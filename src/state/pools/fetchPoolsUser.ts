@@ -67,9 +67,10 @@ export const fetchUserStakeBalances = async (account) => {
   )
 
   // Cake / Cake pool
-  const { amount: masterPoolAmount } = await masterChefContract.userInfo('0', account)
+  // const { amount: masterPoolAmount } = await masterChefContract.userInfo('0', account)
 
-  return { ...stakedBalances, 0: new BigNumber(masterPoolAmount.toString()).toJSON() }
+  // return { ...stakedBalances, 0: new BigNumber(masterPoolAmount.toString()).toJSON() }
+  return { ...stakedBalances }
 }
 
 export const fetchUserPendingRewards = async (account) => {
@@ -88,7 +89,8 @@ export const fetchUserPendingRewards = async (account) => {
   )
 
   // Cake / Cake pool
-  const pendingReward = await masterChefContract.pendingCake('0', account)
+  // const pendingReward = await masterChefContract.pendingCake('0', account)
 
-  return { ...pendingRewards, 0: new BigNumber(pendingReward.toString()).toJSON() }
+  // return { ...pendingRewards, 0: new BigNumber(pendingReward.toString()).toJSON() }
+  return { ...pendingRewards }
 }
