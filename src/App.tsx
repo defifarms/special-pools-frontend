@@ -90,7 +90,7 @@ const App: React.FC = () => {
             <Route path="/farms">
               <Farms />
             </Route>
-            <Route path="/pools">
+            <Route path="/spools">
               <Pools />
             </Route>
             <Route path="/lottery">
