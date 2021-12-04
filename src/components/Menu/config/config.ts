@@ -1,15 +1,56 @@
-import { MenuItemsType, DropdownMenuItemType } from '@pancakeswap/uikit'
+import { MenuEntry, Colors, BoxProps } from '@pancakeswap/uikit'
 import { ContextApi } from 'contexts/Localization/types'
-import { nftsBaseUrl } from 'views/Nft/market/constants'
+
+export enum DropdownMenuItemType {
+  INTERNAL_LINK,
+  EXTERNAL_LINK,
+  BUTTON,
+  DIVIDER,
+}
+
+export interface LinkStatus {
+  text: string;
+  color: keyof Colors;
+}
+
+export interface DropdownMenuItems {
+  label?: string | React.ReactNode;
+  href?: string;
+  onClick?: () => void;
+  type?: DropdownMenuItemType;
+  status?: LinkStatus;
+  disabled?: boolean;
+  iconName?: string;
+  isMobileOnly?: boolean;
+}
+
+export type MenuItemsType = {
+  label: string;
+  href?: string;
+  icon?: string;
+  items?: DropdownMenuItems[];
+  showOnMobile?: boolean;
+  showItemsOnMobile?: boolean;
+};
+
+export interface MenuItemsProps extends BoxProps {
+  items: MenuItemsType[];
+  activeItem?: string;
+  activeSubItem?: string;
+}
 
 export type ConfigMenuItemsType = MenuItemsType & { hideSubNav?: boolean }
 
-const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
+const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
+  {
+    label: t('Home'),
+    icon: 'HomeIcon',
+    href: '/',
+  },
   {
     label: t('Trade'),
-    icon: 'Swap',
-    href: '/swap',
-    showItemsOnMobile: false,
+    icon: 'TradeIcon',
+    initialOpenState: true,
     items: [
       {
         label: t('Exchange'),
@@ -22,90 +63,56 @@ const config: (t: ContextApi['t']) => ConfigMenuItemsType[] = (t) => [
     ],
   },
   {
-    label: t('Earn'),
+    label: t('Farms'),
+    icon: 'FarmIcon',
     href: '/farms',
-    icon: 'Earn',
+  },
+  {
+    label: t('Pools'),
+    icon: 'PoolIcon',
     items: [
       {
-        label: t('Farms'),
-        href: '/farms',
+        label: t('Classic Pools'),
+        href: '/pools',
       },
       {
-        label: t('Pools'),
-        href: '/pools',
+        label: t('Special Pools'),
+        href: '/spools',
       },
     ],
   },
-  // {
-  //   label: t('Win'),
-  //   href: '/prediction',
-  //   icon: 'Trophy',
-  //   items: [
-  //     {
-  //       label: t('Prediction (BETA)'),
-  //       href: '/prediction',
-  //     },
-  //     {
-  //       label: t('Lottery'),
-  //       href: '/lottery',
-  //     },
-  //   ],
-  // },
-  // {
-  //   label: t('NFT'),
-  //   href: `${nftsBaseUrl}`,
-  //   icon: 'Nft',
-  //   items: [
-  //     {
-  //       label: t('Overview'),
-  //       href: `${nftsBaseUrl}`,
-  //     },
-  //     {
-  //       label: t('Collections'),
-  //       href: `${nftsBaseUrl}/collections`,
-  //     },
-  //   ],
-  // },
-  // {
-  //   label: '',
-  //   href: '/info',
-  //   icon: 'More',
-  //   hideSubNav: true,
-  //   items: [
-  //     {
-  //       label: t('Info'),
-  //       href: '/info',
-  //     },
-  //     {
-  //       label: t('IFO'),
-  //       href: '/ifo',
-  //     },
-  //     {
-  //       label: t('Voting'),
-  //       href: '/voting',
-  //     },
-  //     {
-  //       type: DropdownMenuItemType.DIVIDER,
-  //     },
-  //     {
-  //       label: t('Leaderboard'),
-  //       href: '/teams',
-  //     },
-  //     {
-  //       type: DropdownMenuItemType.DIVIDER,
-  //     },
-  //     {
-  //       label: t('Blog'),
-  //       href: 'https://medium.com/pancakeswap',
-  //       type: DropdownMenuItemType.EXTERNAL_LINK,
-  //     },
-  //     {
-  //       label: t('Docs'),
-  //       href: 'https://docs.pancakeswap.finance',
-  //       type: DropdownMenuItemType.EXTERNAL_LINK,
-  //     },
-  //   ],
-  // },
+  {
+    label: t('More'),
+    icon: 'MoreIcon',
+    initialOpenState: true,
+    items: [
+      {
+        label: t('Contact'),
+        href: 'https://docs.defifarms.org/contact-us',
+        target:"_blank"
+      },
+      {
+        label: t('Docs'),
+        href: 'https://docs.defifarms.org/',
+        target:"_blank"
+      },
+      {
+        label: 'Github',
+        href: 'https://github.com/defifarms',
+        target:"_blank"
+      },
+      {
+        label: 'Blog',
+        href: 'https://medium.com/@DefiFarmsNFTs',
+        target:"_blank"
+      },
+      {
+        label: 'Audited by',
+        href: 'https://callisto.network/defifarms-protocol-security-audit/',
+        target:"_blank"
+      },
+    ],
+  },
 ]
 
 export default config

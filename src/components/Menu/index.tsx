@@ -10,8 +10,7 @@ import { usePhishingBannerManager } from 'state/user/hooks'
 import config from './config/config'
 import UserMenu from './UserMenu'
 import GlobalSettings from './GlobalSettings'
-import { getActiveMenuItem, getActiveSubMenuItem } from './utils'
-import { footerLinks } from './config/footerConfig'
+// import { getActiveMenuItem, getActiveSubMenuItem } from './utils'
 
 const Menu = (props) => {
   const { isDark, toggleTheme } = useTheme()
@@ -20,26 +19,26 @@ const Menu = (props) => {
   const { pathname } = useLocation()
   const [showPhishingWarningBanner] = usePhishingBannerManager()
 
-  const activeMenuItem = getActiveMenuItem({ menuConfig: config(t), pathname })
-  const activeSubMenuItem = getActiveSubMenuItem({ menuItem: activeMenuItem, pathname })
+  // const activeMenuItem = getActiveMenuItem({ menuConfig: config(t), pathname })
+  // const activeSubMenuItem = getActiveSubMenuItem({ menuItem: activeMenuItem, pathname })
 
   return (
     <UikitMenu
       userMenu={<UserMenu />}
-      globalMenu={<GlobalSettings />}
-      banner={showPhishingWarningBanner && <PhishingWarningBanner />}
       isDark={isDark}
-      toggleTheme={toggleTheme}
+      toggleTheme={null}
       currentLang={currentLanguage.code}
       langs={languageList}
       setLang={setLanguage}
       cakePriceUsd={cakePriceUsd.toNumber()}
       links={config(t)}
-      subLinks={activeMenuItem?.hideSubNav ? [] : activeMenuItem?.items}
-      footerLinks={footerLinks(t)}
-      activeItem={activeMenuItem?.href}
-      activeSubItem={activeSubMenuItem?.href}
-      buyCakeLabel={t('Buy CAKE')}
+      profile={{
+        username: null,
+        image: undefined,
+        profileLink: '',
+        noProfileLink: '',
+        showPip: null,
+      }}
       {...props}
     />
   )
