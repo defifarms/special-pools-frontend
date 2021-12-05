@@ -12,7 +12,7 @@ import {
   ModalCloseButton,
   Button,
   AutoRenewIcon,
-} from '@pancakeswap/uikit'
+} from '@defifarms/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { getAllV1History } from './helpers'
 

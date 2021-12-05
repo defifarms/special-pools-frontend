@@ -1,7 +1,7 @@
 import React from 'react'
 import { useWeb3React } from '@web3-react/core'
 import ConnectWalletButton from 'components/ConnectWalletButton'
-import { Flex, Text, Button, ButtonMenu, ButtonMenuItem, Message, Link } from '@pancakeswap/uikit'
+import { Flex, Text, Button, ButtonMenu, ButtonMenuItem, Message, Link } from '@defifarms/special-uikit'
 import { FetchStatus } from 'hooks/useTokenBalance'
 import { useTranslation } from 'contexts/Localization'
 import { NftToken } from 'state/nftMarket/types'

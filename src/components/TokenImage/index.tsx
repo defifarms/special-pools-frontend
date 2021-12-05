@@ -4,9 +4,9 @@ import {
   TokenPairImageProps as UIKitTokenPairImageProps,
   TokenImage as UIKitTokenImage,
   ImageProps,
-} from '@pancakeswap/uikit'
+} from '@defifarms/special-uikit'
 import tokens from 'config/constants/tokens'
-import { Token } from '@pancakeswap/sdk'
+import { Token } from '@defifarms/sdk'
 
 interface TokenPairImageProps extends Omit<UIKitTokenPairImageProps, 'primarySrc' | 'secondarySrc'> {
   primaryToken: Token

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { HelpIcon } from '@pancakeswap/uikit'
+import { HelpIcon } from '@defifarms/special-uikit'
 
 const BAD_SRCS: string[] = []
 

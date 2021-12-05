@@ -7,7 +7,7 @@ import {
   UserMenu as UIKitUserMenu,
   UserMenuDivider,
   UserMenuItem,
-} from '@pancakeswap/uikit'
+} from '@defifarms/special-uikit'
 import history from 'routerHistory'
 import useAuth from 'hooks/useAuth'
 import { useProfile } from 'state/profile/hooks'

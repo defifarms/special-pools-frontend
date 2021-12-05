@@ -1,4 +1,4 @@
-import { ChainId } from '@pancakeswap/sdk'
+import { ChainId } from '@defifarms/sdk'
 
 const NETWORK_URLS: { [chainId in ChainId]: string } = {
   [ChainId.MAINNET]: 'https://bsc-dataseed1.defibit.io',

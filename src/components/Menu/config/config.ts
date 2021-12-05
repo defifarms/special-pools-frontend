@@ -1,4 +1,4 @@
-import { MenuEntry, Colors, BoxProps } from '@pancakeswap/uikit'
+import { MenuEntry, Colors, BoxProps } from '@defifarms/special-uikit'
 import { ContextApi } from 'contexts/Localization/types'
 
 export enum DropdownMenuItemType {
