@@ -1,9 +1,6 @@
 import { MenuEntry, Colors, BoxProps } from '@defifarms/special-uikit'
 import { ContextApi } from 'contexts/Localization/types'
 
-const url = process.env.REACT_APP_HOST_1
-const specialUrl = process.env.REACT_APP_HOST_2
-
 export enum DropdownMenuItemType {
   INTERNAL_LINK,
   EXTERNAL_LINK,
@@ -48,7 +45,7 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
   {
     label: t('Home'),
     icon: 'HomeIcon',
-    href: `${url}/`,
+    href: '/',
   },
   {
     label: t('Trade'),
@@ -57,18 +54,18 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
     items: [
       {
         label: t('Exchange'),
-        href: `${url}/swap`,
+        href: '/swap',
       },
       {
         label: t('Liquidity'),
-        href: `${url}/liquidity`,
+        href: '/liquidity',
       },
     ],
   },
   {
     label: t('Farms'),
     icon: 'FarmIcon',
-    href: `${url}/farms`,
+    href: '/farms',
   },
   {
     label: t('Pools'),
@@ -76,11 +73,11 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
     items: [
       {
         label: t('Classic Pools'),
-        href: `${url}/pools`,
+        href: '/pools',
       },
       {
         label: t('Special Pools'),
-        href: `${specialUrl}/spools`,
+        href: '/spools',
       },
     ],
   },
