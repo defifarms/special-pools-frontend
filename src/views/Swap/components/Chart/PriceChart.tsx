@@ -9,7 +9,7 @@ import {
   Skeleton,
   SyncAltIcon,
   Text,
-} from '@pancakeswap/uikit'
+} from '@defifarms/special-uikit'
 import React, { useState } from 'react'
 import { CurrencyLogo, DoubleCurrencyLogo } from 'components/Logo'
 import { formatAmount, formatAmountNotation } from 'views/Info/utils/formatInfoNumbers'

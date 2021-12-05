@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex, LinkExternal, Image, Text, PrizeIcon, Skeleton } from '@pancakeswap/uikit'
+import { Flex, LinkExternal, Image, Text, PrizeIcon, Skeleton } from '@defifarms/special-uikit'
 import tokens from 'config/constants/tokens'
 import { useTranslation } from 'contexts/Localization'
 import { PublicIfoData } from 'views/Ifos/types'

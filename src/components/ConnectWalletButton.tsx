@@ -1,11 +1,12 @@
 import React from 'react'
-import { Button, useWalletModal } from '@pancakeswap/uikit'
+import { Button, useWalletModal } from '@defifarms/special-uikit'
 import useAuth from 'hooks/useAuth'
 import { useTranslation } from 'contexts/Localization'
 import styled from 'styled-components'
 
 const StyledButtonMenu = styled(Button)`
   background: #3230b2;
+  color: #fff;
 `
 
 const ConnectWalletButton = (props) => {

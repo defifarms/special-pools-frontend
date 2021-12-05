@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Text, Button, Spinner } from '@pancakeswap/uikit'
+import { Flex, Text, Button, Spinner } from '@defifarms/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 
 interface ConfirmStageProps {

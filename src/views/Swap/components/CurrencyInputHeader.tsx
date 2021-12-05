@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ChartIcon, Flex, Heading, HistoryIcon, IconButton, NotificationDot, Text, useModal } from '@pancakeswap/uikit'
+import { ChartIcon, Flex, Heading, HistoryIcon, IconButton, NotificationDot, Text, useModal } from '@defifarms/special-uikit'
 import TransactionsModal from 'components/App/Transactions/TransactionsModal'
 import GlobalSettings from 'components/Menu/GlobalSettings'
 import { useExpertModeManager } from 'state/user/hooks'
