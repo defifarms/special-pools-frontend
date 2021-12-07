@@ -30,7 +30,6 @@ import { useTranslation } from 'contexts/Localization'
 import Container from 'components/Layout/Container'
 import { DatePicker, TimePicker } from 'components/DatePicker'
 import ConnectWalletButton from 'components/ConnectWalletButton'
-import ReactMarkdown from 'components/ReactMarkdown'
 import { PageMeta } from 'components/Layout/Page'
 import { sendSnapshotData, Message, generateMetaData, generatePayloadData } from '../helpers'
 import Layout from '../components/Layout'
@@ -202,7 +201,7 @@ const CreateProposal = () => {
                     </Heading>
                   </CardHeader>
                   <CardBody p="0" px="24px">
-                    <ReactMarkdown>{body}</ReactMarkdown>
+                    <p>{body}</p>
                   </CardBody>
                 </Card>
               </Box>

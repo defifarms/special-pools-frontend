@@ -13,7 +13,6 @@ import {
 import { fetchProposal, fetchVotes } from 'state/voting'
 import { useTranslation } from 'contexts/Localization'
 import Container from 'components/Layout/Container'
-import ReactMarkdown from 'components/ReactMarkdown'
 import PageLoader from 'components/Loader/PageLoader'
 import { isCoreProposal } from '../helpers'
 import { ProposalStateTag, ProposalTypeTag } from '../components/Proposals/tags'
@@ -72,7 +71,7 @@ const Proposal = () => {
               {proposal.title}
             </Heading>
             <Box>
-              <ReactMarkdown>{proposal.body}</ReactMarkdown>
+              <p>{proposal.body}</p>
             </Box>
           </Box>
           {!isPageLoading && !hasAccountVoted && proposal.state === ProposalState.ACTIVE && (
