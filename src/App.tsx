@@ -81,7 +81,7 @@ const App: React.FC = () => {
       <Menu>
         <SuspenseWithChunkError fallback={<PageLoader />}>
           <Switch>
-            <Route path="/spools" exact>
+            <Route path="/" exact>
               <Pools />
             </Route>
             {/* 404 */}
