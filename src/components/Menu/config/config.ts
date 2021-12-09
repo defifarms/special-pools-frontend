@@ -41,11 +41,14 @@ export interface MenuItemsProps extends BoxProps {
 
 export type ConfigMenuItemsType = MenuItemsType & { hideSubNav?: boolean }
 
+const url = process.env.REACT_APP_HOST_1
+const specialUrl = process.env.REACT_APP_HOST_2
+
 const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
   {
     label: t('Home'),
     icon: 'HomeIcon',
-    href: '/',
+    href: `${url}/`,
   },
   {
     label: t('Trade'),
@@ -54,18 +57,18 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
     items: [
       {
         label: t('Exchange'),
-        href: '/swap',
+        href: `${url}/swap`,
       },
       {
         label: t('Liquidity'),
-        href: '/liquidity',
+        href: `${url}/liquidity`,
       },
     ],
   },
   {
     label: t('Farms'),
     icon: 'FarmIcon',
-    href: '/farms',
+    href: `${url}/farms`,
   },
   {
     label: t('Pools'),
@@ -73,11 +76,11 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
     items: [
       {
         label: t('Classic Pools'),
-        href: '/pools',
+        href: `${url}/pools`,
       },
       {
         label: t('Special Pools'),
-        href: '/spools',
+        href: `${specialUrl}/spools`,
       },
     ],
   },
