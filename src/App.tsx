@@ -21,6 +21,7 @@ import GlobalCheckClaimStatus from './components/GlobalCheckClaimStatus'
 import history from './routerHistory'
 // Views included in the main bundle
 import Pools from './views/Pools'
+import SpecialPools from './views/SpecialPools'
 import Swap from './views/Swap'
 import {
   RedirectDuplicateTokenIds,
@@ -82,7 +83,7 @@ const App: React.FC = () => {
         <SuspenseWithChunkError fallback={<PageLoader />}>
           <Switch>
             <Route path="/" exact>
-              <Pools />
+              <SpecialPools />
             </Route>
             {/* 404 */}
             <Route component={NotFound} />

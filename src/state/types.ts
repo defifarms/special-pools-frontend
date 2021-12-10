@@ -69,9 +69,12 @@ interface CorePoolProps {
   isAutoVault?: boolean
 }
 
+
 export interface DeserializedPool extends DeserializedPoolConfig, CorePoolProps {
   totalStaked?: BigNumber
   stakingLimit?: BigNumber
+  harvestInterval?: string
+  depositFeeBP?: string
   userData?: {
     allowance: BigNumber
     stakingTokenBalance: BigNumber
@@ -79,7 +82,12 @@ export interface DeserializedPool extends DeserializedPoolConfig, CorePoolProps 
     pendingReward: BigNumber
   }
 }
-
+export interface SpecialPoolConfigType {
+  name: string
+  link: string
+  capGoal: number
+  childrenPools: DeserializedPool[]
+}
 export interface SerializedPool extends SerializedPoolConfig, CorePoolProps {
   totalStaked?: SerializedBigNumber
   stakingLimit?: SerializedBigNumber
