@@ -145,8 +145,8 @@ export const useLpTokenPrice = (symbol: string) => {
 // /!\ Deprecated , use the BUSD hook in /hooks
 
 export const usePriceCakeBusd = (): BigNumber => {
-  const cakeBnbFarm = useFarmFromPid(251)
-
+  const cakeBnbFarm = useFarmFromPid(1)
+  console.log('cakeBnbFarm', cakeBnbFarm);
   const cakePriceBusdAsString = cakeBnbFarm.tokenPriceBusd
 
   const cakePriceBusd = useMemo(() => {

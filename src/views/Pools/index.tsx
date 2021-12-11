@@ -103,7 +103,7 @@ const Pools: React.FC = () => {
     totalCakeInVault,
   } = useCakeVault()
   const accountHasVaultShares = userShares && userShares.gt(0)
-  const performanceFeeAsDecimal = performanceFee && performanceFee / 100
+  const performanceFeeAsDecimal = 1 / 100
 
   const pools = useMemo(() => {
     const cakePool = poolsWithoutAutoVault.find((pool) => pool.sousId === 0)
