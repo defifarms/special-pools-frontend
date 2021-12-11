@@ -78,7 +78,7 @@ const SpecialPoolItem: React.FC<{ poolConfig: SpecialPoolConfigType }> = ({ pool
           <Text color="#FF97CF">{t('20 days')}</Text>
         </Flex>
         <Flex alignItems="center" justifyContent="center" mb="16px">
-          <Button as={Link} variant="primary" scale="md" to={`/special-pools/${poolConfig.link}`}>
+          <Button as={Link} variant="primary" scale="md" to={`/${poolConfig.link}`}>
             <Text>{t('Enter pool')}</Text>
           </Button>
         </Flex>

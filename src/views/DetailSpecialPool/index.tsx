@@ -78,7 +78,7 @@ const DetailSpecialPool: React.FC<RouteComponentProps<{ groupPool: string }>> = 
           <CardSpecialPoolHeader>
             <Flex justifyContent="space-between">
               <Flex flex={1} alignItems="center">
-                <IconButton as={Link} to="/special-pools">
+                <IconButton as={Link} to="/">
                   <ArrowBackIcon width="32px" />
                 </IconButton>
               </Flex>

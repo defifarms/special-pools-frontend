@@ -12,6 +12,16 @@ interface SerializedTokenList {
   [symbol: string]: SerializedToken
 }
 
+// defiy: {
+//   symbol: 'DEFIY',
+//     address: {
+//     56: '0x08d1Ed0e3816183e703a492dDD28d68fcc13bb61',
+//       97: '0x5017AE3D04e29B67b33CF96a86980717A773a783',
+//     },
+//   decimals: 18,
+//     projectLink: 'https://defifarms.org',
+//   },
+
 export const mainnetTokens = {
   wbnb: new Token(
     MAINNET,
@@ -23,6 +33,7 @@ export const mainnetTokens = {
   ),
   // bnb here points to the wbnb contract. Wherever the currency BNB is required, conditional checks for the symbol 'BNB' can be used
   bnb: new Token(MAINNET, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', 18, 'BNB', 'BNB', 'https://www.binance.com/'),
+  defiy: new Token(MAINNET, '0x08d1Ed0e3816183e703a492dDD28d68fcc13bb61', 18, 'DEFIY', 'DEFIY', 'https://defifarms.org'),
   cake: new Token(
     MAINNET,
     '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
@@ -1809,6 +1820,7 @@ export const testnetTokens = {
     'Wrapped BNB',
     'https://www.binance.com/',
   ),
+  defiy: new Token(TESTNET, '0x5017AE3D04e29B67b33CF96a86980717A773a783', 18, 'DEFIY', 'DEFIY', 'https://defifarms.org'),
   cake: new Token(
     TESTNET,
     '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe',
