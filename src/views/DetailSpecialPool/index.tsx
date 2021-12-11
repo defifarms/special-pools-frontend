@@ -7,9 +7,10 @@ import { Link } from 'react-router-dom'
 import { RouteComponentProps } from 'react-router'
 import styled from 'styled-components'
 import ConnectWalletButton from 'components/ConnectWalletButton'
+import { useWeb3React } from '@web3-react/core'
 import { formatNumber } from 'utils/formatBalance'
 import { SpecialPoolsConfig } from '../SpecialPools/config'
-import GroupChildrenPools from './component/GroupChildrenPools'
+import GroupChildrenPools from './components/GroupChildrenPools'
 
 const CardSpecialPool = styled(Card)<{ background?: string }>`
   background-color: unset;
@@ -69,6 +70,8 @@ const DetailSpecialPool: React.FC<RouteComponentProps<{ groupPool: string }>> = 
   },
 }) => {
   const { t } = useTranslation()
+  const { account } = useWeb3React()
+
   const currentSpecialPoolConfig = SpecialPoolsConfig.find((pool) => pool.link === groupPool)
 
   return (
@@ -87,7 +90,7 @@ const DetailSpecialPool: React.FC<RouteComponentProps<{ groupPool: string }>> = 
               </Flex>
               <Flex flex={1} justifyContent="flex-end" alignItems="center">
                 <Text textAlign="right" fontSize="14px" color="#FFB800">
-                  APR 700% | Lock-up tern 10 days
+                  {currentSpecialPoolConfig.description}
                 </Text>
               </Flex>
             </Flex>
@@ -163,7 +166,7 @@ const DetailSpecialPool: React.FC<RouteComponentProps<{ groupPool: string }>> = 
               </StakeInfoWrap>
             </Flex>
             <Flex justifyContent="center" mt="16px" mb="16px">
-              <ConnectWalletButton />
+              {!account ? <ConnectWalletButton /> : null}
             </Flex>
           </CardSpecialPoolBody>
         </CardSpecialPool>

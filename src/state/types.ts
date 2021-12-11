@@ -82,15 +82,12 @@ export interface DeserializedPool extends DeserializedPoolConfig, CorePoolProps 
     pendingReward: BigNumber
   }
 }
-export interface SpecialPoolConfigType {
-  name: string
-  link: string
-  capGoal: number
-  childrenPools: DeserializedPool[]
-}
+
 export interface SerializedPool extends SerializedPoolConfig, CorePoolProps {
   totalStaked?: SerializedBigNumber
   stakingLimit?: SerializedBigNumber
+  harvestInterval?: string
+  depositFeeBP?: string
   userData?: {
     allowance: SerializedBigNumber
     stakingTokenBalance: SerializedBigNumber
@@ -98,7 +95,13 @@ export interface SerializedPool extends SerializedPoolConfig, CorePoolProps {
     pendingReward: SerializedBigNumber
   }
 }
-
+export interface SpecialPoolConfigType {
+  name: string
+  link: string
+  capGoal: number
+  description?: string
+  childrenPools: DeserializedPool[]
+}
 export interface Profile {
   userId: number
   points: number

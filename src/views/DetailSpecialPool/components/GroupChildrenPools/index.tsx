@@ -1,34 +1,22 @@
-import { Box, Button, Card, Flex, Heading, Slider, Text, AddIcon, IconButton } from '@defifarms/special-uikit'
+import { AddIcon, Button, Flex, IconButton, Text } from '@defifarms/special-uikit'
+import { useWeb3React } from '@web3-react/core'
 import Container from 'components/Layout/Container'
-import { MainBackground } from 'components/Layout/MainBackground'
+import { TokenImage } from 'components/TokenImage'
 import { useTranslation } from 'contexts/Localization'
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import React from 'react'
-import { Currency, Token } from '@defifarms/sdk'
-import { RouteComponentProps } from 'react-router'
+import {
+  usePools
+} from 'state/pools/hooks'
 import { SpecialPoolConfigType } from 'state/types'
 import styled from 'styled-components'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import PoolsTable from 'views/DetailSpecialPool/components/PoolsTable/PoolsTable'
 
-import { CurrencyLogo } from 'components/Logo'
-import { TokenImage } from 'components/TokenImage'
-import { wrappedCurrency } from 'utils/wrappedCurrency'
-
-import { SpecialPoolsConfig } from '../../../SpecialPools/config'
 
 interface IGroupPools {
   currentSpecialPoolConfig: SpecialPoolConfigType
 }
 
-const CardSpecialPoolBody = styled.div`
-  background: #2c007c80;
-  padding: 16px;
-  backdrop-filter: blur(5px);
-`
-const ContainerWrap = styled(Container)`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-`
 const ActionContainer = styled(Flex)``
 const RowPool = styled(Flex)`
   background-color: #2c007c;
@@ -52,10 +40,15 @@ const ButtonStyled = styled(Button)`
 
 const GroupChildrenPools: React.FC<IGroupPools> = ({ currentSpecialPoolConfig }) => {
   const { t } = useTranslation()
-  const { chainId } = useActiveWeb3React()
+  const { chainId } = useActiveWeb3React() 
+  const { account } = useWeb3React()
+  const { pools: poolsWithoutAutoVault, userDataLoaded } = usePools()
 
+  const tableLayout = <PoolsTable pools={poolsWithoutAutoVault} account={account} userDataLoaded={userDataLoaded} />
+  // console.log('poolsWithoutAutoVault', poolsWithoutAutoVault)
   return (
     <Flex flexDirection="column" width="100%" mt="16px" flex={2}>
+      {tableLayout}
       {currentSpecialPoolConfig.childrenPools.map((pool) => (
         <RowPool justifyContent="flex-start" alignItems="center">
           {/* <TokenImage token={pool.stakingToken} size="24px" /> */}
