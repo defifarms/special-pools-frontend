@@ -6,8 +6,15 @@ import { useTranslation } from 'contexts/Localization'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import React from 'react'
 import {
-  usePools
+  usePools,
+  useSpecialPools,
+  useFetchPublicPoolsData,
+  useFetchUserPools,
+  useFetchCakeVault,
+  useCakeVault
 } from 'state/pools/hooks'
+import { usePollFarmsPublicData } from 'state/farms/hooks'
+
 import { SpecialPoolConfigType } from 'state/types'
 import styled from 'styled-components'
 import PoolsTable from 'views/DetailSpecialPool/components/PoolsTable/PoolsTable'
@@ -42,15 +49,19 @@ const GroupChildrenPools: React.FC<IGroupPools> = ({ currentSpecialPoolConfig })
   const { t } = useTranslation()
   const { chainId } = useActiveWeb3React() 
   const { account } = useWeb3React()
-  const { pools: poolsWithoutAutoVault, userDataLoaded } = usePools()
+  const { pools: poolsWithoutAutoVault, userDataLoaded } = useSpecialPools()
+  usePollFarmsPublicData()
+  useFetchCakeVault()
+  useFetchPublicPoolsData()
+  useFetchUserPools(account)
 
-  const tableLayout = <PoolsTable pools={poolsWithoutAutoVault} account={account} userDataLoaded={userDataLoaded} />
+  const tableLayout = <PoolsTable pools={poolsWithoutAutoVault.filter(spool => !spool.isFinished)} account={account} userDataLoaded />
   // console.log('poolsWithoutAutoVault', poolsWithoutAutoVault)
   return (
     <Flex flexDirection="column" width="100%" mt="16px" flex={2}>
       {tableLayout}
       {currentSpecialPoolConfig.childrenPools.map((pool) => (
-        <RowPool justifyContent="flex-start" alignItems="center">
+        <RowPool justifyContent="flex-start" alignItems="center" key={pool.sousId}>
           {/* <TokenImage token={pool.stakingToken} size="24px" /> */}
           <TokenImage token={pool.stakingToken} width={40} height={40} />
           <ActionContainer alignItems="center">

@@ -24,11 +24,17 @@ const StyledRow = styled.div`
   display: flex;
   cursor: pointer;
 `
+const StakeInfo = styled.div`
+  background-color: #512e91;
+  padding: 8px 24px;
+  border-radius: 4px;
+  margin-left: 16px;
+`
 
 const PoolRow: React.FC<PoolRowProps> = ({ pool, account, userDataLoaded }) => {
   const { isXs, isSm, isMd, isLg, isXl, isXxl, isTablet, isDesktop } = useMatchBreakpoints()
   const isLargerScreen = isLg || isXl || isXxl
-  const [expanded, setExpanded] = useState(false)
+  const [expanded, setExpanded] = useState(true)
   const shouldRenderActionPanel = useDelayedUnmount(expanded, 300)
 
   const toggleExpanded = () => {
@@ -39,15 +45,20 @@ const PoolRow: React.FC<PoolRowProps> = ({ pool, account, userDataLoaded }) => {
     <>
       <StyledRow role="row" onClick={toggleExpanded}>
         <NameCell pool={pool} />
-        {pool.isAutoVault ? (
+        {/* {pool.isAutoVault ? (
           <AutoEarningsCell pool={pool} account={account} userDataLoaded={userDataLoaded} />
         ) : (
           <EarningsCell pool={pool} account={account} userDataLoaded={userDataLoaded} />
+        )} */}
+        {/* {pool.isAutoVault ? <AutoAprCell pool={pool} /> : <AprCell pool={pool} />} */}
+
+        {isLargerScreen && (
+          <StakeInfo>
+            <TotalStakedCell pool={pool} />
+          </StakeInfo>
         )}
-        {pool.isAutoVault ? <AutoAprCell pool={pool} /> : <AprCell pool={pool} />}
-        {isLargerScreen && <TotalStakedCell pool={pool} />}
-        {isDesktop && <EndsInCell pool={pool} />}
-        <ExpandActionCell expanded={expanded} isFullLayout={isTablet || isDesktop} />
+        {/* {isDesktop && <EndsInCell pool={pool} />} */}
+        {/* <ExpandActionCell expanded={expanded} isFullLayout={isTablet || isDesktop} /> */}
       </StyledRow>
       {shouldRenderActionPanel && (
         <ActionPanel

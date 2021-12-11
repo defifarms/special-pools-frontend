@@ -48,6 +48,13 @@ export const usePools = (): { pools: DeserializedPool[]; userDataLoaded: boolean
   }))
   return { pools: pools.map(transformPool), userDataLoaded }
 }
+export const useSpecialPools = (): { pools: DeserializedPool[]; userDataLoaded: boolean } => {
+  const { pools, userDataLoaded } = useSelector((state: State) => ({
+    pools: state.pools.data,
+    userDataLoaded: state.pools.userDataLoaded,
+  }))
+  return { pools: pools.map(transformPool), userDataLoaded }
+}
 
 export const useFetchCakeVault = () => {
   const { account } = useWeb3React()
