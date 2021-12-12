@@ -22,6 +22,8 @@ import PoolsTable from 'views/DetailSpecialPool/components/PoolsTable/PoolsTable
 
 interface IGroupPools {
   currentSpecialPoolConfig: SpecialPoolConfigType
+  poolsSpecial: any
+  userDataLoaded: boolean
 }
 
 const ActionContainer = styled(Flex)``
@@ -45,24 +47,26 @@ const ButtonStyled = styled(Button)`
   height: unset;
 `
 
-const GroupChildrenPools: React.FC<IGroupPools> = ({ currentSpecialPoolConfig }) => {
+const GroupChildrenPools: React.FC<IGroupPools> = ({
+  currentSpecialPoolConfig,
+  poolsSpecial,
+  userDataLoaded,
+}) => {
   const { t } = useTranslation()
-  const { chainId } = useActiveWeb3React() 
   const { account } = useWeb3React()
-  const { pools: poolsWithoutAutoVault, userDataLoaded } = useSpecialPools()
-  usePollFarmsPublicData()
-  useFetchCakeVault()
-  useFetchPublicPoolsData()
-  useFetchUserPools(account)
 
-  const tableLayout = <PoolsTable pools={poolsWithoutAutoVault.filter(spool => !spool.isFinished)} account={account} userDataLoaded />
-  // console.log('poolsWithoutAutoVault', poolsWithoutAutoVault)
+  const tableLayout = (
+    <PoolsTable
+      pools={poolsSpecial}
+      account={account}
+      userDataLoaded={userDataLoaded}
+    />
+  )
   return (
     <Flex flexDirection="column" width="100%" mt="16px" flex={2}>
       {tableLayout}
-      {currentSpecialPoolConfig.childrenPools.map((pool) => (
+      {/* {currentSpecialPoolConfig.childrenPools.map((pool) => (
         <RowPool justifyContent="flex-start" alignItems="center" key={pool.sousId}>
-          {/* <TokenImage token={pool.stakingToken} size="24px" /> */}
           <TokenImage token={pool.stakingToken} width={40} height={40} />
           <ActionContainer alignItems="center">
             <ButtonStyled scale="sm" minWidth={130} disabled={false} onClick={null} ml="16px" mr="16px">
@@ -74,12 +78,9 @@ const GroupChildrenPools: React.FC<IGroupPools> = ({ currentSpecialPoolConfig })
             <StakeInfo>
               <Text>0.00/0.00</Text>
             </StakeInfo>
-
-            {/* <HarvestAction {...farm} userDataReady={userDataReady} />
-            <StakedAction {...farm} userDataReady={userDataReady} /> */}
           </ActionContainer>
         </RowPool>
-      ))}
+      ))} */}
     </Flex>
   )
 }

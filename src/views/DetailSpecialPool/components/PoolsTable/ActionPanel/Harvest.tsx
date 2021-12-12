@@ -84,9 +84,9 @@ const HarvestAction: React.FunctionComponent<HarvestActionProps> = ({
 
   return (
     <ActionContainer>
-      <ActionTitles>{actionTitle}</ActionTitles>
+      {/* <ActionTitles>{actionTitle}</ActionTitles> */}
       <ActionContent>
-        <Flex flex="1" pt="16px" flexDirection="column" alignSelf="flex-start">
+        {/* <Flex flex="1" pt="16px" flexDirection="column" alignSelf="flex-start">
           <>
             {hasEarnings ? (
               <>
@@ -112,7 +112,7 @@ const HarvestAction: React.FunctionComponent<HarvestActionProps> = ({
               </>
             )}
           </>
-        </Flex>
+        </Flex> */}
         <Button disabled={!hasEarnings} onClick={onPresentCollect}>
           {isCompoundPool ? t('Collect') : t('Harvest')}
         </Button>

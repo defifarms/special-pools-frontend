@@ -3,7 +3,7 @@ import { MainBackground } from 'components/Layout/MainBackground'
 import PageHeader from 'components/PageHeader'
 import { useTranslation } from 'contexts/Localization'
 import React from 'react'
-import { SpecialPoolsConfig } from './config'
+import { SpecialPoolsConfig } from '../../config/constants/specialPoolConfig'
 import SpecialPoolItem from './SpecialPoolItem'
 
 const SpecialPools: React.FC = () => {

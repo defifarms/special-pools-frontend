@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
 export const ActionContainer = styled.div<{ isAutoVault?: boolean }>`
-  padding: 16px;
+  padding: 8px;
   border: 2px solid ${({ theme }) => theme.colors.input};
   border-radius: 16px;
   flex-grow: 1;
   flex-basis: 0;
-  margin-bottom: 16px;
+  margin-bottom: 0px;
 
   ${({ theme }) => theme.mediaQueries.sm} {
     margin-left: 12px;
@@ -17,7 +17,7 @@ export const ActionContainer = styled.div<{ isAutoVault?: boolean }>`
 }
 
   ${({ theme }) => theme.mediaQueries.xl} {
-    margin-left: 32px;
+    margin-left: 8px;
     margin-right: 0;
   }
 `

@@ -181,16 +181,16 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({ pool, userDataLoa
   if (isNotVaultAndHasStake || isVaultWithShares) {
     return (
       <ActionContainer isAutoVault={isAutoVault}>
-        <ActionTitles>
+        {/* <ActionTitles>
           <Text fontSize="12px" bold color="secondary" as="span" textTransform="uppercase">
             {stakingToken.symbol}{' '}
           </Text>
           <Text fontSize="12px" bold color="textSubtle" as="span" textTransform="uppercase">
             {isAutoVault ? t('Staked (compounding)') : t('Staked')}
           </Text>
-        </ActionTitles>
+        </ActionTitles> */}
         <ActionContent>
-          <Flex flex="1" pt="16px" flexDirection="column" alignSelf="flex-start">
+          {/* <Flex flex="1" pt="16px" flexDirection="column" alignSelf="flex-start">
             <Balance
               lineHeight="1"
               bold
@@ -207,11 +207,11 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({ pool, userDataLoa
               unit=" USD"
               prefix="~"
             />
-          </Flex>
+          </Flex> */}
           <IconButtonWrapper>
-            <IconButton variant="secondary" onClick={onUnstake} mr="6px">
+            {/* <IconButton variant="secondary" onClick={onUnstake} mr="6px">
               <MinusIcon color="primary" width="14px" />
-            </IconButton>
+            </IconButton> */}
             {reachStakingLimit ? (
               <span ref={targetRef}>
                 <IconButton variant="secondary" disabled>

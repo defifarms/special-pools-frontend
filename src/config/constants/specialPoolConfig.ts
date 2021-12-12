@@ -12,20 +12,18 @@ export const SpecialPoolsConfig: SpecialPoolConfigType[] = [
     capGoal: 30000,
     childrenPools: [
       {
-        sousId: 236,
-        stakingToken: tokens.cake,
-        earningToken: tokens.porto,
+        sousId: 613,
+        stakingToken: serializedTokens.defiy,
+        earningToken: serializedTokens.defiy,
         contractAddress: {
-          97: '',
-          56: '0xdD52FAB121376432DBCBb47592742F9d86CF8952',
+          97: '0x417d2fe6cf2208036233eb07cae183d6aa623672',
+          56: '',
         },
         poolCategory: PoolCategory.CORE,
-        depositFeeBP: '0',
-        harvestInterval: '14400',
         harvest: true,
         sortOrder: 999,
         tokenPerBlock: '0.0578',
-      },
+      }
       // {
       //   sousId: 3,
       //   apr: 100,

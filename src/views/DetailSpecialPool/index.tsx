@@ -1,16 +1,31 @@
-import { Button, Card, Flex, Heading, Slider, Text, IconButton, ArrowBackIcon, Box } from '@defifarms/special-uikit'
+import {
+  ArrowBackIcon,
+  Card,
+  Flex,
+  Heading,
+  IconButton,
+  Slider,
+  Text,
+  useMatchBreakpoints
+} from '@defifarms/special-uikit'
+import { useWeb3React } from '@web3-react/core'
+import ConnectWalletButton from 'components/ConnectWalletButton'
 import Container from 'components/Layout/Container'
 import { MainBackground } from 'components/Layout/MainBackground'
 import { useTranslation } from 'contexts/Localization'
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { RouteComponentProps } from 'react-router'
+import { Link } from 'react-router-dom'
+import { usePollFarmsPublicData } from 'state/farms/hooks'
+import {
+  useFetchCakeVault, useFetchPublicPoolsData,
+  useFetchUserPools, useSpecialPools
+} from 'state/pools/hooks'
 import styled from 'styled-components'
-import ConnectWalletButton from 'components/ConnectWalletButton'
-import { useWeb3React } from '@web3-react/core'
 import { formatNumber } from 'utils/formatBalance'
-import { SpecialPoolsConfig } from '../SpecialPools/config'
+import { SpecialPoolsConfig } from '../../config/constants/specialPoolConfig'
 import GroupChildrenPools from './components/GroupChildrenPools'
+import GroupStakeInfo from './components/GroupStakeInfo'
 
 const CardSpecialPool = styled(Card)<{ background?: string }>`
   background-color: unset;
@@ -36,16 +51,7 @@ const ContainerWrap = styled(Container)<{ background?: string }>`
   justify-content: center;
   flex-direction: column;
 `
-const StakeInfoWrap = styled(Flex)<{ background?: string }>`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: 16px 0 16px 16px;
-  border: 1px solid #7b53c4;
-  border-radius: 10px;
-  background-color: #4a278a;
-  padding: 16px;
-`
+
 
 const PoolName = styled.div`
   background: #ff368b80;
@@ -71,8 +77,29 @@ const DetailSpecialPool: React.FC<RouteComponentProps<{ groupPool: string }>> = 
 }) => {
   const { t } = useTranslation()
   const { account } = useWeb3React()
+  const { pools: poolsWithoutAutoVault, userDataLoaded } = useSpecialPools()
+  usePollFarmsPublicData()
+  useFetchCakeVault()
+  useFetchPublicPoolsData()
+  useFetchUserPools(account)
 
   const currentSpecialPoolConfig = SpecialPoolsConfig.find((pool) => pool.link === groupPool)
+  const poolsSpecial = poolsWithoutAutoVault.filter((pool) => {
+    const arraySpecialPoolConfig = currentSpecialPoolConfig.childrenPools
+    let isSpecialPools = false
+    arraySpecialPoolConfig.forEach((spoolConfig) => {
+      if (spoolConfig.sousId === pool.sousId) {
+        isSpecialPools = true
+      }
+    })
+    return isSpecialPools
+  })
+
+  // -----------------------
+  const { isXs, isSm, isMd, isLg, isXl, isXxl, isTablet, isDesktop } = useMatchBreakpoints()
+  const isLargerScreen = isLg || isXl || isXxl
+
+
 
   return (
     <MainBackground>
@@ -128,42 +155,36 @@ const DetailSpecialPool: React.FC<RouteComponentProps<{ groupPool: string }>> = 
                   {t('0.00')}
                 </Heading>
               </Flex>
-              <Flex>
-                <Text color="white" fontFamily="HK Grotesk" mt="16px">
-                  {t('Start staking')}
-                </Text>
+              <Flex flexDirection="column">
+                <Flex justifyContent="space-between">
+                  <Text fontSize="18px" color="white" fontFamily="HK Grotesk" mt="16px">
+                    {t('Rewards end in: ')}
+                  </Text>
+                  <Text fontSize="18px" ml="16px" color="four" fontFamily="HK Grotesk" mt="16px">
+                    {t('3,595, 482 Blocks')}
+                  </Text>
+                </Flex>
+                <Flex justifyContent="space-between">
+                  <Text fontSize="18px" color="white" fontFamily="HK Grotesk" mt="16px">
+                    {t('Unstake Fee')}
+                  </Text>
+                  <Text fontSize="18px" color="four" fontFamily="HK Grotesk" mt="16px">
+                    {t('0%')}
+                  </Text>
+                </Flex>
               </Flex>
             </Flex>
-            <Flex>
-              <GroupChildrenPools currentSpecialPoolConfig={currentSpecialPoolConfig} />
-              <StakeInfoWrap flex={1}>
-                <Heading>{t('DEFIY Earned')}</Heading>
-                <Heading color="four">{t('0.00 ~ $0.00')}</Heading>
-                <Flex mt="16px">
-                  <Text mr="16px">0.00</Text>
-                  <Text color="four"> {t('DEFIY Staked')}</Text>
-                </Flex>
-                <Flex mt="16px">
-                  <Text mr="16px">0.00</Text>
-                  <Text color="four"> {t('BUSD Staked')}</Text>
-                </Flex>
-                <Flex mt="16px">
-                  <Text mr="16px">0.00</Text>
-                  <Text color="four"> {t('WBNB Staked')}</Text>
-                </Flex>
-                <Flex mt="16px">
-                  <Text mr="16px">0.00</Text>
-                  <Text color="four"> {t('BTCB Staked')}</Text>
-                </Flex>
-                <Flex mt="16px">
-                  <Text mr="16px">0.00</Text>
-                  <Text color="four"> {t('WETH Staked')}</Text>
-                </Flex>
-                <Flex mt="16px">
-                  <Text mr="16px">0.00</Text>
-                  <Text color="four"> {t('CAKE Staked')}</Text>
-                </Flex>
-              </StakeInfoWrap>
+            <Flex flexDirection={isLargerScreen ? 'row' : 'column'}>
+              <GroupChildrenPools
+                poolsSpecial={poolsSpecial}
+                userDataLoaded={userDataLoaded}
+                currentSpecialPoolConfig={currentSpecialPoolConfig}
+              />
+              <GroupStakeInfo
+                poolsSpecial={poolsSpecial}
+                userDataLoaded={userDataLoaded}
+                currentSpecialPoolConfig={currentSpecialPoolConfig}
+              />
             </Flex>
             <Flex justifyContent="center" mt="16px" mb="16px">
               {!account ? <ConnectWalletButton /> : null}

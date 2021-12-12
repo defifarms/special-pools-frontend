@@ -1,37 +1,28 @@
-import React, { lazy } from 'react'
-import { Router, Redirect, Route, Switch } from 'react-router-dom'
 import { ResetCSS } from '@defifarms/special-uikit'
 import { useWeb3React } from '@web3-react/core'
 import BigNumber from 'bignumber.js'
+import { DatePickerPortal } from 'components/DatePicker'
 import useEagerConnect from 'hooks/useEagerConnect'
-import useUserAgent from 'hooks/useUserAgent'
 import useScrollOnRouteChange from 'hooks/useScrollOnRouteChange'
+import useUserAgent from 'hooks/useUserAgent'
+import React, { lazy } from 'react'
+import { Route, Router, Switch } from 'react-router-dom'
 import { usePollBlockNumber } from 'state/block/hooks'
 import { usePollCoreFarmData } from 'state/farms/hooks'
 import { useFetchProfile } from 'state/profile/hooks'
-import { DatePickerPortal } from 'components/DatePicker'
-import { nftsBaseUrl } from 'views/Nft/market/constants'
-import GlobalStyle from './style/Global'
+import EasterEgg from './components/EasterEgg'
+import GlobalCheckClaimStatus from './components/GlobalCheckClaimStatus'
+import PageLoader from './components/Loader/PageLoader'
 import Menu from './components/Menu'
 import SuspenseWithChunkError from './components/SuspenseWithChunkError'
 import { ToastListener } from './contexts/ToastsContext'
-import PageLoader from './components/Loader/PageLoader'
-import EasterEgg from './components/EasterEgg'
-import GlobalCheckClaimStatus from './components/GlobalCheckClaimStatus'
+import { useInactiveListener } from './hooks/useInactiveListener'
 import history from './routerHistory'
+import GlobalStyle from './style/Global'
+import DetailSpecialPool from './views/DetailSpecialPool'
 // Views included in the main bundle
 import Pools from './views/Pools'
 import SpecialPools from './views/SpecialPools'
-import DetailSpecialPool from './views/DetailSpecialPool'
-import Swap from './views/Swap'
-import {
-  RedirectDuplicateTokenIds,
-  RedirectOldAddLiquidityPathStructure,
-  RedirectToAddLiquidity,
-} from './views/AddLiquidity/redirects'
-import RedirectOldRemoveLiquidityPathStructure from './views/RemoveLiquidity/redirects'
-import { RedirectPathToSwapOnly, RedirectToSwap } from './views/Swap/redirects'
-import { useInactiveListener } from './hooks/useInactiveListener'
 
 // Route-based code splitting
 // Only pool is included in the main bundle because of it's the most visited page
@@ -83,10 +74,10 @@ const App: React.FC = () => {
       <Menu>
         <SuspenseWithChunkError fallback={<PageLoader />}>
           <Switch>
-            <Route path="/" exact>
+            <Route path="/pools" exact>
               <Pools />
             </Route>
-            <Route path="/spools" exact>
+            <Route path="/" exact>
               <SpecialPools />
             </Route>
             <Route exact strict path="/:groupPool" component={DetailSpecialPool} />

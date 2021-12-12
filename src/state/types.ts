@@ -100,7 +100,7 @@ export interface SpecialPoolConfigType {
   link: string
   capGoal: number
   description?: string
-  childrenPools: DeserializedPool[]
+  childrenPools: SerializedPool[]
 }
 export interface Profile {
   userId: number
