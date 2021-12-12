@@ -1,6 +1,6 @@
-import tokens, { serializeTokens } from '../../config/constants/tokens'
+import tokens, { serializeTokens } from './tokens'
 
-import { PoolCategory } from '../../config/constants/types'
+import { PoolCategory } from './types'
 import { SpecialPoolConfigType } from '../../state/types'
 
 const serializedTokens = serializeTokens()
