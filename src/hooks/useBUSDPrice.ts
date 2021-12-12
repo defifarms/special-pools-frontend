@@ -1,7 +1,7 @@
 import { ChainId, Currency, currencyEquals, JSBI, Price } from '@defifarms/sdk'
 import { useMemo } from 'react'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import tokens, { mainnetTokens } from 'config/constants/tokens'
+import tokens, { mainnetTokens, testnetTokens } from 'config/constants/tokens'
 import { PairState, usePairs } from './usePairs'
 import { wrappedCurrency } from '../utils/wrappedCurrency'
 
