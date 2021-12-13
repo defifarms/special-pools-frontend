@@ -8,10 +8,15 @@ import { useTranslation } from 'contexts/Localization'
 import Balance from 'components/Balance'
 import { BIG_ZERO } from 'utils/bigNumber'
 import { DeserializedPool } from 'state/types'
+import styled from 'styled-components'
 
 import { ActionContainer, ActionTitles, ActionContent } from './styles'
 import CollectModal from '../../PoolCard/Modals/CollectModal'
 
+const HarvestButtonStyled = styled(Button)`
+  border-radius: 8px;
+  margin-left: 8px;
+`
 interface HarvestActionProps extends DeserializedPool {
   userDataLoaded: boolean
 }
@@ -62,10 +67,10 @@ const HarvestAction: React.FunctionComponent<HarvestActionProps> = ({
   if (!account) {
     return (
       <ActionContainer>
-        <ActionTitles>{actionTitle}</ActionTitles>
+        {/* <ActionTitles>{actionTitle}</ActionTitles> */}
         <ActionContent>
-          <Heading>0</Heading>
-          <Button disabled>{isCompoundPool ? t('Collect') : t('Harvest')}</Button>
+          {/* <Heading>0</Heading> */}
+          <HarvestButtonStyled disabled>{isCompoundPool ? t('Collect') : t('Harvest')}</HarvestButtonStyled>
         </ActionContent>
       </ActionContainer>
     )
@@ -113,9 +118,9 @@ const HarvestAction: React.FunctionComponent<HarvestActionProps> = ({
             )}
           </>
         </Flex> */}
-        <Button disabled={!hasEarnings} onClick={onPresentCollect}>
+        <HarvestButtonStyled disabled={!hasEarnings} onClick={onPresentCollect}>
           {isCompoundPool ? t('Collect') : t('Harvest')}
-        </Button>
+        </HarvestButtonStyled>
       </ActionContent>
     </ActionContainer>
   )

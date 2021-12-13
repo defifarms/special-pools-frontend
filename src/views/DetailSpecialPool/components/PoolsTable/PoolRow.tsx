@@ -25,11 +25,12 @@ const StyledRow = styled(Flex)`
 const TokenImageWrap = styled.div`
   background-color: transparent;
   display: flex;
-  min-width: 40px;
+  min-width: 50px;
   width: 20%;
-  max-width: 60px;
+  max-width: 70px;
   justify-content: center;
   align-items: center;
+  padding-left: 8px;
 `
 const StakeInfo = styled.div`
   padding: 8px 8px;
@@ -81,7 +82,7 @@ const PoolRow: React.FC<PoolRowProps> = ({ pool, account, userDataLoaded }) => {
         <TokenImageWrap>
           <TokenImage token={pool.stakingToken} width={40} height={40} />
         </TokenImageWrap>
-        {/* <Harvest {...pool} userDataLoaded={userDataLoaded} /> */}
+        <Harvest {...pool} userDataLoaded={userDataLoaded} />
         <Stake pool={pool} userDataLoaded={userDataLoaded} />
         <StakeInfo>
           <StakeInfoInner>
