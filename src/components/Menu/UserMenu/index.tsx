@@ -7,9 +7,11 @@ import {
   UserMenu as UIKitUserMenu,
   UserMenuDivider,
   UserMenuItem,
+  useMatchBreakpoints
 } from '@defifarms/special-uikit'
 import history from 'routerHistory'
 import useAuth from 'hooks/useAuth'
+import styled from 'styled-components'
 import { useProfile } from 'state/profile/hooks'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { FetchStatus, useGetBnbBalance } from 'hooks/useTokenBalance'
@@ -18,6 +20,23 @@ import { nftsBaseUrl } from 'views/Nft/market/constants'
 import WalletModal, { WalletView, LOW_BNB_BALANCE } from './WalletModal'
 import ProfileUserMenuItem from './ProfileUserMenutItem'
 import WalletUserMenuItem from './WalletUserMenuItem'
+
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
+  right: 0;
+`
+
+const Image = styled.img`
+  height: 115px;
+  width: calc(100vw - 243px);
+`
+
+const MenuWrapper = styled.div`
+  position: absolute;
+  right: 16px;
+`
 
 const UserMenu = () => {
   const { t } = useTranslation()
@@ -30,12 +49,16 @@ const UserMenu = () => {
   const hasProfile = isInitialized && !!profile
   const avatarSrc = profile?.nft?.image?.thumbnail
   const hasLowBnbBalance = fetchStatus === FetchStatus.SUCCESS && balance.lte(LOW_BNB_BALANCE)
+  const { isMobile } = useMatchBreakpoints()
 
   if (!account) {
-    return <ConnectWalletButton scale="sm" />
+    return <Wrapper>{!isMobile && <Image alt="alt" src="/images/header.png" />}<MenuWrapper><ConnectWalletButton scale="sm" /></MenuWrapper></Wrapper>
   }
 
   return (
+    <Wrapper>
+    {!isMobile && <Image alt="alt" src="/images/header.png" />}
+    <MenuWrapper>
     <UIKitUserMenu account={account} avatarSrc={avatarSrc}>
       <WalletUserMenuItem hasLowBnbBalance={hasLowBnbBalance} onPresentWalletModal={onPresentWalletModal} />
       <UserMenuItem as="button" onClick={onPresentTransactionModal}>
@@ -54,6 +77,8 @@ const UserMenu = () => {
         </Flex>
       </UserMenuItem>
     </UIKitUserMenu>
+    </MenuWrapper>
+    </Wrapper>
   )
 }
 

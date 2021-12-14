@@ -15,7 +15,6 @@
     "format:write": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
     "updateLPsAPR": "NODE_PATH=./src ts-node --compiler-options '{\"module\":\"commonjs\"}' scripts/updateLPsAPR.ts",
     "prepare": "husky install",
-    "syncui": "rm -rf node_modules/@defifarms/special-uikit/dist && cp -R ../special-pools-uikit/dist node_modules/@defifarms/special-uikit"
   },
   "browserslist": {
     "production": [
@@ -32,7 +31,7 @@
   "dependencies": {
     "@binance-chain/bsc-connector": "^1.0.0",
     "@defifarms/sdk": "^2.3.3",
-    "@defifarms/special-uikit": "^0.0.1",
+    "@defifarms/special-uikit": "^0.0.2",
     "@ethersproject/experimental": "^5.0.1",
     "@pancakeswap/sdk": "^2.4.0",
     "@pancakeswap/uikit": "^0.59.0",

@@ -1547,10 +1547,10 @@
     tiny-warning "^1.0.3"
     toformat "^2.0.0"
 
-"@defifarms/special-uikit@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@defifarms/special-uikit/-/special-uikit-0.0.1.tgz#a752173ced2403a3f98e9bbc107bff33ba00e77d"
-  integrity sha512-kfUylik/uDZe3HaBJhvj4D7r662PmeG0zF9nO3i+Mt9tbADsgjdh5q7dKkdDji0/pv7pQECz9pvW5/XipweZYQ==
+"@defifarms/special-uikit@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@defifarms/special-uikit/-/special-uikit-0.0.2.tgz#62fc5d3a2ff55a979532179efe22e325b7445b70"
+  integrity sha512-kkULG8vSwfS+WTK89evW8BJ0LuCvCWqEHh0kuBtW6hiKKcI5DIGcLYDdeyzqosD/duY7VeSOfJCklisJD5qFhg==
   dependencies:
     "@popperjs/core" "^2.9.2"
     "@types/lodash" "^4.14.168"
