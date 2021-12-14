@@ -283,7 +283,7 @@ const VaultStakeModal: React.FC<VaultStakeModalProps> = ({
       {isRemovingStake && hasUnstakingFee && (
         <FeeSummary stakingTokenSymbol={stakingToken.symbol} stakeAmount={stakeAmount} />
       )}
-      {!isRemovingStake && (
+      {/* {!isRemovingStake && (
         <Flex mt="24px" alignItems="center" justifyContent="space-between">
           <Text mr="8px" color="textSubtle">
             {t('Annual ROI at current rates')}:
@@ -295,7 +295,7 @@ const VaultStakeModal: React.FC<VaultStakeModalProps> = ({
             </IconButton>
           </AnnualRoiContainer>
         </Flex>
-      )}
+      )} */}
       <Button
         isLoading={pendingTx}
         endIcon={pendingTx ? <AutoRenewIcon spin color="currentColor" /> : null}

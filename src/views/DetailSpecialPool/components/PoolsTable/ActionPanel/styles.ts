@@ -9,7 +9,7 @@ export const ActionContainer = styled.div<{ isAutoVault?: boolean }>`
   margin-bottom: 0px;
 
   ${({ theme }) => theme.mediaQueries.sm} {
-    margin-left: 12px;
+    // margin-left: 12px;
     margin-right: 12px;
     margin-bottom: 0;
     height: ${({ isAutoVault }) => (isAutoVault ? '130px' : 'auto')};
@@ -17,7 +17,7 @@ export const ActionContainer = styled.div<{ isAutoVault?: boolean }>`
 }
 
   ${({ theme }) => theme.mediaQueries.xl} {
-    margin-left: 8px;
+    // margin-left: 8px;
     margin-right: 0;
   }
 `

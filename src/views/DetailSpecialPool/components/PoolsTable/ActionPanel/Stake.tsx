@@ -22,6 +22,21 @@ import { useCheckVaultApprovalStatus, useApprovePool, useVaultApprove } from '..
 const IconButtonWrapper = styled.div`
   display: flex;
 `
+const UnstakeButton = styled(Button)`
+  border-radius: 4px;
+  background-color: #e0e0e0;
+  color: #828282;
+`
+const StakeButton = styled(Button)`
+  border-radius: 4px;
+`
+const AddIconStake = styled(IconButton)`
+  border-radius: 4px;
+  background-color: #e0e0e0;
+  color: #828282;
+  margin-left: 8px;
+  border: 0;
+`
 
 interface StackedActionProps {
   pool: DeserializedPool
@@ -134,9 +149,9 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({ pool, userDataLoa
     return (
       <ActionContainer>
         <ActionTitles>
-          <Text fontSize="12px" bold color="textSubtle" as="span" textTransform="uppercase">
+          {/* <Text fontSize="12px" bold color="textSubtle" as="span" textTransform="uppercase">
             {t('Start staking')}
-          </Text>
+          </Text> */}
         </ActionTitles>
         <ActionContent>
           <ConnectWalletButton width="100%" />
@@ -149,9 +164,9 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({ pool, userDataLoa
     return (
       <ActionContainer>
         <ActionTitles>
-          <Text fontSize="12px" bold color="textSubtle" as="span" textTransform="uppercase">
+          {/* <Text fontSize="12px" bold color="textSubtle" as="span" textTransform="uppercase">
             {t('Start staking')}
-          </Text>
+          </Text> */}
         </ActionTitles>
         <ActionContent>
           <Skeleton width={180} height="32px" marginTop={14} />
@@ -164,9 +179,9 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({ pool, userDataLoa
     return (
       <ActionContainer>
         <ActionTitles>
-          <Text fontSize="12px" bold color="textSubtle" as="span" textTransform="uppercase">
+          {/* <Text fontSize="12px" bold color="textSubtle" as="span" textTransform="uppercase">
             {t('Enable pool')}
-          </Text>
+          </Text> */}
         </ActionTitles>
         <ActionContent>
           <Button width="100%" disabled={requestedApproval} onClick={handleApprove} variant="secondary">
@@ -212,6 +227,11 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({ pool, userDataLoa
             {/* <IconButton variant="secondary" onClick={onUnstake} mr="6px">
               <MinusIcon color="primary" width="14px" />
             </IconButton> */}
+            <UnstakeButton onClick={onUnstake}>
+              <Text fontSize="20px" fontWeight={600} color="#828282">
+                {t('Unstake')}
+              </Text>
+            </UnstakeButton>
             {reachStakingLimit ? (
               <span ref={targetRef}>
                 <IconButton variant="secondary" disabled>
@@ -219,13 +239,13 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({ pool, userDataLoa
                 </IconButton>
               </span>
             ) : (
-              <IconButton
+              <AddIconStake
                 variant="secondary"
                 onClick={stakingTokenBalance.gt(0) ? onStake : onPresentTokenRequired}
                 disabled={isFinished}
               >
-                <AddIcon color="primary" width="14px" />
-              </IconButton>
+                <AddIcon color="#828282" width="28px" />
+              </AddIconStake>
             )}
           </IconButtonWrapper>
           {tooltipVisible && tooltip}
@@ -236,23 +256,23 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({ pool, userDataLoa
 
   return (
     <ActionContainer>
-      <ActionTitles>
+      {/* <ActionTitles>
         <Text fontSize="12px" bold color="secondary" as="span" textTransform="uppercase">
           {t('Stake')}{' '}
         </Text>
         <Text fontSize="12px" bold color="textSubtle" as="span" textTransform="uppercase">
           {stakingToken.symbol}
         </Text>
-      </ActionTitles>
+      </ActionTitles> */}
       <ActionContent>
-        <Button
+        <StakeButton
           width="100%"
           onClick={stakingTokenBalance.gt(0) ? onStake : onPresentTokenRequired}
-          variant="secondary"
+          variant="primary"
           disabled={isFinished}
         >
           {t('Stake')}
-        </Button>
+        </StakeButton>
       </ActionContent>
     </ActionContainer>
   )

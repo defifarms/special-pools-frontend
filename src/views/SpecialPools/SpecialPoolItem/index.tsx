@@ -1,11 +1,11 @@
 import { Button, Flex, Heading, Text } from '@defifarms/special-uikit'
-import { MainBackground } from 'components/Layout/MainBackground'
-import PageHeader from 'components/PageHeader'
+import { TokenImage } from 'components/TokenImage'
+import tokens from 'config/constants/tokens'
 import { useTranslation } from 'contexts/Localization'
 import React from 'react'
-import styled from 'styled-components'
-import { SpecialPoolConfigType } from 'state/types'
 import { Link } from 'react-router-dom'
+import { SpecialPoolConfigType } from 'state/types'
+import styled from 'styled-components'
 
 const ItemWrap = styled.div`
   width: 100%;
@@ -36,6 +36,17 @@ const HeaderItem = styled(Flex)`
 const BodyItem = styled.div`
   padding: 16px 24px;
 `
+const ButtonEnterPool = styled(Button)`
+  background-color: #ffb230;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 300px;
+  height: 44px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
 
 const SpecialPoolItem: React.FC<{ poolConfig: SpecialPoolConfigType }> = ({ poolConfig }) => {
   const { t } = useTranslation()
@@ -43,8 +54,9 @@ const SpecialPoolItem: React.FC<{ poolConfig: SpecialPoolConfigType }> = ({ pool
   return (
     <ItemWrap>
       <HeaderItem justifyContent="space-between" flexDirection={['column', null, null, 'row']} width="100%">
-        <Flex flex="1" flexDirection="column" mr={['8px', 0]}>
-          <Text>{t('Special Pools start on')}</Text>
+        <Flex flex="1" flexDirection="row" alignItems='center' mr={['8px', 0]}>
+          <TokenImage token={tokens.defiy} width={40} height={40} />
+          <Text fontSize='24px' fontWeight={600} pl='8px'>{t('Special Pools start on')}</Text>
         </Flex>
         <Flex flex="1" height="fit-content" justifyContent="center" alignItems="center" mt={['24px', null, '0']}>
           <CountDownBlock>
@@ -78,9 +90,11 @@ const SpecialPoolItem: React.FC<{ poolConfig: SpecialPoolConfigType }> = ({ pool
           <Text color="#FF97CF">{t('20 days')}</Text>
         </Flex>
         <Flex alignItems="center" justifyContent="center" mb="16px">
-          <Button as={Link} variant="primary" scale="md" to={`/${poolConfig.link}`}>
-            <Text>{t('Enter pool')}</Text>
-          </Button>
+          <ButtonEnterPool as={Link} variant="primary" scale="md" to={`/${poolConfig.link}`}>
+            <Text fontSize="16px" fontWeight={600}>
+              {t('Enter pool')}
+            </Text>
+          </ButtonEnterPool>
         </Flex>
       </BodyItem>
     </ItemWrap>
