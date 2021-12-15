@@ -29,8 +29,8 @@ const Wrapper = styled.div`
 `
 
 const Image = styled.img`
-  padding-top: 18px;
-  height: 125px;
+  padding-top: 15px;
+  height: 120px;
   width: calc(100vw - 243px);
 `
 
