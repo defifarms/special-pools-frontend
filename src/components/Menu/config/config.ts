@@ -85,6 +85,33 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
     ],
   },
   {
+    label: t('Rocket'),
+    icon: 'RocketIcon',
+    href: '#',
+    status: {
+      text: "SOON",
+      color: "warning",
+    }
+  },
+  {
+    label: t('NFT'),
+    icon: 'NftIcon',
+    href: '#',
+    status: {
+      text: "SOON",
+      color: "warning",
+    }
+  },
+  {
+    label: t('Lottery'),
+    icon: 'LotteryIcon',
+    href: '#',
+    status: {
+      text: "SOON",
+      color: "warning",
+    }
+  },
+  {
     label: t('More'),
     icon: 'MoreIcon',
     initialOpenState: true,
