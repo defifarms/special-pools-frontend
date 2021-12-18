@@ -1,10 +1,9 @@
-import { BaseLayout, Heading, Text, Flex } from '@defifarms/special-uikit'
+import { BaseLayout, Heading, Text, Flex, Button } from '@defifarms/special-uikit'
 import { MainBackground } from 'components/Layout/MainBackground'
 import Page from 'components/Layout/Page'
 import { useTranslation } from 'contexts/Localization'
 import React from 'react'
 import styled from 'styled-components'
-
 
 const Hero = styled.div`
   height: 100%;
@@ -65,7 +64,7 @@ const CardImage = styled.div`
 `
 
 const HeadingHome = styled(Heading)`
-  font-family: HK Grotesk;
+  font-family: sans-serif;
   font-style: normal;
   font-size: 72px;
   line-height: 57px;
@@ -81,7 +80,7 @@ const HeadingHome = styled(Heading)`
 `
 
 const TextHome = styled(Text)`
-  font-family: HK Grotesk;
+  font-family: sans-serif;
   font-style: normal;
   font-weight: normal;
   line-height: 27px;
@@ -96,7 +95,9 @@ const FlexBox = styled(Flex)`
 const WrapSocialIcon = styled.div`
   margin-left: 16px;
   cursor: pointer;
+  z-index: 2
 `
+// https://twitter.com/DeFiFarmsNFTs
 
 const Home: React.FC = () => {
   const { t } = useTranslation()
@@ -123,16 +124,31 @@ const Home: React.FC = () => {
               <HeadingHome as="h1" scale="xl" mb="24px" color="#fff">
                 {t('COMING SOON')}
               </HeadingHome>
-              <TextHome fontSize="24px" mb={18} color="#fff">
+              <TextHome fontSize="24px" mb={18} mt={24} color="#fff">
                 {t('ARE YOU READYS')}
               </TextHome>
             </HeadingWrapper>
-            <Flex>
+            <Flex mt={24}>
               <WrapSocialIcon>
-                <TelegramIcon />
+                <Button paddingX={0} id="telegram" as="a" external href="https://t.me/DefifarmsNFT" variant="text">
+                  {/* <LinkExternal id="Telegram" href="https://t.me/DefifarmsNFT"> */}
+                  <TelegramIcon />
+                  {/* </LinkExternal> */}
+                </Button>
               </WrapSocialIcon>
               <WrapSocialIcon>
-                <TwitterIcon />
+                <Button
+                  paddingX={0}
+                  id="twitter"
+                  as="a"
+                  external
+                  href="https://twitter.com/DeFiFarmsNFTs"
+                  variant="text"
+                >
+                  {/* <LinkExternal id="Twitter" href="https://twitter.com/DeFiFarmsNFTs"> */}
+                  <TwitterIcon />
+                  {/* </LinkExternal> */}
+                </Button>
               </WrapSocialIcon>
             </Flex>
           </Hero>
@@ -145,7 +161,7 @@ const Home: React.FC = () => {
 export default Home
 
 const TelegramIcon = (props) => (
-  <svg viewBox='0 0 40 40' width={40} height={40} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+  <svg viewBox="0 0 40 40" width={40} height={40} fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
     <path d="M20.192 0a20.192 20.192 0 1 0 0 40.385 20.192 20.192 0 0 0 0-40.385Z" fill="#29B6F6" />
     <path
       d="m30.238 11.106-3.782 19.31s-.162.882-1.257.882c-.582 0-.881-.276-.881-.276l-8.192-6.798-4.009-2.02-5.144-1.369s-.915-.264-.915-1.021c0-.631.942-.932.942-.932l21.52-8.55s.658-.237 1.137-.236c.295 0 .631.126.631.505 0 .252-.05.505-.05.505Z"
@@ -242,8 +258,6 @@ const TopLeftCircle = (props) => (
     </defs>
   </svg>
 )
-
-
 
 const BottomRightCircle = (props) => (
   <svg {...props} width="438px" height="384px" viewBox="0 0 438 384" fill="none" xmlns="http://www.w3.org/2000/svg">
