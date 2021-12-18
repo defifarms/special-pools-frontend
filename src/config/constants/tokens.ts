@@ -1814,7 +1814,7 @@ export const mainnetTokens = {
 export const testnetTokens = {
   wbnb: new Token(
     TESTNET,
-    '0x094616F0BdFB0b526bD735Bf66Eca0Ad254ca81F',
+    '0xbb5cc00198193e62bb1c02b2bbea4d542229cd8e',
     18,
     'WBNB',
     'Wrapped BNB',
@@ -1831,7 +1831,7 @@ export const testnetTokens = {
   ),
   busd: new Token(
     TESTNET,
-    '0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee',
+    '0x99976b5d5fd5d83aa6089598dec7fd5336cc310f',
     18,
     'BUSD',
     'Binance USD',
