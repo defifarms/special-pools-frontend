@@ -81,7 +81,7 @@ export const getCustomMeta = (path: string, t: ContextApi['t']): PageMeta => {
       }
     case '/lottery':
       return {
-        title: `${t('Lottery')} | ${t('PancakeSwap')}`,
+        title: `${t('Lottery')} | ${t('Coming Soon')}`,
       }
     case '/ifo':
       return {
@@ -130,9 +130,13 @@ export const getCustomMeta = (path: string, t: ContextApi['t']): PageMeta => {
       return {
         title: `${t('Your Profile')} | ${t('PancakeSwap')}`,
       }
-    case '/pancake-squad':
+    case '/rocket':
       return {
-        title: `${t('Pancake Squad')} | ${t('PancakeSwap')}`,
+        title: `${t('Rocket')} | ${t('Coming Soon')}`,
+      }
+    case '/nft':
+      return {
+        title: `${t('NFT')} | ${t('Coming Soon')}`,
       }
     default:
       return null
