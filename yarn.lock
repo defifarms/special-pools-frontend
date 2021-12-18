@@ -1423,10 +1423,10 @@
     tiny-warning "^1.0.3"
     toformat "^2.0.0"
 
-"@defifarms/special-uikit@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@defifarms/special-uikit/-/special-uikit-0.0.3.tgz#f4c243c7d2f8ca45d54eb25f1d9afce4937330a5"
-  integrity sha512-/TmD8cq+NgknsT11XoF3gNYh8sSRVkhW2DV+FKQGDKZ1rOrbQCr9+e+g02m6QrML4BX9acslAx0o9v0Pnon5Gg==
+"@defifarms/special-uikit@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@defifarms/special-uikit/-/special-uikit-0.0.4.tgz#7ffa5cdb3d2d0852c58bc503b055531502df2d5a"
+  integrity sha512-6pj9rCB9jMcch/R7w7VnmC5F2uUbPzj5BV/KFMkY9JOnIaIntPsS2pz9WfpBUuywtLQ5d41CEq2dsmde0O/1Zw==
   dependencies:
     "@popperjs/core" "^2.9.2"
     "@types/lodash" "^4.14.168"
@@ -2553,9 +2553,9 @@
   integrity sha512-YSBPTLTVm2e2OoQIDYx8HaeWJ5tTToLH67kXR7zYNGupXMEHa2++G8k+DczX2cFVgalypqtyZIcU19AFcmOpmg==
 
 "@types/lodash@^4.14.168":
-  version "4.14.171"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.171.tgz#f01b3a5fe3499e34b622c362a46a609fdb23573b"
-  integrity sha512-7eQ2xYLLI/LsicL2nejW9Wyko3lcpN6O/z0ZLHrEQsg280zIdCv1t/0m6UtBjUHokCGBQ3gYTbHzDkZ1xOBwwg==
+  version "4.14.178"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.178.tgz#341f6d2247db528d4a13ddbb374bcdc80406f4f8"
+  integrity sha512-0d5Wd09ItQWH1qFbEyQ7oTQ3GZrMfth5JkbN3EvTKLXcHLRDSXeLnlvlOn0wvxVIwK5o2M8JzP/OWz7T3NRsbw==
 
 "@types/marked@^2.0.2":
   version "2.0.4"
@@ -2758,9 +2758,9 @@
     csstype "^3.0.2"
 
 "@types/styled-system@^5.1.10":
-  version "5.1.12"
-  resolved "https://registry.yarnpkg.com/@types/styled-system/-/styled-system-5.1.12.tgz#4f3ca8da3dffe3c5a6cc3b2a97f51b41464c104a"
-  integrity sha512-7x4BYKKfK9QewfsFC2x5r9BK/OrfX+JF/1P21jKPMHruawDw9gvG7bTZgTVk6YkzDO2JUlsk4i8hdiAepAhD0g==
+  version "5.1.13"
+  resolved "https://registry.yarnpkg.com/@types/styled-system/-/styled-system-5.1.13.tgz#9ad667534d3bd75720dd7778c94c783449cb5c14"
+  integrity sha512-RtpV6zXnnMQNcxKjC06BUM4MUER5o9uZ6b7xAc2OzhWxSsmQ3jXyW8ohuXdEJRKypEe0EqAzbSGx2Im0NXfdKA==
   dependencies:
     csstype "^3.0.2"
 
