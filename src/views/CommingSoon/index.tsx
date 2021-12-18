@@ -65,9 +65,9 @@ const CardImage = styled.div`
 `
 
 const HeadingHome = styled(Heading)`
-  font-family: HK Grotesk Bold;
+  font-family: HK Grotesk;
   font-style: normal;
-  font-size: 49px;
+  font-size: 72px;
   line-height: 57px;
   background: #fff;
   color: #fff;
@@ -81,7 +81,7 @@ const HeadingHome = styled(Heading)`
 `
 
 const TextHome = styled(Text)`
-  font-family: HK Grotesk Light;
+  font-family: HK Grotesk;
   font-style: normal;
   font-weight: normal;
   line-height: 27px;
@@ -123,7 +123,7 @@ const Home: React.FC = () => {
               <HeadingHome as="h1" scale="xl" mb="24px" color="#fff">
                 {t('COMING SOON')}
               </HeadingHome>
-              <TextHome fontSize="18px" mb={18} color="#fff">
+              <TextHome fontSize="24px" mb={18} color="#fff">
                 {t('ARE YOU READYS')}
               </TextHome>
             </HeadingWrapper>
