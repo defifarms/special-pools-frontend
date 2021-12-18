@@ -23,6 +23,7 @@ import DetailSpecialPool from './views/DetailSpecialPool'
 // Views included in the main bundle
 import Pools from './views/Pools'
 import SpecialPools from './views/SpecialPools'
+import CommingSoon from './views/CommingSoon'
 
 // Route-based code splitting
 // Only pool is included in the main bundle because of it's the most visited page
@@ -76,6 +77,15 @@ const App: React.FC = () => {
           <Switch>
             <Route path="/pools" exact>
               <Pools />
+            </Route>
+            <Route path="/rocket" exact>
+              <CommingSoon />
+            </Route>
+            <Route path="/nft" exact>
+              <CommingSoon />
+            </Route>
+            <Route path="/lottery" exact>
+              <CommingSoon />
             </Route>
             <Route path="/" exact>
               <SpecialPools />

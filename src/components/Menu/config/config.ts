@@ -87,7 +87,7 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
   {
     label: t('Rocket'),
     icon: 'RocketIcon',
-    href: '#',
+    href: `/rocket`,
     status: {
       text: "SOON",
       color: "warning",
@@ -96,7 +96,7 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
   {
     label: t('NFT'),
     icon: 'NftIcon',
-    href: '#',
+    href: `/nft`,
     status: {
       text: "SOON",
       color: "warning",
@@ -105,7 +105,7 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
   {
     label: t('Lottery'),
     icon: 'LotteryIcon',
-    href: '#',
+    href: `/lottery`,
     status: {
       text: "SOON",
       color: "warning",
