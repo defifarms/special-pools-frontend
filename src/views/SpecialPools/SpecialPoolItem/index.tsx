@@ -75,7 +75,7 @@ const SpecialPoolItem: React.FC<{ poolConfig: SpecialPoolConfigType }> = ({ pool
           <Heading as="h1" scale="xxl" color="white">
             {poolConfig.name}
           </Heading>
-          <Text>{t('Stake token DEFY, BUSD, WBNB, BTCT, ATTH, CAKE and ern $DEFIY')}</Text>
+          <Text>{t('Stake token DEFIY, BUSD, WBNB, BTCT, ATH, CAKE and earn $DEFIY')}</Text>
         </Flex>
         <Flex justifyContent="space-between" mb="8px">
           <Text>{t('Total')}</Text>
