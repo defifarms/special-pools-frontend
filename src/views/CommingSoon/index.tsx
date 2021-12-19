@@ -64,7 +64,7 @@ const CardImage = styled.div`
 `
 
 const HeadingHome = styled(Heading)`
-  font-family: sans-serif;
+  font-family: HK Grotesk;
   font-style: normal;
   font-size: 72px;
   line-height: 57px;
@@ -80,7 +80,7 @@ const HeadingHome = styled(Heading)`
 `
 
 const TextHome = styled(Text)`
-  font-family: sans-serif;
+  font-family: HK Grotesk;
   font-style: normal;
   font-weight: normal;
   line-height: 27px;

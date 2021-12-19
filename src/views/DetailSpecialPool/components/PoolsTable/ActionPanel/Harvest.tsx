@@ -79,7 +79,7 @@ const HarvestAction: React.FunctionComponent<HarvestActionProps> = ({
   if (!userDataLoaded) {
     return (
       <ActionContainer>
-        <ActionTitles>{actionTitle}</ActionTitles>
+        {/* <ActionTitles>{actionTitle}</ActionTitles> */}
         <ActionContent>
           <Skeleton width={180} height="32px" marginTop={14} />
         </ActionContent>
