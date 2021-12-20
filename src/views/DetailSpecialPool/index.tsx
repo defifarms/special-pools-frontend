@@ -54,7 +54,7 @@ const ContainerWrap = styled(Container)<{ background?: string }>`
 
 
 const PoolName = styled.div`
-  background: #ff368b80;
+  background: #d52b88;
   backdrop-filter: blur(200px);
   border-radius: 5px;
   justify-content: center;
@@ -67,6 +67,15 @@ const PoolName = styled.div`
   font-weight: bold;
   font-size: 18px;
   line-height: 21px;
+`
+const SliderStyled = styled(Slider)`
+  & > div:nth-of-type(1) {
+    left: 0;
+    width: 100%;
+  }
+  & > div > div:nth-of-type(1) {
+    background: #5523b0;
+  }
 `
 
 const DetailSpecialPool: React.FC<RouteComponentProps<{ groupPool: string }>> = ({
@@ -122,7 +131,7 @@ const DetailSpecialPool: React.FC<RouteComponentProps<{ groupPool: string }>> = 
               </Flex>
             </Flex>
             <Flex justifyContent="center">
-              <Heading as="h1" scale="xxl" color="white" fontFamily="HK Grotesk" mt="16px">
+              <Heading as="h1" scale="xxl" color="white" fontFamily="HK Grotesk" mt="16px" fontSize="50px !important">
                 {t('Cap Goals')}: ${formatNumber(currentSpecialPoolConfig.capGoal, 0, 2)}
               </Heading>
             </Flex>
@@ -130,7 +139,7 @@ const DetailSpecialPool: React.FC<RouteComponentProps<{ groupPool: string }>> = 
               <Text>{t('Cap Goals raised')}</Text>
               <Text>60%</Text>
             </Flex>
-            <Slider
+            <SliderStyled
               min={0}
               max={currentSpecialPoolConfig.capGoal}
               value={(currentSpecialPoolConfig.capGoal * 60) / 100}

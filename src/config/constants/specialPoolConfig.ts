@@ -12,7 +12,7 @@ export const SpecialPoolsConfig: SpecialPoolConfigType[] = [
     capGoal: 30000,
     childrenPools: [
       {
-        sousId: 613,
+        sousId: 2,
         stakingToken: serializedTokens.defiy,
         earningToken: serializedTokens.defiy,
         contractAddress: {
