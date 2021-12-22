@@ -8,9 +8,11 @@ import { useCakeBusdPrice } from 'hooks/useBUSDPrice'
 import Container from './Container'
 
 const StyledPage = styled(Container)`
-  min-height: calc(100vh - 64px);
+  min-height: calc(70vh);
   padding-top: 16px;
   padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
 
   ${({ theme }) => theme.mediaQueries.sm} {
     padding-top: 24px;
