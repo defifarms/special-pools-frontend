@@ -10,10 +10,12 @@ const StyledButtonMenu = styled(Button)`
   border-radius: 75px;
   background: #3230b2;
   color: #fff;
+  font-size: 12px;
   ${({ theme }) => theme.mediaQueries.md} {
     width: 188.66px;
     height: 50px; 
     border-radius: 75px;
+    font-size: 16px;
   }
 `
 

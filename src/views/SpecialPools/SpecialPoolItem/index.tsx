@@ -21,10 +21,9 @@ const ItemWrap = styled.div`
   }
 `
 const CountDownBlock = styled.div`
-  background: #ff368b80;
+  background: rgba(255, 54, 139, 0.8);
   height: 100%;
   padding: 16px;
-  backdrop-filter: blur(200px);
   border-radius: 5px;
   width: 100%;
 `
@@ -48,6 +47,31 @@ const ButtonEnterPool = styled(Button)`
   justify-content: center;
 `
 
+const TextTime = styled(Text)`
+  font-family: HK Grotesk;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #fff;
+  ${({ theme }) => theme.mediaQueries.md} {
+    font-size: 18px;
+    line-height: 21px;
+  }
+`
+
+const HeadingSpecial = styled(Heading)`
+  font-family: HK Grotesk Bold;
+  font-style: normal;
+  font-size: 36px;
+  line-height: 42px;
+  color: #fff;
+  padding-bottom: 10px;
+  ${({ theme }) => theme.mediaQueries.md} {
+    font-size: 57px;
+    line-height: 66px;
+  }
+`
+
 const SpecialPoolItem: React.FC<{ poolConfig: SpecialPoolConfigType }> = ({ poolConfig }) => {
   const { t } = useTranslation()
 
@@ -64,7 +88,7 @@ const SpecialPoolItem: React.FC<{ poolConfig: SpecialPoolConfigType }> = ({ pool
               <Text>{t('Block #14857976')}</Text>
               <Flex flexDirection="column">
                 <Text fontWeight={600}>4days 3h:25m:39s</Text>
-                <Text>November 5th 2021</Text>
+                <TextTime>November 5th 2021</TextTime>
               </Flex>
             </Flex>
           </CountDownBlock>
@@ -72,9 +96,9 @@ const SpecialPoolItem: React.FC<{ poolConfig: SpecialPoolConfigType }> = ({ pool
       </HeaderItem>
       <BodyItem>
         <Flex flexDirection="column" mb="24px">
-          <Heading as="h1" scale="xxl" color="white">
+          <HeadingSpecial as="h1" scale="xxl">
             {poolConfig.name}
-          </Heading>
+          </HeadingSpecial>
           <Text>{t('Stake token DEFIY, BUSD, WBNB, BTCT, ATH, CAKE and earn $DEFIY')}</Text>
         </Flex>
         <Flex justifyContent="space-between" mb="8px">
@@ -89,7 +113,7 @@ const SpecialPoolItem: React.FC<{ poolConfig: SpecialPoolConfigType }> = ({ pool
           <Text>{t('Invest time')}</Text>
           <Text color="#FF97CF">{t('20 days')}</Text>
         </Flex>
-        <Flex alignItems="center" justifyContent="center" mb="16px">
+        <Flex alignItems="center" justifyContent="center" mb="16px" mt="38px">
           <ButtonEnterPool as={Link} variant="primary" scale="md" to={`/${poolConfig.link}`}>
             <Text fontSize="16px" fontWeight={600}>
               {t('Enter pool')}
