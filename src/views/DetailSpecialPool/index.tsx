@@ -48,6 +48,7 @@ const CardSpecialPoolBody = styled.div<{ background?: string }>`
 `
 const ContainerWrap = styled(Container)<{ background?: string }>`
   display: flex;
+  padding: 16px;
   justify-content: center;
   flex-direction: column;
 `
@@ -67,6 +68,11 @@ const PoolName = styled.div`
   font-weight: bold;
   font-size: 18px;
   line-height: 21px;
+  white-space: nowrap;
+`
+const HeadingPool = styled(Text)`
+  font-weight: bold;
+  white-space: nowrap;
 `
 const SliderStyled = styled(Slider)`
   & > div:nth-of-type(1) {
@@ -125,15 +131,15 @@ const DetailSpecialPool: React.FC<RouteComponentProps<{ groupPool: string }>> = 
                 <PoolName>{currentSpecialPoolConfig.name}</PoolName>
               </Flex>
               <Flex flex={1} justifyContent="flex-end" alignItems="center">
-                <Text textAlign="right" fontSize="14px" color="#FFB800">
+                <Text textAlign="right" fontSize={isLargerScreen ? '14px' : '10px'} color="#FFB800">
                   {currentSpecialPoolConfig.description}
                 </Text>
               </Flex>
             </Flex>
             <Flex justifyContent="center">
-              <Heading as="h1" scale="xxl" color="white" fontFamily="HK Grotesk" mt="16px" fontSize="50px !important">
+              <HeadingPool color="white" fontFamily="HK Grotesk" mt="16px" fontSize={isLargerScreen ? '50px' : '30px'}>
                 {t('Cap Goals')}: ${formatNumber(currentSpecialPoolConfig.capGoal, 0, 2)}
-              </Heading>
+              </HeadingPool>
             </Flex>
             <Flex justifyContent="space-between">
               <Text>{t('Cap Goals raised')}</Text>
@@ -155,11 +161,17 @@ const DetailSpecialPool: React.FC<RouteComponentProps<{ groupPool: string }>> = 
                 {t('The pool allowcated stake by DEFIY 60%; Group BUSD, WBNB, BTCB, ETH, CAKE: 40%')}
               </Text>
             </Flex>
-            <Flex justifyContent="space-between">
+            <Flex justifyContent="space-between" flexDirection={isLargerScreen ? 'row' : 'column'}>
               <Flex flexDirection="column">
-                <Heading scale="xxl" color="white" fontFamily="HK Grotesk" mt="16px" bold>
+                <HeadingPool
+                  color="white"
+                  fontFamily="HK Grotesk"
+                  fontSize={isLargerScreen ? '48px' : '32px'}
+                  mt="16px"
+                  bold
+                >
                   {t('Start staking')}
-                </Heading>
+                </HeadingPool>
                 <Heading as="h2" scale="xl" color="four" fontFamily="HK Grotesk" mb="16px">
                   {t('0.00')}
                 </Heading>
