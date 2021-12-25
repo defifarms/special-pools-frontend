@@ -10,7 +10,7 @@ import { useMasterchef, useSousChef } from 'hooks/useContract'
 import getGasPrice from 'utils/getGasPrice'
 
 const options = {
-  gasLimit: DEFAULT_GAS_LIMIT,
+  gasLimit: 380000,
 }
 
 const sousStake = async (sousChefContract, amount, decimals = 18) => {

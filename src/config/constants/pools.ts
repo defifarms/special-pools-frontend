@@ -23,7 +23,7 @@ const pools: SerializedPoolConfig[] = [
     stakingToken: serializedTokens.defiy,
     earningToken: serializedTokens.defiy,
     contractAddress: {
-      97: '0xbaaafc058C92fC534cB35a5fc05EDd1c5eFe0BFe',
+      97: '0x4838bed48aa3385a33BFf0A137ebF6b09BCaCbFd',
       56: '',
     },
     poolCategory: PoolCategory.CORE,
