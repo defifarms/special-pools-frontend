@@ -3,6 +3,7 @@ import { useWeb3React } from '@web3-react/core'
 import BigNumber from 'bignumber.js'
 import { useTranslation } from 'contexts/Localization'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import { usePriceCakeBusd } from 'state/farms/hooks'
 import React from 'react'
 import { SpecialPoolConfigType } from 'state/types'
 import styled from 'styled-components'
@@ -50,21 +51,39 @@ const GroupStakeInfo: React.FC<IGroupPools> = ({ currentSpecialPoolConfig, pools
   const { t } = useTranslation()
   const { chainId } = useActiveWeb3React()
   const { account } = useWeb3React()
+  const cakePriceBusd = usePriceCakeBusd()
+  const cakePriceBusdNumber = cakePriceBusd.toNumber()
 
   const getTotalDefiyEarns = () => {
-        let totalDefiyEarns = 0
-        poolsSpecial.forEach(spool => {
-            const defiyEarnsInPool = Number(spool.userData.pendingReward)
-            totalDefiyEarns += defiyEarnsInPool
-        });
-        return new BigNumber(totalDefiyEarns)
+    let totalDefiyEarns = 0
+    poolsSpecial.forEach((spool) => {
+      const defiyEarnsInPool = Number(spool.userData.pendingReward)
+      totalDefiyEarns += defiyEarnsInPool
+    })
+    return new BigNumber(totalDefiyEarns)
+  }
+  const getTotalDefiyEarnsBUSD = () => {
+    let totalDefiyEarns = 0
+    poolsSpecial.forEach((spool) => {
+      const defiyEarnsInPool = Number(spool.userData.pendingReward) * cakePriceBusdNumber
+      totalDefiyEarns += defiyEarnsInPool
+    })
+    return new BigNumber(totalDefiyEarns)
   }
 
   return (
     <Flex flexDirection="column" width="100%" mt="0px" flex={2}>
       <StakeInfoWrap flex={1}>
         <Heading>{t('Total DEFIY Earned')}</Heading>
-        <Heading color="four">{t(`${getFullDisplayBalance(getTotalDefiyEarns(), 18, 3)} ~ $0.00`)}</Heading>
+        <Heading color="four">
+          {t(
+            `${getFullDisplayBalance(getTotalDefiyEarns(), 18, 2)} ~ $${getFullDisplayBalance(
+              getTotalDefiyEarnsBUSD(),
+              18,
+              2,
+            )}`,
+          )}
+        </Heading>
         {poolsSpecial
           .filter((spool) => !spool.isFinished)
           .map((spool) => {
@@ -73,8 +92,8 @@ const GroupStakeInfo: React.FC<IGroupPools> = ({ currentSpecialPoolConfig, pools
               : BIG_ZERO
             return (
               <Flex mt="16px">
-                <Text mr="16px">{`${getFullDisplayBalance(stakedBalance, spool?.stakingToken.decimals, 3)}`}</Text>
-                <Text color="four"> {t(`${spool.earningToken.name} Staked`)}</Text>
+                <Text mr="16px">{`${getFullDisplayBalance(stakedBalance, spool?.stakingToken.decimals, 2)}`}</Text>
+                <Text color="four"> {t(`${spool.stakingToken.name} Staked`)}</Text>
               </Flex>
             )
           })}

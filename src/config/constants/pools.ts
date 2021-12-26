@@ -20,10 +20,23 @@ const pools: SerializedPoolConfig[] = [
   },
   {
     sousId: 2,
-    stakingToken: serializedTokens.defiy,
-    earningToken: serializedTokens.defiy,
+    stakingToken: serializedTokens.defiynew,
+    earningToken: serializedTokens.defiynew,
     contractAddress: {
-      97: '0x4838bed48aa3385a33BFf0A137ebF6b09BCaCbFd',
+      97: '0x4C15c57071EBCC4318F1C427878491d51262A854',
+      56: '',
+    },
+    poolCategory: PoolCategory.CORE,
+    harvest: true,
+    sortOrder: 999,
+    tokenPerBlock: '0.0578',
+  },
+  {
+    sousId: 3,
+    stakingToken: serializedTokens.usdt,
+    earningToken: serializedTokens.defiynew,
+    contractAddress: {
+      97: '0xf1C20692a886cD9f8fD77eD6b779b482102f3916',
       56: '',
     },
     poolCategory: PoolCategory.CORE,

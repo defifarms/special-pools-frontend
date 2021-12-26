@@ -23,6 +23,19 @@ export const SpecialPoolsConfig: SpecialPoolConfigType[] = [
         harvest: true,
         sortOrder: 999,
         tokenPerBlock: '0.0578',
+      },
+      {
+        sousId: 3,
+        stakingToken: serializedTokens.usdt,
+        earningToken: serializedTokens.defiynew,
+        contractAddress: {
+          97: '0xf1C20692a886cD9f8fD77eD6b779b482102f3916',
+          56: '',
+        },
+        poolCategory: PoolCategory.CORE,
+        harvest: true,
+        sortOrder: 999,
+        tokenPerBlock: '0.0578',
       }
       // {
       //   sousId: 3,

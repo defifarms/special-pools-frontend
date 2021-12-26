@@ -34,6 +34,7 @@ export const mainnetTokens = {
   // bnb here points to the wbnb contract. Wherever the currency BNB is required, conditional checks for the symbol 'BNB' can be used
   bnb: new Token(MAINNET, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', 18, 'BNB', 'BNB', 'https://www.binance.com/'),
   defiy: new Token(MAINNET, '0x08d1Ed0e3816183e703a492dDD28d68fcc13bb61', 18, 'DEFIY', 'DEFIY', 'https://defifarms.org'),
+  defiynew: new Token(MAINNET, '0x08d1Ed0e3816183e703a492dDD28d68fcc13bb61', 18, 'N-DEFIY', 'N-DEFIY', 'https://defifarms.org'),
   cake: new Token(
     MAINNET,
     '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
@@ -1821,6 +1822,7 @@ export const testnetTokens = {
     'https://www.binance.com/',
   ),
   defiy: new Token(TESTNET, '0x5017AE3D04e29B67b33CF96a86980717A773a783', 18, 'DEFIY', 'DEFIY', 'https://defifarms.org'),
+  defiynew: new Token(TESTNET, '0xb4648f24fF16D7bE53f8CAAf3fCc6c3acf3F72A2', 18, 'N-DEFIY', 'N-DEFIY', 'https://defifarms.org'),
   cake: new Token(
     TESTNET,
     '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe',
@@ -1829,6 +1831,7 @@ export const testnetTokens = {
     'PancakeSwap Token',
     'https://pancakeswap.finance/',
   ),
+  usdt: new Token(TESTNET, '0xA6362A6C4498c7E435a5C4Dd79ee42e62837fACA', 18, 'USDT', 'Tether USD', 'https://defifarms.org'),
   busd: new Token(
     TESTNET,
     '0x99976b5d5fd5d83aa6089598dec7fd5336cc310f',

@@ -17,10 +17,7 @@ import React from 'react'
 import { RouteComponentProps } from 'react-router'
 import { Link } from 'react-router-dom'
 import { usePollFarmsPublicData } from 'state/farms/hooks'
-import {
-  useFetchCakeVault, useFetchPublicPoolsData,
-  useFetchUserPools, useSpecialPools
-} from 'state/pools/hooks'
+import { useFetchCakeVault, useFetchPublicPoolsData, useFetchUserPools, useSpecialPools } from 'state/pools/hooks'
 import styled from 'styled-components'
 import { formatNumber } from 'utils/formatBalance'
 import { SpecialPoolsConfig } from '../../config/constants/specialPoolConfig'
@@ -52,7 +49,6 @@ const ContainerWrap = styled(Container)<{ background?: string }>`
   justify-content: center;
   flex-direction: column;
 `
-
 
 const PoolName = styled.div`
   background: #d52b88;
@@ -113,8 +109,6 @@ const DetailSpecialPool: React.FC<RouteComponentProps<{ groupPool: string }>> = 
   // -----------------------
   const { isXs, isSm, isMd, isLg, isXl, isXxl, isTablet, isDesktop } = useMatchBreakpoints()
   const isLargerScreen = isLg || isXl || isXxl
-
-
 
   return (
     <MainBackground>
