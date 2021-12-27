@@ -93,7 +93,7 @@ const GroupStakeInfo: React.FC<IGroupPools> = ({ currentSpecialPoolConfig, pools
             return (
               <Flex mt="16px">
                 <Text mr="16px">{`${getFullDisplayBalance(stakedBalance, spool?.stakingToken.decimals, 2)}`}</Text>
-                <Text color="four"> {t(`${spool.stakingToken.name} Staked`)}</Text>
+                <Text color="four"> {t(`${spool.stakingToken.symbol} Staked`)}</Text>
               </Flex>
             )
           })}

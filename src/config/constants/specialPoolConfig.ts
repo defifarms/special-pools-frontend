@@ -12,11 +12,11 @@ export const SpecialPoolsConfig: SpecialPoolConfigType[] = [
     capGoal: 30000,
     childrenPools: [
       {
-        sousId: 2,
-        stakingToken: serializedTokens.defiy,
-        earningToken: serializedTokens.defiy,
+        sousId: 500,
+        stakingToken: serializedTokens.defiynew,
+        earningToken: serializedTokens.defiynew,
         contractAddress: {
-          97: '0x417d2fe6cf2208036233eb07cae183d6aa623672',
+          97: '0x4C15c57071EBCC4318F1C427878491d51262A854',
           56: '',
         },
         poolCategory: PoolCategory.CORE,
@@ -25,7 +25,7 @@ export const SpecialPoolsConfig: SpecialPoolConfigType[] = [
         tokenPerBlock: '0.0578',
       },
       {
-        sousId: 3,
+        sousId: 501,
         stakingToken: serializedTokens.usdt,
         earningToken: serializedTokens.defiynew,
         contractAddress: {
@@ -36,7 +36,59 @@ export const SpecialPoolsConfig: SpecialPoolConfigType[] = [
         harvest: true,
         sortOrder: 999,
         tokenPerBlock: '0.0578',
-      }
+      },
+      {
+        sousId: 502,
+        stakingToken: serializedTokens.wbnb,
+        earningToken: serializedTokens.defiynew,
+        contractAddress: {
+          97: '0x4362013C43Ee076aC73bf1CF14533B1b52695f96',
+          56: '',
+        },
+        poolCategory: PoolCategory.CORE,
+        harvest: true,
+        sortOrder: 999,
+        tokenPerBlock: '0.0578',
+      },
+      {
+        sousId: 503,
+        stakingToken: serializedTokens.btcb,
+        earningToken: serializedTokens.defiynew,
+        contractAddress: {
+          97: '0x6f2744f028e111fdDDd5F01d78C00F7b8FEF44D4',
+          56: '',
+        },
+        poolCategory: PoolCategory.CORE,
+        harvest: true,
+        sortOrder: 999,
+        tokenPerBlock: '0.0578',
+      },
+      {
+        sousId: 504,
+        stakingToken: serializedTokens.eth,
+        earningToken: serializedTokens.defiynew,
+        contractAddress: {
+          97: '0x6c134C5D35EE70A7617E71B7a2707ebe71EB3096',
+          56: '',
+        },
+        poolCategory: PoolCategory.CORE,
+        harvest: true,
+        sortOrder: 999,
+        tokenPerBlock: '0.0578',
+      },
+      {
+        sousId: 505,
+        stakingToken: serializedTokens.cake,
+        earningToken: serializedTokens.defiynew,
+        contractAddress: {
+          97: '0xc7109B8499ea12643aF743684Cdc299cEaa2e162',
+          56: '',
+        },
+        poolCategory: PoolCategory.CORE,
+        harvest: true,
+        sortOrder: 999,
+        tokenPerBlock: '0.0578',
+      },
       // {
       //   sousId: 3,
       //   apr: 100,

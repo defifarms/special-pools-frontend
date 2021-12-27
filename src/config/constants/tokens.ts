@@ -1825,13 +1825,15 @@ export const testnetTokens = {
   defiynew: new Token(TESTNET, '0xb4648f24fF16D7bE53f8CAAf3fCc6c3acf3F72A2', 18, 'N-DEFIY', 'N-DEFIY', 'https://defifarms.org'),
   cake: new Token(
     TESTNET,
-    '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe',
+    '0x01BB38d9F8d2d83564bab7BD756EB801651E539F',
     18,
     'CAKE',
     'PancakeSwap Token',
     'https://pancakeswap.finance/',
   ),
   usdt: new Token(TESTNET, '0xA6362A6C4498c7E435a5C4Dd79ee42e62837fACA', 18, 'USDT', 'Tether USD', 'https://defifarms.org'),
+  btcb: new Token(TESTNET, '0x5f319004A2378a0ed9b398e102BDda9186AA4242', 18, 'BTCB', 'Binance BTC', 'https://bitcoin.org/'),
+  eth: new Token(TESTNET, '0x0f51c1691F5dBa6BBF95d9dEdA9Fd0f2AB26015D', 18, 'ETH', 'Binance-Peg Ethereum Token', 'https://ethereum.org/en/'),
   busd: new Token(
     TESTNET,
     '0x99976b5d5fd5d83aa6089598dec7fd5336cc310f',
