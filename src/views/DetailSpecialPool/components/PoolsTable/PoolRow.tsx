@@ -25,6 +25,7 @@ const StyledRow = styled(Flex)`
 const TokenImageWrap = styled.div`
   background-color: transparent;
   display: flex;
+  flex: 1;
   min-width: 50px;
   width: 20%;
   max-width: 70px;
@@ -34,6 +35,8 @@ const TokenImageWrap = styled.div`
 `
 const StakeInfo = styled.div`
   padding: 8px 8px;
+  flex: 4;
+  width: 100%;
 
 `
 const StakeInfoInner = styled.div`
@@ -41,7 +44,7 @@ const StakeInfoInner = styled.div`
   padding: 8px 16px;
   border-radius: 4px;
   height: 48px;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   display: flex;
 `
@@ -78,7 +81,7 @@ const PoolRow: React.FC<PoolRowProps> = ({ pool, account, userDataLoaded }) => {
 
   return (
     <>
-      <StyledRow role="row" alignItems='center' flexWrap={isLargerScreen ? 'nowrap' : 'wrap'}>
+      <StyledRow role="row" alignItems="center" flexWrap={isLargerScreen ? 'nowrap' : 'wrap'}>
         <TokenImageWrap>
           <TokenImage token={pool.stakingToken} width={40} height={40} />
         </TokenImageWrap>
@@ -87,11 +90,11 @@ const PoolRow: React.FC<PoolRowProps> = ({ pool, account, userDataLoaded }) => {
         <StakeInfo>
           <StakeInfoInner>
             {/* <Text color='four'>{t('Your staked')}</Text> */}
-            <Text fontWeight={600} fontSize='20px'>{`${getFullDisplayBalance(stakedBalance, stakingToken.decimals, 2)}/${getFullDisplayBalance(
-              stakingLimit,
+            <Text fontWeight={600} fontSize="18px">{`${getFullDisplayBalance(
+              stakedBalance,
               stakingToken.decimals,
-              0,
-            )}`}</Text>
+              2,
+            )}/${getFullDisplayBalance(stakingLimit, stakingToken.decimals, 0)}`}</Text>
           </StakeInfoInner>
         </StakeInfo>
         <StakeInfo>

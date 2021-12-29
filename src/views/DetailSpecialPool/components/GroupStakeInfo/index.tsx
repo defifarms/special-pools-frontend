@@ -97,27 +97,6 @@ const GroupStakeInfo: React.FC<IGroupPools> = ({ currentSpecialPoolConfig, pools
               </Flex>
             )
           })}
-        {/* 
-        <Flex mt="16px">
-          <Text mr="16px">0.00</Text>
-          <Text color="four"> {t('BUSD Staked')}</Text>
-        </Flex>
-        <Flex mt="16px">
-          <Text mr="16px">0.00</Text>
-          <Text color="four"> {t('WBNB Staked')}</Text>
-        </Flex>
-        <Flex mt="16px">
-          <Text mr="16px">0.00</Text>
-          <Text color="four"> {t('BTCB Staked')}</Text>
-        </Flex>
-        <Flex mt="16px">
-          <Text mr="16px">0.00</Text>
-          <Text color="four"> {t('WETH Staked')}</Text>
-        </Flex>
-        <Flex mt="16px">
-          <Text mr="16px">0.00</Text>
-          <Text color="four"> {t('CAKE Staked')}</Text>
-        </Flex> */}
       </StakeInfoWrap>
     </Flex>
   )

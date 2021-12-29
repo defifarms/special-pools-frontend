@@ -14,8 +14,11 @@ import { ActionContainer, ActionTitles, ActionContent } from './styles'
 import CollectModal from '../../PoolCard/Modals/CollectModal'
 
 const HarvestButtonStyled = styled(Button)`
-  border-radius: 8px;
+  border-radius: 4px;
   margin-left: 8px;
+  padding: 0 8px;
+  flex: 2;
+  background: #eaab42;
 `
 interface HarvestActionProps extends DeserializedPool {
   userDataLoaded: boolean
@@ -67,9 +70,7 @@ const HarvestAction: React.FunctionComponent<HarvestActionProps> = ({
   if (!account) {
     return (
       <ActionContainer>
-        {/* <ActionTitles>{actionTitle}</ActionTitles> */}
         <ActionContent>
-          {/* <Heading>0</Heading> */}
           <HarvestButtonStyled disabled>{isCompoundPool ? t('Collect') : t('Harvest')}</HarvestButtonStyled>
         </ActionContent>
       </ActionContainer>
@@ -88,41 +89,9 @@ const HarvestAction: React.FunctionComponent<HarvestActionProps> = ({
   }
 
   return (
-    <ActionContainer>
-      {/* <ActionTitles>{actionTitle}</ActionTitles> */}
-      <ActionContent>
-        {/* <Flex flex="1" pt="16px" flexDirection="column" alignSelf="flex-start">
-          <>
-            {hasEarnings ? (
-              <>
-                <Balance lineHeight="1" bold fontSize="20px" decimals={5} value={earningTokenBalance} />
-                {earningTokenPrice > 0 && (
-                  <Balance
-                    display="inline"
-                    fontSize="12px"
-                    color="textSubtle"
-                    decimals={2}
-                    prefix="~"
-                    value={earningTokenDollarBalance}
-                    unit=" USD"
-                  />
-                )}
-              </>
-            ) : (
-              <>
-                <Heading color="textDisabled">0</Heading>
-                <Text fontSize="12px" color="textDisabled">
-                  0 USD
-                </Text>
-              </>
-            )}
-          </>
-        </Flex> */}
-        <HarvestButtonStyled disabled={!hasEarnings} onClick={onPresentCollect}>
-          {isCompoundPool ? t('Collect') : t('Harvest')}
-        </HarvestButtonStyled>
-      </ActionContent>
-    </ActionContainer>
+      <HarvestButtonStyled disabled={!hasEarnings} onClick={onPresentCollect}>
+        {isCompoundPool ? t('Collect') : t('Harvest')}
+      </HarvestButtonStyled>
   )
 }
 
