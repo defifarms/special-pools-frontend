@@ -7,6 +7,7 @@ export const ActionContainer = styled.div<{ isAutoVault?: boolean }>`
   flex-grow: 1;
   flex-basis: 0;
   margin-bottom: 0px;
+  flex: 3;
 
   ${({ theme }) => theme.mediaQueries.sm} {
     // margin-left: 12px;
@@ -31,4 +32,5 @@ export const ActionContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex: 1;
 `

@@ -21,14 +21,25 @@ import { useCheckVaultApprovalStatus, useApprovePool, useVaultApprove } from '..
 
 const IconButtonWrapper = styled.div`
   display: flex;
+  width: 100%;
 `
 const UnstakeButton = styled(Button)`
   border-radius: 4px;
   background-color: #e0e0e0;
   color: #828282;
+  padding: 0 8px;
+  flex: 2;
 `
 const StakeButton = styled(Button)`
   border-radius: 4px;
+`
+const ConnectWalletButtonStyled = styled(ConnectWalletButton)`
+  border-radius: 4px;
+  background: #3ab7de;
+`
+const ButtonEnable = styled(Button)`
+  border-radius: 4px;
+  background: #6079ff;
 `
 const AddIconStake = styled(IconButton)`
   border-radius: 4px;
@@ -36,6 +47,7 @@ const AddIconStake = styled(IconButton)`
   color: #828282;
   margin-left: 8px;
   border: 0;
+  flex: 1;
 `
 
 interface StackedActionProps {
@@ -154,7 +166,7 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({ pool, userDataLoa
           </Text> */}
         </ActionTitles>
         <ActionContent>
-          <ConnectWalletButton width="100%" />
+          <ConnectWalletButtonStyled width="100%" />
         </ActionContent>
       </ActionContainer>
     )
@@ -178,16 +190,9 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({ pool, userDataLoa
   if (needsApproval) {
     return (
       <ActionContainer>
-        <ActionTitles>
-          {/* <Text fontSize="12px" bold color="textSubtle" as="span" textTransform="uppercase">
-            {t('Enable pool')}
-          </Text> */}
-        </ActionTitles>
-        <ActionContent>
-          <Button width="100%" disabled={requestedApproval} onClick={handleApprove} variant="secondary">
-            {t('Enable')}
-          </Button>
-        </ActionContent>
+        <ButtonEnable width="100%" disabled={requestedApproval} onClick={handleApprove} variant="primary">
+          {t('Enable')}
+        </ButtonEnable>
       </ActionContainer>
     )
   }
@@ -196,37 +201,8 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({ pool, userDataLoa
   if (isNotVaultAndHasStake || isVaultWithShares) {
     return (
       <ActionContainer isAutoVault={isAutoVault}>
-        {/* <ActionTitles>
-          <Text fontSize="12px" bold color="secondary" as="span" textTransform="uppercase">
-            {stakingToken.symbol}{' '}
-          </Text>
-          <Text fontSize="12px" bold color="textSubtle" as="span" textTransform="uppercase">
-            {isAutoVault ? t('Staked (compounding)') : t('Staked')}
-          </Text>
-        </ActionTitles> */}
         <ActionContent>
-          {/* <Flex flex="1" pt="16px" flexDirection="column" alignSelf="flex-start">
-            <Balance
-              lineHeight="1"
-              bold
-              fontSize="20px"
-              decimals={5}
-              value={isAutoVault ? cakeAsNumberBalance : stakedTokenBalance}
-            />
-            <Balance
-              fontSize="12px"
-              display="inline"
-              color="textSubtle"
-              decimals={2}
-              value={isAutoVault ? stakedAutoDollarValue : stakedTokenDollarBalance}
-              unit=" USD"
-              prefix="~"
-            />
-          </Flex> */}
           <IconButtonWrapper>
-            {/* <IconButton variant="secondary" onClick={onUnstake} mr="6px">
-              <MinusIcon color="primary" width="14px" />
-            </IconButton> */}
             <UnstakeButton onClick={onUnstake}>
               <Text fontSize="20px" fontWeight={600} color="#828282">
                 {t('Unstake')}
