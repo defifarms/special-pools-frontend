@@ -90,12 +90,12 @@ const GroupStakeInfo: React.FC<IGroupPools> = ({ currentSpecialPoolConfig, pools
             const stakedBalance = spool?.userData?.stakedBalance
               ? new BigNumber(spool?.userData.stakedBalance)
               : BIG_ZERO
-            return (
+            return stakedBalance.gt(0) ? (
               <Flex mt="16px">
                 <Text mr="16px">{`${getFullDisplayBalance(stakedBalance, spool?.stakingToken.decimals, 2)}`}</Text>
                 <Text color="four"> {t(`${spool.stakingToken.symbol} Staked`)}</Text>
               </Flex>
-            )
+            ) : null
           })}
       </StakeInfoWrap>
     </Flex>

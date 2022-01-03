@@ -9,6 +9,7 @@ import {
   useMatchBreakpoints
 } from '@defifarms/special-uikit'
 import { useWeb3React } from '@web3-react/core'
+import BigNumber from 'bignumber.js'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import Container from 'components/Layout/Container'
 import { MainBackground } from 'components/Layout/MainBackground'
@@ -19,10 +20,13 @@ import { Link } from 'react-router-dom'
 import { usePollFarmsPublicData } from 'state/farms/hooks'
 import { useFetchCakeVault, useFetchPublicPoolsData, useFetchUserPools, useSpecialPools } from 'state/pools/hooks'
 import styled from 'styled-components'
+import { BIG_ZERO } from 'utils/bigNumber'
 import { formatNumber } from 'utils/formatBalance'
 import { SpecialPoolsConfig } from '../../config/constants/specialPoolConfig'
 import GroupChildrenPools from './components/GroupChildrenPools'
 import GroupStakeInfo from './components/GroupStakeInfo'
+import Apr from './components/PoolsTable/Apr'
+
 
 const CardSpecialPool = styled(Card)<{ background?: string }>`
   background-color: unset;
@@ -105,6 +109,10 @@ const DetailSpecialPool: React.FC<RouteComponentProps<{ groupPool: string }>> = 
     })
     return isSpecialPools
   })
+  const defiyPools = poolsSpecial[0] || null
+  const stakedBalance = defiyPools && defiyPools?.userData?.stakedBalance ? new BigNumber(defiyPools.userData.stakedBalance) : BIG_ZERO
+
+
 
   // -----------------------
   const { isXs, isSm, isMd, isLg, isXl, isXxl, isTablet, isDesktop } = useMatchBreakpoints()
@@ -125,7 +133,9 @@ const DetailSpecialPool: React.FC<RouteComponentProps<{ groupPool: string }>> = 
                 <PoolName>{currentSpecialPoolConfig.name}</PoolName>
               </Flex>
               <Flex flex={1} justifyContent="flex-end" alignItems="center">
-                <Text textAlign="right" fontSize={isLargerScreen ? '14px' : '10px'} color="#FFB800">
+                <Text textAlign="right" fontSize={isLargerScreen ? '14px' : '10px'} color="#FFB800" display='inline-flex'>
+                  APR 
+                  <Apr pool={defiyPools} stakedBalance={stakedBalance} showIcon={false} />
                   {currentSpecialPoolConfig.description}
                 </Text>
               </Flex>

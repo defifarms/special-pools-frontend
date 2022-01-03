@@ -2,10 +2,12 @@ import { Button, Flex, Heading, Text } from '@defifarms/special-uikit'
 import { TokenImage } from 'components/TokenImage'
 import tokens from 'config/constants/tokens'
 import { useTranslation } from 'contexts/Localization'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { SpecialPoolConfigType } from 'state/types'
 import styled from 'styled-components'
+import useCountDownTimer from 'hooks/useCountDownTimer'
+import Time from 'components/Time'
 
 const ItemWrap = styled.div`
   width: 100%;
@@ -74,21 +76,57 @@ const HeadingSpecial = styled(Heading)`
 
 const SpecialPoolItem: React.FC<{ poolConfig: SpecialPoolConfigType }> = ({ poolConfig }) => {
   const { t } = useTranslation()
+  const [timeHarvestRemaining, setTimeHarvestRemaining] = useCountDownTimer()
+
+  useEffect(() => {
+    const time = new Date(poolConfig.timeStart).getTime()/1000
+    setTimeHarvestRemaining(time)
+  }, [setTimeHarvestRemaining, poolConfig.timeStart])
+
+  const timeLeft = timeHarvestRemaining
+    ? {
+        days: Math.floor(timeHarvestRemaining / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((timeHarvestRemaining / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((timeHarvestRemaining / 1000 / 60) % 60),
+        seconds: Math.floor((timeHarvestRemaining / 1000) % 60),
+      }
+    : {
+        days: 0,
+        hours: 0,
+        minutes: 0,
+        seconds: 0,
+      }
 
   return (
     <ItemWrap>
       <HeaderItem justifyContent="space-between" flexDirection={['column', null, null, 'row']} width="100%">
-        <Flex flex="1" flexDirection="row" alignItems='center' mr={['8px', 0]}>
+        <Flex flex="1" flexDirection="row" alignItems="center" mr={['8px', 0]}>
           <TokenImage token={tokens.defiy} width={40} height={40} />
-          <Text fontSize='24px' fontWeight={600} pl='8px'>{t('Special Pools start on')}</Text>
+          <Text fontSize="24px" fontWeight={600} pl="8px">
+            {t('Special Pools start on')}
+          </Text>
         </Flex>
         <Flex flex="1" height="fit-content" justifyContent="center" alignItems="center" mt={['24px', null, '0']}>
           <CountDownBlock>
             <Flex justifyContent="space-between">
               <Text>{t('Block #14857976')}</Text>
               <Flex flexDirection="column">
-                <Text fontWeight={600}>4days 3h:25m:39s</Text>
-                <TextTime>November 5th 2021</TextTime>
+                <Flex flexDirection="row">
+                  {timeHarvestRemaining ? (
+                    <>
+                      <Time size="small" time={timeLeft.days} label="Days" />
+                      <div style={{ width: 12 }} />
+                      <Time size="small" time={timeLeft.hours} label="h:" />
+                      <Time size="small" time={timeLeft.minutes} label="m:" />
+                      <Time size="small" time={timeLeft.seconds} label="s" />
+                    </>
+                  ) : (
+                    <Text fontSize="24px" fontWeight={600}>
+                      {t('Coming soon')}
+                    </Text>
+                  )}
+                </Flex>
+                {poolConfig.timeStartNote ? <TextTime>{t(poolConfig.timeStartNote)}</TextTime> : null}
               </Flex>
             </Flex>
           </CountDownBlock>

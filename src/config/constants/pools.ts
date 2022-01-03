@@ -18,6 +18,19 @@ const pools: SerializedPoolConfig[] = [
     sortOrder: 1,
     isFinished: true,
   },
+  // {
+  //   sousId: 4,
+  //   stakingToken: serializedTokens.defiy,
+  //   earningToken: serializedTokens.defiy,
+  //   contractAddress: {
+  //     97: '0xc7437617f89A23FA7eACB90f6b3D663055B5d467',
+  //     56: '',
+  //   },
+  //   poolCategory: PoolCategory.CORE,
+  //   tokenPerBlock: '0.01',
+  //   sortOrder: 2,
+  //   isFinished: false,
+  // },
   /**
    * SpecialPools start from 500
    */
@@ -33,6 +46,7 @@ const pools: SerializedPoolConfig[] = [
     harvest: true,
     sortOrder: 999,
     tokenPerBlock: '0.0578',
+    poolNote: "DEFIY: Pool Allowcated 60% of master pool",
   },
   {
     sousId: 501,
@@ -46,6 +60,7 @@ const pools: SerializedPoolConfig[] = [
     harvest: true,
     sortOrder: 999,
     tokenPerBlock: '0.0578',
+    poolNote: "USDT: Pool Allowcated 8% of master pool",
   },
   {
     sousId: 502,
@@ -59,6 +74,7 @@ const pools: SerializedPoolConfig[] = [
     harvest: true,
     sortOrder: 999,
     tokenPerBlock: '0.0578',
+    poolNote: "WBNB: Pool Allowcated 8% of master pool",
   },
   {
     sousId: 503,
@@ -72,6 +88,7 @@ const pools: SerializedPoolConfig[] = [
     harvest: true,
     sortOrder: 999,
     tokenPerBlock: '0.0578',
+    poolNote: "BTCB: Pool Allowcated 8% of master pool",
   },
   {
     sousId: 504,
@@ -85,6 +102,7 @@ const pools: SerializedPoolConfig[] = [
     harvest: true,
     sortOrder: 999,
     tokenPerBlock: '0.0578',
+    poolNote: "ETH: Pool Allowcated 8% of master pool",
   },
   {
     sousId: 505,
@@ -98,6 +116,7 @@ const pools: SerializedPoolConfig[] = [
     harvest: true,
     sortOrder: 999,
     tokenPerBlock: '0.0578',
+    poolNote: "CAKE: Pool Allowcated 8% of master pool",
   },
 ]
 

@@ -62,6 +62,7 @@ const Apr: React.FC<AprProps> = ({ pool, showIcon, stakedBalance, performanceFee
             isDisabled={isFinished}
             value={isFinished ? 0 : earningsPercentageToDisplay}
             decimals={2}
+            color="#F2C94C"
             unit="%"
           />
           {!isFinished && showIcon && (

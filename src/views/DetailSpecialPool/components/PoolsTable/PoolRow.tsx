@@ -1,4 +1,4 @@
-import { Flex, Text, useMatchBreakpoints } from '@defifarms/special-uikit'
+import { Flex, Text, useMatchBreakpoints, useTooltip } from '@defifarms/special-uikit'
 import BigNumber from 'bignumber.js'
 import { TokenImage } from 'components/TokenImage'
 import { useTranslation } from 'contexts/Localization'
@@ -10,6 +10,7 @@ import { getBalanceNumber, getFullDisplayBalance } from 'utils/formatBalance'
 import Harvest from './ActionPanel/Harvest'
 import Stake from './ActionPanel/Stake'
 import TotalStakedCell from './Cells/TotalStakedCell'
+import Apr from './Apr'
 
 interface PoolRowProps {
   pool: DeserializedPool
@@ -39,9 +40,12 @@ const StakeInfo = styled.div`
   width: 100%;
 
 `
+const StakeInfoLast = styled(StakeInfo)`
+  flex: 6;
+`
 const StakeInfoInner = styled.div`
   background-color: #512e91;
-  padding: 8px 16px;
+  padding: 8px 8px;
   border-radius: 4px;
   height: 48px;
   justify-content: flex-start;
@@ -78,10 +82,16 @@ const PoolRow: React.FC<PoolRowProps> = ({ pool, account, userDataLoaded }) => {
       <Text>{`${getFullDisplayBalance(stakingLimit, stakingToken.decimals, 0)} ${stakingToken.symbol}`}</Text>
     </Flex>
   ) : null
+ 
+    const { targetRef, tooltip, tooltipVisible } = useTooltip(pool.poolNote ? t(pool.poolNote) : '', {
+      placement: 'top',
+      tooltipOffset: [20, 10],
+    })
 
   return (
     <>
-      <StyledRow role="row" alignItems="center" flexWrap={isLargerScreen ? 'nowrap' : 'wrap'}>
+      {tooltipVisible && tooltip}
+      <StyledRow ref={targetRef} role="row" alignItems="center" flexWrap={isLargerScreen ? 'nowrap' : 'wrap'}>
         <TokenImageWrap>
           <TokenImage token={pool.stakingToken} width={40} height={40} />
         </TokenImageWrap>
@@ -97,11 +107,11 @@ const PoolRow: React.FC<PoolRowProps> = ({ pool, account, userDataLoaded }) => {
             )}/${getFullDisplayBalance(stakingLimit, stakingToken.decimals, 0)}`}</Text>
           </StakeInfoInner>
         </StakeInfo>
-        <StakeInfo>
+        <StakeInfoLast>
           <StakeInfoInner>
             <TotalStakedCell pool={pool} />
           </StakeInfoInner>
-        </StakeInfo>
+        </StakeInfoLast>
       </StyledRow>
     </>
   )
