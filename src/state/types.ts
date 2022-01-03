@@ -75,6 +75,7 @@ export interface DeserializedPool extends DeserializedPoolConfig, CorePoolProps 
   stakingLimit?: BigNumber
   harvestInterval?: string
   depositFeeBP?: string
+  maxPoolStakeAmount?: BigNumber
   userData?: {
     allowance: BigNumber
     stakingTokenBalance: BigNumber
