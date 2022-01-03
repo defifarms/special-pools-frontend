@@ -76,6 +76,7 @@ export interface DeserializedPool extends DeserializedPoolConfig, CorePoolProps 
   harvestInterval?: string
   depositFeeBP?: string
   maxPoolStakeAmount?: BigNumber
+  poolNote?: string
   userData?: {
     allowance: BigNumber
     stakingTokenBalance: BigNumber
@@ -89,6 +90,7 @@ export interface SerializedPool extends SerializedPoolConfig, CorePoolProps {
   stakingLimit?: SerializedBigNumber
   harvestInterval?: string
   depositFeeBP?: string
+  poolNote?: string
   userData?: {
     allowance: SerializedBigNumber
     stakingTokenBalance: SerializedBigNumber
@@ -101,6 +103,8 @@ export interface SpecialPoolConfigType {
   link: string
   capGoal: number
   description?: string
+  timeStart?: number
+  timeStartNote?: string
   childrenPools: SerializedPool[]
 }
 export interface Profile {

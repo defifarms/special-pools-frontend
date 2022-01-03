@@ -1,4 +1,4 @@
-import { Flex, Text, useMatchBreakpoints } from '@defifarms/special-uikit'
+import { Flex, Text, useMatchBreakpoints, useTooltip } from '@defifarms/special-uikit'
 import BigNumber from 'bignumber.js'
 import { TokenImage } from 'components/TokenImage'
 import { useTranslation } from 'contexts/Localization'
@@ -82,10 +82,16 @@ const PoolRow: React.FC<PoolRowProps> = ({ pool, account, userDataLoaded }) => {
       <Text>{`${getFullDisplayBalance(stakingLimit, stakingToken.decimals, 0)} ${stakingToken.symbol}`}</Text>
     </Flex>
   ) : null
+ 
+    const { targetRef, tooltip, tooltipVisible } = useTooltip(pool.poolNote ? t(pool.poolNote) : '', {
+      placement: 'top',
+      tooltipOffset: [20, 10],
+    })
 
   return (
     <>
-      <StyledRow role="row" alignItems="center" flexWrap={isLargerScreen ? 'nowrap' : 'wrap'}>
+      {tooltipVisible && tooltip}
+      <StyledRow ref={targetRef} role="row" alignItems="center" flexWrap={isLargerScreen ? 'nowrap' : 'wrap'}>
         <TokenImageWrap>
           <TokenImage token={pool.stakingToken} width={40} height={40} />
         </TokenImageWrap>

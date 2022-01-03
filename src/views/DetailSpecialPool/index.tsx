@@ -133,7 +133,8 @@ const DetailSpecialPool: React.FC<RouteComponentProps<{ groupPool: string }>> = 
                 <PoolName>{currentSpecialPoolConfig.name}</PoolName>
               </Flex>
               <Flex flex={1} justifyContent="flex-end" alignItems="center">
-                <Text textAlign="right" fontSize={isLargerScreen ? '14px' : '10px'} color="#FFB800">
+                <Text textAlign="right" fontSize={isLargerScreen ? '14px' : '10px'} color="#FFB800" display='inline-flex'>
+                  APR 
                   <Apr pool={defiyPools} stakedBalance={stakedBalance} showIcon={false} />
                   {currentSpecialPoolConfig.description}
                 </Text>
