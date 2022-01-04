@@ -48,7 +48,7 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
   {
     label: t('Home'),
     icon: 'HomeIcon',
-    href: `${url}/`,
+    href: `/`,
   },
   {
     label: t('Trade'),
@@ -57,18 +57,18 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
     items: [
       {
         label: t('Exchange'),
-        href: `${url}/swap`,
+        href: `/swap`,
       },
       {
         label: t('Liquidity'),
-        href: `${url}/liquidity`,
+        href: `/liquidity`,
       },
     ],
   },
   {
     label: t('Farms'),
     icon: 'FarmIcon',
-    href: `${url}/farms`,
+    href: `/farms`,
   },
   {
     label: t('Pools'),
@@ -76,11 +76,11 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => [
     items: [
       {
         label: t('Classic Pools'),
-        href: `${url}/pools`,
+        href: `/pools`,
       },
       {
         label: t('Special Pools'),
-        href: `${specialUrl}/spools`,
+        href: `/spool`,
       },
     ],
   },

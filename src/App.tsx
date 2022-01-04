@@ -83,7 +83,13 @@ const App: React.FC = () => {
       <Menu>
         <SuspenseWithChunkError fallback={<PageLoader />}>
           <Switch>
-            <Route path="/pools" exact>
+            <Route path="/" exact>
+              <SpecialPools />
+            </Route>
+            <Route path="/farms">
+              <Farms />
+            </Route>
+            <Route path="/pools">
               <Pools />
             </Route>
             <Route exact strict path="/swap" component={Swap} />
@@ -98,7 +104,7 @@ const App: React.FC = () => {
             <Route path="/lottery" exact>
               <CommingSoon />
             </Route>
-            <Route path="/" exact>
+            <Route path="/spool" exact>
               <SpecialPools />
             </Route>
             <Route exact strict path="/liquidity" component={Liquidity} />
