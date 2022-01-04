@@ -1,7 +1,7 @@
 import React from 'react'
 import { Image, Flex, Text, Td, IconButton, Link, OpenNewIcon, useMatchBreakpoints, useModal } from '@defifarms/special-uikit'
 import { NftToken } from 'state/nftMarket/types'
-import { Price } from '@defifarms/sdk'
+import { Price } from '@pancakeswap/sdk'
 import styled from 'styled-components'
 import { getBscScanLink } from 'utils'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'

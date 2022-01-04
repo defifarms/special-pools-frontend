@@ -1,5 +1,5 @@
 import { createAction } from '@reduxjs/toolkit'
-import { ChainId } from '@defifarms/sdk'
+import { ChainId } from '@pancakeswap/sdk'
 
 export interface SerializableTransactionReceipt {
   to: string

@@ -1,4 +1,4 @@
-import { ChainId, Currency, currencyEquals, JSBI, Price } from '@defifarms/sdk'
+import { ChainId, Currency, currencyEquals, JSBI, Price } from '@pancakeswap/sdk'
 import { useMemo } from 'react'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import tokens, { mainnetTokens, testnetTokens } from 'config/constants/tokens'

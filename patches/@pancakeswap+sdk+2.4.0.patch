@@ -1,0 +1,54 @@
+diff --git a/node_modules/@pancakeswap/sdk/dist/constants.d.ts b/node_modules/@pancakeswap/sdk/dist/constants.d.ts
+index cc044e8..663d1bb 100644
+--- a/node_modules/@pancakeswap/sdk/dist/constants.d.ts
++++ b/node_modules/@pancakeswap/sdk/dist/constants.d.ts
+@@ -13,8 +13,8 @@ export declare enum Rounding {
+     ROUND_HALF_UP = 1,
+     ROUND_UP = 2
+ }
+-export declare const FACTORY_ADDRESS = "0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73";
+-export declare const INIT_CODE_HASH = "0x00fb7f630766e6a796048ea87d01acd3068e8ff67d078148a3fa3f4a84f69bd5";
++export declare const FACTORY_ADDRESS = "0x0290Bc634957878edd88B2BE3e6F92aF31364B66";
++export declare const INIT_CODE_HASH = "0x9abe2c7ad6a914a8a15cc5431e2f4deaea1062bdbffc8831bd95b7f5a0dab2ad";
+ export declare const MINIMUM_LIQUIDITY: JSBI;
+ export declare const ZERO: JSBI;
+ export declare const ONE: JSBI;
+diff --git a/node_modules/@pancakeswap/sdk/dist/sdk.cjs.development.js b/node_modules/@pancakeswap/sdk/dist/sdk.cjs.development.js
+index 5a9ce10..5dfe19f 100644
+--- a/node_modules/@pancakeswap/sdk/dist/sdk.cjs.development.js
++++ b/node_modules/@pancakeswap/sdk/dist/sdk.cjs.development.js
+@@ -35,8 +35,8 @@ var _SOLIDITY_TYPE_MAXIMA;
+   Rounding[Rounding["ROUND_UP"] = 2] = "ROUND_UP";
+ })(exports.Rounding || (exports.Rounding = {}));
+ 
+-var FACTORY_ADDRESS = '0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73';
+-var INIT_CODE_HASH = '0x00fb7f630766e6a796048ea87d01acd3068e8ff67d078148a3fa3f4a84f69bd5';
++var FACTORY_ADDRESS = '0x0290Bc634957878edd88B2BE3e6F92aF31364B66';
++var INIT_CODE_HASH = '0x9abe2c7ad6a914a8a15cc5431e2f4deaea1062bdbffc8831bd95b7f5a0dab2ad';
+ var MINIMUM_LIQUIDITY = /*#__PURE__*/JSBI.BigInt(1000); // exports for internal consumption
+ 
+ var ZERO = /*#__PURE__*/JSBI.BigInt(0);
+diff --git a/node_modules/@pancakeswap/sdk/dist/sdk.esm.js b/node_modules/@pancakeswap/sdk/dist/sdk.esm.js
+index 494a8ed..a16a45b 100644
+--- a/node_modules/@pancakeswap/sdk/dist/sdk.esm.js
++++ b/node_modules/@pancakeswap/sdk/dist/sdk.esm.js
+@@ -35,8 +35,8 @@ var Rounding;
+   Rounding[Rounding["ROUND_UP"] = 2] = "ROUND_UP";
+ })(Rounding || (Rounding = {}));
+ 
+-var FACTORY_ADDRESS = '0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73';
+-var INIT_CODE_HASH = '0x00fb7f630766e6a796048ea87d01acd3068e8ff67d078148a3fa3f4a84f69bd5';
++var FACTORY_ADDRESS = '0x0290Bc634957878edd88B2BE3e6F92aF31364B66';
++var INIT_CODE_HASH = '0x9abe2c7ad6a914a8a15cc5431e2f4deaea1062bdbffc8831bd95b7f5a0dab2ad';
+ var MINIMUM_LIQUIDITY = /*#__PURE__*/JSBI.BigInt(1000); // exports for internal consumption
+ 
+ var ZERO = /*#__PURE__*/JSBI.BigInt(0);
+@@ -759,7 +759,7 @@ var Pair = /*#__PURE__*/function () {
+   function Pair(tokenAmountA, tokenAmountB) {
+     var tokenAmounts = tokenAmountA.token.sortsBefore(tokenAmountB.token) // does safety checks
+     ? [tokenAmountA, tokenAmountB] : [tokenAmountB, tokenAmountA];
+-    this.liquidityToken = new Token(tokenAmounts[0].token.chainId, Pair.getAddress(tokenAmounts[0].token, tokenAmounts[1].token), 18, 'Cake-LP', 'Pancake LPs');
++    this.liquidityToken = new Token(tokenAmounts[0].token.chainId, Pair.getAddress(tokenAmounts[0].token, tokenAmounts[1].token), 18, 'Defifarm-LP', 'Defifarm LPs');
+     this.tokenAmounts = tokenAmounts;
+   }
+ 

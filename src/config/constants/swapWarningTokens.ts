@@ -1,4 +1,4 @@
-import { Token } from '@defifarms/sdk'
+import { Token } from '@pancakeswap/sdk'
 import tokens from 'config/constants/tokens'
 
 const { bondly, safemoon } = tokens

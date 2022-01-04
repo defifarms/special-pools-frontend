@@ -1,5 +1,5 @@
 import React, { KeyboardEvent, RefObject, useCallback, useMemo, useRef, useState, useEffect } from 'react'
-import { Currency, ETHER, Token } from '@defifarms/sdk'
+import { Currency, ETHER, Token } from '@pancakeswap/sdk'
 import { Text, Input, Box } from '@defifarms/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { FixedSizeList } from 'react-window'

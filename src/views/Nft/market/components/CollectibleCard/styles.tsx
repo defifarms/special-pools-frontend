@@ -12,7 +12,7 @@ import {
   WalletFilledIcon,
   Skeleton,
 } from '@defifarms/special-uikit'
-import { Price } from '@defifarms/sdk'
+import { Price } from '@pancakeswap/sdk'
 import { useTranslation } from 'contexts/Localization'
 import { multiplyPriceByAmount } from 'utils/prices'
 import styled from 'styled-components'

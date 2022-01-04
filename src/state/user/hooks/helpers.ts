@@ -1,4 +1,4 @@
-import { Token } from '@defifarms/sdk'
+import { Token } from '@pancakeswap/sdk'
 import { SerializedToken } from 'config/constants/types'
 import { parseUnits } from 'ethers/lib/utils'
 

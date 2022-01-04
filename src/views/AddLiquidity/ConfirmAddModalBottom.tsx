@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Fraction, Percent } from '@defifarms/sdk'
+import { Currency, CurrencyAmount, Fraction, Percent } from '@pancakeswap/sdk'
 import React from 'react'
 import { Button, Text } from '@defifarms/special-uikit'
 import { useTranslation } from 'contexts/Localization'

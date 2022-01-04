@@ -1,5 +1,5 @@
 import React from 'react'
-import { Price } from '@defifarms/sdk'
+import { Price } from '@pancakeswap/sdk'
 import { Flex, Text } from '@defifarms/special-uikit'
 import { multiplyPriceByAmount } from 'utils/prices'
 import { useTranslation } from 'contexts/Localization'

@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react'
-import { ChainId, Currency, Token } from '@defifarms/sdk'
+import { ChainId, Currency, Token } from '@pancakeswap/sdk'
 import styled from 'styled-components'
 import {
   Button,

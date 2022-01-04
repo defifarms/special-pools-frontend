@@ -1,4 +1,4 @@
-import { ChainId } from '@defifarms/sdk'
+import { ChainId } from '@pancakeswap/sdk'
 import store from 'state'
 import { GAS_PRICE_GWEI } from 'state/user/hooks/helpers'
 

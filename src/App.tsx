@@ -24,9 +24,17 @@ import DetailSpecialPool from './views/DetailSpecialPool'
 import Pools from './views/Pools'
 import SpecialPools from './views/SpecialPools'
 import CommingSoon from './views/CommingSoon'
+import { RedirectPathToSwapOnly, RedirectToSwap, RedirectToSwapWithPairs } from './views/Swap/redirects'
+import {
+  RedirectDuplicateTokenIds,
+  RedirectOldAddLiquidityPathStructure,
+  RedirectToAddLiquidity,
+} from './views/AddLiquidity/redirects'
+import RedirectOldRemoveLiquidityPathStructure from './views/RemoveLiquidity/redirects'
 
 // Route-based code splitting
 // Only pool is included in the main bundle because of it's the most visited page
+const Swap = lazy(() => import('./views/Swap'))
 const Home = lazy(() => import('./views/Home'))
 const Farms = lazy(() => import('./views/Farms'))
 const FarmAuction = lazy(() => import('./views/FarmAuction'))
@@ -78,6 +86,9 @@ const App: React.FC = () => {
             <Route path="/pools" exact>
               <Pools />
             </Route>
+            <Route exact strict path="/swap" component={Swap} />
+            <Route exact strict path="/swap/:outputCurrency" component={RedirectToSwap} />
+            <Route exact strict path="/swap/:inputCurrency/:outputCurrency" component={RedirectToSwapWithPairs} />
             <Route path="/rocket" exact>
               <CommingSoon />
             </Route>
@@ -90,6 +101,16 @@ const App: React.FC = () => {
             <Route path="/" exact>
               <SpecialPools />
             </Route>
+            <Route exact strict path="/liquidity" component={Liquidity} />
+            <Route exact strict path="/create" component={RedirectToAddLiquidity} />
+            <Route exact path="/add" component={AddLiquidity} />
+            <Route exact path="/add/:currencyIdA" component={RedirectOldAddLiquidityPathStructure} />
+            <Route exact path="/add/:currencyIdA/:currencyIdB" component={RedirectDuplicateTokenIds} />
+            <Route exact path="/create" component={AddLiquidity} />
+            <Route exact path="/create/:currencyIdA" component={RedirectOldAddLiquidityPathStructure} />
+            <Route exact path="/create/:currencyIdA/:currencyIdB" component={RedirectDuplicateTokenIds} />
+            <Route exact strict path="/remove/:tokens" component={RedirectOldRemoveLiquidityPathStructure} />
+            <Route exact strict path="/remove/:currencyIdA/:currencyIdB" component={RemoveLiquidity} />
             <Route exact strict path="/:groupPool" component={DetailSpecialPool} />
 
             {/* 404 */}

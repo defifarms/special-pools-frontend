@@ -6,7 +6,7 @@ import {
   ImageProps,
 } from '@defifarms/special-uikit'
 import tokens from 'config/constants/tokens'
-import { Token } from '@defifarms/sdk'
+import { Token } from '@pancakeswap/sdk'
 import { SerializedToken } from 'config/constants/types'
 
 interface TokenPairImageProps extends Omit<UIKitTokenPairImageProps, 'primarySrc' | 'secondarySrc'> {

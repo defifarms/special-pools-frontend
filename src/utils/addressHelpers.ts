@@ -1,4 +1,4 @@
-import { ChainId } from '@defifarms/sdk'
+import { ChainId } from '@pancakeswap/sdk'
 import addresses from 'config/constants/contracts'
 import { Address } from 'config/constants/types'
 

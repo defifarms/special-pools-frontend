@@ -1,7 +1,7 @@
-import { ChainId, JSBI, Percent, Token } from '@defifarms/sdk'
+import { ChainId, JSBI, Percent, Token } from '@pancakeswap/sdk'
 import { mainnetTokens, testnetTokens } from './tokens'
 
-export const ROUTER_ADDRESS = '0x2b9F516318a115209304e5AEe6d6fDA1A95a16b6'
+export const ROUTER_ADDRESS = '0xEaF73930656b2dBB4d1b9cCCa66EE43C421120D3'
 
 // a list of tokens by chain
 type ChainTokenList = {
