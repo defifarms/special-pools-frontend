@@ -14,7 +14,7 @@ index cc044e8..663d1bb 100644
  export declare const ZERO: JSBI;
  export declare const ONE: JSBI;
 diff --git a/node_modules/@pancakeswap/sdk/dist/sdk.cjs.development.js b/node_modules/@pancakeswap/sdk/dist/sdk.cjs.development.js
-index 5a9ce10..5dfe19f 100644
+index 5a9ce10..c8109b4 100644
 --- a/node_modules/@pancakeswap/sdk/dist/sdk.cjs.development.js
 +++ b/node_modules/@pancakeswap/sdk/dist/sdk.cjs.development.js
 @@ -35,8 +35,8 @@ var _SOLIDITY_TYPE_MAXIMA;
@@ -28,8 +28,17 @@ index 5a9ce10..5dfe19f 100644
  var MINIMUM_LIQUIDITY = /*#__PURE__*/JSBI.BigInt(1000); // exports for internal consumption
  
  var ZERO = /*#__PURE__*/JSBI.BigInt(0);
+@@ -436,7 +436,7 @@ function currencyEquals(currencyA, currencyB) {
+     return currencyA === currencyB;
+   }
+ }
+-var WETH = (_WETH = {}, _WETH[exports.ChainId.MAINNET] = /*#__PURE__*/new Token(exports.ChainId.MAINNET, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', 18, 'WBNB', 'Wrapped BNB', 'https://www.binance.org'), _WETH[exports.ChainId.TESTNET] = /*#__PURE__*/new Token(exports.ChainId.TESTNET, '0xaE8E19eFB41e7b96815649A6a60785e1fbA84C1e', 18, 'WBNB', 'Wrapped BNB', 'https://www.binance.org'), _WETH);
++var WETH = (_WETH = {}, _WETH[exports.ChainId.MAINNET] = /*#__PURE__*/new Token(exports.ChainId.MAINNET, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', 18, 'WBNB', 'Wrapped BNB', 'https://www.binance.org'), _WETH[exports.ChainId.TESTNET] = /*#__PURE__*/new Token(exports.ChainId.TESTNET, "0xbb5cC00198193E62bB1C02B2bbeA4d542229CD8E", 18, 'WBNB', 'Wrapped BNB', 'https://www.binance.org'), _WETH);
+ 
+ var _toSignificantRoundin, _toFixedRounding;
+ var Decimal = /*#__PURE__*/toFormat(_Decimal);
 diff --git a/node_modules/@pancakeswap/sdk/dist/sdk.esm.js b/node_modules/@pancakeswap/sdk/dist/sdk.esm.js
-index 494a8ed..a16a45b 100644
+index 494a8ed..ffe19e9 100644
 --- a/node_modules/@pancakeswap/sdk/dist/sdk.esm.js
 +++ b/node_modules/@pancakeswap/sdk/dist/sdk.esm.js
 @@ -35,8 +35,8 @@ var Rounding;
@@ -43,6 +52,15 @@ index 494a8ed..a16a45b 100644
  var MINIMUM_LIQUIDITY = /*#__PURE__*/JSBI.BigInt(1000); // exports for internal consumption
  
  var ZERO = /*#__PURE__*/JSBI.BigInt(0);
+@@ -436,7 +436,7 @@ function currencyEquals(currencyA, currencyB) {
+     return currencyA === currencyB;
+   }
+ }
+-var WETH = (_WETH = {}, _WETH[ChainId.MAINNET] = /*#__PURE__*/new Token(ChainId.MAINNET, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', 18, 'WBNB', 'Wrapped BNB', 'https://www.binance.org'), _WETH[ChainId.TESTNET] = /*#__PURE__*/new Token(ChainId.TESTNET, '0xaE8E19eFB41e7b96815649A6a60785e1fbA84C1e', 18, 'WBNB', 'Wrapped BNB', 'https://www.binance.org'), _WETH);
++var WETH = (_WETH = {}, _WETH[ChainId.MAINNET] = /*#__PURE__*/new Token(ChainId.MAINNET, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', 18, 'WBNB', 'Wrapped BNB', 'https://www.binance.org'), _WETH[ChainId.TESTNET] = /*#__PURE__*/new Token(ChainId.TESTNET, "0xbb5cC00198193E62bB1C02B2bbeA4d542229CD8E", 18, 'WBNB', 'Wrapped BNB', 'https://www.binance.org'), _WETH);
+ 
+ var _toSignificantRoundin, _toFixedRounding;
+ var Decimal = /*#__PURE__*/toFormat(_Decimal);
 @@ -759,7 +759,7 @@ var Pair = /*#__PURE__*/function () {
    function Pair(tokenAmountA, tokenAmountB) {
      var tokenAmounts = tokenAmountA.token.sortsBefore(tokenAmountB.token) // does safety checks
@@ -52,3 +70,15 @@ index 494a8ed..a16a45b 100644
      this.tokenAmounts = tokenAmounts;
    }
  
+@@ -1245,7 +1245,10 @@ var Trade = /*#__PURE__*/function () {
+       var pair = pairs[i]; // pair irrelevant
+ 
+       if (!pair.token0.equals(amountIn.token) && !pair.token1.equals(amountIn.token)) continue;
+-      if (pair.reserve0.equalTo(ZERO) || pair.reserve1.equalTo(ZERO)) continue;
++      if (pair.reserve0.equalTo(ZERO) || pair.reserve1.equalTo(ZERO)) {
++        console.log(pair)
++        continue;
++      }
+       var amountOut = void 0;
+ 
+       try {

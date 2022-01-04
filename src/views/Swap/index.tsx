@@ -98,6 +98,9 @@ export default function Swap({ history }: RouteComponentProps) {
   // swap state
   const { independentField, typedValue, recipient } = useSwapState()
   const { v2Trade, currencyBalances, parsedAmount, currencies, inputError: swapInputError } = useDerivedSwapInfo()
+  console.log({
+    v2Trade
+  })
 
   // Price data
   const {
@@ -164,8 +167,13 @@ export default function Swap({ history }: RouteComponentProps) {
 
   const route = trade?.route
   const userHasSpecifiedInputOutput = Boolean(
-    currencies[Field.INPUT] && currencies[Field.OUTPUT] && parsedAmounts[independentField]?.greaterThan(JSBI.BigInt(0)),
+    currencies[Field.INPUT] && currencies[Field.OUTPUT],
   )
+  console.log({
+    userHasSpecifiedInputOutput,
+    route,
+    currencies
+  })
   const noRoute = !route
 
   // check whether the user has approved the router on the input token
