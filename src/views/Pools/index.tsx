@@ -1,39 +1,36 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react'
-import { useLocation } from 'react-router-dom'
-import styled from 'styled-components'
-import { ethers } from 'ethers'
-import { formatUnits } from 'ethers/lib/utils'
-import BigNumber from 'bignumber.js'
+import { Flex, Heading, Image, Text } from '@defifarms/special-uikit'
 import { useWeb3React } from '@web3-react/core'
-import { Heading, Flex, Image, Text } from '@defifarms/special-uikit'
-import orderBy from 'lodash/orderBy'
-import partition from 'lodash/partition'
-import { useTranslation } from 'contexts/Localization'
-import useIntersectionObserver from 'hooks/useIntersectionObserver'
-import {
-  useFetchPublicPoolsData,
-  usePools,
-  useFetchUserPools,
-  useFetchCakeVault,
-  useCakeVault,
-} from 'state/pools/hooks'
-import { usePollFarmsPublicData } from 'state/farms/hooks'
-import { latinise } from 'utils/latinise'
+import BigNumber from 'bignumber.js'
 import FlexLayout from 'components/Layout/Flex'
+import { MainBackground } from 'components/Layout/MainBackground'
 import Page from 'components/Layout/Page'
+import Loading from 'components/Loading'
 import PageHeader from 'components/PageHeader'
 import SearchInput from 'components/SearchInput'
 import Select, { OptionProps } from 'components/Select/Select'
+import { useTranslation } from 'contexts/Localization'
+import { ethers } from 'ethers'
+import { formatUnits } from 'ethers/lib/utils'
+import useIntersectionObserver from 'hooks/useIntersectionObserver'
+import orderBy from 'lodash/orderBy'
+import partition from 'lodash/partition'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
+import { useLocation } from 'react-router-dom'
+import { usePollFarmsPublicData } from 'state/farms/hooks'
+import {
+  useCakeVault, useFetchCakeVault, useFetchPublicPoolsData, useFetchUserPools, usePools
+} from 'state/pools/hooks'
 import { DeserializedPool } from 'state/types'
-import { useUserPoolStakedOnly, useUserPoolsViewMode } from 'state/user/hooks'
 import { ViewMode } from 'state/user/actions'
-import Loading from 'components/Loading'
-import PoolCard from './components/PoolCard'
-import CakeVaultCard from './components/CakeVaultCard'
-import PoolTabButtons from './components/PoolTabButtons'
+import { useUserPoolStakedOnly, useUserPoolsViewMode } from 'state/user/hooks'
+import styled from 'styled-components'
+import { latinise } from 'utils/latinise'
 import BountyCard from './components/BountyCard'
+import CakeVaultCard from './components/CakeVaultCard'
 import HelpButton from './components/HelpButton'
+import PoolCard from './components/PoolCard'
 import PoolsTable from './components/PoolsTable/PoolsTable'
+import PoolTabButtons from './components/PoolTabButtons'
 import { getAprData, getCakeVaultEarnings } from './helpers'
 
 const CardLayout = styled(FlexLayout)`
@@ -254,23 +251,20 @@ const Pools: React.FC = () => {
   const tableLayout = <PoolsTable pools={chosenPools} account={account} userDataLoaded={userDataLoaded} />
 
   return (
-    <>
-      <PageHeader>
+    <MainBackground>
+      <PageHeader background="linear-gradient(269.58deg, #18ACFF 25.78%, #00A3FF 88.47%)" pageName="pools">
         <Flex justifyContent="space-between" flexDirection={['column', null, null, 'row']}>
           <Flex flex="1" flexDirection="column" mr={['8px', 0]}>
-            <Heading as="h1" scale="xxl" color="secondary" mb="24px">
-              {t('Syrup Pools')}
+            <Heading as="h1" scale="xxl" color="white">
+              {t('Pools')}
             </Heading>
-            <Heading scale="md" color="text">
-              {t('Just stake some tokens to earn.')}
-            </Heading>
-            <Heading scale="md" color="text">
-              {t('High APR, low risk.')}
+            <Heading scale="md" color="white">
+              {t('Just stake some tokens to earn. High APR, low risk.')}
             </Heading>
           </Flex>
           <Flex flex="1" height="fit-content" justifyContent="center" alignItems="center" mt={['24px', null, '0']}>
-            <HelpButton />
-            <BountyCard />
+            {/* <HelpButton /> */}
+            {/* <BountyCard /> */}
           </Flex>
         </Flex>
       </PageHeader>
@@ -341,7 +335,7 @@ const Pools: React.FC = () => {
           height={184.5}
         />
       </Page>
-    </>
+    </MainBackground>
   )
 }
 
