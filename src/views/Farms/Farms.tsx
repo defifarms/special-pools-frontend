@@ -1,30 +1,31 @@
-import React, { useEffect, useCallback, useState, useMemo, useRef } from 'react'
-import { Route, useRouteMatch, useLocation, NavLink } from 'react-router-dom'
-import BigNumber from 'bignumber.js'
-import { useWeb3React } from '@web3-react/core'
-import { Image, Heading, RowType, Toggle, Text, Button, ArrowForwardIcon, Flex } from '@defifarms/special-uikit'
+import { Flex, Heading, Image, RowType, Text, Toggle } from '@defifarms/special-uikit'
 import { ChainId } from '@pancakeswap/sdk'
-import styled from 'styled-components'
+import { useWeb3React } from '@web3-react/core'
+import BigNumber from 'bignumber.js'
 import FlexLayout from 'components/Layout/Flex'
+import { MainBackground } from 'components/Layout/MainBackground'
 import Page from 'components/Layout/Page'
-import { useFarms, usePollFarmsWithUserData, usePriceCakeBusd } from 'state/farms/hooks'
-import useIntersectionObserver from 'hooks/useIntersectionObserver'
-import { DeserializedFarm } from 'state/types'
-import { useTranslation } from 'contexts/Localization'
-import { getBalanceNumber } from 'utils/formatBalance'
-import { getFarmApr } from 'utils/apr'
-import { orderBy } from 'lodash'
-import isArchivedPid from 'utils/farmHelpers'
-import { latinise } from 'utils/latinise'
-import { useUserFarmStakedOnly, useUserFarmsViewMode } from 'state/user/hooks'
-import { ViewMode } from 'state/user/actions'
+import Loading from 'components/Loading'
 import PageHeader from 'components/PageHeader'
 import SearchInput from 'components/SearchInput'
 import Select, { OptionProps } from 'components/Select/Select'
-import Loading from 'components/Loading'
+import { useTranslation } from 'contexts/Localization'
+import useIntersectionObserver from 'hooks/useIntersectionObserver'
+import { orderBy } from 'lodash'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { Route, useLocation, useRouteMatch } from 'react-router-dom'
+import { useFarms, usePollFarmsWithUserData, usePriceCakeBusd } from 'state/farms/hooks'
+import { DeserializedFarm } from 'state/types'
+import { ViewMode } from 'state/user/actions'
+import { useUserFarmStakedOnly, useUserFarmsViewMode } from 'state/user/hooks'
+import styled from 'styled-components'
+import { getFarmApr } from 'utils/apr'
+import isArchivedPid from 'utils/farmHelpers'
+import { getBalanceNumber } from 'utils/formatBalance'
+import { latinise } from 'utils/latinise'
 import FarmCard, { FarmWithStakedValue } from './components/FarmCard/FarmCard'
-import Table from './components/FarmTable/FarmTable'
 import FarmTabButtons from './components/FarmTabButtons'
+import Table from './components/FarmTable/FarmTable'
 import { RowProps } from './components/FarmTable/Row'
 import ToggleView from './components/ToggleView/ToggleView'
 import { DesktopColumnSchema } from './components/types'
@@ -38,12 +39,13 @@ const ControlContainer = styled.div`
   justify-content: space-between;
   flex-direction: column;
   margin-bottom: 32px;
+  border-radius: 16px;
+  padding: 0 0 16px 0;
 
   ${({ theme }) => theme.mediaQueries.sm} {
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 16px 32px;
-    margin-bottom: 0;
+    margin-bottom: 18px;
   }
 `
 
@@ -77,7 +79,7 @@ const FilterContainer = styled.div`
 
 const ViewControls = styled.div`
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   display: flex;
   align-items: center;
   width: 100%;
@@ -368,22 +370,14 @@ const Farms: React.FC = () => {
   }
 
   return (
-    <>
-      <PageHeader>
-        <Heading as="h1" scale="xxl" color="secondary" mb="24px">
+    <MainBackground>
+      <PageHeader background="linear-gradient(269.58deg, #ffa318 25.78%, #ff9900 88.47%)" pageName="farms">
+        <Heading as="h1" scale="xxl" color="white">
           {t('Farms')}
         </Heading>
-        <Heading scale="lg" color="text">
-          {t('Stake LP tokens to earn.')}
+        <Heading color="white" style={{ fontWeight: 400 }}>
+          {t('Stake Liquidity Pool (LP) tokens to earn.')}
         </Heading>
-        <NavLink exact activeClassName="active" to="/farms/auction" id="lottery-pot-banner">
-          <Button p="0" variant="text">
-            <Text color="primary" bold fontSize="16px" mr="4px">
-              {t('Community Auctions')}
-            </Text>
-            <ArrowForwardIcon color="primary" />
-          </Button>
-        </NavLink>
       </PageHeader>
       <Page>
         <ControlContainer>
@@ -444,7 +438,7 @@ const Farms: React.FC = () => {
         <div ref={observerRef} />
         <StyledImage src="/images/decorations/3dpan.png" alt="Pancake illustration" width={120} height={103} />
       </Page>
-    </>
+    </MainBackground>
   )
 }
 
