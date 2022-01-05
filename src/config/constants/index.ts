@@ -43,7 +43,7 @@ export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: To
 // used for display in the default list when adding liquidity
 export const SUGGESTED_BASES: ChainTokenList = {
   [ChainId.MAINNET]: [mainnetTokens.usdt, mainnetTokens.defiy, mainnetTokens.btcb],
-  [ChainId.TESTNET]: [testnetTokens.usdt, testnetTokens.defiy, testnetTokens.eth],
+  [ChainId.TESTNET]: [testnetTokens.wbnb, testnetTokens.defiy, testnetTokens.busd, testnetTokens.usdt, testnetTokens.btcb, testnetTokens.eth, testnetTokens.cake],
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
