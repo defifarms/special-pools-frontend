@@ -41,7 +41,7 @@ export default function CurrencyLogo({
   if (currency === ETHER) {
     return <BinanceIcon width={size} style={style} />
   }
-  console.log('srcs', srcs)
+  // console.log('srcs', srcs)
   
   return <StyledLogo size={size} srcs={srcs} alt={`${currency?.symbol ?? 'token'} logo`} style={style} />
 }
