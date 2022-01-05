@@ -1479,10 +1479,10 @@
     debug "^3.1.0"
     lodash.once "^4.1.1"
 
-"@defifarms/special-uikit@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@defifarms/special-uikit/-/special-uikit-0.0.8.tgz#c7538517d94702335d3c1aa8ec26a4e0e5201bfd"
-  integrity sha512-0UO61th079ADrahYqGcuGyR7l3jMN+PvGz+G3YrKE7apPkSFvpmDrgLDFYuGb+C8UqbR73eiUl4RWe/92sYLmg==
+"@defifarms/special-uikit@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@defifarms/special-uikit/-/special-uikit-0.0.9.tgz#9dcc3282d61e044f2f14e2c26b97f08bcfa886db"
+  integrity sha512-VH94WJq7rvCxaa9wQ06CxCUuhFATtZjIMVhomGoIN6i74m3zw72FCrfKHFYjDb/cDior8Qtfvg58O+iJEFKutQ==
   dependencies:
     "@popperjs/core" "^2.9.2"
     "@types/lodash" "^4.14.168"
@@ -2505,7 +2505,7 @@
     eslint-plugin-react "^7.21.5"
     eslint-plugin-react-hooks "^4.0.0"
 
-"@pancakeswap/sdk@^2.4.0":
+"@pancakeswap/sdk@2.4.0":
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@pancakeswap/sdk/-/sdk-2.4.0.tgz#5da040384419cb45ea2b6eee8104d05914e8bd28"
   integrity sha512-c5cLOMVa/dlbVbURPpSY6oNSYm61xN5NgfoYCXY88NisHbgLWd/MNHoM98XjgeJFs7OlKcf4G7nui4XGM9lDSA==
@@ -3806,13 +3806,6 @@
     "@types/react" "*"
     date-fns "^2.0.1"
     popper.js "^1.14.1"
-
-"@types/react-dom@^17.0.4":
-  version "17.0.9"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-17.0.9.tgz#441a981da9d7be117042e1a6fd3dac4b30f55add"
-  integrity sha512-wIvGxLfgpVDSAMH5utdL9Ngm5Owu0VsGmldro3ORLXV8CShrL8awVj06NuEXFQ5xyaYfdca7Sgbk/50Ri1GdPg==
-  dependencies:
-    "@types/react" "*"
 
 "@types/react-redux@^7.1.16":
   version "7.1.17"
