@@ -37,8 +37,8 @@ export default function CurrencyLogo({
     }
     return []
   }, [currency, uriLocations])
-
-  if (currency === ETHER) {
+  
+  if (currency === ETHER || currency.symbol.toLocaleUpperCase() === 'WBNB') {
     return <BinanceIcon width={size} style={style} />
   }
   // console.log('srcs', srcs)

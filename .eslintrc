@@ -15,6 +15,7 @@
   },
   "extends": "@pancakeswap/eslint-config-pancake",
   "rules": {
+    "import/no-unresolved": 0,
     "no-console": [
       "warn",
       {
