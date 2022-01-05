@@ -1,13 +1,22 @@
 import { Button, Flex, Heading, Text } from '@defifarms/special-uikit'
+import { useWeb3React } from '@web3-react/core'
+import BigNumber from 'bignumber.js'
+import Time from 'components/Time'
 import { TokenImage } from 'components/TokenImage'
 import tokens from 'config/constants/tokens'
 import { useTranslation } from 'contexts/Localization'
+import useCountDownTimer from 'hooks/useCountDownTimer'
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { usePollFarmsPublicData } from 'state/farms/hooks'
+import { useFetchCakeVault, useFetchPublicPoolsData, useFetchUserPools, useSpecialPools } from 'state/pools/hooks'
 import { SpecialPoolConfigType } from 'state/types'
 import styled from 'styled-components'
-import useCountDownTimer from 'hooks/useCountDownTimer'
-import Time from 'components/Time'
+import { BIG_ZERO } from 'utils/bigNumber'
+import { SpecialPoolsConfig } from 'config/constants/specialPoolConfig'
+import Apr from 'views/DetailSpecialPool/components/PoolsTable/Apr'
+import { getFullDisplayBalance, formatNumber, getDecimalAmount } from 'utils/formatBalance'
+
 
 const ItemWrap = styled.div`
   width: 100%;
@@ -97,6 +106,29 @@ const SpecialPoolItem: React.FC<{ poolConfig: SpecialPoolConfigType }> = ({ pool
         seconds: 0,
       }
 
+  // ------------ APR caculate 
+  const { account } = useWeb3React()
+  const { pools: poolsWithoutAutoVault, userDataLoaded } = useSpecialPools()
+  usePollFarmsPublicData()
+  useFetchCakeVault()
+  useFetchPublicPoolsData()
+  useFetchUserPools(account)
+
+  const currentSpecialPoolConfig = SpecialPoolsConfig.find((pool) => pool.link === poolConfig.link)
+  const poolsSpecial = poolsWithoutAutoVault.filter((pool) => {
+    const arraySpecialPoolConfig = currentSpecialPoolConfig.childrenPools
+    let isSpecialPools = false
+    arraySpecialPoolConfig.forEach((spoolConfig) => {
+      if (spoolConfig.sousId === pool.sousId) {
+        isSpecialPools = true
+      }
+    })
+    return isSpecialPools
+  })
+  const defiyPools = poolsSpecial[0] || null
+  const stakedBalance =
+    defiyPools && defiyPools?.userData?.stakedBalance ? new BigNumber(defiyPools.userData.stakedBalance) : BIG_ZERO
+
   return (
     <ItemWrap>
       <HeaderItem justifyContent="space-between" flexDirection={['column', null, null, 'row']} width="100%">
@@ -141,11 +173,18 @@ const SpecialPoolItem: React.FC<{ poolConfig: SpecialPoolConfigType }> = ({ pool
         </Flex>
         <Flex justifyContent="space-between" mb="8px">
           <Text>{t('Total')}</Text>
-          <Text color="#FF97CF">{t('30.000$')}</Text>
+          <Text color="#FF97CF">{t(`${formatNumber(poolConfig.capGoal, 0)}$`)}</Text>
         </Flex>
         <Flex justifyContent="space-between" mb="8px">
           <Text>{t('APR (%)')}</Text>
-          <Text color="#FF97CF">{t('20%')}</Text>
+          <Text color="#FF97CF">
+            {poolConfig.childrenPools.length !== 0 ? (
+              <Apr pool={defiyPools} stakedBalance={stakedBalance} showIcon={false} />
+            ) : (
+              t('High profits')
+            )}
+            {/* {t('20%')} */}
+          </Text>
         </Flex>
         <Flex justifyContent="space-between" mb="8px">
           <Text>{t('Invest time')}</Text>

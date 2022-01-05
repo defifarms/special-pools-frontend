@@ -82,7 +82,7 @@ export default function CurrencyInputPanel({
       onCurrencySelect={onCurrencySelect}
       selectedCurrency={currency}
       otherSelectedCurrency={otherCurrency}
-      showCommonBases={showCommonBases}
+      showCommonBases
     />,
   )
   return (

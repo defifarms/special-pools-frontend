@@ -8,6 +8,7 @@ import Loading from 'components/Loading'
 import PageHeader from 'components/PageHeader'
 import SearchInput from 'components/SearchInput'
 import Select, { OptionProps } from 'components/Select/Select'
+import { PoolCategory } from 'config/constants/types'
 import { useTranslation } from 'contexts/Localization'
 import { ethers } from 'ethers'
 import { formatUnits } from 'ethers/lib/utils'
@@ -234,6 +235,7 @@ const Pools: React.FC = () => {
   }
 
   chosenPools = sortPools(chosenPools).slice(0, numberOfPoolsVisible)
+  // chosenPools = sortPools(chosenPools).slice(0, numberOfPoolsVisible).filter((pool) => pool.poolCategory !== PoolCategory.SPECIAL)
   chosenPoolsLength.current = chosenPools.length
 
   const cardLayout = (
@@ -326,14 +328,14 @@ const Pools: React.FC = () => {
         )}
         {viewMode === ViewMode.CARD ? cardLayout : tableLayout}
         <div ref={observerRef} />
-        <Image
+        {/* <Image
           mx="auto"
           mt="12px"
           src="/images/decorations/3d-syrup-bunnies.png"
           alt="Pancake illustration"
           width={192}
           height={184.5}
-        />
+        /> */}
       </Page>
     </MainBackground>
   )

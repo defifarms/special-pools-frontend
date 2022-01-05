@@ -32,9 +32,9 @@
   },
   "dependencies": {
     "@binance-chain/bsc-connector": "^1.0.0",
-    "@pancakeswap/sdk": "2.4.0",
     "@defifarms/special-uikit": "^0.0.5",
     "@ethersproject/experimental": "^5.0.1",
+    "@pancakeswap/sdk": "^2.4.0",
     "@reduxjs/toolkit": "^1.5.0",
     "@types/multicodec": "^1.0.0",
     "@types/node": "^13.13.5",
@@ -65,6 +65,7 @@
     "multicodec": "^2.0.0",
     "multihashes": "^3.0.1",
     "numeral": "^2.0.6",
+    "patch-package": "^6.4.7",
     "qs": "^6.9.4",
     "react": "^17.0.1",
     "react-countup": "^4.3.3",
@@ -83,8 +84,7 @@
     "split-grid": "^1.0.11",
     "styled-components": "^5.3.0",
     "swiper": "^6.8.4",
-    "typescript": "^4.3.2",
-    "patch-package": "^6.4.7"
+    "typescript": "^4.3.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
