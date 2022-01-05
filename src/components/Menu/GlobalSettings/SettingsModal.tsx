@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Text, PancakeToggle, Toggle, Flex, Modal, InjectedModalProps, ThemeSwitcher } from '@defifarms/special-uikit'
+import { Text, Toggle, Flex, Modal, InjectedModalProps } from '@defifarms/special-uikit'
 import {
   useAudioModeManager,
   useExpertModeManager,
@@ -65,17 +65,10 @@ const SettingsModal: React.FC<InjectedModalProps> = ({ onDismiss }) => {
     >
       <ScrollableContainer>
         <Flex pb="24px" flexDirection="column">
-          <Text bold textTransform="uppercase" fontSize="12px" color="secondary" mb="24px">
-            {t('Global')}
-          </Text>
-          <Flex justifyContent="space-between">
-            <Text mb="24px">{t('Dark mode')}</Text>
-            <ThemeSwitcher isDark={isDark} toggleTheme={toggleTheme} />
-          </Flex>
           <GasSettings />
         </Flex>
         <Flex pt="24px" flexDirection="column" borderTop={`1px ${theme.colors.cardBorder} solid`}>
-          <Text bold textTransform="uppercase" fontSize="12px" color="secondary" mb="24px">
+          <Text bold textTransform="uppercase" fontSize="12px" mb="24px">
             {t('Swaps & Liquidity')}
           </Text>
           <TransactionSettings />
@@ -114,7 +107,7 @@ const SettingsModal: React.FC<InjectedModalProps> = ({ onDismiss }) => {
               ml="4px"
             />
           </Flex>
-          <PancakeToggle checked={audioPlay} onChange={toggleSetAudioMode} scale="md" />
+          {/* <PancakeToggle checked={audioPlay} onChange={toggleSetAudioMode} scale="md" /> */}
         </Flex>
       </ScrollableContainer>
     </Modal>

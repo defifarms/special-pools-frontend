@@ -54,7 +54,7 @@ import { StyledInputCurrencyWrapper, StyledSwapContainer } from './styles'
 const Label = styled(Text)`
   font-size: 12px;
   font-weight: bold;
-  color: ${({ theme }) => theme.colors.secondary};
+  color: #fff;
 `
 
 export default function Swap({ history }: RouteComponentProps) {
@@ -389,20 +389,21 @@ export default function Swap({ history }: RouteComponentProps) {
                         onCurrencySelect={handleInputSelect}
                         otherCurrency={currencies[Field.OUTPUT]}
                         id="swap-currency-input"
+                        showCommonBases
                       />
 
                       <AutoColumn justify="space-between">
                         <AutoRow justify={isExpertMode ? 'space-between' : 'center'} style={{ padding: '0 1rem' }}>
-                          <IconButton variant="light" scale="sm">
+                          <ArrowWrapper clickable>
                             <ArrowDownIcon
                               width="16px"
                               onClick={() => {
                                 setApprovalSubmitted(false) // reset 2 step UI for approvals
                                 onSwitchTokens()
                               }}
-                              color={currencies[Field.INPUT] && currencies[Field.OUTPUT] ? 'primary' : 'text'}
+                              color={currencies[Field.INPUT] && currencies[Field.OUTPUT] ? 'four' : 'four'}
                             />
-                          </IconButton>
+                          </ArrowWrapper>
                           {recipient === null && !showWrap && isExpertMode ? (
                             <Button variant="text" id="add-recipient-button" onClick={() => onChangeRecipient('')}>
                               {t('+ Add a send (optional)')}
@@ -419,6 +420,7 @@ export default function Swap({ history }: RouteComponentProps) {
                         onCurrencySelect={handleOutputSelect}
                         otherCurrency={currencies[Field.INPUT]}
                         id="swap-currency-output"
+                        showCommonBases
                       />
 
                       {isExpertMode && recipient !== null && !showWrap ? (
@@ -449,7 +451,7 @@ export default function Swap({ history }: RouteComponentProps) {
                           )}
                           {allowedSlippage !== INITIAL_ALLOWED_SLIPPAGE && (
                             <RowBetween align="center">
-                              <Label>{t('Slippage Tolerance')}</Label>
+                              <Label color="primary">{t('Slippage Tolerance')}</Label>
                               <Text bold color="primary">
                                 {allowedSlippage / 100}%
                               </Text>
