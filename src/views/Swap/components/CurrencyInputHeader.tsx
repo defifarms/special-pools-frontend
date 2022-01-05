@@ -20,6 +20,10 @@ const CurrencyInputContainer = styled(Flex)`
   border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
 `
 
+const SubTitle = styled(Text)`
+  font-family: HK Grotesk;
+`
+
 const CurrencyInputHeader: React.FC<Props> = ({ title, subtitle, setIsChartDisplayed }) => {
   const [expertMode] = useExpertModeManager()
   const toggleChartDisplayed = () => {
@@ -40,9 +44,9 @@ const CurrencyInputHeader: React.FC<Props> = ({ title, subtitle, setIsChartDispl
             {title}
           </Heading>
           <Flex alignItems="center">
-            <Text color="textSubtle" fontSize="14px">
+            <SubTitle color="text" fontSize="14px">
               {subtitle}
-            </Text>
+            </SubTitle>
           </Flex>
         </Flex>
         <Flex>
