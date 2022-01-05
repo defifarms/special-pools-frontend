@@ -1479,10 +1479,10 @@
     debug "^3.1.0"
     lodash.once "^4.1.1"
 
-"@defifarms/special-uikit@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@defifarms/special-uikit/-/special-uikit-0.0.5.tgz#0f2d201c46958f7e6e9e8557d1d74ab7c520e3ee"
-  integrity sha512-1m3J9o7psXnVAVTGjA1WL0VtOYB19RwUPX8068DaIHdo3WfbBM8hBlJDTiTpnyOjzACiUD8DS/EuwqO6gc1mzg==
+"@defifarms/special-uikit@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@defifarms/special-uikit/-/special-uikit-0.0.8.tgz#c7538517d94702335d3c1aa8ec26a4e0e5201bfd"
+  integrity sha512-0UO61th079ADrahYqGcuGyR7l3jMN+PvGz+G3YrKE7apPkSFvpmDrgLDFYuGb+C8UqbR73eiUl4RWe/92sYLmg==
   dependencies:
     "@popperjs/core" "^2.9.2"
     "@types/lodash" "^4.14.168"

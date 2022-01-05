@@ -23,19 +23,23 @@ export default function CurrencyLogo({
 }) {
   const uriLocations = useHttpLocations(currency instanceof WrappedTokenInfo ? currency.logoURI : undefined)
 
+  const getImageUrlFromToken = (address: string) => {
+    return `${window.location.origin}/images/tokens/${address}.svg`
+  }
+
   const srcs: string[] = useMemo(() => {
     if (currency === ETHER) return []
 
     if (currency instanceof Token) {
       if (currency instanceof WrappedTokenInfo) {
-        return [...uriLocations, getTokenLogoURL(currency.address)]
+        return [...uriLocations, getImageUrlFromToken(currency.address)]
       }
-      return [getTokenLogoURL(currency.address)]
+      return [getImageUrlFromToken(currency.address)]
     }
     return []
   }, [currency, uriLocations])
-
-  if (currency === ETHER) {
+  
+  if (currency === ETHER || currency.symbol.toLocaleUpperCase() === 'WBNB') {
     return <BinanceIcon width={size} style={style} />
   }
 

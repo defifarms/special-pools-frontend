@@ -35,13 +35,13 @@ const InputPanel = styled.div`
   flex-flow: column nowrap;
   position: relative;
   border-radius: '20px';
-  background-color: ${({ theme }) => theme.colors.backgroundAlt};
   z-index: 1;
 `
 const Container = styled.div`
   border-radius: 16px;
-  background-color: ${({ theme }) => theme.colors.input};
+  background-color: ${({ theme }) => '#43109E'};
   box-shadow: ${({ theme }) => theme.shadows.inset};
+  border: 0.887863px solid #ac8aea80;
 `
 interface CurrencyInputPanelProps {
   value: string
@@ -120,7 +120,7 @@ export default function CurrencyInputPanel({
           </Flex>
         </CurrencySelectButton>
         {account && (
-          <Text onClick={onMax} color="textSubtle" fontSize="14px" style={{ display: 'inline', cursor: 'pointer' }}>
+          <Text onClick={onMax} color="cyan" fontSize="14px" style={{ display: 'inline', cursor: 'pointer' }}>
             {!hideBalance && !!currency
               ? t('Balance: %balance%', { balance: selectedCurrencyBalance?.toSignificant(6) ?? t('Loading') })
               : ' -'}

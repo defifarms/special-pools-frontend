@@ -55,7 +55,7 @@ export const MinMaxFilter: React.FC<MinMaxFilterProps> = ({ onApply, onClear, ma
   return (
     <InlineMenu
       component={
-        <Button variant="light" scale="sm">
+        <Button variant="four" scale="sm">
           {t('Price')}
         </Button>
       }

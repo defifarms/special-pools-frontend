@@ -156,9 +156,9 @@ export const ListFilter: React.FC<ListFilterProps> = ({ title, traitType, items,
         >
           <Box maxWidth="375px" ref={menuRef}>
             <SearchWrapper alignItems="center" p="16px">
-              <InputGroup startIcon={<SearchIcon color="textSubtle" />}>
+              {/* <InputGroup startIcon={<SearchIcon color="textSubtle" />}>
                 <Input name="query" placeholder={t('Search')} onChange={handleChange} value={query} />
-              </InputGroup>
+              </InputGroup> */}
             </SearchWrapper>
             <Flex alignItems="center" p="16px">
               <FilterButton onClick={toggleSort('label')} style={{ flex: 1 }}>
