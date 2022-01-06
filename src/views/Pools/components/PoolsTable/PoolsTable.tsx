@@ -34,6 +34,9 @@ const ScrollButtonContainer = styled.div`
   padding-top: 5px;
   padding-bottom: 5px;
 `
+const ButtonToTop = styled(Button)`
+  color: ${({ theme }) => theme.colors.four};
+`
 
 const PoolsTable: React.FC<PoolsTableProps> = ({ pools, userDataLoaded, account }) => {
   const { t } = useTranslation()
@@ -55,10 +58,10 @@ const PoolsTable: React.FC<PoolsTableProps> = ({ pools, userDataLoaded, account 
           />
         ))}
         <ScrollButtonContainer>
-          <Button variant="text" onClick={scrollToTop}>
+          <ButtonToTop variant="text" onClick={scrollToTop}>
             {t('To Top')}
-            <ChevronUpIcon color="primary" />
-          </Button>
+            <ChevronUpIcon color="four" />
+          </ButtonToTop>
         </ScrollButtonContainer>
       </StyledTable>
     </StyledTableBorder>

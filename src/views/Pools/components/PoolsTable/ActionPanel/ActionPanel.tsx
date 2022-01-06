@@ -189,22 +189,24 @@ const ActionPanel: React.FC<ActionPanelProps> = ({ account, pool, userDataLoaded
 
   const maxStakeRow = stakingLimit.gt(0) ? (
     <Flex mb="8px" justifyContent="space-between">
-      <Text>{t('Max. stake per user')}:</Text>
-      <Text>{`${getFullDisplayBalance(stakingLimit, stakingToken.decimals, 0)} ${stakingToken.symbol}`}</Text>
+      <Text color="four">{t('Max. stake per user')}:</Text>
+      <Text color="four">{`${getFullDisplayBalance(stakingLimit, stakingToken.decimals, 0)} ${
+        stakingToken.symbol
+      }`}</Text>
     </Flex>
   ) : null
 
   const blocksRow =
     blocksRemaining || blocksUntilStart ? (
       <Flex mb="8px" justifyContent="space-between">
-        <Text>{hasPoolStarted ? t('Ends in') : t('Starts in')}:</Text>
+        <Text color="four">{hasPoolStarted ? t('Ends in') : t('Starts in')}:</Text>
         <Flex>
           <Link external href={getBscScanLink(hasPoolStarted ? endBlock : startBlock, 'countdown')}>
-            <Balance fontSize="16px" value={blocksToDisplay} decimals={0} color="primary" />
-            <Text ml="4px" color="primary" textTransform="lowercase">
+            <Balance color="four" fontSize="16px" value={blocksToDisplay} decimals={0} />
+            <Text ml="4px" color='four' textTransform="lowercase">
               {t('Blocks')}
             </Text>
-            <TimerIcon ml="4px" color="primary" />
+            <TimerIcon ml="4px" color='four' />
           </Link>
         </Flex>
       </Flex>
@@ -251,12 +253,12 @@ const ActionPanel: React.FC<ActionPanelProps> = ({ account, pool, userDataLoaded
         {(isXs || isSm || isMd) && totalStakedRow}
         {shouldShowBlockCountdown && blocksRow}
         <Flex mb="8px" justifyContent={['flex-end', 'flex-end', 'flex-start']}>
-          <LinkExternal href={`/info/token/${earningToken.address}`} bold={false}>
+          <LinkExternal color="four" href={`/info/token/${earningToken.address}`} bold={false}>
             {t('See Token Info')}
           </LinkExternal>
         </Flex>
         <Flex mb="8px" justifyContent={['flex-end', 'flex-end', 'flex-start']}>
-          <LinkExternal href={earningToken.projectLink} bold={false}>
+          <LinkExternal color="four" href={earningToken.projectLink} bold={false}>
             {t('View Project Site')}
           </LinkExternal>
         </Flex>
@@ -265,6 +267,7 @@ const ActionPanel: React.FC<ActionPanelProps> = ({ account, pool, userDataLoaded
             <LinkExternal
               href={`${BASE_BSC_SCAN_URL}/address/${isAutoVault ? cakeVaultContractAddress : poolContractAddress}`}
               bold={false}
+              color="four"
             >
               {t('View Contract')}
             </LinkExternal>
@@ -278,7 +281,7 @@ const ActionPanel: React.FC<ActionPanelProps> = ({ account, pool, userDataLoaded
               height="auto"
               onClick={() => registerToken(tokenAddress, earningToken.symbol, earningToken.decimals)}
             >
-              <Text color="primary">{t('Add to Metamask')}</Text>
+              <Text color="four">{t('Add to Metamask')}</Text>
               <MetamaskIcon ml="4px" />
             </Button>
           </Flex>

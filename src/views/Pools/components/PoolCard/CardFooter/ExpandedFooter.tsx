@@ -94,13 +94,21 @@ const ExpandedFooter: React.FC<ExpandedFooterProps> = ({ pool, account }) => {
   return (
     <ExpandedWrapper flexDirection="column">
       <Flex mb="2px" justifyContent="space-between" alignItems="center">
-        <Text small>{t('Total staked')}:</Text>
+        <Text small color="four">
+          {t('Total staked')}:
+        </Text>
         <Flex alignItems="flex-start">
           {totalStaked && totalStaked.gte(0) ? (
             <>
-              <Balance small value={getTotalStakedBalance()} decimals={0} unit={` ${stakingToken.symbol}`} />
+              <Balance
+                color="four"
+                small
+                value={getTotalStakedBalance()}
+                decimals={0}
+                unit={` ${stakingToken.symbol}`}
+              />
               <span ref={totalStakedTargetRef}>
-                <HelpIcon color="textSubtle" width="20px" ml="6px" mt="4px" />
+                <HelpIcon color="four" width="20px" ml="6px" mt="4px" />
               </span>
             </>
           ) : (
@@ -111,21 +119,27 @@ const ExpandedFooter: React.FC<ExpandedFooterProps> = ({ pool, account }) => {
       </Flex>
       {stakingLimit && stakingLimit.gt(0) && (
         <Flex mb="2px" justifyContent="space-between">
-          <Text small>{t('Max. stake per user')}:</Text>
-          <Text small>{`${getFullDisplayBalance(stakingLimit, stakingToken.decimals, 0)} ${stakingToken.symbol}`}</Text>
+          <Text small color="four">
+            {t('Max. stake per user')}:
+          </Text>
+          <Text small color="four">{`${getFullDisplayBalance(stakingLimit, stakingToken.decimals, 0)} ${
+            stakingToken.symbol
+          }`}</Text>
         </Flex>
       )}
       {shouldShowBlockCountdown && (
         <Flex mb="2px" justifyContent="space-between" alignItems="center">
-          <Text small>{hasPoolStarted ? t('Ends in') : t('Starts in')}:</Text>
+          <Text small color="four">
+            {hasPoolStarted ? t('Ends in') : t('Starts in')}:
+          </Text>
           {blocksRemaining || blocksUntilStart ? (
             <Flex alignItems="center">
               <Link external href={getBscScanLink(hasPoolStarted ? endBlock : startBlock, 'countdown')}>
-                <Balance small value={blocksToDisplay} decimals={0} color="primary" />
-                <Text small ml="4px" color="primary" textTransform="lowercase">
+                <Balance small value={blocksToDisplay} decimals={0} color="four" />
+                <Text small ml="4px" color="four" textTransform="lowercase">
                   {t('Blocks')}
                 </Text>
-                <TimerIcon ml="4px" color="primary" />
+                <TimerIcon ml="4px" color="four" />
               </Link>
             </Flex>
           ) : (
@@ -136,12 +150,12 @@ const ExpandedFooter: React.FC<ExpandedFooterProps> = ({ pool, account }) => {
       {isAutoVault && (
         <Flex mb="2px" justifyContent="space-between" alignItems="center">
           {tooltipVisible && tooltip}
-          <TooltipText ref={targetRef} small>
+          <TooltipText ref={targetRef} small color="four">
             {t('Performance Fee')}
           </TooltipText>
           <Flex alignItems="center">
             {performanceFee ? (
-              <Text ml="4px" small>
+              <Text ml="4px" small color="four">
                 {performanceFee / 100}%
               </Text>
             ) : (
@@ -151,12 +165,12 @@ const ExpandedFooter: React.FC<ExpandedFooterProps> = ({ pool, account }) => {
         </Flex>
       )}
       <Flex mb="2px" justifyContent="flex-end">
-        <LinkExternal href={`/info/token/${earningToken.address}`} bold={false} small>
+        <LinkExternal color="four" href={`/info/token/${earningToken.address}`} bold={false} small>
           {t('See Token Info')}
         </LinkExternal>
       </Flex>
       <Flex mb="2px" justifyContent="flex-end">
-        <LinkExternal href={earningToken.projectLink} bold={false} small>
+        <LinkExternal color="four" href={earningToken.projectLink} bold={false} small>
           {t('View Project Site')}
         </LinkExternal>
       </Flex>
@@ -166,6 +180,7 @@ const ExpandedFooter: React.FC<ExpandedFooterProps> = ({ pool, account }) => {
             href={`${BASE_BSC_SCAN_URL}/address/${isAutoVault ? cakeVaultContractAddress : poolContractAddress}`}
             bold={false}
             small
+            color="four"
           >
             {t('View Contract')}
           </LinkExternal>
@@ -179,7 +194,7 @@ const ExpandedFooter: React.FC<ExpandedFooterProps> = ({ pool, account }) => {
             height="auto"
             onClick={() => registerToken(tokenAddress, earningToken.symbol, earningToken.decimals)}
           >
-            <Text color="primary" fontSize="14px">
+            <Text color="four" fontSize="14px">
               {t('Add to Metamask')}
             </Text>
             <MetamaskIcon ml="4px" />

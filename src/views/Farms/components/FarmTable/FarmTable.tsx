@@ -50,6 +50,9 @@ const TableBody = styled.tbody`
 const TableContainer = styled.div`
   position: relative;
 `
+const ButtonToTop = styled(Button)`
+  color: ${({ theme }) => theme.colors.four};
+`
 
 const ScrollButtonContainer = styled.div`
   display: flex;
@@ -84,10 +87,10 @@ const FarmTable: React.FC<ITableProps> = (props) => {
           </StyledTable>
         </TableWrapper>
         <ScrollButtonContainer>
-          <Button variant="text" onClick={scrollToTop}>
+          <ButtonToTop variant="text" onClick={scrollToTop}>
             {t('To Top')}
-            <ChevronUpIcon color="primary" />
-          </Button>
+            <ChevronUpIcon color="four" />
+          </ButtonToTop>
         </ScrollButtonContainer>
       </TableContainer>
     </Container>
