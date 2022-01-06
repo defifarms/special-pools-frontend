@@ -1821,7 +1821,7 @@ export const testnetTokens = {
     'Wrapped BNB',
     'https://www.binance.com/',
   ),
-  defiy: new Token(TESTNET, '0x5017AE3D04e29B67b33CF96a86980717A773a783', 18, 'DEFIY', 'DEFIY', 'https://defifarms.org'),
+  defiy: new Token(TESTNET, '0xAEDF504fc3AE541D57072D333Cb30cB9bAc0d779', 18, 'DEFIY', 'DEFIY', 'https://defifarms.org'),
   defiynew: new Token(TESTNET, '0xb4648f24fF16D7bE53f8CAAf3fCc6c3acf3F72A2', 18, 'N-DEFIY', 'N-DEFIY', 'https://defifarms.org'),
   cake: new Token(
     TESTNET,

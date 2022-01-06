@@ -18,6 +18,7 @@ const CurrencyInputContainer = styled(Flex)`
   padding: 24px;
   width: 100%;
   border-bottom: 1px solid ${({ theme }) => theme.colors.cardBorder};
+  background: #3F09A2;
 `
 
 const SubTitle = styled(Text)`
@@ -36,7 +37,7 @@ const CurrencyInputHeader: React.FC<Props> = ({ title, subtitle, setIsChartDispl
       <Flex width="100%" alignItems="flex-start" justifyContent="space-between">
         {setIsChartDisplayed && (
           <IconButton onClick={toggleChartDisplayed} variant="text" scale="sm">
-            <ChartIcon width="24px" color="primary" />
+            <ChartIcon width="24px" color="#fff" />
           </IconButton>
         )}
         <Flex flexDirection="column" alignItems="center">
@@ -54,7 +55,7 @@ const CurrencyInputHeader: React.FC<Props> = ({ title, subtitle, setIsChartDispl
             <GlobalSettings color="primary" mr="0" />
           </NotificationDot>
           <IconButton onClick={onPresentTransactionsModal} variant="text" scale="sm">
-            <HistoryIcon color="primary" width="24px" />
+            <HistoryIcon color="#fff" width="24px" />
           </IconButton>
         </Flex>
       </Flex>

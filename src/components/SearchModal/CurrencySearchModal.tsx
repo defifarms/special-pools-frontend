@@ -10,6 +10,8 @@ import {
   InjectedModalProps,
   Heading,
   Button,
+  ArrowBackIcon,
+  IconButton
 } from '@defifarms/special-uikit'
 import styled from 'styled-components'
 import usePrevious from 'hooks/usePreviousValue'
@@ -30,6 +32,11 @@ const Footer = styled.div`
 const StyledModalContainer = styled(ModalContainer)`
   max-width: 420px;
   width: 100%;
+  background: rgba(44, 0, 124, 0.565);
+  border: 0.887863px solid rgba(172, 138, 234, 0.5);
+  box-sizing: border-box;
+  backdrop-filter: blur(177.573px);
+}
 `
 
 const StyledModalBody = styled(ModalBody)`
@@ -40,6 +47,10 @@ const StyledModalBody = styled(ModalBody)`
   &::-webkit-scrollbar {
     display: none;
   }
+`
+
+const HeaderWrapper = styled(ModalHeader)`
+  background-color: rgb(63, 9, 162)
 `
 
 interface CurrencySearchModalProps extends InjectedModalProps {
@@ -91,13 +102,17 @@ export default function CurrencySearchModal({
 
   return (
     <StyledModalContainer minWidth="320px">
-      <ModalHeader>
+      <HeaderWrapper>
         <ModalTitle>
-          {config[modalView].onBack && <ModalBackButton onBack={config[modalView].onBack} />}
+          {config[modalView].onBack && 
+          <IconButton onClick={config[modalView].onBack} variant="text" scale="sm">
+            <ArrowBackIcon height={24} width={24} color="#fff" />
+          </IconButton>
+          }
           <Heading>{config[modalView].title}</Heading>
         </ModalTitle>
         <ModalCloseButton onDismiss={onDismiss} />
-      </ModalHeader>
+      </HeaderWrapper>
       <StyledModalBody>
         {modalView === CurrencyModalView.search ? (
           <CurrencySearch
