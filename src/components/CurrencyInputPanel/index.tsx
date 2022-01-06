@@ -38,10 +38,10 @@ const InputPanel = styled.div`
   z-index: 1;
 `
 const Container = styled.div`
-  border-radius: 16px;
-  background-color: ${({ theme }) => '#43109E'};
+  border-radius: 14px;
+  background-color: #43109E;
   box-shadow: ${({ theme }) => theme.shadows.inset};
-  border: 0.887863px solid #ac8aea80;
+  border: 0.887863px solid #AC8AEA;
 `
 interface CurrencyInputPanelProps {
   value: string

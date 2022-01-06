@@ -370,7 +370,7 @@ export default function Swap({ history }: RouteComponentProps) {
               <StyledInputCurrencyWrapper mt={isChartExpanded ? '24px' : '0'} mr={isChartExpanded ? '0' : '0'}>
                 <AppBody>
                   <CurrencyInputHeader
-                    title={t('Swap')}
+                    title={t('Exchange')}
                     subtitle={t('Trade tokens in an instant')}
                     setIsChartDisplayed={setIsChartDisplayed}
                     isChartDisplayed={isChartDisplayed}
@@ -502,7 +502,7 @@ export default function Swap({ history }: RouteComponentProps) {
                             )}
                           </Button>
                           <Button
-                            variant={isValid && priceImpactSeverity > 2 ? 'danger' : 'primary'}
+                            variant={isValid && priceImpactSeverity > 2 ? 'danger' : 'four'}
                             onClick={() => {
                               if (isExpertMode) {
                                 handleSwap()
@@ -533,7 +533,7 @@ export default function Swap({ history }: RouteComponentProps) {
                         </RowBetween>
                       ) : (
                         <Button
-                          variant={isValid && priceImpactSeverity > 2 && !swapCallbackError ? 'danger' : 'primary'}
+                          variant={isValid && priceImpactSeverity > 2 && !swapCallbackError ? 'danger' : 'four'}
                           onClick={() => {
                             if (isExpertMode) {
                               handleSwap()
