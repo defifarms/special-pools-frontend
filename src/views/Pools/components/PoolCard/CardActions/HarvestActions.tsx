@@ -1,10 +1,11 @@
-import React from 'react'
-import { Flex, Text, Button, Heading, useModal, Skeleton } from '@defifarms/special-uikit'
-import BigNumber from 'bignumber.js'
+import { Button, Flex, Heading, Skeleton, Text, useModal } from '@defifarms/special-uikit'
 import { Token } from '@pancakeswap/sdk'
-import { useTranslation } from 'contexts/Localization'
-import { getFullDisplayBalance, getBalanceNumber, formatNumber } from 'utils/formatBalance'
+import BigNumber from 'bignumber.js'
 import Balance from 'components/Balance'
+import { useTranslation } from 'contexts/Localization'
+import React from 'react'
+import styled from 'styled-components'
+import { formatNumber, getBalanceNumber, getFullDisplayBalance } from 'utils/formatBalance'
 import CollectModal from '../Modals/CollectModal'
 
 interface HarvestActionsProps {
@@ -15,6 +16,10 @@ interface HarvestActionsProps {
   isBnbPool: boolean
   isLoading?: boolean
 }
+
+const ButtonHarvestStyled = styled(Button)`
+  background: ${({ theme }) => theme.colors.royalBlue};
+`
 
 const HarvestActions: React.FC<HarvestActionsProps> = ({
   earnings,
@@ -79,9 +84,9 @@ const HarvestActions: React.FC<HarvestActionsProps> = ({
           </>
         )}
       </Flex>
-      <Button disabled={!hasEarnings} onClick={onPresentCollect}>
+      <ButtonHarvestStyled disabled={!hasEarnings} onClick={onPresentCollect}>
         {isCompoundPool ? t('Collect') : t('Harvest')}
-      </Button>
+      </ButtonHarvestStyled>
     </Flex>
   )
 }

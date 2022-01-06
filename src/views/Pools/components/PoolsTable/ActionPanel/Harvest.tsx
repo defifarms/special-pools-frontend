@@ -1,20 +1,25 @@
-import React from 'react'
-import { Button, Text, useModal, Flex, Skeleton, Heading } from '@defifarms/special-uikit'
-import BigNumber from 'bignumber.js'
+import { Button, Flex, Heading, Skeleton, Text, useModal } from '@defifarms/special-uikit'
 import { useWeb3React } from '@web3-react/core'
-import { PoolCategory } from 'config/constants/types'
-import { formatNumber, getBalanceNumber, getFullDisplayBalance } from 'utils/formatBalance'
-import { useTranslation } from 'contexts/Localization'
+import BigNumber from 'bignumber.js'
 import Balance from 'components/Balance'
-import { BIG_ZERO } from 'utils/bigNumber'
+import { PoolCategory } from 'config/constants/types'
+import { useTranslation } from 'contexts/Localization'
+import React from 'react'
 import { DeserializedPool } from 'state/types'
-
-import { ActionContainer, ActionTitles, ActionContent } from './styles'
+import styled from 'styled-components'
+import { BIG_ZERO } from 'utils/bigNumber'
+import { formatNumber, getBalanceNumber, getFullDisplayBalance } from 'utils/formatBalance'
 import CollectModal from '../../PoolCard/Modals/CollectModal'
+import { ActionContainer, ActionContent, ActionTitles } from './styles'
+
 
 interface HarvestActionProps extends DeserializedPool {
   userDataLoaded: boolean
 }
+
+const ButtonHarvestStyled = styled(Button)`
+  background: ${({ theme }) => theme.colors.royalBlue};
+`
 
 const HarvestAction: React.FunctionComponent<HarvestActionProps> = ({
   sousId,
@@ -113,9 +118,9 @@ const HarvestAction: React.FunctionComponent<HarvestActionProps> = ({
             )}
           </>
         </Flex>
-        <Button disabled={!hasEarnings} onClick={onPresentCollect}>
+        <ButtonHarvestStyled disabled={!hasEarnings} onClick={onPresentCollect}>
           {isCompoundPool ? t('Collect') : t('Harvest')}
-        </Button>
+        </ButtonHarvestStyled>
       </ActionContent>
     </ActionContainer>
   )
