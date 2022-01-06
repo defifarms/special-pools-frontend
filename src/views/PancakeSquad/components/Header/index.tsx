@@ -77,7 +77,7 @@ const PancakeSquadHeader: React.FC<PancakeSquadHeaderType> = ({
         {`${t('Public Sale:')} 08:00 UTC, Oct. 7`}
       </Text>
       <Text color={lightColors.warning} textAlign="center" bold>
-        {t('Mint Cost: %minCost% CAKE each', {
+        {t('Mint Cost: %minCost% DEFIY each', {
           minCost: DEFAULT_CAKE_COST,
         })}
       </Text>

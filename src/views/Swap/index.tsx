@@ -486,7 +486,7 @@ export default function Swap({ history }: RouteComponentProps) {
                       ) : showApproveFlow ? (
                         <RowBetween>
                           <Button
-                            variant={approval === ApprovalState.APPROVED ? 'success' : 'primary'}
+                            variant={approval === ApprovalState.APPROVED ? 'success' : 'four'}
                             onClick={approveCallback}
                             disabled={approval !== ApprovalState.NOT_APPROVED || approvalSubmitted}
                             width="48%"

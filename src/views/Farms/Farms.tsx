@@ -41,11 +41,13 @@ const ControlContainer = styled.div`
   margin-bottom: 32px;
   border-radius: 16px;
   padding: 0 0 16px 0;
+  align-items: flex-end;
 
   ${({ theme }) => theme.mediaQueries.sm} {
     flex-direction: row;
     flex-wrap: wrap;
     margin-bottom: 18px;
+    padding: 16px 32px;
   }
 `
 
@@ -98,11 +100,6 @@ const ViewControls = styled.div`
   }
 `
 
-const StyledImage = styled(Image)`
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 58px;
-`
 const NUMBER_OF_FARMS_VISIBLE = 12
 
 const getDisplayApr = (cakeRewardsApr?: number, lpRewardsApr?: number) => {
@@ -396,7 +393,7 @@ const Farms: React.FC = () => {
           </ViewControls>
           <FilterContainer>
             <LabelWrapper>
-              <Text fontSize="18px" mb="4px" color="secondary">
+              <Text style={{ fontSize: 18 }} mb="4px" color="secondary">
                 {t('Sort by')}
               </Text>
               <Select
@@ -426,7 +423,7 @@ const Farms: React.FC = () => {
               />
             </LabelWrapper>
             <LabelWrapper style={{ marginLeft: 16 }}>
-              <Text fontSize="18px" mb="4px" color="secondary">
+              <Text style={{ fontSize: 18 }} mb="4px" color="secondary">
                 {t('Search')}
               </Text>
               <SearchInput onChange={handleChangeQuery} placeholder="Search Farms" />

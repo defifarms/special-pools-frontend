@@ -47,6 +47,7 @@ const PoolControls = styled.div`
   justify-content: space-between;
   flex-direction: column;
   margin-bottom: 32px;
+  align-items: flex-end;
 
   ${({ theme }) => theme.mediaQueries.sm} {
     flex-direction: row;
@@ -281,7 +282,7 @@ const Pools: React.FC = () => {
           />
           <FilterContainer>
             <LabelWrapper>
-              <Text fontSize="18px" mb="4px" color="secondary">
+              <Text style={{ fontSize: 18 }} mb="4px" color="secondary">
                 {t('Sort by')}
               </Text>
               <ControlStretch>
@@ -309,7 +310,7 @@ const Pools: React.FC = () => {
               </ControlStretch>
             </LabelWrapper>
             <LabelWrapper style={{ marginLeft: 16 }}>
-              <Text fontSize="18px" mb="4px" color="secondary">
+              <Text style={{ fontSize: 18 }} mb="4px" color="secondary">
                 {t('Search')}
               </Text>
               <SearchInput onChange={handleChangeSearchQuery} placeholder="Search Pools" />

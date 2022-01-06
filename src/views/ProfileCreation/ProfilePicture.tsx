@@ -124,6 +124,7 @@ const ProfilePicture: React.FC = () => {
             onClick={handleApprove}
             endIcon={isApproving ? <AutoRenewIcon spin color="currentColor" /> : undefined}
             id="approveStarterCollectible"
+            variant="four"
           >
             {t('Enable')}
           </Button>

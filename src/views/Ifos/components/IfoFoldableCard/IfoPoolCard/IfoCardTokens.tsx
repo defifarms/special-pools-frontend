@@ -95,7 +95,7 @@ const IfoCardTokens: React.FC<IfoCardTokensProps> = ({
   const { t } = useTranslation()
   const { targetRef, tooltip, tooltipVisible } = useTooltip(
     t(
-      'Sorry, you didn’t contribute enough CAKE to meet the minimum threshold. You didn’t buy anything in this sale, but you can still reclaim your CAKE.',
+      'Sorry, you didn’t contribute enough DEFIY to meet the minimum threshold. You didn’t buy anything in this sale, but you can still reclaim your DEFIY.',
     ),
     { placement: 'bottom' },
   )

@@ -18,7 +18,7 @@ const ToggleWrapper = styled.div`
 
 const ViewControls = styled.div`
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   display: flex;
   align-items: center;
   width: 100%;
@@ -41,6 +41,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 300px;
 
   a {
     padding-left: 12px;
@@ -51,6 +52,9 @@ const Wrapper = styled.div`
     margin-left: 16px;
   }
 `
+const ButtonMenuStyled = styled(ButtonMenu)`
+  background-color: #631ad1;
+`
 
 const PoolTabButtons = ({ stakedOnly, setStakedOnly, hasStakeInFinishedPools, viewMode, setViewMode }) => {
   const { url, isExact } = useRouteMatch()
@@ -60,16 +64,16 @@ const PoolTabButtons = ({ stakedOnly, setStakedOnly, hasStakeInFinishedPools, vi
 
   const liveOrFinishedSwitch = (
     <Wrapper>
-      <ButtonMenu activeIndex={isExact ? 0 : 1} scale="sm" variant="subtle">
+      <ButtonMenuStyled fullWidth activeIndex={isExact ? 0 : 1} scale="md" variant="primary">
         <ButtonMenuItem as={Link} to={`${url}`}>
           {t('Live')}
         </ButtonMenuItem>
-        <NotificationDot show={hasStakeInFinishedPools}>
-          <ButtonMenuItem id="finished-pools-button" as={Link} to={`${url}/history`}>
-            {t('Finished')}
-          </ButtonMenuItem>
-        </NotificationDot>
-      </ButtonMenu>
+        {/* <NotificationDot show={hasStakeInFinishedPools}> */}
+        <ButtonMenuItem as={Link} to={`${url}/history`}>
+          {t('Finished')}
+        </ButtonMenuItem>
+        {/* </NotificationDot> */}
+      </ButtonMenuStyled>
     </Wrapper>
   )
 

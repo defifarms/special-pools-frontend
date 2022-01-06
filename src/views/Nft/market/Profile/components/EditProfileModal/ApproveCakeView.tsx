@@ -44,7 +44,7 @@ const ApproveCakePage: React.FC<ApproveCakePageProps> = ({ goToChange, onDismiss
     <Flex flexDirection="column">
       <Flex alignItems="center" justifyContent="space-between" mb="24px">
         <Text>{profile.isActive ? t('Cost to update:') : t('Cost to reactivate:')}</Text>
-        <Text>{formatBigNumber(cost)} CAKE</Text>
+        <Text>{formatBigNumber(cost)} DEFIY</Text>
       </Flex>
       <Button
         disabled={isApproving}
@@ -53,6 +53,7 @@ const ApproveCakePage: React.FC<ApproveCakePageProps> = ({ goToChange, onDismiss
         width="100%"
         mb="8px"
         onClick={handleApprove}
+        variant="four"
       >
         {t('Enable')}
       </Button>

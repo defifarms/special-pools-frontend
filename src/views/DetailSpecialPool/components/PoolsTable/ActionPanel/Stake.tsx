@@ -190,7 +190,7 @@ const Staked: React.FunctionComponent<StackedActionProps> = ({ pool, userDataLoa
   if (needsApproval) {
     return (
       <ActionContainer>
-        <ButtonEnable width="100%" disabled={requestedApproval} onClick={handleApprove} variant="primary">
+        <ButtonEnable width="100%" disabled={requestedApproval} onClick={handleApprove} variant="four">
           {t('Enable')}
         </ButtonEnable>
       </ActionContainer>
