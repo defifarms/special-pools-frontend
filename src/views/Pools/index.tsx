@@ -281,7 +281,7 @@ const Pools: React.FC = () => {
           />
           <FilterContainer>
             <LabelWrapper>
-              <Text fontSize="12px" bold color="textSubtle" textTransform="uppercase">
+              <Text fontSize="18px" mb="4px" color="secondary">
                 {t('Sort by')}
               </Text>
               <ControlStretch>
@@ -309,7 +309,7 @@ const Pools: React.FC = () => {
               </ControlStretch>
             </LabelWrapper>
             <LabelWrapper style={{ marginLeft: 16 }}>
-              <Text fontSize="12px" bold color="textSubtle" textTransform="uppercase">
+              <Text fontSize="18px" mb="4px" color="secondary">
                 {t('Search')}
               </Text>
               <SearchInput onChange={handleChangeSearchQuery} placeholder="Search Pools" />

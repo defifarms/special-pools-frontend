@@ -1829,7 +1829,7 @@ export const testnetTokens = {
     'PancakeSwap Token',
     'https://pancakeswap.finance/',
   ),
-  usdt: new Token(TESTNET, '0xA6362A6C4498c7E435a5C4Dd79ee42e62837fACA', 18, 'USDT', 'Tether USD', 'https://defifarms.org'),
+  usdt: new Token(TESTNET, '0x4aa236cf4516c7c94789bf2266fbf033387ff4ae', 18, 'DUSDT', 'Tether USD', 'https://defifarms.org'),
   btcb: new Token(TESTNET, '0x5f319004A2378a0ed9b398e102BDda9186AA4242', 18, 'BTCB', 'Binance BTC', 'https://bitcoin.org/'),
   eth: new Token(TESTNET, '0x0f51c1691F5dBa6BBF95d9dEdA9Fd0f2AB26015D', 18, 'ETH', 'Binance-Peg Ethereum Token', 'https://ethereum.org/en/'),
   busd: new Token(

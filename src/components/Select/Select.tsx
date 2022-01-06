@@ -10,9 +10,9 @@ const DropDownHeader = styled.div`
   justify-content: space-between;
   padding: 0px 16px;
   box-shadow: ${({ theme }) => theme.shadows.inset};
-  border: 1px solid ${({ theme }) => theme.colors.inputSecondary};
-  border-radius: 16px;
-  background: ${({ theme }) => theme.colors.input};
+  border: 1px solid ${({ theme }) => theme.colors.cyan};
+  border-radius: 10px;
+  background: #5c1bbd;
   transition: border-radius 0.15s;
 `
 
@@ -21,7 +21,7 @@ const DropDownListContainer = styled.div`
   height: 0;
   position: absolute;
   overflow: hidden;
-  background: ${({ theme }) => theme.colors.input};
+  background: #5C1BBD;
   z-index: ${({ theme }) => theme.zIndices.dropdown};
   transition: transform 0.15s, opacity 0.15s;
   transform: scaleY(0);
@@ -38,8 +38,8 @@ const DropDownContainer = styled(Box)<{ isOpen: boolean }>`
   cursor: pointer;
   width: 100%;
   position: relative;
-  background: ${({ theme }) => theme.colors.input};
-  border-radius: 16px;
+  background: #5C1BBD;
+  border-radius: 10px;
   height: 40px;
   min-width: 136px;
   user-select: none;
@@ -53,18 +53,18 @@ const DropDownContainer = styled(Box)<{ isOpen: boolean }>`
     props.isOpen &&
     css`
       ${DropDownHeader} {
-        border-bottom: 1px solid ${({ theme }) => theme.colors.inputSecondary};
+        border-bottom: 1px solid ${({ theme }) => theme.colors.cyan};
         box-shadow: ${({ theme }) => theme.tooltip.boxShadow};
-        border-radius: 16px 16px 0 0;
+        border-radius: 10px 10px 0 0;
       }
 
       ${DropDownListContainer} {
         height: auto;
         transform: scaleY(1);
         opacity: 1;
-        border: 1px solid ${({ theme }) => theme.colors.inputSecondary};
+        border: 1px solid ${({ theme }) => theme.colors.cyan};
         border-top-width: 0;
-        border-radius: 0 0 16px 16px;
+        border-radius: 0 0 10px 10px;
         box-shadow: ${({ theme }) => theme.tooltip.boxShadow};
       }
     `}
@@ -88,7 +88,7 @@ const ListItem = styled.li`
   list-style: none;
   padding: 8px 16px;
   &:hover {
-    background: ${({ theme }) => theme.colors.inputSecondary};
+    background: ${({ theme }) => theme.colors.cyan};
   }
 `
 

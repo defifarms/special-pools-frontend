@@ -396,7 +396,9 @@ const Farms: React.FC = () => {
           </ViewControls>
           <FilterContainer>
             <LabelWrapper>
-              <Text textTransform="uppercase">{t('Sort by')}</Text>
+              <Text fontSize="18px" mb="4px" color="secondary">
+                {t('Sort by')}
+              </Text>
               <Select
                 options={[
                   {
@@ -424,7 +426,9 @@ const Farms: React.FC = () => {
               />
             </LabelWrapper>
             <LabelWrapper style={{ marginLeft: 16 }}>
-              <Text textTransform="uppercase">{t('Search')}</Text>
+              <Text fontSize="18px" mb="4px" color="secondary">
+                {t('Search')}
+              </Text>
               <SearchInput onChange={handleChangeQuery} placeholder="Search Farms" />
             </LabelWrapper>
           </FilterContainer>
