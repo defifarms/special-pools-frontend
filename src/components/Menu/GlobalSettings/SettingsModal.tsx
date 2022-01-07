@@ -61,13 +61,13 @@ const SettingsModal: React.FC<InjectedModalProps> = ({ onDismiss }) => {
       title={t('Settings')}
       headerBackground="gradients.cardHeader"
       onDismiss={onDismiss}
-      style={{ maxWidth: '420px' }}
+      style={{ maxWidth: '600px' }}
     >
       <ScrollableContainer>
-        <Flex pb="24px" flexDirection="column">
+        {/* <Flex pb="24px" flexDirection="column">
           <GasSettings />
-        </Flex>
-        <Flex pt="24px" flexDirection="column" borderTop={`1px ${theme.colors.cardBorder} solid`}>
+        </Flex> */}
+        <Flex flexDirection="column">
           <Text bold textTransform="uppercase" fontSize="12px" mb="24px">
             {t('Swaps & Liquidity')}
           </Text>

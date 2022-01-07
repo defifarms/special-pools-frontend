@@ -71,7 +71,7 @@ export function MinimalPositionCard({ pair, showUnwrapped = false }: PositionCar
   return (
     <>
       {userPoolBalance && JSBI.greaterThan(userPoolBalance.raw, JSBI.BigInt(0)) ? (
-        <Card>
+        <Card isSuccess>
           <CardBody>
             <AutoColumn gap="16px">
               <FixedHeightRow>
@@ -172,7 +172,7 @@ export default function FullPositionCard({ pair, ...props }: PositionCardProps) 
       : [undefined, undefined]
 
   return (
-    <Card style={{ borderRadius: '12px' }} {...props}>
+    <Card isSuccess style={{ borderRadius: '10px' }} {...props}>
       <Flex justifyContent="space-between" role="button" onClick={() => setShowMore(!showMore)} p="16px">
         <Flex flexDirection="column">
           <Flex alignItems="center" mb="4px">
@@ -236,7 +236,7 @@ export default function FullPositionCard({ pair, ...props }: PositionCardProps) 
               <Button
                 as={Link}
                 to={`/remove/${currencyId(currency0)}/${currencyId(currency1)}`}
-                variant="primary"
+                variant="four"
                 width="100%"
                 mb="8px"
               >

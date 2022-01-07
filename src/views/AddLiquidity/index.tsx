@@ -373,13 +373,13 @@ export default function AddLiquidity({
               />
               {currencies[Field.CURRENCY_A] && currencies[Field.CURRENCY_B] && pairState !== PairState.INVALID && (
                 <>
-                  <LightCard padding="0px" borderRadius="20px">
+                  <LightCard padding="0px" borderRadius="10px">
                     <RowBetween padding="1rem">
                       <Text fontSize="14px">
                         {noLiquidity ? t('Initial prices and pool share') : t('Prices and pool share')}
                       </Text>
                     </RowBetween>{' '}
-                    <LightCard padding="1rem" borderRadius="20px">
+                    <LightCard padding="1rem" borderRadius="10px">
                       <PoolPriceBar
                         currencies={currencies}
                         poolTokenPercentage={poolTokenPercentage}
@@ -437,7 +437,7 @@ export default function AddLiquidity({
                     variant={
                       !isValid && !!parsedAmounts[Field.CURRENCY_A] && !!parsedAmounts[Field.CURRENCY_B]
                         ? 'danger'
-                        : 'primary'
+                        : 'four'
                     }
                     onClick={() => {
                       if (expertMode) {

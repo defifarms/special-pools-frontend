@@ -102,7 +102,7 @@ export default function Pool() {
             )}
           </Body>
           <CardFooter style={{ textAlign: 'center' }}>
-            <Button id="join-pool-button" as={Link} to="/add" width="100%" startIcon={<AddIcon color="white" />}>
+            <Button variant='four' id="join-pool-button" as={Link} to="/add" width="100%" startIcon={<AddIcon color="white" />}>
               {t('Add Liquidity')}
             </Button>
           </CardFooter>

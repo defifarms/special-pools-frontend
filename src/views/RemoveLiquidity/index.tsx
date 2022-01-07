@@ -654,7 +654,7 @@ export default function RemoveLiquidity({
                   variant={
                     !isValid && !!parsedAmounts[Field.CURRENCY_A] && !!parsedAmounts[Field.CURRENCY_B]
                       ? 'danger'
-                      : 'primary'
+                      : 'four'
                   }
                   onClick={() => {
                     onPresentRemoveLiquidity()

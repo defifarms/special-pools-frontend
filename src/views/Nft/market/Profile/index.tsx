@@ -36,7 +36,7 @@ const NftProfile = () => {
         <Page style={{ minHeight: 'auto' }}>
           <Flex p="24px" flexDirection="column" alignItems="center">
             <NoNftsImage />
-            <Text textAlign="center" maxWidth="420px" pt="8px" bold>
+            <Text textAlign="center" maxWidth="600px" pt="8px" bold>
               {t('Please enter a valid address, or connect your wallet to view your profile')}
             </Text>
           </Flex>

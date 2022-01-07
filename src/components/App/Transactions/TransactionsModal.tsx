@@ -50,7 +50,7 @@ const TransactionsModal: React.FC<InjectedModalProps> = ({ onDismiss }) => {
             <>
               <AutoRow mb="1rem" style={{ justifyContent: 'space-between' }}>
                 <Text>{t('Recent Transactions')}</Text>
-                <Button variant="tertiary" scale="xs" onClick={clearAllTransactionsCallback}>
+                <Button variant="danger" scale="sm" onClick={clearAllTransactionsCallback}>
                   {t('clear all')}
                 </Button>
               </AutoRow>

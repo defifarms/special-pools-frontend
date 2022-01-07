@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { escapeRegExp } from 'utils'
+import styled from 'styled-components'
 import { Text, Button, Input, Flex, Box } from '@defifarms/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { useUserSlippageTolerance, useUserTransactionTTL } from 'state/user/hooks'
@@ -14,6 +15,19 @@ enum SlippageError {
 enum DeadlineError {
   InvalidInput = 'InvalidInput',
 }
+
+const ButtonStyled = styled(Button)`
+  border: 1px solid #ac8aea;
+  padding: 4px 16px;
+`
+
+const InputStyled = styled(Input)`
+  padding: 10px 16px;
+  height: unset;
+  border-radius: 10px;
+  fontsize: 24px;
+  font-weight: bold;
+`
 
 const inputRegex = RegExp(`^\\d*(?:\\\\[.])?\\d*$`) // match escaped "." characters via in a non-capturing group
 
@@ -88,47 +102,68 @@ const SlippageTabs = () => {
             ml="4px"
           />
         </Flex>
-        <Flex flexWrap="wrap">
-          <Button
+        <Flex flexWrap="wrap" justifyContent="center">
+          <ButtonStyled
             mt="4px"
             mr="4px"
-            scale="sm"
+            scale="md"
             onClick={() => {
               setSlippageInput('')
               setUserSlippageTolerance(10)
             }}
-            variant={userSlippageTolerance === 10 ? 'primary' : 'tertiary'}
+            variant={userSlippageTolerance === 10 ? 'four' : 'tertiary'}
           >
-            0.1%
-          </Button>
-          <Button
+            <Text
+              fontSize="24px"
+              fontWeight="bold"
+              fontFamily="HK Grotesk"
+              color={userSlippageTolerance === 10 ? 'white' : 'cyan'}
+            >
+              0.1%
+            </Text>
+          </ButtonStyled>
+          <ButtonStyled
             mt="4px"
             mr="4px"
-            scale="sm"
+            scale="md"
             onClick={() => {
               setSlippageInput('')
               setUserSlippageTolerance(50)
             }}
-            variant={userSlippageTolerance === 50 ? 'primary' : 'tertiary'}
+            variant={userSlippageTolerance === 50 ? 'four' : 'tertiary'}
           >
-            0.5%
-          </Button>
-          <Button
+            <Text
+              fontSize="24px"
+              fontWeight="bold"
+              fontFamily="HK Grotesk"
+              color={userSlippageTolerance === 50 ? 'white' : 'cyan'}
+            >
+              0.5%
+            </Text>
+          </ButtonStyled>
+          <ButtonStyled
             mr="4px"
             mt="4px"
-            scale="sm"
+            scale="md"
             onClick={() => {
               setSlippageInput('')
               setUserSlippageTolerance(100)
             }}
-            variant={userSlippageTolerance === 100 ? 'primary' : 'tertiary'}
+            variant={userSlippageTolerance === 100 ? 'four' : 'tertiary'}
           >
-            1.0%
-          </Button>
+            <Text
+              fontSize="24px"
+              fontWeight="bold"
+              fontFamily="HK Grotesk"
+              color={userSlippageTolerance === 100 ? 'white' : 'cyan'}
+            >
+              1.0%
+            </Text>
+          </ButtonStyled>
           <Flex alignItems="center">
-            <Box width="76px" mt="4px">
-              <Input
-                scale="sm"
+            <Box width="100%" mt="4px">
+              <InputStyled
+                scale="md"
                 inputMode="decimal"
                 pattern="^[0-9]*[.,]?[0-9]{0,2}$"
                 placeholder={(userSlippageTolerance / 100).toFixed(2)}
@@ -145,7 +180,7 @@ const SlippageTabs = () => {
                 isSuccess={![10, 50, 100].includes(userSlippageTolerance)}
               />
             </Box>
-            <Text color="primary" bold ml="2px">
+            <Text color="white" fontSize="24px" bold ml="2px">
               %
             </Text>
           </Flex>
@@ -170,8 +205,8 @@ const SlippageTabs = () => {
           />
         </Flex>
         <Flex>
-          <Box width="52px" mt="4px">
-            <Input
+          <Box mt="4px">
+            <InputStyled
               scale="sm"
               inputMode="numeric"
               pattern="^[0-9]+$"

@@ -20,7 +20,7 @@ const ImportTokenWarningModal: React.FC<Props> = ({ tokens, onDismiss, onCancel 
         }
         onCancel()
       }}
-      style={{ maxWidth: '420px' }}
+      style={{ maxWidth: '600px' }}
     >
       <ImportToken tokens={tokens} handleCurrencySelect={onDismiss} />
     </Modal>
