@@ -18,19 +18,19 @@ const pools: SerializedPoolConfig[] = [
     sortOrder: 1,
     isFinished: true,
   },
-  // {
-  //   sousId: 4,
-  //   stakingToken: serializedTokens.defiy,
-  //   earningToken: serializedTokens.defiy,
-  //   contractAddress: {
-  //     97: '0xc7437617f89A23FA7eACB90f6b3D663055B5d467',
-  //     56: '',
-  //   },
-  //   poolCategory: PoolCategory.CORE,
-  //   tokenPerBlock: '0.01',
-  //   sortOrder: 2,
-  //   isFinished: false,
-  // },
+  {
+    sousId: 1,
+    stakingToken: serializedTokens.defiy,
+    earningToken: serializedTokens.defiy,
+    contractAddress: {
+      97: '0x2C149949B4B8cc29FDCD251ab1d58a5c7fD4996d',
+      56: '',
+    },
+    poolCategory: PoolCategory.CORE,
+    tokenPerBlock: '0.01',
+    sortOrder: 2,
+    isFinished: false,
+  },
   /**
    * SpecialPools start from 500
    */
