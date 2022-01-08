@@ -235,8 +235,8 @@ const Pools: React.FC = () => {
     )
   }
 
-  chosenPools = sortPools(chosenPools).slice(0, numberOfPoolsVisible)
-  // chosenPools = sortPools(chosenPools).slice(0, numberOfPoolsVisible).filter((pool) => pool.poolCategory !== PoolCategory.SPECIAL)
+  // chosenPools = sortPools(chosenPools).slice(0, numberOfPoolsVisible)
+  chosenPools = sortPools(chosenPools).slice(0, numberOfPoolsVisible).filter((pool) => pool.poolCategory !== PoolCategory.SPECIAL)
   chosenPoolsLength.current = chosenPools.length
 
   const cardLayout = (
