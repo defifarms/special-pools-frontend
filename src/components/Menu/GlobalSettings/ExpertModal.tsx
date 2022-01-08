@@ -2,11 +2,16 @@ import React, { useState } from 'react'
 import { Button, Text, Flex, Message, Modal, InjectedModalProps, Checkbox } from '@defifarms/special-uikit'
 import { useExpertModeManager } from 'state/user/hooks'
 import { useTranslation } from 'contexts/Localization'
+import styled from 'styled-components'
 
 interface ExpertModalProps extends InjectedModalProps {
   setShowConfirmExpertModal: (boolean) => void
   setShowExpertModeAcknowledgement: (boolean) => void
 }
+
+const CheckboxStyled = styled(Checkbox)`
+  border: 1px solid ${({ theme }) => theme.colors.primary};
+`
 
 const ExpertModal: React.FC<ExpertModalProps> = ({ setShowConfirmExpertModal, setShowExpertModeAcknowledgement }) => {
   const [, toggleExpertMode] = useExpertModeManager()
@@ -31,7 +36,7 @@ const ExpertModal: React.FC<ExpertModalProps> = ({ setShowConfirmExpertModal, se
       </Message>
       <Text mb="24px">{t('Only use this mode if you know what you’re doing.')}</Text>
       <Flex alignItems="center" mb="24px">
-        <Checkbox
+        <CheckboxStyled
           name="confirmed"
           type="checkbox"
           checked={isRememberChecked}
@@ -45,6 +50,7 @@ const ExpertModal: React.FC<ExpertModalProps> = ({ setShowConfirmExpertModal, se
       <Button
         mb="8px"
         id="confirm-expert-mode"
+        variant='four'
         onClick={() => {
           // eslint-disable-next-line no-alert
           if (window.prompt(`Please type the word "confirm" to enable expert mode.`) === 'confirm') {

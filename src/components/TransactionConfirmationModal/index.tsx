@@ -98,7 +98,7 @@ function TransactionSubmittedContent({
               </RowFixed>
             </Button>
           )}
-          <Button onClick={onDismiss} mt="20px">
+          <Button onClick={onDismiss} mt="20px" variant='four'>
             {t('Close')}
           </Button>
         </AutoColumn>

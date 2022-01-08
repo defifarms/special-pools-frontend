@@ -7,6 +7,7 @@ import UnsupportedCurrencyFooter from 'components/UnsupportedCurrencyFooter'
 import { useTranslation } from 'contexts/Localization'
 import { useIsTransactionUnsupported } from 'hooks/Trades'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import useToast from 'hooks/useToast'
 import React, { useCallback, useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { RouteComponentProps } from 'react-router-dom'
@@ -50,6 +51,7 @@ export default function AddLiquidity({
   const dispatch = useDispatch<AppDispatch>()
   const { t } = useTranslation()
   const gasPrice = useGasPrice()
+  const { toastWarning } = useToast()
 
   const currencyA = useCurrency(currencyIdA)
   const currencyB = useCurrency(currencyIdB)
@@ -130,10 +132,12 @@ export default function AddLiquidity({
   const addTransaction = useTransactionAdder()
 
   async function onAdd() {
+    console.log('onAdd')
+    
     if (!chainId || !library || !account) return
     const router = getRouterContract(chainId, library, account)
     // eslint-disable-next-line no-debugger
-    debugger
+    // debugger
     const { [Field.CURRENCY_A]: parsedAmountA, [Field.CURRENCY_B]: parsedAmountB } = parsedAmounts
     if (!parsedAmountA || !parsedAmountB || !currencyA || !currencyB || !deadline) {
       return
@@ -200,7 +204,12 @@ export default function AddLiquidity({
         setAttemptingTxn(false)
         // we only care if the error is something _other_ than the user rejected the tx
         if (err?.code !== 4001) {
+          if (err?.data?.code === 3) {
+            toastWarning(t('Warning'), t('Are you a whale?'))
+          }
+          console.log("Some error", err);
           console.error(err)
+          
         }
       })
   }
