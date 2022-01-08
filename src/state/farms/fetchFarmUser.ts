@@ -72,3 +72,22 @@ export const fetchFarmUserEarnings = async (account: string, farmsToFetch: Seria
   })
   return parsedEarnings
 }
+
+export const fetchNextHarvestFarms = async (account: string, farmsToFetch: SerializedFarmConfig[]) => {
+  const masterChefAddress = getMasterChefAddress()
+
+  const calls = farmsToFetch.map((farm) => {
+    return {
+      address: masterChefAddress,
+      name: 'nextHarvest',
+      params: [farm.pid, account],
+    }
+  })
+
+  const rawNextHarvest = await multicall(masterchefABI, calls)
+  const nextHarvest = rawNextHarvest.map((countDown) => {
+    return new BigNumber(countDown).toNumber()
+  })
+
+  return nextHarvest
+}
