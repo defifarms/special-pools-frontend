@@ -1,6 +1,7 @@
 import { ChainId } from '@pancakeswap/sdk'
 import addresses from 'config/constants/contracts'
 import { Address } from 'config/constants/types'
+import tokens from 'config/constants/tokens'
 
 export const getAddress = (address: Address): string => {
   const chainId = process.env.REACT_APP_CHAIN_ID
@@ -72,4 +73,8 @@ export const getNftSaleAddress = () => {
 }
 export const getPancakeSquadAddress = () => {
   return getAddress(addresses.pancakeSquad)
+}
+
+export const getDefiyAddress = () => {
+  return tokens.defiy.address
 }

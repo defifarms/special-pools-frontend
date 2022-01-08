@@ -3,9 +3,10 @@ import sousChefABI from 'config/abi/sousChef.json'
 import erc20ABI from 'config/abi/erc20.json'
 import multicall from 'utils/multicall'
 import { getMasterchefContract } from 'utils/contractHelpers'
-import { getAddress } from 'utils/addressHelpers'
+import { getAddress, getMasterChefAddress } from 'utils/addressHelpers'
 import { simpleRpcProvider } from 'utils/providers'
 import BigNumber from 'bignumber.js'
+import { SerializedPoolConfig } from 'config/constants/types'
 
 // Pool 0, Cake / Cake is a different kind of contract (master chef)
 // BNB pools use the native BNB token (wrapping ? unwrapping is done at the contract level)
@@ -115,4 +116,23 @@ export const fetchMaxPoolStakeAmount = async (account) => {
 
   // return { ...maxPoolStakeAmounts, 0: new BigNumber(maxPoolStakeAmount.toString()).toJSON() }
   return { ...maxPoolStakeAmounts }
+}
+
+export const fetchNextHarvestPools = async (account: string, poolTofetch: SerializedPoolConfig[]) => {
+  const masterChefAddress = getMasterChefAddress()
+
+  const calls = poolTofetch.map((pool) => {
+    return {
+      address: masterChefAddress,
+      name: 'nextHarvest',
+      params: [pool.sousId, account],
+    }
+  })
+
+  const rawNextHarvest = await multicall(sousChefABI, calls)
+  const nextHarvest = rawNextHarvest.map((countDown) => {
+    return new BigNumber(countDown).toNumber()
+  })
+
+  return nextHarvest
 }
