@@ -3,7 +3,7 @@ import { ethers } from 'ethers'
 import BigNumber from 'bignumber.js'
 import { useWeb3React } from '@web3-react/core'
 import tokens from 'config/constants/tokens'
-import { getBep20Contract, getCakeContract } from 'utils/contractHelpers'
+import { getBep20Contract, getCakeContract, getDefiyContract } from 'utils/contractHelpers'
 import { BIG_ZERO } from 'utils/bigNumber'
 import { simpleRpcProvider } from 'utils/providers'
 import useRefresh from './useRefresh'
@@ -116,6 +116,22 @@ export const useGetCakeBalance = () => {
 
   // TODO: Remove ethers conversion once useTokenBalance is converted to ethers.BigNumber
   return { balance: ethers.BigNumber.from(balance.toString()), fetchStatus }
+}
+
+
+export const useMaxTransferAmount = () => {
+  const { slowRefresh } = useRefresh()
+  const [maxTransferAmount, setMaxTransferAmount] = useState<BigNumber>()
+
+  useEffect(() => {
+    async function fetchTotalSupply() {
+      const cakeContract = getDefiyContract()
+      const supply = await cakeContract.maxTransferAmount()
+      setMaxTransferAmount(supply)
+    }
+    fetchTotalSupply()
+  }, [slowRefresh])
+  return maxTransferAmount
 }
 
 export default useTokenBalance

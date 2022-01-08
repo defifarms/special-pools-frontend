@@ -76,6 +76,7 @@
     "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.1",
+    "react-slick": "^0.28.1",
     "react-transition-group": "^4.4.1",
     "react-window": "^1.8.6",
     "recharts": "2.0.6",

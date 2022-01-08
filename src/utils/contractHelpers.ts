@@ -29,6 +29,7 @@ import {
   getNftMarketAddress,
   getNftSaleAddress,
   getPancakeSquadAddress,
+  getDefiyAddress,
 } from 'utils/addressHelpers'
 
 // ABI
@@ -168,4 +169,8 @@ export const getPancakeSquadContract = (signer?: ethers.Signer | ethers.provider
 }
 export const getErc721CollectionContract = (signer?: ethers.Signer | ethers.providers.Provider, address?: string) => {
   return getContract(erc721CollectionAbi, address, signer)
+}
+
+export const getDefiyContract = (signer?: ethers.Signer | ethers.providers.Provider) => {
+  return getContract(cakeAbi, getDefiyAddress(), signer)
 }
