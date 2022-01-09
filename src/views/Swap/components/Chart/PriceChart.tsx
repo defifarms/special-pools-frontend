@@ -71,7 +71,7 @@ const PriceChart = ({
             </Text>
           )}
           <IconButton variant="text" onClick={onSwitchTokens}>
-            <SyncAltIcon ml="6px" color="primary" />
+            <SyncAltIcon ml="6px" color="#79D6F4" />
           </IconButton>
         </Flex>
         {!isMobile && (
@@ -110,10 +110,10 @@ const PriceChart = ({
         </Flex>
         <Box>
           <ButtonMenu activeIndex={timeWindow} onItemClick={setTimeWindow} scale="sm">
-            <ButtonMenuItem>{t('24H')}</ButtonMenuItem>
-            <ButtonMenuItem>{t('1W')}</ButtonMenuItem>
-            <ButtonMenuItem>{t('1M')}</ButtonMenuItem>
-            <ButtonMenuItem>{t('1Y')}</ButtonMenuItem>
+            <ButtonMenuItem p="0 23px">{t('24H')}</ButtonMenuItem>
+            <ButtonMenuItem p="0 23px">{t('1W')}</ButtonMenuItem>
+            <ButtonMenuItem p="0 23px">{t('1M')}</ButtonMenuItem>
+            <ButtonMenuItem p="0 23px">{t('1Y')}</ButtonMenuItem>
           </ButtonMenu>
         </Box>
       </Flex>
