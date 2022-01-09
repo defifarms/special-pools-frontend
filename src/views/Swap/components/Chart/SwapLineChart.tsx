@@ -34,7 +34,7 @@ const HoverUpdater = ({ locale, payload, setHoverValue, setHoverDate }) => {
 
 const getChartColors = ({ isChangePositive }) => {
   return isChangePositive
-    ? { gradient1: '#00E7B0', gradient2: '#0C8B6C', stroke: '#31D0AA' }
+    ? { gradient1: '#1FD7FF', gradient2: '#1FD7FF', stroke: 'rgba(23, 255, 255, 1)' }
     : { gradient1: '#ED4B9E', gradient2: '#ED4B9E', stroke: '#ED4B9E ' }
 }
 
@@ -98,6 +98,7 @@ const LineChart = ({ data, setHoverValue, setHoverDate, isChangePositive, timeWi
           tickLine={false}
           tickFormatter={(time) => time.toLocaleString(locale, dateFormatting)}
           minTickGap={8}
+          className="text-aXAxis"
         />
         <YAxis dataKey="value" axisLine={false} tickLine={false} domain={['auto', 'auto']} hide />
         <Tooltip

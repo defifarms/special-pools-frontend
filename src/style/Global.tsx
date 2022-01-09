@@ -38,6 +38,10 @@ const GlobalStyle = createGlobalStyle`
       max-width: 100%;
     }
   }
+
+  .recharts-layer recharts-cartesian-axis-tick {
+    color: #fff;
+  }
 `
 
 export default GlobalStyle
