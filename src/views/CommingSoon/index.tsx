@@ -147,7 +147,7 @@ const Home: React.FC = () => {
                 {t('COMING SOON')}
               </HeadingHome>
               <TextHome fontSize={isLargerScreen ? '24px' : '16px'} mb={18} style={{ marginTop: isLargerScreen ? 24 : 8 }} color="#fff">
-                {t('ARE YOU READYS')}
+                {t('ARE YOU READY?')}
               </TextHome>
               <CardImage />
             </HeadingWrapper>

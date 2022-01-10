@@ -22,6 +22,7 @@ import { useFetchCakeVault, useFetchPublicPoolsData, useFetchUserPools, useSpeci
 import styled from 'styled-components'
 import { BIG_ZERO } from 'utils/bigNumber'
 import { formatNumber } from 'utils/formatBalance'
+import CommingSoon from 'views/CommingSoon'
 import { SpecialPoolsConfig } from '../../config/constants/specialPoolConfig'
 import GroupChildrenPools from './components/GroupChildrenPools'
 import GroupStakeInfo from './components/GroupStakeInfo'
@@ -90,6 +91,8 @@ const DetailSpecialPool: React.FC<RouteComponentProps<{ groupPool: string }>> = 
     params: { groupPool },
   },
 }) => {
+
+
   const { t } = useTranslation()
   const { account } = useWeb3React()
   const { pools: poolsWithoutAutoVault, userDataLoaded } = useSpecialPools()
@@ -97,6 +100,8 @@ const DetailSpecialPool: React.FC<RouteComponentProps<{ groupPool: string }>> = 
   useFetchCakeVault()
   useFetchPublicPoolsData()
   useFetchUserPools(account)
+
+  
 
   const currentSpecialPoolConfig = SpecialPoolsConfig.find((pool) => pool.link === groupPool)
   const poolsSpecial = poolsWithoutAutoVault.filter((pool) => {
@@ -117,7 +122,11 @@ const DetailSpecialPool: React.FC<RouteComponentProps<{ groupPool: string }>> = 
   // -----------------------
   const { isXs, isSm, isMd, isLg, isXl, isXxl, isTablet, isDesktop } = useMatchBreakpoints()
   const isLargerScreen = isLg || isXl || isXxl
-
+  // -------------
+  if (groupPool !== 'round-1') {
+    return <CommingSoon />
+  }
+  // -----------
   return (
     <MainBackground>
       <ContainerWrap>
