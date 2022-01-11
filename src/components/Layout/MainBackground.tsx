@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import React, { useCallback, useEffect, useState } from 'react'
 
 const MainBackgroundStyled = styled.div`
-  background-image: url(images/home/main-background.webp);
+  background-image: url(/images/home/main-background.webp);
   background-size: cover;
   background-color: rgba(0, 0, 0, ${({ theme }) => (theme.isDark ? '0.0' : '0.0')});
   background-blend-mode: multiply;

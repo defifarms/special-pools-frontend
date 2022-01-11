@@ -8,8 +8,9 @@ import {
   ShrinkIcon,
   Skeleton,
   SyncAltIcon,
-  Text,
+  Text as TextStyle,
 } from '@defifarms/special-uikit'
+import styled from 'styled-components'
 import React, { useState } from 'react'
 import { CurrencyLogo, DoubleCurrencyLogo } from 'components/Logo'
 import { formatAmount, formatAmountNotation } from 'views/Info/utils/formatInfoNumbers'
@@ -18,6 +19,9 @@ import SwapLineChart from './SwapLineChart'
 import { StyledPriceChart } from './styles'
 import { getTimeWindowChange } from './utils'
 
+const Text = styled(TextStyle)`
+  font-family: HK Grotesk;
+`
 const formatOptions = {
   notation: 'standard' as formatAmountNotation,
   displayThreshold: 0.001,
@@ -90,7 +94,7 @@ const PriceChart = ({
       >
         <Flex flexDirection="column" pt="12px">
           {lineChartData?.length > 0 && valueToDisplay ? (
-            <Flex alignItems="flex-end">
+            <Flex alignItems="flex-end" flexWrap="wrap">
               <Text fontSize="40px" mr="8px" bold>
                 {formatAmount(valueToDisplay, formatOptions)}
               </Text>
