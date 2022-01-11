@@ -38,7 +38,7 @@ function CurrencySearch({
 }: CurrencySearchProps) {
   const { t } = useTranslation()
   const { chainId } = useActiveWeb3React()
-  console.log('showCommonBases', showCommonBases);
+  // console.log('showCommonBases', showCommonBases);
   
   // refs for fixed size lists
   const fixedList = useRef<FixedSizeList>()

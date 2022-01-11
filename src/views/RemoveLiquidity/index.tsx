@@ -105,7 +105,8 @@ export default function RemoveLiquidity({
 
     // try to gather a signature for permission
     const nonce = await pairContract.nonces(account)
-
+    console.log('nonce', nonce, nonce?.toNumber(), pairContract)
+    
     const EIP712Domain = [
       { name: 'name', type: 'string' },
       { name: 'version', type: 'string' },
@@ -113,7 +114,7 @@ export default function RemoveLiquidity({
       { name: 'verifyingContract', type: 'address' },
     ]
     const domain = {
-      name: 'Pancake LPs',
+      name: 'Defifarms LPs',
       version: '1',
       chainId,
       verifyingContract: pair.liquidityToken.address,
@@ -142,6 +143,9 @@ export default function RemoveLiquidity({
       message,
     })
 
+    console.log('info signature', { EIP712Domain, domain, Permit, message, data, account })
+    
+
     library
       .send('eth_signTypedData_v4', [account, data])
       .then(splitSignature)
@@ -154,6 +158,8 @@ export default function RemoveLiquidity({
         })
       })
       .catch((err) => {
+        console.log('err', err)
+        
         // for all errors other than 4001 (EIP-1193 user rejected request), fall back to manual approve
         if (err?.code !== 4001) {
           approveCallback()
@@ -230,6 +236,8 @@ export default function RemoveLiquidity({
     }
     // we have a signature, use permit versions of remove liquidity
     else if (signatureData !== null) {
+      console.log('signatureData', signatureData)
+      
       // removeLiquidityETHWithPermit
       if (oneCurrencyIsETH) {
         methodNames = ['removeLiquidityETHWithPermit', 'removeLiquidityETHWithPermitSupportingFeeOnTransferTokens']
