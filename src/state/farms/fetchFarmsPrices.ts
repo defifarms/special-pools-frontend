@@ -19,15 +19,22 @@ const getFarmBaseTokenPrice = (
   quoteTokenFarm: SerializedFarm,
   bnbPriceBusd: BigNumber,
 ): BigNumber => {
+  console.log('getFarmBaseTokenPrice', quoteTokenFarm, farm, bnbPriceBusd.toString());
+
   const hasTokenPriceVsQuote = Boolean(farm.tokenPriceVsQuote)
 
   if (farm.quoteToken.symbol === tokens.busd.symbol) {
+    console.log('farm.quoteToken.symbol === tokens.busd.symbol', farm);
+    
     return hasTokenPriceVsQuote ? new BigNumber(farm.tokenPriceVsQuote) : BIG_ZERO
   }
 
   if (farm.quoteToken.symbol === tokens.wbnb.symbol) {
+    console.log('farm.quoteToken.symbol === tokens.wbnb.symbol');
+
     return hasTokenPriceVsQuote ? bnbPriceBusd.times(farm.tokenPriceVsQuote) : BIG_ZERO
   }
+  console.log('quoteTokenFarm', quoteTokenFarm);
 
   // We can only calculate profits without a quoteTokenFarm for BUSD/BNB farms
   if (!quoteTokenFarm) {
@@ -94,6 +101,7 @@ const fetchFarmsPrices = async (farms: SerializedFarm[]) => {
     const quoteTokenFarm = getFarmFromTokenSymbol(farms, farm.quoteToken.symbol)
     const tokenPriceBusd = getFarmBaseTokenPrice(farm, quoteTokenFarm, bnbPriceBusd)
     const quoteTokenPriceBusd = getFarmQuoteTokenPrice(farm, quoteTokenFarm, bnbPriceBusd)
+    console.log("quoteTokenPriceBusd", farm.token.symbol, tokenPriceBusd.toJSON(), farm.quoteToken.symbol,quoteTokenPriceBusd.toJSON())
     
     return {
       ...farm,

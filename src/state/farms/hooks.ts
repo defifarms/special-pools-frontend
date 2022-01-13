@@ -146,13 +146,14 @@ export const useLpTokenPrice = (symbol: string) => {
 
 export const usePriceCakeBusd = (): BigNumber => {
   const cakeBnbFarm = useFarmFromPid(1)
+  console.log('cakeBnbFarm', cakeBnbFarm);
   
-  const cakePriceBusdAsString = cakeBnbFarm.tokenPriceBusd
+  const cakePriceBusdAsString = cakeBnbFarm.quoteTokenPriceBusd
 
   const cakePriceBusd = useMemo(() => {
     return new BigNumber(cakePriceBusdAsString)
   }, [cakePriceBusdAsString])
 
-  return new BigNumber(0.2)
-  // return cakePriceBusd
+  // return new BigNumber(0.2)
+  return cakePriceBusd
 }

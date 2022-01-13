@@ -5,7 +5,7 @@ import tokens, { mainnetTokens, testnetTokens } from 'config/constants/tokens'
 import { PairState, usePairs } from './usePairs'
 import { wrappedCurrency } from '../utils/wrappedCurrency'
 
-const BUSD_MAINNET = mainnetTokens.busd
+const BUSD_MAINNET = testnetTokens.busd
 const { wbnb: WBNB } = tokens
 
 /**
@@ -13,6 +13,7 @@ const { wbnb: WBNB } = tokens
  * @param currency currency to compute the BUSD price of
  */
 export default function useBUSDPrice(currency?: Currency): Price | undefined {
+  
   const { chainId } = useActiveWeb3React()
   const wrapped = wrappedCurrency(currency, chainId)
   const tokenPairs: [Currency | undefined, Currency | undefined][] = useMemo(
@@ -22,7 +23,8 @@ export default function useBUSDPrice(currency?: Currency): Price | undefined {
       [chainId ? WBNB : undefined, chainId === ChainId.MAINNET ? BUSD_MAINNET : undefined],
     ],
     [chainId, currency, wrapped],
-  )
+    )
+  // console.log('wbnb: WBNB', usePairs(tokenPairs));
   const [[ethPairState, ethPair], [busdPairState, busdPair], [busdEthPairState, busdEthPair]] = usePairs(tokenPairs)
 
   return useMemo(() => {
@@ -70,7 +72,9 @@ export default function useBUSDPrice(currency?: Currency): Price | undefined {
 }
 
 export const useCakeBusdPrice = (): Price | undefined => {
-  const cakeBusdPrice = useBUSDPrice(tokens.cake)
+  const cakeBusdPrice = useBUSDPrice(tokens.defiy)
+  console.log(' useCakeBusdPrice cakeBusdPrice', cakeBusdPrice);
+  
   return cakeBusdPrice
 }
 
