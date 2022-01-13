@@ -32,13 +32,17 @@ const Section = styled(AutoColumn)`
 const ConfirmedIcon = styled(ColumnCenter)`
   padding: 24px 0;
 `
+const SpinnerWrap = styled(Spinner)`
+  top: 36px;
+  left: 28px;
+`
 
 function ConfirmationPendingContent({ pendingText }: { pendingText: string }) {
   const { t } = useTranslation()
   return (
     <Wrapper>
       <ConfirmedIcon>
-        <Spinner />
+        <SpinnerWrap />
       </ConfirmedIcon>
       <AutoColumn gap="12px" justify="center">
         <Text fontSize="20px">{t('Waiting For Confirmation')}</Text>

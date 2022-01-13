@@ -8,11 +8,15 @@ const Wrapper = styled(Page)`
   justify-content: center;
   align-items: center;
 `
+const SpinnerWrap = styled(Spinner)`
+  top: 36px;
+  left: 28px;
+`
 
 const PageLoader: React.FC = () => {
   return (
     <Wrapper>
-      <Spinner />
+      <SpinnerWrap />
     </Wrapper>
   )
 }
