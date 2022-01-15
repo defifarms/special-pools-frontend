@@ -12,7 +12,7 @@ const farms: SerializedFarmConfig[] = [
     lpSymbol: 'DEFIY',
     lpAddresses: {
       97: '0x5017AE3D04e29B67b33CF96a86980717A773a783', // DEFI
-      56: '0x5017AE3D04e29B67b33CF96a86980717A773a783',
+      56: '',
     },
     token: serializedTokens.defiy,
     quoteToken: serializedTokens.busd,
@@ -32,7 +32,7 @@ const farms: SerializedFarmConfig[] = [
     lpSymbol: 'BUSD-BNB LP',
     lpAddresses: {
       97: '0xc1a3d5db7612d76330b6392b6caf0eaeba098a1b',
-      56: '0xc1a3d5db7612d76330b6392b6caf0eaeba098a1b',
+      56: '',
     },
     token: serializedTokens.busd,
     quoteToken: serializedTokens.wbnb,

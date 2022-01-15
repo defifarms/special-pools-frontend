@@ -5,17 +5,19 @@ import { useTranslation } from 'contexts/Localization'
 import styled from 'styled-components'
 
 const StyledButtonMenu = styled(Button)`
-  width: 132px;
+  // width: 132px;
   height: 35px;
   border-radius: 75px;
   background: #3230b2;
   color: #fff;
-  font-size: 12px;
+  font-size: 14px;
+  white-space: nowrap;
+  // width: 188.66px;
   ${({ theme }) => theme.mediaQueries.md} {
-    width: 188.66px;
-    height: 50px; 
+    width: 100%;
+    height: 50px;
     border-radius: 75px;
-    font-size: 16px;
+    font-size: 18px;
   }
 `
 
