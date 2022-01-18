@@ -22,6 +22,7 @@ import GlobalStyle from './style/Global'
 import DetailSpecialPool from './views/DetailSpecialPool'
 // Views included in the main bundle
 import Pools from './views/Pools'
+import Farms from './views/DefiFarms'
 import SpecialPools from './views/SpecialPools'
 import CommingSoon from './views/CommingSoon'
 import { RedirectPathToSwapOnly, RedirectToSwap, RedirectToSwapWithPairs } from './views/Swap/redirects'
@@ -36,7 +37,6 @@ import RedirectOldRemoveLiquidityPathStructure from './views/RemoveLiquidity/red
 // Only pool is included in the main bundle because of it's the most visited page
 const Swap = lazy(() => import('./views/Swap'))
 const Home = lazy(() => import('./views/Home'))
-const Farms = lazy(() => import('./views/Farms'))
 const FarmAuction = lazy(() => import('./views/FarmAuction'))
 const Lottery = lazy(() => import('./views/Lottery'))
 const Ifos = lazy(() => import('./views/Ifos'))

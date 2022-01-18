@@ -95,6 +95,7 @@ interface PoolConfigBaseProps {
   isFinished?: boolean
   enableEmergencyWithdraw?: boolean
   poolNote?: string
+  lpSymbol?: string
 }
 
 export interface SerializedPoolConfig extends PoolConfigBaseProps {

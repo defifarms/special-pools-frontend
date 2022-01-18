@@ -31,6 +31,7 @@ export const mainnetTokens = {
     'Wrapped BNB',
     'https://www.binance.com/',
   ),
+  lpDefiyBnb: new Token(MAINNET, '0xdf5bB32A0A6eEA368ec8c36E70B51252DAbfE3d8', 18, 'LP-DEFI-BNBN', 'LP-DEFI-BNBN', 'https://defifarms.org'),
   // bnb here points to the wbnb contract. Wherever the currency BNB is required, conditional checks for the symbol 'BNB' can be used
   bnb: new Token(MAINNET, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', 18, 'BNB', 'BNB', 'https://www.binance.com/'),
   defiy: new Token(MAINNET, '0x08d1Ed0e3816183e703a492dDD28d68fcc13bb61', 18, 'DEFIY', 'DEFIY', 'https://defifarms.org'),
@@ -1821,6 +1822,7 @@ export const testnetTokens = {
     'https://www.binance.com/',
   ),
   defiy: new Token(TESTNET, '0xAEDF504fc3AE541D57072D333Cb30cB9bAc0d779', 18, 'DEFIY', 'DEFIY', 'https://defifarms.org'),
+  lpDefiyBnb: new Token(TESTNET, '0xdf5bB32A0A6eEA368ec8c36E70B51252DAbfE3d8', 18, 'LP-DEFI-BNBN', 'LP-DEFI-BNBN', 'https://defifarms.org'),
   cake: new Token(
     TESTNET,
     '0x01BB38d9F8d2d83564bab7BD756EB801651E539F',

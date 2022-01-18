@@ -1,4 +1,4 @@
-import { serializeTokens } from './tokens'
+import tokens, { serializeTokens } from './tokens'
 import { SerializedPoolConfig, PoolCategory } from './types'
 
 const serializedTokens = serializeTokens()
@@ -31,6 +31,21 @@ const pools: SerializedPoolConfig[] = [
     harvest: true,
     sortOrder: 2,
     isFinished: false,
+  },
+  {
+    sousId: 3,
+    stakingToken: serializedTokens.lpDefiyBnb,
+    earningToken: serializedTokens.defiy,
+    contractAddress: {
+      97: '0x7630396C31Cc18232f9409Cc4dfe9e11DAE7cD3d',
+      56: '',
+    },
+    poolCategory: PoolCategory.COMMUNITY,
+    tokenPerBlock: '10',
+    harvest: true,
+    sortOrder: 2,
+    isFinished: false,
+    lpSymbol: 'DEFIY-BNB LP'
   },
   /**
    * SpecialPools start from 500
