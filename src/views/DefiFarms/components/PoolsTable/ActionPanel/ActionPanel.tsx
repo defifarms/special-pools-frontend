@@ -111,6 +111,9 @@ const InfoSection = styled(Box)`
     flex-basis: 230px;
   }
 `
+const NowrapText = styled(Text)`
+  white-space: nowrap;
+`
 
 const ActionPanel: React.FC<ActionPanelProps> = ({ account, pool, userDataLoaded, expanded, breakpoints }) => {
   const {
@@ -189,10 +192,10 @@ const ActionPanel: React.FC<ActionPanelProps> = ({ account, pool, userDataLoaded
 
   const maxStakeRow = stakingLimit.gt(0) ? (
     <Flex mb="8px" justifyContent="space-between">
-      <Text color="four">{t('Max. stake per user')}:</Text>
-      <Text color="four">{`${getFullDisplayBalance(stakingLimit, stakingToken.decimals, 0)} ${
+      <NowrapText color="four" mr='8px' style={{ whiteSpace: 'nowrap'}}>{t('Max. stake per user')}:</NowrapText>
+      <NowrapText color="four" style={{ whiteSpace: 'nowrap'}}>{`${getFullDisplayBalance(stakingLimit, stakingToken.decimals, 0)} ${
         stakingToken.symbol
-      }`}</Text>
+      }`}</NowrapText>
     </Flex>
   ) : null
 
