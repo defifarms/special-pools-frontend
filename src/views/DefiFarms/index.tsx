@@ -242,7 +242,7 @@ const Pools: React.FC = () => {
   }
 
   // chosenPools = sortPools(chosenPools).slice(0, numberOfPoolsVisible)
-  chosenPools = sortPools(chosenPools).slice(0, numberOfPoolsVisible).filter((pool) => pool.poolCategory === PoolCategory.COMMUNITY)
+  chosenPools = sortPools(chosenPools).slice(0, numberOfPoolsVisible).filter((pool) => pool.poolCategory === PoolCategory.FARMING)
   chosenPoolsLength.current = chosenPools.length
 
   const cardLayout = (
@@ -261,21 +261,13 @@ const Pools: React.FC = () => {
 
   return (
     <MainBackground>
-      <PageHeader background="linear-gradient(269.58deg, #18ACFF 25.78%, #00A3FF 88.47%)" pageName="pools">
-        <Flex justifyContent="space-between" flexDirection={['column', null, null, 'row']}>
-          <Flex flex="1" flexDirection="column" mr={['8px', 0]}>
-            <Heading as="h1" scale="xxl" color="white">
-              {t('Pools')}
-            </Heading>
-            <Heading scale="md" color="white">
-              {t('Just stake some tokens to earn. High APR, low risk.')}
-            </Heading>
-          </Flex>
-          <Flex flex="1" height="fit-content" justifyContent="center" alignItems="center" mt={['24px', null, '0']}>
-            {/* <HelpButton /> */}
-            {/* <BountyCard /> */}
-          </Flex>
-        </Flex>
+      <PageHeader background="linear-gradient(269.58deg, #ffa318 25.78%, #ff9900 88.47%)" pageName="farms">
+        <Heading as="h1" scale="xxl" color="white">
+          {t('Farms')}
+        </Heading>
+        <Heading color="white" style={{ fontWeight: 400 }}>
+          {t('Stake Liquidity Pool (LP) tokens to earn.')}
+        </Heading>
       </PageHeader>
       <Page>
         <PoolControls>

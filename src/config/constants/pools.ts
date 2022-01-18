@@ -40,7 +40,7 @@ const pools: SerializedPoolConfig[] = [
       97: '0x7630396C31Cc18232f9409Cc4dfe9e11DAE7cD3d',
       56: '',
     },
-    poolCategory: PoolCategory.COMMUNITY,
+    poolCategory: PoolCategory.FARMING,
     tokenPerBlock: '10',
     harvest: true,
     sortOrder: 2,

@@ -60,6 +60,7 @@ export enum PoolCategory {
   'BINANCE' = 'Binance', // Pools using native BNB behave differently than pools using a token
   'AUTO' = 'Auto',
   'SPECIAL' = 'Special',
+  'FARMING' = 'Farming',
 }
 
 interface FarmConfigBaseProps {
