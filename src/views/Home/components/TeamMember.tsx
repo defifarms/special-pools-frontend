@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Heading, Text, Flex } from '@defifarms/special-uikit'
 import styled from 'styled-components'
 import { getBalanceNumber } from 'utils/formatBalance'
@@ -104,6 +104,14 @@ const Partners = styled.img<{ margin?: string }>`
   margin: ${({ margin }) => margin || '0 15px'};
 `
 
+const TwitterWrapper = styled(CardWrapper)`
+overflow: hidden;
+  transition: opacity 250ms ease-in;
+  &:hover { 
+    overflow-y: scroll;
+  }
+
+`
 const teams = [
   {
     image: '/images/home/teams/cesar.webp',
@@ -139,11 +147,29 @@ const settings = {
   slidesToScroll: 1,
 }
 
+const settingsTw = {
+  dots: false,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  arrows: false,
+  autoplay: true
+}
+
 const CakeStats = () => {
   const { t } = useTranslation()
   const totalSupply = useTotalSupply()
   const burnedBalance = getBalanceNumber(useBurnedBalance(getDefiyAddress()))
   const slides = []
+  useEffect(() => {
+    const scriptTag = document.createElement('script')
+
+    scriptTag.src = 'https://platform.twitter.com/widgets.js'
+    scriptTag.async = true
+
+    document.getElementById('twitterDashboard').appendChild(scriptTag)
+  }, [])
 
   for (let i = 0; i < teams.length; i++) {
     slides.push(
@@ -228,6 +254,50 @@ const CakeStats = () => {
         <Partners src="/images/home/teams/ichi.png" margin="0 11px 24px" />
         <Partners src="/images/home/teams/seoul.png" margin="0 11px 24px" />
       </Flex>
+      <HeadingCard color="#fff" scale="xl" pt="15px" mb="8px">
+        {t('Built for people like you')}
+      </HeadingCard>
+            <SliderWrapper>
+        <Slider {...settingsTw}>
+
+            <div style={{ padding: '0 10px' }}>
+              <TwitterWrapper>
+                <blockquote className="twitter-tweet" data-conversation="none">
+                  <p lang="en" dir="ltr">Just like any other <a
+                      href="https://twitter.com/hashtag/DEXs?src=hash&amp;ref_src=twsrc%5Etfw">#DEXs</a>, <a
+                      href="https://twitter.com/hashtag/DeFiFarms?src=hash&amp;ref_src=twsrc%5Etfw">#DeFiFarms</a> has our own <a
+                      href="https://twitter.com/hashtag/token?src=hash&amp;ref_src=twsrc%5Etfw">#token</a> with details below: <br/>Name:
+                    DefiFarms Non-Fungible Yearn<br/>Chain: Binance Smart Chain (BEP20)<br/>Symbol: DEFIY<br/>Max Supply:
+                    100,000,000<br/><br/>Exciting time with more info to come! <a
+                      href="https://t.co/4aDQEHDug4">pic.twitter.com/4aDQEHDug4</a></p>&mdash; DeFiFarms NFTs (@DeFiFarmsNFTs) <a
+                    href="https://twitter.com/DeFiFarmsNFTs/status/1481189796072804356?ref_src=twsrc%5Etfw">January 12, 2022</a>
+                </blockquote>
+              </TwitterWrapper>
+            </div>
+            <div style={{ padding: '0 10px' }}>
+              <TwitterWrapper>
+                <blockquote className="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/DeFiFarmsNFTs?ref_src=twsrc%5Etfw">@DeFiFarmsNFTs</a> good project<a href="https://twitter.com/Leenga86?ref_src=twsrc%5Etfw">@Leenga86</a> <a href="https://twitter.com/Trng16743393?ref_src=twsrc%5Etfw">@Trng16743393</a> <a href="https://twitter.com/wiki7070?ref_src=twsrc%5Etfw">@wiki7070</a> <a href="https://t.co/mKjHMUeObH">https://t.co/mKjHMUeObH</a></p>&mdash; compass ( La bàn) (@SyhauP) <a href="https://twitter.com/SyhauP/status/1485175446614716421?ref_src=twsrc%5Etfw">January 23, 2022</a></blockquote>
+              </TwitterWrapper>
+            </div>
+            <div style={{ padding: '0 10px' }}>
+              <TwitterWrapper>
+                <blockquote className="twitter-tweet"><p lang="en" dir="ltr">&quot;Interested to find out more about Defifarms (<a href="https://twitter.com/hashtag/DEFIY?src=hash&amp;ref_src=twsrc%5Etfw">#DEFIY</a>) before IDO? Click here: <a href="https://t.co/zwJNcTazqC">https://t.co/zwJNcTazqC</a>&#13;Also flick any questions below and we are here to answer! &quot; <a href="https://t.co/5pq68EtZjx">pic.twitter.com/5pq68EtZjx</a></p>&mdash; DeFiFarms NFTs (@DeFiFarmsNFTs) <a href="https://twitter.com/DeFiFarmsNFTs/status/1481617210397585410?ref_src=twsrc%5Etfw">January 13, 2022</a></blockquote>
+              </TwitterWrapper>
+            </div>
+      
+            <div style={{ padding: '0 10px' }}>
+              <TwitterWrapper>
+                <blockquote className="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/DEFIY?src=hash&amp;ref_src=twsrc%5Etfw">#DEFIY</a> TRANSFER TAX BREAKDOWN 👇<br/>🔴 6% Transfer Tax becomes a part of DeFiFarms Liquidity Pool<br/>🔴 2% Transfer Tax will be burned to keep the value and number of tokens under control <br/><br/>For further details, here&#39;s our Medium post: <a href="https://t.co/7DQyRUbpK2">https://t.co/7DQyRUbpK2</a></p>&mdash; DeFiFarms NFTs (@DeFiFarmsNFTs) <a href="https://twitter.com/DeFiFarmsNFTs/status/1481192391235506176?ref_src=twsrc%5Etfw">January 12, 2022</a></blockquote>
+              </TwitterWrapper>
+            </div>
+            <div style={{ padding: '0 10px' }}>
+              <TwitterWrapper>
+                <blockquote className="twitter-tweet"><p lang="en" dir="ltr">i thing its really good things!<a href="https://twitter.com/hashtag/DeFiFarms?src=hash&amp;ref_src=twsrc%5Etfw">#DeFiFarms</a> <a href="https://twitter.com/search?q=%24DEFIY&amp;src=ctag&amp;ref_src=twsrc%5Etfw">$DEFIY</a><a href="https://twitter.com/IgorVasNft?ref_src=twsrc%5Etfw">@IgorVasNft</a> <a href="https://twitter.com/NDzibuk?ref_src=twsrc%5Etfw">@NDzibuk</a></p>&mdash; Анна На (@AnnaNa78617148) <a href="https://twitter.com/AnnaNa78617148/status/1482728508501762048?ref_src=twsrc%5Etfw">January 16, 2022</a></blockquote>
+              </TwitterWrapper>
+            </div>
+          
+        </Slider>
+      </SliderWrapper>
     </StyledContainer>
   )
 }
