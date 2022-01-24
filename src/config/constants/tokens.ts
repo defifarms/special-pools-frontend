@@ -1822,7 +1822,8 @@ export const testnetTokens = {
     'https://www.binance.com/',
   ),
   // defiy: new Token(TESTNET, '0xAEDF504fc3AE541D57072D333Cb30cB9bAc0d779', 18, 'DEFIY', 'DEFIY', 'https://defifarms.org'),
-  defiy: new Token(TESTNET, '0x538d0f0ef6cFFeb577be6aEB3b81C2BaaFA95f17', 18, 'DEFIY', 'DEFIY', 'https://defifarms.org'),
+  // defiy: new Token(TESTNET, '0x538d0f0ef6cFFeb577be6aEB3b81C2BaaFA95f17', 18, 'DEFIY', 'DEFIY', 'https://defifarms.org'),
+  defiy: new Token(TESTNET, '0x93F59205df12A64dA17813dd4098B2f16Bd7CACE', 18, 'DEFIY', 'DEFIY', 'https://defifarms.org'),
 
   lpDefiyBnb: new Token(TESTNET, '0xdf5bB32A0A6eEA368ec8c36E70B51252DAbfE3d8', 18, 'LP-DEFIY-BNB', 'LP-DEFIY-BNB', 'https://defifarms.org'),
   cake: new Token(
