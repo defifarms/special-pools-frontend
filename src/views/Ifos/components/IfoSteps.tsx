@@ -92,10 +92,10 @@ const IfoSteps: React.FC<Props> = ({ ifo, walletIfoData }) => {
         return (
           <CardBody>
             <Heading as="h4" color="secondary" mb="16px">
-              {t('Get %symbol%', { symbol: 'DEFIY' })}
+              {t('Get %symbol%', { symbol: 'LOOPS' })}
             </Heading>
             <Text color="textSubtle" small>
-              {t('You’ll spend DEFIY to buy IFO sale tokens.')}
+              {t('You’ll spend LOOPS to buy IFO sale tokens.')}
             </Text>
             <Button
               as={Link}
@@ -104,7 +104,7 @@ const IfoSteps: React.FC<Props> = ({ ifo, walletIfoData }) => {
               endIcon={<OpenNewIcon color="white" />}
               mt="16px"
             >
-              {t('Get %symbol%', { symbol: 'DEFIY' })}
+              {t('Get %symbol%', { symbol: 'LOOPS' })}
             </Button>
           </CardBody>
         )
@@ -112,10 +112,10 @@ const IfoSteps: React.FC<Props> = ({ ifo, walletIfoData }) => {
         return (
           <CardBody>
             <Heading as="h4" color="secondary" mb="16px">
-              {t('Commit DEFIY')}
+              {t('Commit LOOPS')}
             </Heading>
             <Text color="textSubtle" small>
-              {t('When the IFO sales are live, you can “commit” your DEFIY to buy the tokens being sold.')} <br />
+              {t('When the IFO sales are live, you can “commit” your LOOPS to buy the tokens being sold.')} <br />
               {t('We recommend committing to the Basic Sale first, but you can do both if you like.')}
             </Text>
           </CardBody>
@@ -128,7 +128,7 @@ const IfoSteps: React.FC<Props> = ({ ifo, walletIfoData }) => {
             </Heading>
             <Text color="textSubtle" small>
               {t(
-                'After the IFO sales finish, you can claim any IFO tokens that you bought, and any unspent DEFIY tokens will be returned to your wallet.',
+                'After the IFO sales finish, you can claim any IFO tokens that you bought, and any unspent LOOPS tokens will be returned to your wallet.',
               )}
             </Text>
           </CardBody>

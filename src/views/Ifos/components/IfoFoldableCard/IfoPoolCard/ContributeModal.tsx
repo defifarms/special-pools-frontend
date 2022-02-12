@@ -109,7 +109,7 @@ const ContributeModal: React.FC<Props> = ({
           <Flex flexGrow={1} justifyContent="flex-end">
             <Image
               src={
-                ifo.currency.symbol === 'DEFIY'
+                ifo.currency.symbol === 'LOOPS'
                   ? '/images/cake.svg'
                   : `/images/farms/${currency.symbol.split(' ')[0].toLocaleLowerCase()}.svg`
               }
@@ -147,7 +147,7 @@ const ContributeModal: React.FC<Props> = ({
         </Flex>
         <Text color="textSubtle" fontSize="12px" mb="24px">
           {t(
-            'If you don’t commit enough DEFIY, you may not receive any IFO tokens at all and will only receive a full refund of your DEFIY.',
+            'If you don’t commit enough LOOPS, you may not receive any IFO tokens at all and will only receive a full refund of your LOOPS.',
           )}
         </Text>
         <ApproveConfirmButtons

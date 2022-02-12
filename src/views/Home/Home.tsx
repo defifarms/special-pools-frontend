@@ -151,7 +151,7 @@ const Home: React.FC = () => {
           <Hero>
             <HeadingWrapper>
               <HeadingHome as="h1" scale="xl" mb="24px">
-                {t('DeFiFarms')}
+                {t('LoopStarter')}
               </HeadingHome>
               <TextHome fontSize="18px" mb={18} color="#0F0B5F">
                 {t('The First NFTs Protocol Powerful Automatic Liquidity Acquisition Yield Farm & AMM')}

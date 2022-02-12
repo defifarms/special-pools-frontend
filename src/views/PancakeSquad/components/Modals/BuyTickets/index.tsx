@@ -97,14 +97,14 @@ const BuyTicketsModal: React.FC<BuyTicketsModalProps> = ({
               <Text font-size="14px" color="textSubtle">
                 {t('Cost per Ticket')}
               </Text>
-              <Text font-size="14px">{formatBigNumber(pricePerTicket, 0)} DEFIY</Text>
+              <Text font-size="14px">{formatBigNumber(pricePerTicket, 0)} LOOPS</Text>
             </Flex>
             <Flex mb="8px" justifyContent="space-between">
               <Text font-size="14px" color="textSubtle">
-                {t('Your DEFIY Balance')}
+                {t('Your LOOPS Balance')}
               </Text>
               <Text font-size="14px" color={isCakeBalanceInsufficient ? 'failure' : 'text'}>
-                {formatBigNumber(cakeBalance, 3)} DEFIY
+                {formatBigNumber(cakeBalance, 3)} LOOPS
               </Text>
             </Flex>
             <Flex
@@ -125,7 +125,7 @@ const BuyTicketsModal: React.FC<BuyTicketsModalProps> = ({
                 {t('Total Cost')}
               </Text>
               <Text font-size="14px" bold>
-                {formatBigNumber(totalCost, 0)} DEFIY
+                {formatBigNumber(totalCost, 0)} LOOPS
               </Text>
             </Flex>
           </Box>

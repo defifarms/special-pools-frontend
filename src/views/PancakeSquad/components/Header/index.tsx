@@ -77,7 +77,7 @@ const PancakeSquadHeader: React.FC<PancakeSquadHeaderType> = ({
         {`${t('Public Sale:')} 08:00 UTC, Oct. 7`}
       </Text>
       <Text color={lightColors.warning} textAlign="center" bold>
-        {t('Mint Cost: %minCost% DEFIY each', {
+        {t('Mint Cost: %minCost% LOOPS each', {
           minCost: DEFAULT_CAKE_COST,
         })}
       </Text>
@@ -85,7 +85,7 @@ const PancakeSquadHeader: React.FC<PancakeSquadHeaderType> = ({
         {t('Max per wallet: %maxPerWallet%', { maxPerWallet: DEFAULT_MAX_TICKETS })}
       </Text>
       <Text color={lightColors.invertedContrast} textAlign="center">
-        {t('DefiFarms’s first official generative NFT collection.')}
+        {t('LoopStarter’s first official generative NFT collection.')}
       </Text>
       <Text color={lightColors.invertedContrast} mb={!displayEventBlock ? '80px' : '32px'} textAlign="center">
         {t('Join the squad.')}

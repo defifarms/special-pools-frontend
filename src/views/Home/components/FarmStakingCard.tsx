@@ -154,11 +154,11 @@ const FarmedStakingCard = () => {
         <CardImage src="/images/home/farm-staking.jpg" />
         <Cards>
           <Block>
-            <Label>{t('DEFIY to Harvest')}:</Label>
+            <Label>{t('LOOPS to Harvest')}:</Label>
             <CakeHarvestBalance farmsWithBalance={balancesWithValueFarms} poolsWithBalance={[]} />
           </Block>
           <Block>
-            <Label>{t('DEFIY in Wallet')}:</Label>
+            <Label>{t('LOOPS in Wallet')}:</Label>
             <CakeWalletBalance />
           </Block>
         </Cards>
@@ -172,7 +172,7 @@ const FarmedStakingCard = () => {
               borderRadius="98px"
             >
               {pendingTx
-                ? t('Collecting DEFIY')
+                ? t('Collecting LOOPS')
                 : t('Harvest all', {
                     count: balancesWithValueFarms.length,
                   })}

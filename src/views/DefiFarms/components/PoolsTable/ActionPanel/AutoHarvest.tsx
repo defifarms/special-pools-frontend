@@ -42,7 +42,7 @@ const AutoHarvestAction: React.FunctionComponent<AutoHarvestActionProps> = ({ us
 
   const actionTitle = (
     <Text fontSize="12px" bold color="secondary" as="span" textTransform="uppercase">
-      {t('Recent DEFIY profit')}
+      {t('Recent LOOPS profit')}
     </Text>
   )
 

@@ -79,7 +79,7 @@ const RoiCalculatorModal: React.FC<RoiCalculatorModalProps> = ({
   stakingTokenPrice,
   multiplier,
   initialValue,
-  earningTokenSymbol = 'DEFIY',
+  earningTokenSymbol = 'LOOPS',
   autoCompoundFrequency = 0,
   performanceFee = 0,
   isFarm = false,

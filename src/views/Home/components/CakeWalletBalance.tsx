@@ -4,7 +4,7 @@ import { Text } from '@defifarms/special-uikit'
 import { useWeb3React } from '@web3-react/core'
 import useTokenBalance from 'hooks/useTokenBalance'
 import { useTranslation } from 'contexts/Localization'
-import { getDefiyAddress } from 'utils/addressHelpers'
+import { getLoopsAddress } from 'utils/addressHelpers'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { BigNumber } from 'bignumber.js'
 import CardValue from './CardValue'
@@ -13,7 +13,7 @@ import { usePriceCakeBusd } from '../../../state/farms/hooks'
 
 const CakeWalletBalance = () => {
   const { t } = useTranslation()
-  const { balance: cakeBalance } = useTokenBalance(getDefiyAddress())
+  const { balance: cakeBalance } = useTokenBalance(getLoopsAddress())
   const cakePriceBusd = usePriceCakeBusd()
   const busdBalance = new BigNumber(getBalanceNumber(cakeBalance)).multipliedBy(cakePriceBusd).toNumber()
   const { account } = useWeb3React()

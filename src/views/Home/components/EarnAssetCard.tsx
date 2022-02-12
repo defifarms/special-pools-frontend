@@ -59,10 +59,10 @@ const CardImage = styled.img`
   width: 100%;
 `
 
-const activeNonCakePools = pools.filter((pool) => pool.earningToken.symbol !== 'DEFIY')
+const activeNonCakePools = pools.filter((pool) => pool.earningToken.symbol !== 'LOOPS')
 const latestPools: SerializedPool[] = orderBy(activeNonCakePools, ['sortOrder', 'pid'], ['desc', 'desc']).slice(0, 5)
 // Always include CAKE
-const assets = ['DEFIY', ...latestPools.map((pool) => pool.earningToken.symbol)].join(', ')
+const assets = ['LOOPS', ...latestPools.map((pool) => pool.earningToken.symbol)].join(', ')
 
 const EarnAssetCard = () => {
   const { t } = useTranslation()

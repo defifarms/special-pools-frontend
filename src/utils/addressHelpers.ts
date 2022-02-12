@@ -78,6 +78,6 @@ export const getPancakeSquadAddress = () => {
   return getAddress(addresses.pancakeSquad)
 }
 
-export const getDefiyAddress = () => {
+export const getLoopsAddress = () => {
   return tokens.defiy.address
 }

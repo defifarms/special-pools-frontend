@@ -171,7 +171,7 @@ const DetailSpecialPool: React.FC<RouteComponentProps<{ groupPool: string }>> = 
           <CardSpecialPoolBody>
             <Flex justifyContent="flex-start">
               <Text fontSize="16px">
-                {t('The pool allowcated stake by DEFIY 60%; Group BUSD, WBNB, BTCB, ETH, CAKE: 40%')}
+                {t('The pool allowcated stake by LOOPS 60%; Group BUSD, WBNB, BTCB, ETH, CAKE: 40%')}
               </Text>
             </Flex>
             <Flex justifyContent="space-between" flexDirection={isLargerScreen ? 'row' : 'column'}>

@@ -362,7 +362,7 @@ const UpcomingIdo: React.FC = () => {
           </ImageWrapper>
           <Image width="51px" height="51px" alt="alt" src="/images/home/defiLogo.png" />
           <RealTextWrapper>
-            <RealLabel>DEFIY</RealLabel>
+            <RealLabel>LOOPS</RealLabel>
             <RealDesc>The 1st cross-chain liquidity DEX on Avalande</RealDesc>
             <IconWrapper>
             
@@ -373,7 +373,7 @@ const UpcomingIdo: React.FC = () => {
           </RealTextWrapper>
         </Grid>
         <PriceWrapper>
-          <Price>(DEFIY/BUSD)</Price>
+          <Price>(LOOPS/BUSD)</Price>
           <StyledButtonMenu href="https://docs.defifarms.org/" target="_blank">
             {t('More details')}
           </StyledButtonMenu>

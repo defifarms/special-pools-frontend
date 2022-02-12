@@ -2,9 +2,9 @@ import { ContextApi } from 'contexts/Localization/types'
 import { PageMeta } from './types'
 
 export const DEFAULT_META: PageMeta = {
-  title: 'DefiFarms',
+  title: 'LoopStarter',
   description:
-    'The most popular AMM on BSC by user count! Earn DEFIY through yield farming or win it in the Lottery, then stake it in Syrup Pools to earn more tokens! Initial Farm Offerings (new token launch model pioneered by DefiFarms), NFTs, and more, on a platform you can trust.',
+    'The most popular AMM on BSC by user count! Earn LOOPS through yield farming or win it in the Lottery, then stake it in Syrup Pools to earn more tokens! Initial Farm Offerings (new token launch model pioneered by LoopStarter), NFTs, and more, on a platform you can trust.',
   image: 'https://app.defifarms.org/images/logo.png',
 }
 
@@ -33,51 +33,51 @@ export const getCustomMeta = (path: string, t: ContextApi['t']): PageMeta => {
   switch (basePath) {
     case '/':
       return {
-        title: `${t('Home')} | ${t('DefiFarms')}`,
+        title: `${t('Home')} | ${t('LoopStarter')}`,
       }
     case '/swap':
       return {
-        title: `${t('Exchange')} | ${t('DefiFarms')}`,
+        title: `${t('Exchange')} | ${t('LoopStarter')}`,
       }
     case '/add':
       return {
-        title: `${t('Add Liquidity')} | ${t('DefiFarms')}`,
+        title: `${t('Add Liquidity')} | ${t('LoopStarter')}`,
       }
     case '/remove':
       return {
-        title: `${t('Remove Liquidity')} | ${t('DefiFarms')}`,
+        title: `${t('Remove Liquidity')} | ${t('LoopStarter')}`,
       }
     case '/liquidity':
       return {
-        title: `${t('Liquidity')} | ${t('DefiFarms')}`,
+        title: `${t('Liquidity')} | ${t('LoopStarter')}`,
       }
     case '/find':
       return {
-        title: `${t('Import Pool')} | ${t('DefiFarms')}`,
+        title: `${t('Import Pool')} | ${t('LoopStarter')}`,
       }
     case '/competition':
       return {
-        title: `${t('Trading Battle')} | ${t('DefiFarms')}`,
+        title: `${t('Trading Battle')} | ${t('LoopStarter')}`,
       }
     case '/prediction':
       return {
-        title: `${t('Prediction')} | ${t('DefiFarms')}`,
+        title: `${t('Prediction')} | ${t('LoopStarter')}`,
       }
     case '/prediction/leaderboard':
       return {
-        title: `${t('Leaderboard')} | ${t('DefiFarms')}`,
+        title: `${t('Leaderboard')} | ${t('LoopStarter')}`,
       }
     case '/farms':
       return {
-        title: `${t('Farms')} | ${t('DefiFarms')}`,
+        title: `${t('Farms')} | ${t('LoopStarter')}`,
       }
     case '/farms/auction':
       return {
-        title: `${t('Farm Auctions')} | ${t('DefiFarms')}`,
+        title: `${t('Farm Auctions')} | ${t('LoopStarter')}`,
       }
     case '/pools':
       return {
-        title: `${t('Pools')} | ${t('DefiFarms')}`,
+        title: `${t('Pools')} | ${t('LoopStarter')}`,
       }
     case '/lottery':
       return {
@@ -85,50 +85,50 @@ export const getCustomMeta = (path: string, t: ContextApi['t']): PageMeta => {
       }
     case '/ifo':
       return {
-        title: `${t('Initial Farm Offering')} | ${t('DefiFarms')}`,
+        title: `${t('Initial Farm Offering')} | ${t('LoopStarter')}`,
       }
     case '/teams':
       return {
-        title: `${t('Leaderboard')} | ${t('DefiFarms')}`,
+        title: `${t('Leaderboard')} | ${t('LoopStarter')}`,
       }
     case '/voting':
       return {
-        title: `${t('Voting')} | ${t('DefiFarms')}`,
+        title: `${t('Voting')} | ${t('LoopStarter')}`,
       }
     case '/voting/proposal':
       return {
-        title: `${t('Proposals')} | ${t('DefiFarms')}`,
+        title: `${t('Proposals')} | ${t('LoopStarter')}`,
       }
     case '/voting/proposal/create':
       return {
-        title: `${t('Make a Proposal')} | ${t('DefiFarms')}`,
+        title: `${t('Make a Proposal')} | ${t('LoopStarter')}`,
       }
     case '/info':
       return {
-        title: `${t('Overview')} | ${t('DefiFarms Info & Analytics')}`,
+        title: `${t('Overview')} | ${t('LoopStarter Info & Analytics')}`,
         description: 'View statistics for Pancakeswap exchanges.',
       }
     case '/info/pools':
       return {
-        title: `${t('Pools')} | ${t('DefiFarms Info & Analytics')}`,
+        title: `${t('Pools')} | ${t('LoopStarter Info & Analytics')}`,
         description: 'View statistics for Pancakeswap exchanges.',
       }
     case '/info/tokens':
       return {
-        title: `${t('Tokens')} | ${t('DefiFarms Info & Analytics')}`,
+        title: `${t('Tokens')} | ${t('LoopStarter Info & Analytics')}`,
         description: 'View statistics for Pancakeswap exchanges.',
       }
     case '/nfts':
       return {
-        title: `${t('Overview')} | ${t('DefiFarms')}`,
+        title: `${t('Overview')} | ${t('LoopStarter')}`,
       }
     case '/nfts/collections':
       return {
-        title: `${t('Collections')} | ${t('DefiFarms')}`,
+        title: `${t('Collections')} | ${t('LoopStarter')}`,
       }
     case '/nfts/profile':
       return {
-        title: `${t('Your Profile')} | ${t('DefiFarms')}`,
+        title: `${t('Your Profile')} | ${t('LoopStarter')}`,
       }
     case '/rocket':
       return {
