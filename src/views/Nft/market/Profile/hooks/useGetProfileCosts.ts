@@ -34,7 +34,7 @@ const useGetProfileCosts = () => {
         })
         setIsLoading(false)
       } catch (error) {
-        toastError(t('Error'), t('Could not retrieve DEFIY costs for profile'))
+        toastError(t('Error'), t('Could not retrieve LOOPS costs for profile'))
       }
     }
 

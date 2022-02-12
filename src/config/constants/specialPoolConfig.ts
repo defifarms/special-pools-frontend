@@ -6,7 +6,7 @@ import { SpecialPoolConfigType } from '../../state/types'
 const serializedTokens = serializeTokens()
 export const SpecialPoolsConfig: SpecialPoolConfigType[] = [
   {
-    name: 'DeFiFarms 30K',
+    name: 'LoopStarter 30K',
     link: 'round-1',
     description: " | Lock-up tern 10 days",
     capGoal: 30000,
@@ -94,28 +94,28 @@ export const SpecialPoolsConfig: SpecialPoolConfigType[] = [
     ],
   },
   {
-    name: 'DeFiFarms 50K',
+    name: 'LoopStarter 50K',
     link: 'round-2',
     description: "APR 700% | Lock-up tern 10 days",
     capGoal: 50000,
     childrenPools: [],
   },
   {
-    name: 'DeFiFarms 100K',
+    name: 'LoopStarter 100K',
     link: 'round-3',
     description: "APR 700% | Lock-up tern 10 days",
     capGoal: 100000,
     childrenPools: [],
   },
   {
-    name: 'DeFiFarms 500K',
+    name: 'LoopStarter 500K',
     link: 'round-4',
     description: "APR 700% | Lock-up tern 10 days",
     capGoal: 500000,
     childrenPools: [],
   },
   {
-    name: 'DeFiFarms 1500K',
+    name: 'LoopStarter 1500K',
     capGoal: 1500000,
     link: 'round-5',
     description: "APR 700% | Lock-up tern 10 days",

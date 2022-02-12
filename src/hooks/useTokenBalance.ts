@@ -3,7 +3,7 @@ import { ethers } from 'ethers'
 import BigNumber from 'bignumber.js'
 import { useWeb3React } from '@web3-react/core'
 import tokens from 'config/constants/tokens'
-import { getBep20Contract, getCakeContract, getDefiyContract } from 'utils/contractHelpers'
+import { getBep20Contract, getCakeContract, getLoopsContract } from 'utils/contractHelpers'
 import { BIG_ZERO } from 'utils/bigNumber'
 import { simpleRpcProvider } from 'utils/providers'
 import useRefresh from './useRefresh'
@@ -125,7 +125,7 @@ export const useMaxTransferAmount = () => {
 
   useEffect(() => {
     async function fetchTotalSupply() {
-      const cakeContract = getDefiyContract()
+      const cakeContract = getLoopsContract()
       const supply = await cakeContract.maxTransferAmount()
       setMaxTransferAmount(supply)
     }

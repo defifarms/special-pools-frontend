@@ -298,7 +298,7 @@ const ActionPanel: React.FC<ActionPanelProps> = ({ account, pool, userDataLoaded
       <ActionContainer>
         {showSubtitle && (
           <Text mt="4px" mb="16px" color="textSubtle">
-            {isAutoVault ? t('Automatic restaking') : `${t('Earn')} DEFIY ${t('Stake').toLocaleLowerCase()} DEFIY`}
+            {isAutoVault ? t('Automatic restaking') : `${t('Earn')} LOOPS ${t('Stake').toLocaleLowerCase()} LOOPS`}
           </Text>
         )}
         {pool.isAutoVault ? (

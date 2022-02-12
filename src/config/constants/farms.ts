@@ -9,7 +9,7 @@ const farms: SerializedFarmConfig[] = [
    */
    {
     pid: 0,
-    lpSymbol: 'DEFIY',
+    lpSymbol: 'LOOPS',
     lpAddresses: {
       97: '0x5017AE3D04e29B67b33CF96a86980717A773a783', // DEFI
       56: '',
@@ -19,7 +19,7 @@ const farms: SerializedFarmConfig[] = [
   },
   {
     pid: 1,
-    lpSymbol: 'DEFIY-BNB LP',
+    lpSymbol: 'LOOPS-BNB LP',
     lpAddresses: {
       97: '0xdf5bB32A0A6eEA368ec8c36E70B51252DAbfE3d8',
       56: '0xf5cae1131ff6004f4091543b08e6264c73b703df',

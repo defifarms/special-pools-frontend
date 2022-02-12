@@ -54,31 +54,31 @@ const GroupStakeInfo: React.FC<IGroupPools> = ({ currentSpecialPoolConfig, pools
   const cakePriceBusd = usePriceCakeBusd()
   const cakePriceBusdNumber = cakePriceBusd.toNumber()
 
-  const getTotalDefiyEarns = () => {
-    let totalDefiyEarns = 0
+  const getTotalLoopsEarns = () => {
+    let totalLoopsEarns = 0
     poolsSpecial.forEach((spool) => {
       const defiyEarnsInPool = Number(spool.userData.pendingReward)
-      totalDefiyEarns += defiyEarnsInPool
+      totalLoopsEarns += defiyEarnsInPool
     })
-    return new BigNumber(totalDefiyEarns)
+    return new BigNumber(totalLoopsEarns)
   }
-  const getTotalDefiyEarnsBUSD = () => {
-    let totalDefiyEarns = 0
+  const getTotalLoopsEarnsBUSD = () => {
+    let totalLoopsEarns = 0
     poolsSpecial.forEach((spool) => {
       const defiyEarnsInPool = Number(spool.userData.pendingReward) * cakePriceBusdNumber
-      totalDefiyEarns += defiyEarnsInPool
+      totalLoopsEarns += defiyEarnsInPool
     })
-    return new BigNumber(totalDefiyEarns)
+    return new BigNumber(totalLoopsEarns)
   }
 
   return (
     <Flex flexDirection="column" width="100%" mt="0px" flex={2}>
       <StakeInfoWrap flex={1}>
-        <Heading>{t('Total DEFIY Earned')}</Heading>
+        <Heading>{t('Total LOOPS Earned')}</Heading>
         <Heading color="four">
           {t(
-            `${getFullDisplayBalance(getTotalDefiyEarns(), 18, 2)} ~ $${getFullDisplayBalance(
-              getTotalDefiyEarnsBUSD(),
+            `${getFullDisplayBalance(getTotalLoopsEarns(), 18, 2)} ~ $${getFullDisplayBalance(
+              getTotalLoopsEarnsBUSD(),
               18,
               2,
             )}`,

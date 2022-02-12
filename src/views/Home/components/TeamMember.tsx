@@ -5,7 +5,7 @@ import { getBalanceNumber } from 'utils/formatBalance'
 import { useBurnedBalance, useTotalSupply } from 'hooks/useTokenBalance'
 import Slider from 'react-slick'
 import { useTranslation } from 'contexts/Localization'
-import { getDefiyAddress } from 'utils/addressHelpers'
+import { getLoopsAddress } from 'utils/addressHelpers'
 import { usePriceCakeBusd } from '../../../state/farms/hooks'
 
 const StyledContainer = styled.div`
@@ -160,7 +160,7 @@ const settingsTw = {
 const CakeStats = () => {
   const { t } = useTranslation()
   const totalSupply = useTotalSupply()
-  const burnedBalance = getBalanceNumber(useBurnedBalance(getDefiyAddress()))
+  const burnedBalance = getBalanceNumber(useBurnedBalance(getLoopsAddress()))
   const slides = []
   useEffect(() => {
     const scriptTag = document.createElement('script')
@@ -267,7 +267,7 @@ const CakeStats = () => {
                       href="https://twitter.com/hashtag/DEXs?src=hash&amp;ref_src=twsrc%5Etfw">#DEXs</a>, <a
                       href="https://twitter.com/hashtag/DeFiFarms?src=hash&amp;ref_src=twsrc%5Etfw">#DeFiFarms</a> has our own <a
                       href="https://twitter.com/hashtag/token?src=hash&amp;ref_src=twsrc%5Etfw">#token</a> with details below: <br/>Name:
-                    DefiFarms Non-Fungible Yearn<br/>Chain: Binance Smart Chain (BEP20)<br/>Symbol: DEFIY<br/>Max Supply:
+                    DefiFarms Non-Fungible Yearn<br/>Chain: Binance Smart Chain (BEP20)<br/>Symbol: LOOPS<br/>Max Supply:
                     100,000,000<br/><br/>Exciting time with more info to come! <a
                       href="https://t.co/4aDQEHDug4">pic.twitter.com/4aDQEHDug4</a></p>&mdash; DeFiFarms NFTs (@DeFiFarmsNFTs) <a
                     href="https://twitter.com/DeFiFarmsNFTs/status/1481189796072804356?ref_src=twsrc%5Etfw">January 12, 2022</a>
@@ -281,18 +281,18 @@ const CakeStats = () => {
             </div>
             <div style={{ padding: '0 10px' }}>
               <TwitterWrapper>
-                <blockquote className="twitter-tweet"><p lang="en" dir="ltr">&quot;Interested to find out more about Defifarms (<a href="https://twitter.com/hashtag/DEFIY?src=hash&amp;ref_src=twsrc%5Etfw">#DEFIY</a>) before IDO? Click here: <a href="https://t.co/zwJNcTazqC">https://t.co/zwJNcTazqC</a>&#13;Also flick any questions below and we are here to answer! &quot; <a href="https://t.co/5pq68EtZjx">pic.twitter.com/5pq68EtZjx</a></p>&mdash; DeFiFarms NFTs (@DeFiFarmsNFTs) <a href="https://twitter.com/DeFiFarmsNFTs/status/1481617210397585410?ref_src=twsrc%5Etfw">January 13, 2022</a></blockquote>
+                <blockquote className="twitter-tweet"><p lang="en" dir="ltr">&quot;Interested to find out more about Defifarms (<a href="https://twitter.com/hashtag/LOOPS?src=hash&amp;ref_src=twsrc%5Etfw">#LOOPS</a>) before IDO? Click here: <a href="https://t.co/zwJNcTazqC">https://t.co/zwJNcTazqC</a>&#13;Also flick any questions below and we are here to answer! &quot; <a href="https://t.co/5pq68EtZjx">pic.twitter.com/5pq68EtZjx</a></p>&mdash; DeFiFarms NFTs (@DeFiFarmsNFTs) <a href="https://twitter.com/DeFiFarmsNFTs/status/1481617210397585410?ref_src=twsrc%5Etfw">January 13, 2022</a></blockquote>
               </TwitterWrapper>
             </div>
       
             <div style={{ padding: '0 10px' }}>
               <TwitterWrapper>
-                <blockquote className="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/DEFIY?src=hash&amp;ref_src=twsrc%5Etfw">#DEFIY</a> TRANSFER TAX BREAKDOWN 👇<br/>🔴 6% Transfer Tax becomes a part of DeFiFarms Liquidity Pool<br/>🔴 2% Transfer Tax will be burned to keep the value and number of tokens under control <br/><br/>For further details, here&#39;s our Medium post: <a href="https://t.co/7DQyRUbpK2">https://t.co/7DQyRUbpK2</a></p>&mdash; DeFiFarms NFTs (@DeFiFarmsNFTs) <a href="https://twitter.com/DeFiFarmsNFTs/status/1481192391235506176?ref_src=twsrc%5Etfw">January 12, 2022</a></blockquote>
+                <blockquote className="twitter-tweet"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/LOOPS?src=hash&amp;ref_src=twsrc%5Etfw">#LOOPS</a> TRANSFER TAX BREAKDOWN 👇<br/>🔴 6% Transfer Tax becomes a part of DeFiFarms Liquidity Pool<br/>🔴 2% Transfer Tax will be burned to keep the value and number of tokens under control <br/><br/>For further details, here&#39;s our Medium post: <a href="https://t.co/7DQyRUbpK2">https://t.co/7DQyRUbpK2</a></p>&mdash; DeFiFarms NFTs (@DeFiFarmsNFTs) <a href="https://twitter.com/DeFiFarmsNFTs/status/1481192391235506176?ref_src=twsrc%5Etfw">January 12, 2022</a></blockquote>
               </TwitterWrapper>
             </div>
             <div style={{ padding: '0 10px' }}>
               <TwitterWrapper>
-                <blockquote className="twitter-tweet"><p lang="en" dir="ltr">i thing its really good things!<a href="https://twitter.com/hashtag/DeFiFarms?src=hash&amp;ref_src=twsrc%5Etfw">#DeFiFarms</a> <a href="https://twitter.com/search?q=%24DEFIY&amp;src=ctag&amp;ref_src=twsrc%5Etfw">$DEFIY</a><a href="https://twitter.com/IgorVasNft?ref_src=twsrc%5Etfw">@IgorVasNft</a> <a href="https://twitter.com/NDzibuk?ref_src=twsrc%5Etfw">@NDzibuk</a></p>&mdash; Анна На (@AnnaNa78617148) <a href="https://twitter.com/AnnaNa78617148/status/1482728508501762048?ref_src=twsrc%5Etfw">January 16, 2022</a></blockquote>
+                <blockquote className="twitter-tweet"><p lang="en" dir="ltr">i thing its really good things!<a href="https://twitter.com/hashtag/DeFiFarms?src=hash&amp;ref_src=twsrc%5Etfw">#DeFiFarms</a> <a href="https://twitter.com/search?q=%24LOOPS&amp;src=ctag&amp;ref_src=twsrc%5Etfw">$LOOPS</a><a href="https://twitter.com/IgorVasNft?ref_src=twsrc%5Etfw">@IgorVasNft</a> <a href="https://twitter.com/NDzibuk?ref_src=twsrc%5Etfw">@NDzibuk</a></p>&mdash; Анна На (@AnnaNa78617148) <a href="https://twitter.com/AnnaNa78617148/status/1482728508501762048?ref_src=twsrc%5Etfw">January 16, 2022</a></blockquote>
               </TwitterWrapper>
             </div>
           

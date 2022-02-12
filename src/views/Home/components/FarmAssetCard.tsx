@@ -61,7 +61,7 @@ const CardImage = styled.img`
   bottom: 0;
 `
 
-const activeNonCakePools = pools.filter((pool) => pool.earningToken.symbol !== 'DEFIY')
+const activeNonCakePools = pools.filter((pool) => pool.earningToken.symbol !== 'LOOPS')
 const latestPools: SerializedPool[] = orderBy(activeNonCakePools, ['sortOrder', 'pid'], ['desc', 'desc']).slice(0, 5)
 
 export interface FarmAssetCardProps {

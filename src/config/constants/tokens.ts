@@ -13,7 +13,7 @@ interface SerializedTokenList {
 }
 
 // defiy: {
-//   symbol: 'DEFIY',
+//   symbol: 'LOOPS',
 //     address: {
 //     56: '0x08d1Ed0e3816183e703a492dDD28d68fcc13bb61',
 //       97: '0x5017AE3D04e29B67b33CF96a86980717A773a783',
@@ -31,10 +31,10 @@ export const mainnetTokens = {
     'Wrapped BNB',
     'https://www.binance.com/',
   ),
-  lpDefiyBnb: new Token(MAINNET, '0xdf5bB32A0A6eEA368ec8c36E70B51252DAbfE3d8', 18, 'LP-DEFIY-BNB', 'LP-DEFIY-BNB', 'https://defifarms.org'),
+  lpLoopsBnb: new Token(MAINNET, '0xdf5bB32A0A6eEA368ec8c36E70B51252DAbfE3d8', 18, 'LP-LOOPS-BNB', 'LP-LOOPS-BNB', 'https://defifarms.org'),
   // bnb here points to the wbnb contract. Wherever the currency BNB is required, conditional checks for the symbol 'BNB' can be used
   bnb: new Token(MAINNET, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', 18, 'BNB', 'BNB', 'https://www.binance.com/'),
-  defiy: new Token(MAINNET, '0x08d1Ed0e3816183e703a492dDD28d68fcc13bb61', 18, 'DEFIY', 'DEFIY', 'https://defifarms.org'),
+  defiy: new Token(MAINNET, '0x08d1Ed0e3816183e703a492dDD28d68fcc13bb61', 18, 'LOOPS', 'LOOPS', 'https://defifarms.org'),
   cake: new Token(
     MAINNET,
     '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
@@ -1821,10 +1821,10 @@ export const testnetTokens = {
     'Wrapped BNB',
     'https://www.binance.com/',
   ),
-  // defiy: new Token(TESTNET, '0x93F59205df12A64dA17813dd4098B2f16Bd7CACE', 18, 'DEFIY', 'DEFIY', 'https://defifarms.org'),
-  defiy: new Token(TESTNET, '0xF75E0D2Cb7667506edeEce42144b8667D042c937', 18, 'DEFIY', 'DEFIY', 'https://defifarms.org'),
+  // defiy: new Token(TESTNET, '0x93F59205df12A64dA17813dd4098B2f16Bd7CACE', 18, 'LOOPS', 'LOOPS', 'https://defifarms.org'),
+  defiy: new Token(TESTNET, '0xF75E0D2Cb7667506edeEce42144b8667D042c937', 18, 'LOOPS', 'LOOPS', 'https://defifarms.org'),
 
-  lpDefiyBnb: new Token(TESTNET, '0xdf5bB32A0A6eEA368ec8c36E70B51252DAbfE3d8', 18, 'LP-DEFIY-BNB', 'LP-DEFIY-BNB', 'https://defifarms.org'),
+  lpLoopsBnb: new Token(TESTNET, '0xdf5bB32A0A6eEA368ec8c36E70B51252DAbfE3d8', 18, 'LP-LOOPS-BNB', 'LP-LOOPS-BNB', 'https://defifarms.org'),
   cake: new Token(
     TESTNET,
     '0x01BB38d9F8d2d83564bab7BD756EB801651E539F',

@@ -34,7 +34,7 @@ const pools: SerializedPoolConfig[] = [
   },
   {
     sousId: 3,
-    stakingToken: serializedTokens.lpDefiyBnb,
+    stakingToken: serializedTokens.lpLoopsBnb,
     earningToken: serializedTokens.defiy,
     contractAddress: {
       97: '0x7630396C31Cc18232f9409Cc4dfe9e11DAE7cD3d',
@@ -45,7 +45,7 @@ const pools: SerializedPoolConfig[] = [
     harvest: true,
     sortOrder: 2,
     isFinished: false,
-    lpSymbol: 'DEFIY-BNB LP'
+    lpSymbol: 'LOOPS-BNB LP'
   },
   /**
    * SpecialPools start from 500
@@ -62,7 +62,7 @@ const pools: SerializedPoolConfig[] = [
     harvest: true,
     sortOrder: 999,
     tokenPerBlock: '0.0578',
-    poolNote: "DEFIY: Pool Allowcated 60% of master pool",
+    poolNote: "LOOPS: Pool Allowcated 60% of master pool",
   },
   {
     sousId: 501,

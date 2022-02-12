@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { getBalanceNumber, formatLocalisedCompactNumber } from 'utils/formatBalance'
 import { useBurnedBalance, useTotalSupply, useMaxTransferAmount } from 'hooks/useTokenBalance'
 import { useTranslation } from 'contexts/Localization'
-import { getDefiyAddress } from 'utils/addressHelpers'
+import { getLoopsAddress } from 'utils/addressHelpers'
 import { formatEther } from 'ethers/lib/utils'
 import CardValue from './CardValue'
 import { usePriceCakeBusd } from '../../../state/farms/hooks'
@@ -85,7 +85,7 @@ const StyleCardBody = styled(CardBody)`
 const CakeStats = () => {
   const { t } = useTranslation()
   const totalSupply = useTotalSupply()
-  const burnedBalance = getBalanceNumber(useBurnedBalance(getDefiyAddress()))
+  const burnedBalance = getBalanceNumber(useBurnedBalance(getLoopsAddress()))
   const cakeSupply = totalSupply ? getBalanceNumber(totalSupply) - burnedBalance : 0
   const totalMinted = totalSupply ? getBalanceNumber(totalSupply) : 0
   const cakePriceBusd = usePriceCakeBusd()
@@ -103,7 +103,7 @@ const CakeStats = () => {
     <StyledCakeStats>
       <StyleCardBody>
         <HeadingCard color="#fff" scale="xl" mb="8px">
-          {t('DEFIY Stats')}
+          {t('LOOPS Stats')}
         </HeadingCard>
         <Row>
           <Flex>
@@ -151,7 +151,7 @@ const CakeStats = () => {
         <Row>
           <Flex>
             <ArrowRightIcon color="none" />
-            <StyleText>{t('New DEFIY/Block')}</StyleText>
+            <StyleText>{t('New LOOPS/Block')}</StyleText>
           </Flex>
           <StyleText bold>0.01</StyleText>
         </Row>
