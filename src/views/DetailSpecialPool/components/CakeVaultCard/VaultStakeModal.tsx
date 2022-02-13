@@ -58,7 +58,7 @@ const AnnualRoiDisplay = styled(Text)`
 `
 
 const callOptions = {
-  gasLimit: 800000,
+  gasLimit: 1200000,
 }
 
 const VaultStakeModal: React.FC<VaultStakeModalProps> = ({
