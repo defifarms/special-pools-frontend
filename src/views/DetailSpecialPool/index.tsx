@@ -105,7 +105,7 @@ const DetailSpecialPool: React.FC<RouteComponentProps<{ groupPool: string }>> = 
 
   const currentSpecialPoolConfig = SpecialPoolsConfig.find((pool) => pool.link === groupPool)
   const poolsSpecial = poolsWithoutAutoVault.filter((pool) => {
-    const arraySpecialPoolConfig = currentSpecialPoolConfig.childrenPools
+    const arraySpecialPoolConfig = currentSpecialPoolConfig.childrenPoolConfigs
     let isSpecialPools = false
     arraySpecialPoolConfig.forEach((spoolConfig) => {
       if (spoolConfig.sousId === pool.sousId) {

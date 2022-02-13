@@ -105,8 +105,13 @@ export interface SpecialPoolConfigType {
   description?: string
   timeStart?: number
   timeStartNote?: string
-  childrenPools: SerializedPool[]
+  childrenPoolConfigs: SpecialPoolChildrenConfigType[]
 }
+export interface SpecialPoolChildrenConfigType  {
+  sousId: number
+  allocateInMasterPool: number // By percent total all childen is 1 (mean 100%)
+}
+
 export interface Profile {
   userId: number
   points: number

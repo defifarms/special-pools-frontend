@@ -116,7 +116,7 @@ const SpecialPoolItem: React.FC<{ poolConfig: SpecialPoolConfigType }> = ({ pool
 
   const currentSpecialPoolConfig = SpecialPoolsConfig.find((pool) => pool.link === poolConfig.link)
   const poolsSpecial = poolsWithoutAutoVault.filter((pool) => {
-    const arraySpecialPoolConfig = currentSpecialPoolConfig.childrenPools
+    const arraySpecialPoolConfig = currentSpecialPoolConfig.childrenPoolConfigs
     let isSpecialPools = false
     arraySpecialPoolConfig.forEach((spoolConfig) => {
       if (spoolConfig.sousId === pool.sousId) {
@@ -178,7 +178,7 @@ const SpecialPoolItem: React.FC<{ poolConfig: SpecialPoolConfigType }> = ({ pool
         <Flex justifyContent="space-between" mb="8px">
           <Text>{t('APR (%)')}</Text>
           <Text color="#FF97CF">
-            {poolConfig.childrenPools.length !== 0 ? (
+            {poolConfig.childrenPoolConfigs.length !== 0 ? (
               <Apr pool={defiyPools} stakedBalance={stakedBalance} showIcon={false} />
             ) : (
               t('High profits')

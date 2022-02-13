@@ -12,19 +12,10 @@ export const SpecialPoolsConfig: SpecialPoolConfigType[] = [
     capGoal: 30000,
     timeStart: 1641282721695, // 1641222721695
     timeStartNote: 'November 5th 2021',
-    childrenPools: [
+    childrenPoolConfigs: [
       {
         sousId: 500,
-        stakingToken: serializedTokens.defiy,
-        earningToken: serializedTokens.defiy,
-        contractAddress: {
-          97: '0xF29A919Ce75F6667D74aE1edaa442135DC008c58',
-          56: '',
-        },
-        poolCategory: PoolCategory.SPECIAL,
-        harvest: true,
-        sortOrder: 999,
-        tokenPerBlock: '0.0578',
+        allocateInMasterPool: 1
       },
       // {
       //   sousId: 501,
@@ -98,27 +89,27 @@ export const SpecialPoolsConfig: SpecialPoolConfigType[] = [
     link: 'round-2',
     description: "APR 700% | Lock-up tern 10 days",
     capGoal: 50000,
-    childrenPools: [],
+    childrenPoolConfigs: [],
   },
   {
     name: 'LoopStarter 100K',
     link: 'round-3',
     description: "APR 700% | Lock-up tern 10 days",
     capGoal: 100000,
-    childrenPools: [],
+    childrenPoolConfigs: [],
   },
   {
     name: 'LoopStarter 500K',
     link: 'round-4',
     description: "APR 700% | Lock-up tern 10 days",
     capGoal: 500000,
-    childrenPools: [],
+    childrenPoolConfigs: [],
   },
   {
     name: 'LoopStarter 1500K',
     capGoal: 1500000,
     link: 'round-5',
     description: "APR 700% | Lock-up tern 10 days",
-    childrenPools: [],
+    childrenPoolConfigs: [],
   },
 ]
