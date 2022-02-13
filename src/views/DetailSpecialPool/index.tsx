@@ -6,7 +6,7 @@ import {
   IconButton,
   Slider,
   Text,
-  useMatchBreakpoints
+  useMatchBreakpoints,
 } from '@defifarms/special-uikit'
 import { useWeb3React } from '@web3-react/core'
 import BigNumber from 'bignumber.js'
@@ -27,7 +27,6 @@ import { SpecialPoolsConfig } from '../../config/constants/specialPoolConfig'
 import GroupChildrenPools from './components/GroupChildrenPools'
 import GroupStakeInfo from './components/GroupStakeInfo'
 import Apr from './components/PoolsTable/Apr'
-
 
 const CardSpecialPool = styled(Card)<{ background?: string }>`
   background-color: unset;
@@ -91,8 +90,6 @@ const DetailSpecialPool: React.FC<RouteComponentProps<{ groupPool: string }>> = 
     params: { groupPool },
   },
 }) => {
-
-
   const { t } = useTranslation()
   const { account } = useWeb3React()
   const { pools: poolsWithoutAutoVault, userDataLoaded } = useSpecialPools()
@@ -100,8 +97,6 @@ const DetailSpecialPool: React.FC<RouteComponentProps<{ groupPool: string }>> = 
   useFetchCakeVault()
   useFetchPublicPoolsData()
   useFetchUserPools(account)
-
-  
 
   const currentSpecialPoolConfig = SpecialPoolsConfig.find((pool) => pool.link === groupPool)
   const poolsSpecial = poolsWithoutAutoVault.filter((pool) => {
@@ -115,9 +110,20 @@ const DetailSpecialPool: React.FC<RouteComponentProps<{ groupPool: string }>> = 
     return isSpecialPools
   })
   const defiyPools = poolsSpecial[0] || null
-  const stakedBalance = defiyPools && defiyPools?.userData?.stakedBalance ? new BigNumber(defiyPools.userData.stakedBalance) : BIG_ZERO
+  const stakedBalance =
+    defiyPools && defiyPools?.userData?.stakedBalance ? new BigNumber(defiyPools.userData.stakedBalance) : BIG_ZERO
 
-
+  // Pool progress
+  const caculatePoolProgress = (poolsData): number => {
+    let progress = 0 
+    poolsData.forEach((data) => {
+      const totalStaked = data.totalStaked
+      const maxAllowStaked = new BigNumber(data.poolLimit)
+      progress += totalStaked.toNumber() / maxAllowStaked.toNumber()
+    })
+    return progress ? progress * 100 : 0
+  }
+  const poolProgress = caculatePoolProgress(poolsSpecial)
 
   // -----------------------
   const { isXs, isSm, isMd, isLg, isXl, isXxl, isTablet, isDesktop } = useMatchBreakpoints()
@@ -142,8 +148,13 @@ const DetailSpecialPool: React.FC<RouteComponentProps<{ groupPool: string }>> = 
                 <PoolName>{currentSpecialPoolConfig.name}</PoolName>
               </Flex>
               <Flex flex={1} justifyContent="flex-end" alignItems="center">
-                <Text textAlign="right" fontSize={isLargerScreen ? '14px' : '10px'} color="#FFB800" display='inline-flex'>
-                  APR 
+                <Text
+                  textAlign="right"
+                  fontSize={isLargerScreen ? '14px' : '10px'}
+                  color="#FFB800"
+                  display="inline-flex"
+                >
+                  APR
                   <Apr pool={defiyPools} stakedBalance={stakedBalance} showIcon={false} />
                   {currentSpecialPoolConfig.description}
                 </Text>
@@ -156,12 +167,12 @@ const DetailSpecialPool: React.FC<RouteComponentProps<{ groupPool: string }>> = 
             </Flex>
             <Flex justifyContent="space-between">
               <Text>{t('Cap Goals raised')}</Text>
-              <Text>60%</Text>
+              <Text>{poolProgress.toFixed(2)}%</Text>
             </Flex>
             <SliderStyled
               min={0}
-              max={currentSpecialPoolConfig.capGoal}
-              value={(currentSpecialPoolConfig.capGoal * 60) / 100}
+              max={100}
+              value={poolProgress}
               onValueChanged={() => null}
               name="stake"
               // valueLabel={`${60}%`}
