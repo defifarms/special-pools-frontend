@@ -82,6 +82,15 @@ export const fetchPoolStakingLimit = async (sousId: number): Promise<BigNumber> 
     return BIG_ZERO
   }
 }
+export const fetchpoolLimit = async (sousId: number): Promise<BigNumber> => {
+  try {
+    const sousContract = getSouschefV2Contract(sousId)
+    const poolLimit = await sousContract.poolLimit()
+    return new BigNumber(poolLimit.toString())
+  } catch (error) {
+    return BIG_ZERO
+  }
+}
 
 export const fetchPoolsStakingLimits = async (
   poolsWithStakingLimit: number[],
@@ -99,6 +108,25 @@ export const fetchPoolsStakingLimits = async (
     return {
       ...accum,
       [validPools[index].sousId]: stakingLimit,
+    }
+  }, {})
+}
+export const fetchPoolsLimit = async (
+  poolsWithStakingLimit: number[],
+): Promise<{ [key: string]: BigNumber }> => {
+  const validPools = poolsConfig
+    .filter((p) => p.stakingToken.symbol !== 'BNB' && !p.isFinished)
+    .filter((p) => !poolsWithStakingLimit.includes(p.sousId))
+
+  // Get the staking limit for each valid pool
+  // Note: We cannot batch the calls via multicall because V1 pools do not have "poolLimitPerUser" and will throw an error
+  const stakingLimitPromises = validPools.map((validPool) => fetchpoolLimit(validPool.sousId))
+  const poolLimits = await Promise.all(stakingLimitPromises)
+
+  return poolLimits.reduce((accum, poolLimit, index) => {
+    return {
+      ...accum,
+      [validPools[index].sousId]: poolLimit,
     }
   }, {})
 }

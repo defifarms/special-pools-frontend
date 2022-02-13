@@ -19,7 +19,8 @@ const StyledCell = styled(BaseCell)`
 
 const TotalStakedCell: React.FC<TotalStakedCellProps> = ({ pool }) => {
   const { t } = useTranslation()
-  const { sousId, stakingToken, totalStaked, isAutoVault, maxPoolStakeAmount = new BigNumber(10000) } = pool
+  const { sousId, stakingToken, totalStaked, isAutoVault, poolLimit } = pool
+  
   const { totalCakeInVault } = useCakeVault()
 
   const isManualCakePool = sousId === 0
@@ -47,7 +48,7 @@ const TotalStakedCell: React.FC<TotalStakedCellProps> = ({ pool }) => {
             <div>
               <Text fontSize="16px" color="#F2C94C" style={{ whiteSpace: 'nowrap' }}>{`${totalStakedBalance.toFixed(
                 2,
-              )}/${maxPoolStakeAmount} ${stakingToken.symbol}`}</Text>
+              )}/${getBalanceNumber(poolLimit, stakingToken.decimals)} ${stakingToken.symbol}`}</Text>
             </div>
           </Flex>
         ) : (

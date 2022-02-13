@@ -5,13 +5,12 @@ import { BIG_ZERO } from 'utils/bigNumber'
 import { PoolsState, SerializedPool, CakeVault, VaultFees, VaultUser, AppThunk } from 'state/types'
 import { getPoolApr } from 'utils/apr'
 import { getBalanceNumber } from 'utils/formatBalance'
-import { fetchPoolsBlockLimits, fetchPoolsStakingLimits, fetchPoolsTotalStaking } from './fetchPools'
+import { fetchPoolsBlockLimits, fetchPoolsStakingLimits, fetchPoolsLimit, fetchPoolsTotalStaking } from './fetchPools'
 import {
   fetchPoolsAllowance,
   fetchUserBalances,
   fetchUserStakeBalances,
   fetchUserPendingRewards,
-  fetchMaxPoolStakeAmount,
 } from './fetchPoolsUser'
 import { fetchPublicVaultData, fetchVaultFees } from './fetchVaultPublic'
 import fetchVaultUser from './fetchVaultUser'
@@ -88,15 +87,18 @@ export const fetchPoolsStakingLimitsAsync = () => async (dispatch, getState) => 
     .map((pool) => pool.sousId)
 
   const stakingLimits = await fetchPoolsStakingLimits(poolsWithStakingLimit)
+  const poolLimits = await fetchPoolsLimit(poolsWithStakingLimit)
 
   const stakingLimitData = poolsConfig.map((pool) => {
     if (poolsWithStakingLimit.includes(pool.sousId)) {
       return { sousId: pool.sousId }
     }
     const stakingLimit = stakingLimits[pool.sousId] || BIG_ZERO
+    const poolLimit = stakingLimits[pool.sousId] || BIG_ZERO
     return {
       sousId: pool.sousId,
       stakingLimit: stakingLimit.toJSON(),
+      poolLimit: poolLimit.toJSON()
     }
   })
 
@@ -110,7 +112,6 @@ export const fetchPoolsUserDataAsync =
     const stakingTokenBalances = await fetchUserBalances(account)
     const stakedBalances = await fetchUserStakeBalances(account)
     const pendingRewards = await fetchUserPendingRewards(account)
-    const maxPoolStakeAmount = await fetchMaxPoolStakeAmount(account)
 
     const userData = poolsConfig.map((pool) => ({
       sousId: pool.sousId,
@@ -118,7 +119,6 @@ export const fetchPoolsUserDataAsync =
       stakingTokenBalance: stakingTokenBalances[pool.sousId],
       stakedBalance: stakedBalances[pool.sousId],
       pendingReward: pendingRewards[pool.sousId],
-      maxPoolStakeAmount: maxPoolStakeAmount[pool.sousId]
     }))
 
     dispatch(setPoolsUserData(userData))

@@ -18,7 +18,7 @@ export const SpecialPoolsConfig: SpecialPoolConfigType[] = [
         stakingToken: serializedTokens.defiy,
         earningToken: serializedTokens.defiy,
         contractAddress: {
-          97: '0x7458c463a6a257Ae3541B361D1260ae357F9E5A5',
+          97: '0xF29A919Ce75F6667D74aE1edaa442135DC008c58',
           56: '',
         },
         poolCategory: PoolCategory.SPECIAL,

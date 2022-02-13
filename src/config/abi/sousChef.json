@@ -294,6 +294,11 @@
         "type": "uint256"
       },
       {
+        "internalType": "uint256",
+        "name": "_poolLimit",
+        "type": "uint256"
+      },
+      {
         "internalType": "address",
         "name": "_admin",
         "type": "address"
@@ -365,6 +370,19 @@
       }
     ],
     "name": "pendingReward",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "poolLimit",
     "outputs": [
       {
         "internalType": "uint256",
@@ -508,6 +526,11 @@
       {
         "internalType": "uint256",
         "name": "_poolLimitPerUser",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_poolLimit",
         "type": "uint256"
       }
     ],

@@ -185,9 +185,9 @@ const DetailSpecialPool: React.FC<RouteComponentProps<{ groupPool: string }>> = 
                 >
                   {t('Start staking')}
                 </HeadingPool>
-                <Heading as="h2" scale="xl" color="four" fontFamily="HK Grotesk" mb="16px">
+                {/* <Heading as="h2" scale="xl" color="four" fontFamily="HK Grotesk" mb="16px">
                   {t('0.00')}
-                </Heading>
+                </Heading> */}
               </Flex>
               <Flex flexDirection="column">
                 <Flex justifyContent="space-between">

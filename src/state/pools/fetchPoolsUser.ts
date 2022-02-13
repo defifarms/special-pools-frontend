@@ -96,27 +96,6 @@ export const fetchUserPendingRewards = async (account) => {
   return { ...pendingRewards }
 }
 
-export const fetchMaxPoolStakeAmount = async (account) => {
-  const calls = nonMasterPools.map((p) => ({
-    address: getAddress(p.contractAddress),
-    name: 'pendingReward',
-    params: [account],
-  }))
-  const res = await multicall(sousChefABI, calls)
-  const maxPoolStakeAmounts = nonMasterPools.reduce(
-    (acc, pool, index) => ({
-      ...acc,
-      [pool.sousId]: new BigNumber(res[index]).toJSON(),
-    }),
-    {},
-  )
-
-  // Cake / Cake pool
-  // const maxPoolStakeAmount = await masterChefContract.pendingCake('0', account)
-
-  // return { ...maxPoolStakeAmounts, 0: new BigNumber(maxPoolStakeAmount.toString()).toJSON() }
-  return { ...maxPoolStakeAmounts }
-}
 
 export const fetchNextHarvestPools = async (account: string, poolTofetch: SerializedPoolConfig[]) => {
   const masterChefAddress = getMasterChefAddress()
