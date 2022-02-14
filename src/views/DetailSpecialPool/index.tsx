@@ -116,10 +116,12 @@ const DetailSpecialPool: React.FC<RouteComponentProps<{ groupPool: string }>> = 
   // Pool progress
   const caculatePoolProgress = (poolsData): number => {
     let progress = 0 
-    poolsData.forEach((data) => {
-      const totalStaked = data.totalStaked
-      const maxAllowStaked = new BigNumber(data.poolLimit)
-      progress += totalStaked.toNumber() / maxAllowStaked.toNumber()
+    poolsData.forEach((data, index) => {
+      const { totalStaked, poolLimit } = data
+      const maxAllowStaked = new BigNumber(poolLimit)
+      progress +=
+        (totalStaked.toNumber() / maxAllowStaked.toNumber()) *
+        currentSpecialPoolConfig.childrenPoolConfigs[index].allocateInMasterPool
     })
     return progress ? progress * 100 : 0
   }

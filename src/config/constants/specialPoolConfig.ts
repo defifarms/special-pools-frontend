@@ -15,73 +15,28 @@ export const SpecialPoolsConfig: SpecialPoolConfigType[] = [
     childrenPoolConfigs: [
       {
         sousId: 500,
-        allocateInMasterPool: 1
+        allocateInMasterPool: 0.6
       },
-      // {
-      //   sousId: 501,
-      //   stakingToken: serializedTokens.usdt,
-      //   earningToken: serializedTokens.defiy,
-      //   contractAddress: {
-      //     97: '0xf1C20692a886cD9f8fD77eD6b779b482102f3916',
-      //     56: '',
-      //   },
-      //   poolCategory: PoolCategory.SPECIAL,
-      //   harvest: true,
-      //   sortOrder: 999,
-      //   tokenPerBlock: '0.0578',
-      // },
-      // {
-      //   sousId: 502,
-      //   stakingToken: serializedTokens.wbnb,
-      //   earningToken: serializedTokens.defiy,
-      //   contractAddress: {
-      //     97: '0x4362013C43Ee076aC73bf1CF14533B1b52695f96',
-      //     56: '',
-      //   },
-      //   poolCategory: PoolCategory.SPECIAL,
-      //   harvest: true,
-      //   sortOrder: 999,
-      //   tokenPerBlock: '0.0578',
-      // },
-      // {
-      //   sousId: 503,
-      //   stakingToken: serializedTokens.btcb,
-      //   earningToken: serializedTokens.defiy,
-      //   contractAddress: {
-      //     97: '0x6f2744f028e111fdDDd5F01d78C00F7b8FEF44D4',
-      //     56: '',
-      //   },
-      //   poolCategory: PoolCategory.SPECIAL,
-      //   harvest: true,
-      //   sortOrder: 999,
-      //   tokenPerBlock: '0.0578',
-      // },
-      // {
-      //   sousId: 504,
-      //   stakingToken: serializedTokens.eth,
-      //   earningToken: serializedTokens.defiy,
-      //   contractAddress: {
-      //     97: '0x6c134C5D35EE70A7617E71B7a2707ebe71EB3096',
-      //     56: '',
-      //   },
-      //   poolCategory: PoolCategory.SPECIAL,
-      //   harvest: true,
-      //   sortOrder: 999,
-      //   tokenPerBlock: '0.0578',
-      // },
-      // {
-      //   sousId: 505,
-      //   stakingToken: serializedTokens.cake,
-      //   earningToken: serializedTokens.defiy,
-      //   contractAddress: {
-      //     97: '0xc7109B8499ea12643aF743684Cdc299cEaa2e162',
-      //     56: '',
-      //   },
-      //   poolCategory: PoolCategory.SPECIAL,
-      //   harvest: true,
-      //   sortOrder: 999,
-      //   tokenPerBlock: '0.0578',
-      // },
+      {
+        sousId: 501,
+        allocateInMasterPool: 0.08
+      },
+      {
+        sousId: 502,
+        allocateInMasterPool: 0.08
+      },
+      {
+        sousId: 503,
+        allocateInMasterPool: 0.08
+      },
+      {
+        sousId: 504,
+        allocateInMasterPool: 0.08
+      },
+      {
+        sousId: 505,
+        allocateInMasterPool: 0.08
+      },
     ],
   },
   {
