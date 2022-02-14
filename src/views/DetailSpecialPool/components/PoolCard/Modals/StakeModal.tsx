@@ -1,13 +1,10 @@
-import {
-  AutoRenewIcon, BalanceInput, Button, Flex,
-  Image, Link, Modal, Slider, Text
-} from '@defifarms/special-uikit'
+import { AutoRenewIcon, BalanceInput, Button, Flex, Image, Link, Modal, Slider, Text } from '@defifarms/special-uikit'
 import BigNumber from 'bignumber.js'
 import RoiCalculatorModal from 'components/RoiCalculatorModal'
 import { useTranslation } from 'contexts/Localization'
 import useTheme from 'hooks/useTheme'
 import useToast from 'hooks/useToast'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import { DeserializedPool } from 'state/types'
 import styled from 'styled-components'
 import { BIG_ZERO } from 'utils/bigNumber'
@@ -70,14 +67,15 @@ const StakeModal: React.FC<StakeModalProps> = ({
     // return stakingLimit.gt(0) && stakingTokenBalance.gt(stakingLimit) ? stakingLimit : stakingTokenBalance
     return stakingTokenBalance
   }
-  const getBalanceCanStake = () => {
+
+  const getBalanceCanStake = useCallback(() => {
     if (isRemovingStake) {
       return userData.stakedBalance
     }
     let canStakeBalance = BIG_ZERO
     canStakeBalance = new BigNumber(poolLimit).minus(totalStaked)
     return canStakeBalance.gt(0) && stakingTokenBalance.gt(canStakeBalance) ? canStakeBalance : stakingTokenBalance
-  }
+  }, [isRemovingStake, userData.stakedBalance, stakingTokenBalance, poolLimit, totalStaked])
   const fullDecimalStakeAmount = getDecimalAmount(new BigNumber(stakeAmount), stakingToken.decimals)
   const userNotEnoughToken = isRemovingStake
     ? userData.stakedBalance.lt(fullDecimalStakeAmount)
@@ -108,6 +106,7 @@ const StakeModal: React.FC<StakeModalProps> = ({
     isRemovingStake,
     setHasReachedStakedLimit,
     fullDecimalStakeAmount,
+    getBalanceCanStake,
   ])
 
   const handleStakeInputChange = (input: string) => {
@@ -227,12 +226,12 @@ const StakeModal: React.FC<StakeModalProps> = ({
       )}
       <Text ml="auto" color="textSubtle" fontSize="12px">
         {t('Balance: %balance%', {
-          balance: getFullDisplayBalance(getCalculatedStakingLimit(), stakingToken.decimals),
+          balance: getFullDisplayBalance(getCalculatedStakingLimit(), stakingToken.decimals, 4),
         })}
       </Text>
       <Text ml="auto" color="textSubtle" fontSize="12px" mb="8px">
         {t('Allow amount: %balance%', {
-          balance: getFullDisplayBalance(getBalanceCanStake(), stakingToken.decimals),
+          balance: getFullDisplayBalance(getBalanceCanStake(), stakingToken.decimals, 4),
         })}
       </Text>
       <Slider
