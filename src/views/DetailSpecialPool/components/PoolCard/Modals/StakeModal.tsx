@@ -1,29 +1,21 @@
-import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
 import {
-  Modal,
-  Text,
-  Flex,
-  Image,
-  Button,
-  Slider,
-  BalanceInput,
-  AutoRenewIcon,
-  Link,
-  CalculateIcon,
-  IconButton,
+  AutoRenewIcon, BalanceInput, Button, Flex,
+  Image, Link, Modal, Slider, Text
 } from '@defifarms/special-uikit'
+import BigNumber from 'bignumber.js'
+import RoiCalculatorModal from 'components/RoiCalculatorModal'
 import { useTranslation } from 'contexts/Localization'
 import useTheme from 'hooks/useTheme'
 import useToast from 'hooks/useToast'
-import BigNumber from 'bignumber.js'
-import RoiCalculatorModal from 'components/RoiCalculatorModal'
-import { getFullDisplayBalance, formatNumber, getDecimalAmount } from 'utils/formatBalance'
+import React, { useEffect, useState } from 'react'
 import { DeserializedPool } from 'state/types'
+import styled from 'styled-components'
+import { BIG_ZERO } from 'utils/bigNumber'
 import { getInterestBreakdown } from 'utils/compoundApyHelpers'
-import PercentageButton from './PercentageButton'
+import { formatNumber, getDecimalAmount, getFullDisplayBalance } from 'utils/formatBalance'
 import useStakePool from '../../../hooks/useStakePool'
 import useUnstakePool from '../../../hooks/useUnstakePool'
+import PercentageButton from './PercentageButton'
 
 interface StakeModalProps {
   isBnbPool: boolean
@@ -58,7 +50,8 @@ const StakeModal: React.FC<StakeModalProps> = ({
   isRemovingStake = false,
   onDismiss,
 }) => {
-  const { sousId, stakingToken, earningTokenPrice, apr, userData, stakingLimit, earningToken } = pool
+  const { sousId, stakingToken, earningTokenPrice, apr, userData, stakingLimit, earningToken, poolLimit, totalStaked } =
+    pool
   const { t } = useTranslation()
   const { theme } = useTheme()
   const { onStake } = useStakePool(sousId, isBnbPool)
@@ -69,11 +62,21 @@ const StakeModal: React.FC<StakeModalProps> = ({
   const [hasReachedStakeLimit, setHasReachedStakedLimit] = useState(false)
   const [percent, setPercent] = useState(0)
   const [showRoiCalculator, setShowRoiCalculator] = useState(false)
+
   const getCalculatedStakingLimit = () => {
+    // if (isRemovingStake) {
+    //   return userData.stakedBalance
+    // }
+    // return stakingLimit.gt(0) && stakingTokenBalance.gt(stakingLimit) ? stakingLimit : stakingTokenBalance
+    return stakingTokenBalance
+  }
+  const getBalanceCanStake = () => {
     if (isRemovingStake) {
       return userData.stakedBalance
     }
-    return stakingLimit.gt(0) && stakingTokenBalance.gt(stakingLimit) ? stakingLimit : stakingTokenBalance
+    let canStakeBalance = BIG_ZERO
+    canStakeBalance = new BigNumber(poolLimit).minus(totalStaked)
+    return canStakeBalance.gt(0) && stakingTokenBalance.gt(canStakeBalance) ? canStakeBalance : stakingTokenBalance
   }
   const fullDecimalStakeAmount = getDecimalAmount(new BigNumber(stakeAmount), stakingToken.decimals)
   const userNotEnoughToken = isRemovingStake
@@ -110,7 +113,7 @@ const StakeModal: React.FC<StakeModalProps> = ({
   const handleStakeInputChange = (input: string) => {
     if (input) {
       const convertedInput = getDecimalAmount(new BigNumber(input), stakingToken.decimals)
-      const percentage = Math.floor(convertedInput.dividedBy(getCalculatedStakingLimit()).multipliedBy(100).toNumber())
+      const percentage = Math.floor(convertedInput.dividedBy(getBalanceCanStake()).multipliedBy(100).toNumber())
       setPercent(Math.min(percentage, 100))
     } else {
       setPercent(0)
@@ -120,7 +123,7 @@ const StakeModal: React.FC<StakeModalProps> = ({
 
   const handleChangePercent = (sliderPercent: number) => {
     if (sliderPercent > 0) {
-      const percentageOfStakingMax = getCalculatedStakingLimit().dividedBy(100).multipliedBy(sliderPercent)
+      const percentageOfStakingMax = getBalanceCanStake().dividedBy(100).multipliedBy(sliderPercent)
       const amountToStake = getFullDisplayBalance(percentageOfStakingMax, stakingToken.decimals, stakingToken.decimals)
       setStakeAmount(amountToStake)
     } else {
@@ -222,9 +225,14 @@ const StakeModal: React.FC<StakeModalProps> = ({
           })}
         </Text>
       )}
-      <Text ml="auto" color="textSubtle" fontSize="12px" mb="8px">
+      <Text ml="auto" color="textSubtle" fontSize="12px">
         {t('Balance: %balance%', {
           balance: getFullDisplayBalance(getCalculatedStakingLimit(), stakingToken.decimals),
+        })}
+      </Text>
+      <Text ml="auto" color="textSubtle" fontSize="12px" mb="8px">
+        {t('Allow amount: %balance%', {
+          balance: getFullDisplayBalance(getBalanceCanStake(), stakingToken.decimals),
         })}
       </Text>
       <Slider
