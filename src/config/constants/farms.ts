@@ -21,7 +21,7 @@ const farms: SerializedFarmConfig[] = [
     pid: 1,
     lpSymbol: 'LOOPS-BNB LP',
     lpAddresses: {
-      97: '0xdf5bB32A0A6eEA368ec8c36E70B51252DAbfE3d8',
+      97: '0x1AAe36292a6F188e3c8ef245258Df50BFf1ab87D',
       56: '0xf5cae1131ff6004f4091543b08e6264c73b703df',
     },
     token: serializedTokens.defiy,
