@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Box, Text, Button } from '@defifarms/special-uikit'
+import { Flex, Box, Text, Button } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { Divider } from '../shared/styles'
 

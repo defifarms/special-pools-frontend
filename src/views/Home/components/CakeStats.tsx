@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardBody, Heading, Skeleton, Text, ArrowRightIcon, Flex } from '@defifarms/special-uikit'
+import { Card, CardBody, Heading, Skeleton, Text, ArrowRightIcon, Flex } from '@loopstarter/special-uikit'
 import styled from 'styled-components'
 import { getBalanceNumber, formatLocalisedCompactNumber } from 'utils/formatBalance'
 import { useBurnedBalance, useTotalSupply, useMaxTransferAmount } from 'hooks/useTokenBalance'

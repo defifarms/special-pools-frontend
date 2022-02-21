@@ -1,4 +1,4 @@
-import { Flex, Heading, Image, Text } from '@defifarms/special-uikit'
+import { Flex, Heading, Image, Text } from '@loopstarter/special-uikit'
 import { useWeb3React } from '@web3-react/core'
 import BigNumber from 'bignumber.js'
 import FlexLayout from 'components/Layout/Flex'

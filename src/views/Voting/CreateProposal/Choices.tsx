@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Card, CardBody, CardHeader, Heading } from '@defifarms/special-uikit'
+import { Button, Card, CardBody, CardHeader, Heading } from '@loopstarter/special-uikit'
 import uniqueId from 'lodash/uniqueId'
 import { useTranslation } from 'contexts/Localization'
 import Choice from './Choice'

@@ -1,4 +1,4 @@
-import { Heading, Text, Flex, LogoIcon } from '@defifarms/special-uikit'
+import { Heading, Text, Flex, LogoIcon } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'

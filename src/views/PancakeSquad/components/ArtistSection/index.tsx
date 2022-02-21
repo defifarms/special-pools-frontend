@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Button, Flex, Text } from '@defifarms/special-uikit'
+import { Box, Button, Flex, Text } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { LandingBodyWrapper, StyledWaveContainer } from 'views/PancakeSquad/styles'
 import { useTheme } from 'styled-components'

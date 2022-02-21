@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Modal, Box, Flex, Text, BinanceIcon, Input } from '@defifarms/special-uikit'
+import { Modal, Box, Flex, Text, BinanceIcon, Input } from '@loopstarter/special-uikit'
 import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
 import { multiplyPriceByAmount } from 'utils/prices'
 import { SellingStage } from './types'

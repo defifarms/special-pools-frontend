@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Box, Text } from '@defifarms/special-uikit'
+import { Box, Text } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import LineChartLoaderSVG from './LineChartLoaderSVG'
 import BarChartLoaderSVG from './BarChartLoaderSVG'

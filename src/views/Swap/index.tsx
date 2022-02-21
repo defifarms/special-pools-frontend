@@ -1,7 +1,7 @@
 import {
   ArrowDownIcon, BottomDrawer, Box, Button, Flex,
   IconButton, Text, useMatchBreakpoints, useModal
-} from '@defifarms/special-uikit'
+} from '@loopstarter/special-uikit'
 import { CurrencyAmount, JSBI, Token, Trade } from '@pancakeswap/sdk'
 import { MainBackground } from 'components/Layout/MainBackground'
 import Footer from 'components/Menu/Footer'

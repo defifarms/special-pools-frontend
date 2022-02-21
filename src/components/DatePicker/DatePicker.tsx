@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDatePicker, { ReactDatePickerProps } from 'react-datepicker'
-import { Input, InputProps } from '@defifarms/special-uikit'
+import { Input, InputProps } from '@loopstarter/special-uikit'
 
 import 'react-datepicker/dist/react-datepicker.css'
 

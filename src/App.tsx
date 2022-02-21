@@ -1,4 +1,4 @@
-import { ResetCSS } from '@defifarms/special-uikit'
+import { ResetCSS } from '@loopstarter/special-uikit'
 import { useWeb3React } from '@web3-react/core'
 import BigNumber from 'bignumber.js'
 import { DatePickerPortal } from 'components/DatePicker'

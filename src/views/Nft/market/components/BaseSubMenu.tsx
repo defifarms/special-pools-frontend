@@ -1,4 +1,4 @@
-import { SubMenuItems } from '@defifarms/special-uikit'
+import { SubMenuItems } from '@loopstarter/special-uikit'
 import styled from 'styled-components'
 
 const BaseSubMenu = styled(SubMenuItems)`

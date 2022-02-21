@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import { Card, CardBody, Heading } from '@defifarms/special-uikit'
+import { Card, CardBody, Heading } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 
 const StyledAnnouncements = styled(Card)`

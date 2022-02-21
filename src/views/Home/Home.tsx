@@ -1,4 +1,4 @@
-import { BaseLayout, Heading, Text, Flex } from '@defifarms/special-uikit'
+import { BaseLayout, Heading, Text, Flex } from '@loopstarter/special-uikit'
 // import TotalValueLockedCard from './components/TotalValueLockedCard'
 import { MainBackground } from 'components/Layout/MainBackground'
 import Page from 'components/Layout/Page'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { darkColors, Text } from '@defifarms/special-uikit'
+import { darkColors, Text } from '@loopstarter/special-uikit'
 import { ContextApi } from 'contexts/Localization/types'
 import { SaleStatusEnum, UserStatusEnum } from '../../types'
 

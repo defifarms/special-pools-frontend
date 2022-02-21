@@ -10,7 +10,7 @@ import {
   ModalContainer,
   ModalHeader as UIKitModalHeader,
   ModalTitle,
-} from '@defifarms/special-uikit'
+} from '@loopstarter/special-uikit'
 import { parseUnits } from 'ethers/lib/utils'
 import { useTranslation } from 'contexts/Localization'
 import styled from 'styled-components'

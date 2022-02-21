@@ -1,4 +1,4 @@
-import { Box, Flex, lightColors, Text } from '@defifarms/special-uikit'
+import { Box, Flex, lightColors, Text } from '@loopstarter/special-uikit'
 import styled from 'styled-components'
 
 export const StyledSquadHeaderContainer = styled(Flex)`

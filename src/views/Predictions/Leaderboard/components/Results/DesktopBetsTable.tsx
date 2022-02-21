@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Card, Text } from '@defifarms/special-uikit'
+import { Box, Card, Text } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import PreviousBetsTable from '../PreviousBetsTable'
 

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useWeb3React } from '@web3-react/core'
-import { Flex } from '@defifarms/special-uikit'
+import { Flex } from '@loopstarter/special-uikit'
 import sum from 'lodash/sum'
 import Page from 'components/Layout/Page'
 import { getNftApi, getNftsMarketData } from 'state/nftMarket/helpers'

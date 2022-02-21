@@ -12,7 +12,7 @@ import {
   Button,
   ArrowBackIcon,
   IconButton
-} from '@defifarms/special-uikit'
+} from '@loopstarter/special-uikit'
 import styled from 'styled-components'
 import usePrevious from 'hooks/usePreviousValue'
 import { TokenList } from '@uniswap/token-lists'

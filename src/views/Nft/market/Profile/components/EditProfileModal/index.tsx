@@ -1,5 +1,5 @@
 import React from 'react'
-import { InjectedModalProps, Modal } from '@defifarms/special-uikit'
+import { InjectedModalProps, Modal } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { ContextApi } from 'contexts/Localization/types'
 import useEditProfile, { Views } from './reducer'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Radio, Flex, Image, Text } from '@defifarms/special-uikit'
+import { Radio, Flex, Image, Text } from '@loopstarter/special-uikit'
 import styled from 'styled-components'
 import noop from 'lodash/noop'
 import { formatNumber } from 'utils/formatBalance'

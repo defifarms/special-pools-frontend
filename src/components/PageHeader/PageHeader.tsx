@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Box } from '@defifarms/special-uikit'
+import { Box } from '@loopstarter/special-uikit'
 import Container from '../Layout/Container'
 import { PageHeaderProps } from './types'
 

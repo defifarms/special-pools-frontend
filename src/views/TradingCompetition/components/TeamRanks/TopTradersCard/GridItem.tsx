@@ -1,5 +1,5 @@
 import React from 'react'
-import { Heading, Text, Flex } from '@defifarms/special-uikit'
+import { Heading, Text, Flex } from '@loopstarter/special-uikit'
 import styled from 'styled-components'
 import truncateHash from 'utils/truncateHash'
 import { LeaderboardDataItem } from '../../../types'

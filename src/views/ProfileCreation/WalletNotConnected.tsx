@@ -1,5 +1,5 @@
 import React from 'react'
-import { Heading, Text } from '@defifarms/special-uikit'
+import { Heading, Text } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 

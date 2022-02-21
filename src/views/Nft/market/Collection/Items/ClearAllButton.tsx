@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, ButtonProps } from '@defifarms/special-uikit'
+import { Button, ButtonProps } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { useAppDispatch } from 'state'
 import { removeAllFilters } from 'state/nftMarket/reducer'

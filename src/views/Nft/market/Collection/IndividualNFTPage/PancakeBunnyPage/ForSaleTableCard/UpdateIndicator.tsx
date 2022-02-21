@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Flex, useTooltip } from '@defifarms/special-uikit'
+import { Flex, useTooltip } from '@loopstarter/special-uikit'
 import { useLoadingState } from 'state/nftMarket/hooks'
 import { useTranslation } from 'contexts/Localization'
 import CountdownCircle from './CountdownCircle'

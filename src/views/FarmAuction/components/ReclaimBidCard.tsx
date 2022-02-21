@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, Heading, Card, CardHeader, CardBody, Flex } from '@defifarms/special-uikit'
+import { Text, Heading, Card, CardHeader, CardBody, Flex } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import useApproveConfirmTransaction from 'hooks/useApproveConfirmTransaction'
 import { useCake, useFarmAuctionContract } from 'hooks/useContract'

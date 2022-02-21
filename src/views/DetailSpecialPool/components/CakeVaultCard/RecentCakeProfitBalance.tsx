@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, TooltipText, useTooltip } from '@defifarms/special-uikit'
+import { Text, TooltipText, useTooltip } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import Balance from 'components/Balance'
 

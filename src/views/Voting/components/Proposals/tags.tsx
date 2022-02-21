@@ -1,5 +1,5 @@
 import React from 'react'
-import { TagProps } from '@defifarms/special-uikit'
+import { TagProps } from '@loopstarter/special-uikit'
 import { ClosedTag, CommunityTag, CoreTag, SoonTag, VoteNowTag } from 'components/Tags'
 import { ProposalState } from 'state/types'
 

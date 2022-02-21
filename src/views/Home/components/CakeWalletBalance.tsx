@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text } from '@defifarms/special-uikit'
+import { Text } from '@loopstarter/special-uikit'
 import { useWeb3React } from '@web3-react/core'
 import useTokenBalance from 'hooks/useTokenBalance'
 import { useTranslation } from 'contexts/Localization'

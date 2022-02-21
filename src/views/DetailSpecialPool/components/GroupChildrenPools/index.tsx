@@ -1,4 +1,4 @@
-import { Flex } from '@defifarms/special-uikit'
+import { Flex } from '@loopstarter/special-uikit'
 import { useWeb3React } from '@web3-react/core'
 import React from 'react'
 import { SpecialPoolConfigType } from 'state/types'

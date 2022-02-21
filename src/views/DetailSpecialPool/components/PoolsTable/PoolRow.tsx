@@ -1,4 +1,4 @@
-import { Flex, Text, useMatchBreakpoints, useTooltip } from '@defifarms/special-uikit'
+import { Flex, Text, useMatchBreakpoints, useTooltip } from '@loopstarter/special-uikit'
 import BigNumber from 'bignumber.js'
 import { TokenImage } from 'components/TokenImage'
 import { useTranslation } from 'contexts/Localization'

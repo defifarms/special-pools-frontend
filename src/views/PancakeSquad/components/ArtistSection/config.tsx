@@ -1,5 +1,5 @@
 import React from 'react'
-import { InstagramIcon, TwitterIcon } from '@defifarms/special-uikit'
+import { InstagramIcon, TwitterIcon } from '@loopstarter/special-uikit'
 import { ContextApi } from 'contexts/Localization/types'
 
 type ArtistConfigType = {

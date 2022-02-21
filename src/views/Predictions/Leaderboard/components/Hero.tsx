@@ -1,5 +1,5 @@
 import React from 'react'
-import { Heading } from '@defifarms/special-uikit'
+import { Heading } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import PageHeader from 'components/PageHeader'
 import Crumbs from './Crumbs'

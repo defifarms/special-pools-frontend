@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, TextProps } from '@defifarms/special-uikit'
+import { Text, TextProps } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { MarketEvent } from '../../utils/sortUserActivity'
 

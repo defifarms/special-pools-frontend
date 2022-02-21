@@ -1,4 +1,4 @@
-import { Svg, SvgProps } from '@defifarms/special-uikit'
+import { Svg, SvgProps } from '@loopstarter/special-uikit'
 import * as React from 'react'
 
 const Icon: React.FC<SvgProps & { isDark: boolean }> = ({ isDark, ...props }) => {

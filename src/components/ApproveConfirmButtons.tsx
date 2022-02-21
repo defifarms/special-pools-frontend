@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ChevronRightIcon, Button as UIKitButton, AutoRenewIcon, ChevronDownIcon, Box, Flex } from '@defifarms/special-uikit'
+import { ChevronRightIcon, Button as UIKitButton, AutoRenewIcon, ChevronDownIcon, Box, Flex } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 
 export enum ButtonArrangement {

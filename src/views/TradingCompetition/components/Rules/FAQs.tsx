@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Card, CardBody, CardHeader, Heading, Text, Flex } from '@defifarms/special-uikit'
+import { Card, CardBody, CardHeader, Heading, Text, Flex } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import FoldableText from 'components/FoldableSection/FoldableText'
 

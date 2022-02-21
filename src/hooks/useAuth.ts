@@ -9,7 +9,7 @@ import {
   UserRejectedRequestError as UserRejectedRequestErrorWalletConnect,
   WalletConnectConnector,
 } from '@web3-react/walletconnect-connector'
-import { ConnectorNames, connectorLocalStorageKey } from '@defifarms/special-uikit'
+import { ConnectorNames, connectorLocalStorageKey } from '@loopstarter/special-uikit'
 import { connectorsByName } from 'utils/web3React'
 import { setupNetwork } from 'utils/wallet'
 import useToast from 'hooks/useToast'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, Heading, Card, CardHeader, CardBody, Box, BoxProps } from '@defifarms/special-uikit'
+import { Text, Heading, Card, CardHeader, CardBody, Box, BoxProps } from '@loopstarter/special-uikit'
 import FoldableText from './FoldableText'
 
 interface Props extends BoxProps {

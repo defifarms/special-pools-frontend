@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Skeleton } from '@defifarms/special-uikit'
+import { Skeleton } from '@loopstarter/special-uikit'
 
 export interface EarnedProps {
   earnings: number

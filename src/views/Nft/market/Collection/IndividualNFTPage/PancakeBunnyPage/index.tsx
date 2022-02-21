@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import { useWeb3React } from '@web3-react/core'
-import { Flex } from '@defifarms/special-uikit'
+import { Flex } from '@loopstarter/special-uikit'
 import orderBy from 'lodash/orderBy'
 import sum from 'lodash/sum'
 import Page from 'components/Layout/Page'

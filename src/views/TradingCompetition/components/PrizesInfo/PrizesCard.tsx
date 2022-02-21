@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Card, CardHeader, Box, Heading, Text } from '@defifarms/special-uikit'
+import { Card, CardHeader, Box, Heading, Text } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import PrizesGrid from './PrizesGrid'
 

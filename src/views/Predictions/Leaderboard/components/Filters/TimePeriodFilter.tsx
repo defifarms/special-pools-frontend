@@ -1,5 +1,5 @@
 import React from 'react'
-import { ButtonMenu, ButtonMenuItem } from '@defifarms/special-uikit'
+import { ButtonMenu, ButtonMenuItem } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { useAppDispatch } from 'state'
 import { setLeaderboardFilter } from 'state/predictions'

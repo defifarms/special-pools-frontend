@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Box, Button, Flex, Text } from '@defifarms/special-uikit'
+import { Box, Button, Flex, Text } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import ColoredWordHeading from 'views/Home/components/ColoredWordHeading'
 import { LandingBodyWrapper } from 'views/PancakeSquad/styles'

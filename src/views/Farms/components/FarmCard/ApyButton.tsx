@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
-import { Flex, IconButton, useModal, CalculateIcon } from '@defifarms/special-uikit'
+import { Flex, IconButton, useModal, CalculateIcon } from '@loopstarter/special-uikit'
 import RoiCalculatorModal from 'components/RoiCalculatorModal'
 import { useTranslation } from 'contexts/Localization'
 import { useFarmUser, useLpTokenPrice } from 'state/farms/hooks'

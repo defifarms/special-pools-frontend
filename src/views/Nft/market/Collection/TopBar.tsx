@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, ChevronLeftIcon, Flex } from '@defifarms/special-uikit'
+import { Box, ChevronLeftIcon, Flex } from '@loopstarter/special-uikit'
 import { Link as RouterLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'

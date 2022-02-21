@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, BinanceIcon, Text } from '@defifarms/special-uikit'
+import { Flex, BinanceIcon, Text } from '@loopstarter/special-uikit'
 import { multiplyPriceByAmount } from 'utils/prices'
 
 const ActivityPrice = ({ bnbBusdPrice, price }) => {

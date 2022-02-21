@@ -10,7 +10,7 @@ import {
   Text,
   useTooltip,
   WaitIcon,
-} from '@defifarms/special-uikit'
+} from '@loopstarter/special-uikit'
 import { useWeb3React } from '@web3-react/core'
 import styled from 'styled-components'
 import { useAppDispatch } from 'state'

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Token } from '@pancakeswap/sdk'
-import { Modal, InjectedModalProps } from '@defifarms/special-uikit'
+import { Modal, InjectedModalProps } from '@loopstarter/special-uikit'
 import ImportToken from 'components/SearchModal/ImportToken'
 import { useTranslation } from 'contexts/Localization'
 

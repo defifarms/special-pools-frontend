@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { useMatchBreakpoints } from '@defifarms/special-uikit'
+import { useMatchBreakpoints } from '@loopstarter/special-uikit'
 import { DeserializedPool } from 'state/types'
 import useDelayedUnmount from 'hooks/useDelayedUnmount'
 import NameCell from './Cells/NameCell'

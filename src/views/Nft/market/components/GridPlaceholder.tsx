@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, BoxProps, Grid, GridProps, Skeleton } from '@defifarms/special-uikit'
+import { Box, BoxProps, Grid, GridProps, Skeleton } from '@loopstarter/special-uikit'
 import times from 'lodash/times'
 
 interface GridPlaceholderProps extends GridProps {

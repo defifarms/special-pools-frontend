@@ -10,7 +10,7 @@ import {
   CheckmarkCircleIcon,
   useWalletModal,
   useModal,
-} from '@defifarms/special-uikit'
+} from '@loopstarter/special-uikit'
 import { useHistory } from 'react-router-dom'
 import useAuth from 'hooks/useAuth'
 import { useTranslation } from 'contexts/Localization'

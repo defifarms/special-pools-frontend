@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { InjectedModalProps } from '@defifarms/special-uikit'
+import { InjectedModalProps } from '@loopstarter/special-uikit'
 import { useWeb3React } from '@web3-react/core'
 import { parseUnits } from 'ethers/lib/utils'
 import useTheme from 'hooks/useTheme'

@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react'
 import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
-import { Button, Flex, Text } from '@defifarms/special-uikit'
+import { Button, Flex, Text } from '@loopstarter/special-uikit'
 import { getAddress } from 'utils/addressHelpers'
 import { useAppDispatch } from 'state'
 import { fetchFarmUserDataAsync } from 'state/farms'

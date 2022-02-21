@@ -1,4 +1,4 @@
-import { Box, BoxProps } from '@defifarms/special-uikit'
+import { Box, BoxProps } from '@loopstarter/special-uikit'
 import React, { FC } from 'react'
 import { NftToken } from 'state/nftMarket/types'
 import styled from 'styled-components'

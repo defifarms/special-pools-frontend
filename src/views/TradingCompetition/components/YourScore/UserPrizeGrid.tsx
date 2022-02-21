@@ -9,7 +9,7 @@ import {
   TeamPlayerIcon,
   TrophyGoldIcon,
   Skeleton,
-} from '@defifarms/special-uikit'
+} from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { UserTradingInformationProps } from '../../types'
 import { useCompetitionCakeRewards, getRewardGroupAchievements } from '../../helpers'

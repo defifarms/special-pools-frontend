@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Box, Breadcrumbs, Card, Flex, Heading, Text } from '@defifarms/special-uikit'
+import { Box, Breadcrumbs, Card, Flex, Heading, Text } from '@loopstarter/special-uikit'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'contexts/Localization'
 import Container from 'components/Layout/Container'

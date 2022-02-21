@@ -1,4 +1,4 @@
-import { InjectedModalProps } from '@defifarms/special-uikit'
+import { InjectedModalProps } from '@loopstarter/special-uikit'
 
 export enum ConfirmVoteView {
   MAIN = 'main',

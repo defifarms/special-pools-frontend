@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Skeleton, Text, Flex, Box, useModal, useMatchBreakpoints } from '@defifarms/special-uikit'
+import { Skeleton, Text, Flex, Box, useModal, useMatchBreakpoints } from '@loopstarter/special-uikit'
 import { DeserializedPool } from 'state/types'
 import BigNumber from 'bignumber.js'
 import { PoolCategory } from 'config/constants/types'

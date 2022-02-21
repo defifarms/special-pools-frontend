@@ -1,5 +1,5 @@
 import React from 'react'
-import { Td, Text } from '@defifarms/special-uikit'
+import { Td, Text } from '@loopstarter/special-uikit'
 import { PredictionUser } from 'state/types'
 import ResultAvatar from './ResultAvatar'
 import { NetWinnings } from './styles'

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Box, Flex, Text } from '@defifarms/special-uikit'
+import { Box, Flex, Text } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { useAppDispatch } from 'state'
 import { setLeaderboardFilter } from 'state/predictions'

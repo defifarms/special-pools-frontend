@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Flex, Text, ChevronUpIcon, ChevronDownIcon } from '@defifarms/special-uikit'
+import { Flex, Text, ChevronUpIcon, ChevronDownIcon } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import PreviousBetsTable from './PreviousBetsTable'
 

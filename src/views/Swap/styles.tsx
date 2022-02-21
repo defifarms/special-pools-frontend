@@ -1,4 +1,4 @@
-import { Box, Flex } from '@defifarms/special-uikit'
+import { Box, Flex } from '@loopstarter/special-uikit'
 import styled from 'styled-components'
 
 export const StyledSwapContainer = styled(Flex)<{ $isChartExpanded: boolean }>`

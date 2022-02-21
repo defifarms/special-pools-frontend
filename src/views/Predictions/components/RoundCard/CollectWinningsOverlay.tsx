@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex, TrophyGoldIcon } from '@defifarms/special-uikit'
+import { Flex, TrophyGoldIcon } from '@loopstarter/special-uikit'
 import { useGetIsClaimable } from 'state/predictions/hooks'
 import { useTranslation } from 'contexts/Localization'
 import CollectWinningsButton from '../CollectWinningsButton'

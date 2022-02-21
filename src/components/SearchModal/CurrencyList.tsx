@@ -1,6 +1,6 @@
 import React, { CSSProperties, MutableRefObject, useCallback, useMemo } from 'react'
 import { Currency, CurrencyAmount, currencyEquals, ETHER, Token } from '@pancakeswap/sdk'
-import { Text } from '@defifarms/special-uikit'
+import { Text } from '@loopstarter/special-uikit'
 import styled from 'styled-components'
 import { FixedSizeList } from 'react-window'
 import { wrappedCurrency } from 'utils/wrappedCurrency'

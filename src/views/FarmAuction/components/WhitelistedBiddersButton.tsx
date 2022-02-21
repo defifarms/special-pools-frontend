@@ -1,5 +1,5 @@
 import React from 'react'
-import { useModal, Button, Skeleton } from '@defifarms/special-uikit'
+import { useModal, Button, Skeleton } from '@loopstarter/special-uikit'
 import WhitelistedBiddersModal from './WhitelistedBiddersModal'
 import useWhitelistedAddresses from '../hooks/useWhitelistedAddresses'
 

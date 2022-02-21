@@ -1,4 +1,4 @@
-import { Flex } from '@defifarms/special-uikit'
+import { Flex } from '@loopstarter/special-uikit'
 import styled from 'styled-components'
 
 export const StyledBunnySectionContainer = styled(Flex)`

@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
 import { BigNumber } from 'ethers'
-import { Flex } from '@defifarms/special-uikit'
+import { Flex } from '@loopstarter/special-uikit'
 import { ContextApi } from 'contexts/Localization/types'
 import { DefaultTheme } from 'styled-components'
 import { SaleStatusEnum, UserStatusEnum } from '../../types'

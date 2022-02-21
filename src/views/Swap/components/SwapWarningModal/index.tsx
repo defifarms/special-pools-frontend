@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import { ModalBody, ModalContainer, Message, ModalHeader, Box, Heading } from '@defifarms/special-uikit'
+import { ModalBody, ModalContainer, Message, ModalHeader, Box, Heading } from '@loopstarter/special-uikit'
 import useTheme from 'hooks/useTheme'
 import { useTranslation } from 'contexts/Localization'
 import { WrappedTokenInfo } from 'state/lists/hooks'

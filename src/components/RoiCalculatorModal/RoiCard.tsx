@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { Box, Flex, Text, Input, CheckmarkIcon, PencilIcon, IconButton } from '@defifarms/special-uikit'
+import { Box, Flex, Text, Input, CheckmarkIcon, PencilIcon, IconButton } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { CalculatorMode, RoiCalculatorReducerState } from './useRoiCalculatorReducer'
 

@@ -1,4 +1,4 @@
-import { AddIcon, Button, CardBody, Flex, Message, Text, useModal } from '@defifarms/special-uikit'
+import { AddIcon, Button, CardBody, Flex, Message, Text, useModal } from '@loopstarter/special-uikit'
 import { BigNumber } from '@ethersproject/bignumber'
 import { TransactionResponse } from '@ethersproject/providers'
 import { Currency, currencyEquals, ETHER, TokenAmount, WETH } from '@pancakeswap/sdk'

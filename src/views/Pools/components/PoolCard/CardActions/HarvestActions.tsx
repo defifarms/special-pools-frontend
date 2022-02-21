@@ -1,4 +1,4 @@
-import { Button, Flex, Heading, Skeleton, Text, useModal } from '@defifarms/special-uikit'
+import { Button, Flex, Heading, Skeleton, Text, useModal } from '@loopstarter/special-uikit'
 import { Token } from '@pancakeswap/sdk'
 import BigNumber from 'bignumber.js'
 import Balance from 'components/Balance'

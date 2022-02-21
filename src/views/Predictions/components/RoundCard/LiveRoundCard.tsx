@@ -9,7 +9,7 @@ import {
   Text,
   TooltipText,
   useTooltip,
-} from '@defifarms/special-uikit'
+} from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { NodeRound, NodeLedger, BetPosition } from 'state/types'
 import { formatBigNumberToFixed } from 'utils/formatBalance'

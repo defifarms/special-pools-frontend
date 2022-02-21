@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Card, Radio } from '@defifarms/special-uikit'
+import { Card, Radio } from '@loopstarter/special-uikit'
 
 interface SelectionCardProps {
   name: string

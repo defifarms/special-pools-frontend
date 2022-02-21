@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box } from '@defifarms/special-uikit'
+import { Box } from '@loopstarter/special-uikit'
 import { PredictionUser } from 'state/types'
 import MobileRow from './MobileRow'
 

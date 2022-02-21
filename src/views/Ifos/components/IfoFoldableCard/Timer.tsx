@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'contexts/Localization'
 import { getBscScanLink } from 'utils'
-import { Flex, Link, PocketWatchIcon, Text, Skeleton } from '@defifarms/special-uikit'
+import { Flex, Link, PocketWatchIcon, Text, Skeleton } from '@loopstarter/special-uikit'
 import getTimePeriods from 'utils/getTimePeriods'
 import { PublicIfoData } from 'views/Ifos/types'
 

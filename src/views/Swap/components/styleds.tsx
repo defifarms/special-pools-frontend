@@ -1,4 +1,4 @@
-import { ErrorIcon, Text } from '@defifarms/special-uikit'
+import { ErrorIcon, Text } from '@loopstarter/special-uikit'
 import { AutoColumn } from 'components/Layout/Column'
 import React from 'react'
 import styled, { css } from 'styled-components'

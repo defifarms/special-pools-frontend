@@ -1,6 +1,6 @@
 import React from 'react'
 import { ethers } from 'ethers'
-import { CheckmarkCircleIcon, CheckmarkCircleFillIcon, Tag, useTooltip } from '@defifarms/special-uikit'
+import { CheckmarkCircleIcon, CheckmarkCircleFillIcon, Tag, useTooltip } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { formatBnbv2 } from '../../helpers'
 

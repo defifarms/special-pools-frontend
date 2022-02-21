@@ -8,7 +8,7 @@ import {
   UserMenuDivider,
   UserMenuItem,
   useMatchBreakpoints
-} from '@defifarms/special-uikit'
+} from '@loopstarter/special-uikit'
 import history from 'routerHistory'
 import useAuth from 'hooks/useAuth'
 import styled from 'styled-components'

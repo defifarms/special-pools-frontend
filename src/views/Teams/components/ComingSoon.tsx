@@ -1,5 +1,5 @@
 import React from 'react'
-import { BunnyPlaceholderIcon, Flex, Heading } from '@defifarms/special-uikit'
+import { BunnyPlaceholderIcon, Flex, Heading } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 
 interface ComingSoonProps {

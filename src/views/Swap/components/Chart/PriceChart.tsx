@@ -9,7 +9,7 @@ import {
   Skeleton,
   SyncAltIcon,
   Text as TextStyle,
-} from '@defifarms/special-uikit'
+} from '@loopstarter/special-uikit'
 import styled from 'styled-components'
 import React, { useState } from 'react'
 import { CurrencyLogo, DoubleCurrencyLogo } from 'components/Logo'

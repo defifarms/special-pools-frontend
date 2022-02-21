@@ -1,4 +1,4 @@
-import { AutoRenewIcon, BalanceInput, Button, Flex, Image, Link, Modal, Slider, Text } from '@defifarms/special-uikit'
+import { AutoRenewIcon, BalanceInput, Button, Flex, Image, Link, Modal, Slider, Text } from '@loopstarter/special-uikit'
 import BigNumber from 'bignumber.js'
 import RoiCalculatorModal from 'components/RoiCalculatorModal'
 import { useTranslation } from 'contexts/Localization'

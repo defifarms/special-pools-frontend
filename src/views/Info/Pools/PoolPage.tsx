@@ -16,7 +16,7 @@ import {
   ButtonMenuItem,
   HelpIcon,
   useTooltip,
-} from '@defifarms/special-uikit'
+} from '@loopstarter/special-uikit'
 import styled from 'styled-components'
 import Page from 'components/Layout/Page'
 import { getBscScanLink } from 'utils'

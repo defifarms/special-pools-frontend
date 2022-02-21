@@ -11,7 +11,7 @@ import {
   LaurelRightIcon,
   CheckmarkCircleIcon,
   useModal,
-} from '@defifarms/special-uikit'
+} from '@loopstarter/special-uikit'
 import { CLAIM, OVER } from 'config/constants/trading-competition/easterPhases'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { useTranslation } from 'contexts/Localization'

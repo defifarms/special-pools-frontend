@@ -8,7 +8,7 @@ import {
   IconButton,
   ChevronUpIcon,
   ChevronDownIcon,
-} from '@defifarms/special-uikit'
+} from '@loopstarter/special-uikit'
 
 interface CollapsibleCardProps extends CardProps {
   initialOpenState?: boolean

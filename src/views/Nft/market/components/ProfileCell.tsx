@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Box, Flex, BunnyPlaceholderIcon, Skeleton, Text } from '@defifarms/special-uikit'
+import { Box, Flex, BunnyPlaceholderIcon, Skeleton, Text } from '@loopstarter/special-uikit'
 import truncateHash from 'utils/truncateHash'
 import { useGetProfileAvatar } from 'state/profile/hooks'
 import { ProfileAvatarFetchStatus } from 'state/types'

@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from 'react'
-import { Flex, Radio, Text } from '@defifarms/special-uikit'
+import { Flex, Radio, Text } from '@loopstarter/special-uikit'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
 import { ProposalState } from 'state/types'

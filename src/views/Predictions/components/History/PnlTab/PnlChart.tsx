@@ -1,6 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'contexts/Localization'
-import { Text } from '@defifarms/special-uikit'
+import { Text } from '@loopstarter/special-uikit'
 import { SVG, WonSlice, LostSlice, Wrapper, Info } from './PnlChartStyles'
 
 /**

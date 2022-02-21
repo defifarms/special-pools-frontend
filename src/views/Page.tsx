@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Box, Flex } from '@defifarms/special-uikit'
+import { Box, Flex } from '@loopstarter/special-uikit'
 import Footer from 'components/Menu/Footer'
 import { PageMeta } from 'components/Layout/Page'
 

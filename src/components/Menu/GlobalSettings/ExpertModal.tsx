@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Text, Flex, Message, Modal, InjectedModalProps, Checkbox } from '@defifarms/special-uikit'
+import { Button, Text, Flex, Message, Modal, InjectedModalProps, Checkbox } from '@loopstarter/special-uikit'
 import { useExpertModeManager } from 'state/user/hooks'
 import { useTranslation } from 'contexts/Localization'
 import styled from 'styled-components'

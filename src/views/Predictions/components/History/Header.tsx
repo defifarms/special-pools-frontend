@@ -10,7 +10,7 @@ import {
   Text,
   ButtonMenu,
   ButtonMenuItem,
-} from '@defifarms/special-uikit'
+} from '@loopstarter/special-uikit'
 import { useAppDispatch } from 'state'
 import { HistoryFilter } from 'state/types'
 import { setHistoryFilter, setHistoryPaneState } from 'state/predictions'

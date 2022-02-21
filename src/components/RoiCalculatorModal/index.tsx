@@ -11,7 +11,7 @@ import {
   HelpIcon,
   ButtonMenuItem,
   useTooltip,
-} from '@defifarms/special-uikit'
+} from '@loopstarter/special-uikit'
 import BigNumber from 'bignumber.js'
 import { useTranslation } from 'contexts/Localization'
 import { getBalanceNumber } from 'utils/formatBalance'

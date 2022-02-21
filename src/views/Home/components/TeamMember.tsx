@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Heading, Text, Flex } from '@defifarms/special-uikit'
+import { Heading, Text, Flex } from '@loopstarter/special-uikit'
 import styled from 'styled-components'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { useBurnedBalance, useTotalSupply } from 'hooks/useTokenBalance'

@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { Text, Heading, Card } from '@defifarms/special-uikit'
+import { Text, Heading, Card } from '@loopstarter/special-uikit'
 import Page from 'components/Layout/Page'
 import PoolTable from 'views/Info/components/InfoTables/PoolsTable'
 import { useAllPoolData, usePoolDatas } from 'state/info/hooks'

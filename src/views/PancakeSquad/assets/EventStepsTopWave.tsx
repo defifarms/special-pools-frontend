@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Svg, SvgProps } from '@defifarms/special-uikit'
+import { Svg, SvgProps } from '@loopstarter/special-uikit'
 
 const Icon: React.FC<SvgProps & { isDark }> = ({ isDark, ...props }) => {
   return (

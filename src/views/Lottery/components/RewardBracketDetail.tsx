@@ -1,6 +1,6 @@
 import React from 'react'
 import BigNumber from 'bignumber.js'
-import { Flex, Skeleton, Text } from '@defifarms/special-uikit'
+import { Flex, Skeleton, Text } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { usePriceCakeBusd } from 'state/farms/hooks'
 import Balance from 'components/Balance'

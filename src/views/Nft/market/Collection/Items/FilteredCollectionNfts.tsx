@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import orderBy from 'lodash/orderBy'
-import { BunnyPlaceholderIcon, Button, Flex, Grid, Text } from '@defifarms/special-uikit'
+import { BunnyPlaceholderIcon, Button, Flex, Grid, Text } from '@loopstarter/special-uikit'
 import {
   useGetNftFilterLoadingState,
   useGetNftOrdering,

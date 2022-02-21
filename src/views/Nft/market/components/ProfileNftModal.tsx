@@ -1,5 +1,5 @@
 import React from 'react'
-import { InjectedModalProps, Modal, Flex, Text, Button, useModal, Link, Grid, LinkExternal } from '@defifarms/special-uikit'
+import { InjectedModalProps, Modal, Flex, Text, Button, useModal, Link, Grid, LinkExternal } from '@loopstarter/special-uikit'
 import useTheme from 'hooks/useTheme'
 import styled from 'styled-components'
 import { NftToken } from 'state/nftMarket/types'

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useLocation } from 'react-router'
-import { Menu as UikitMenu } from '@defifarms/special-uikit'
+import { Menu as UikitMenu } from '@loopstarter/special-uikit'
 import { languageList } from 'config/localization/languages'
 import { useTranslation } from 'contexts/Localization'
 import PhishingWarningBanner from 'components/PhishingWarningBanner'

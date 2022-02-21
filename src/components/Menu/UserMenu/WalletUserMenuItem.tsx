@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, UserMenuItem, WarningIcon } from '@defifarms/special-uikit'
+import { Flex, UserMenuItem, WarningIcon } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 
 interface WalletUserMenuItemProps {

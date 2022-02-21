@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Flex, Text, NftIcon } from '@defifarms/special-uikit'
+import { Box, Flex, Text, NftIcon } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { NftAttribute } from 'state/nftMarket/types'
 import ExpandableCard from './ExpandableCard'

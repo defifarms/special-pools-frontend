@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Flex, Box, Text, ExpandableLabel, LinkExternal, Grid, HelpIcon, useTooltip } from '@defifarms/special-uikit'
+import { Flex, Box, Text, ExpandableLabel, LinkExternal, Grid, HelpIcon, useTooltip } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { getApy } from 'utils/compoundApyHelpers'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, AutoRenewIcon, Skeleton } from '@defifarms/special-uikit'
+import { Button, AutoRenewIcon, Skeleton } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { useERC20 } from 'hooks/useContract'
 import { DeserializedPool } from 'state/types'

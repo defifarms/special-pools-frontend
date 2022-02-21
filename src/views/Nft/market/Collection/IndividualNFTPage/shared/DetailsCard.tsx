@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Box, Flex, Text, SearchIcon, Link } from '@defifarms/special-uikit'
+import { Box, Flex, Text, SearchIcon, Link } from '@loopstarter/special-uikit'
 import { getBscScanLink } from 'utils'
 import { formatNumber } from 'utils/formatBalance'
 import uriToHttp from 'utils/uriToHttp'

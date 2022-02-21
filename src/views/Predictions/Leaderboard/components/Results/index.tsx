@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Button, Grid, Flex, useMatchBreakpoints, AutoRenewIcon } from '@defifarms/special-uikit'
+import { Box, Button, Grid, Flex, useMatchBreakpoints, AutoRenewIcon } from '@loopstarter/special-uikit'
 import { useAppDispatch } from 'state'
 import {
   useGetLeaderboardHasMoreResults,

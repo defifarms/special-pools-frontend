@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, Heading, Card, CardHeader, CardBody, Flex } from '@defifarms/special-uikit'
+import { Text, Heading, Card, CardHeader, CardBody, Flex } from '@loopstarter/special-uikit'
 import { Auction, Bidder } from 'config/constants/types'
 import { useTranslation } from 'contexts/Localization'
 import { getBalanceNumber } from 'utils/formatBalance'

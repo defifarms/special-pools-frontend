@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { css, DefaultTheme } from 'styled-components'
-import { Box } from '@defifarms/special-uikit'
+import { Box } from '@loopstarter/special-uikit'
 import { ClipFill } from '../types'
 
 interface CurveProps {

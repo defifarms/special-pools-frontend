@@ -1,4 +1,4 @@
-import { Flex, lightColors, Text } from '@defifarms/special-uikit'
+import { Flex, lightColors, Text } from '@loopstarter/special-uikit'
 import { ContextApi } from 'contexts/Localization/types'
 import React from 'react'
 import { SaleStatusEnum, UserStatusEnum } from '../../types'

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
-import { Text, useMatchBreakpoints } from '@defifarms/special-uikit'
+import { Text, useMatchBreakpoints } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { useCakeVault } from 'state/pools/hooks'
 import { DeserializedPool } from 'state/types'

@@ -15,7 +15,7 @@ import {
   ModalTitle,
   Spinner,
   Text,
-} from '@defifarms/special-uikit'
+} from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import useTheme from 'hooks/useTheme'

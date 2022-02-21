@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { BigNumber } from 'ethers'
 import React, { useEffect, useState } from 'react'
-import { AutoRenewIcon, Button, useModal } from '@defifarms/special-uikit'
+import { AutoRenewIcon, Button, useModal } from '@loopstarter/special-uikit'
 import { ContextApi } from 'contexts/Localization/types'
 import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
 import { useNftSaleContract } from 'hooks/useContract'

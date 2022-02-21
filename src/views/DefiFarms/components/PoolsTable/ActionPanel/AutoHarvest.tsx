@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, Flex, TooltipText, useTooltip, Skeleton, Heading } from '@defifarms/special-uikit'
+import { Text, Flex, TooltipText, useTooltip, Skeleton, Heading } from '@loopstarter/special-uikit'
 import { useWeb3React } from '@web3-react/core'
 import { getCakeVaultEarnings } from 'views/Pools/helpers'
 import { useTranslation } from 'contexts/Localization'

@@ -1,4 +1,4 @@
-import { Flex, lightColors } from '@defifarms/special-uikit'
+import { Flex, lightColors } from '@loopstarter/special-uikit'
 import styled, { keyframes } from 'styled-components'
 
 const flyingAnim = () => keyframes`

@@ -1,4 +1,4 @@
-import { Image } from '@defifarms/special-uikit'
+import { Image } from '@loopstarter/special-uikit'
 import styled from 'styled-components'
 
 const DesktopImage = styled(Image)`

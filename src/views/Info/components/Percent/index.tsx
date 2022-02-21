@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, TextProps } from '@defifarms/special-uikit'
+import { Text, TextProps } from '@loopstarter/special-uikit'
 
 export interface PercentProps extends TextProps {
   value: number | undefined

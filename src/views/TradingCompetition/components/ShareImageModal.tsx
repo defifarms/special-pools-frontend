@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'
-import { Modal, Flex, Button, Text, Skeleton, Box } from '@defifarms/special-uikit'
+import { Modal, Flex, Button, Text, Skeleton, Box } from '@loopstarter/special-uikit'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'
 import FlippersShare from '../pngs/flippers-share.png'

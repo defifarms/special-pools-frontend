@@ -1,4 +1,4 @@
-import { Text } from '@defifarms/special-uikit'
+import { Text } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import React from 'react'
 import styled from 'styled-components'

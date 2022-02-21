@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { HelpIcon } from '@defifarms/special-uikit'
+import { HelpIcon } from '@loopstarter/special-uikit'
 
 const BAD_SRCS: { [tokenAddress: string]: true } = {}
 

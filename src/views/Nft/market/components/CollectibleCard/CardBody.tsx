@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, CardBody, Flex, Text } from '@defifarms/special-uikit'
+import { Box, CardBody, Flex, Text } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
 import PreviewImage from './PreviewImage'

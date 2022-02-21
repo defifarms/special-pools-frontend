@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, Flex, Box, CloseIcon, IconButton, useMatchBreakpoints } from '@defifarms/special-uikit'
+import { Text, Flex, Box, CloseIcon, IconButton, useMatchBreakpoints } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { usePhishingBannerManager } from 'state/user/hooks'
 

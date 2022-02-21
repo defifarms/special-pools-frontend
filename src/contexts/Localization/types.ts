@@ -1,5 +1,5 @@
 import { ReactText } from 'react'
-import { Language } from '@defifarms/special-uikit'
+import { Language } from '@loopstarter/special-uikit'
 
 export type ContextData = {
   [key: string]: ReactText

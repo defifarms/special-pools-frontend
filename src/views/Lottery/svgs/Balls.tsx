@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Svg, SvgProps, Text, Flex } from '@defifarms/special-uikit'
+import { Svg, SvgProps, Text, Flex } from '@loopstarter/special-uikit'
 
 export const PinkBall: React.FC<SvgProps> = (props) => {
   return (

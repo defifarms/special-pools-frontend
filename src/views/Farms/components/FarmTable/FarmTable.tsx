@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 import styled from 'styled-components'
-import { useTable, Button, ChevronUpIcon, ColumnType } from '@defifarms/special-uikit'
+import { useTable, Button, ChevronUpIcon, ColumnType } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 
 import Row, { RowProps } from './Row'

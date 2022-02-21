@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, Flex, Box } from '@defifarms/special-uikit'
+import { Text, Flex, Box } from '@loopstarter/special-uikit'
 import { Auction, AuctionStatus } from 'config/constants/types'
 import { useTranslation } from 'contexts/Localization'
 

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import orderBy from 'lodash/orderBy'
-import { ArrowForwardIcon, Card, CardBody, Flex, Heading } from '@defifarms/special-uikit'
+import { ArrowForwardIcon, Card, CardBody, Flex, Heading } from '@loopstarter/special-uikit'
 import { NavLink } from 'react-router-dom'
 import pools from 'config/constants/pools'
 import { SerializedPool } from 'state/types'

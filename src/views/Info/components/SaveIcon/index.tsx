@@ -1,6 +1,6 @@
 import React, { HTMLAttributes } from 'react'
 import styled from 'styled-components'
-import { StarFillIcon, StarLineIcon } from '@defifarms/special-uikit'
+import { StarFillIcon, StarLineIcon } from '@loopstarter/special-uikit'
 import useTheme from 'hooks/useTheme'
 
 const HoverIcon = styled.div`

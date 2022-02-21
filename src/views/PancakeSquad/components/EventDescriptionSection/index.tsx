@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Button, Flex, Link, Text } from '@defifarms/special-uikit'
+import { Box, Button, Flex, Link, Text } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { LandingBodyWrapper } from 'views/PancakeSquad/styles'
 import eventDescriptionConfigBuilder from './config'

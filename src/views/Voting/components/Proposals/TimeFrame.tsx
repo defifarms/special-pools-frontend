@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text } from '@defifarms/special-uikit'
+import { Text } from '@loopstarter/special-uikit'
 import { toDate, format } from 'date-fns'
 import { useTranslation } from 'contexts/Localization'
 import { ProposalState } from 'state/types'

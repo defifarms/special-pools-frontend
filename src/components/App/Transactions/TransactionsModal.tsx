@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useDispatch } from 'react-redux'
-import { Modal, ModalBody, Text, Button, Flex, InjectedModalProps } from '@defifarms/special-uikit'
+import { Modal, ModalBody, Text, Button, Flex, InjectedModalProps } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { orderBy } from 'lodash'
 import { isTransactionRecent, useAllTransactions } from 'state/transactions/hooks'

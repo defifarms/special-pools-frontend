@@ -13,7 +13,7 @@ import {
   LinkExternal,
   Text,
   useModal,
-} from '@defifarms/special-uikit'
+} from '@loopstarter/special-uikit'
 import { useHistory } from 'react-router'
 import { Link } from 'react-router-dom'
 import { useWeb3React } from '@web3-react/core'

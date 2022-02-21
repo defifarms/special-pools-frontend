@@ -1,4 +1,4 @@
-import { CheckmarkIcon, Flex, FlexProps, Text } from '@defifarms/special-uikit'
+import { CheckmarkIcon, Flex, FlexProps, Text } from '@loopstarter/special-uikit'
 import React from 'react'
 
 type ReadyTextProps = {

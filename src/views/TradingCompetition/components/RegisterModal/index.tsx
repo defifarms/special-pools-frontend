@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Modal, Button, NoProfileAvatarIcon, Flex } from '@defifarms/special-uikit'
+import { Modal, Button, NoProfileAvatarIcon, Flex } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import ProfileAvatarWithTeam from 'components/ProfileAvatarWithTeam'
 import { CompetitionProps } from '../../types'

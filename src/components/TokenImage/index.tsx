@@ -4,7 +4,7 @@ import {
   TokenPairImageProps as UIKitTokenPairImageProps,
   TokenImage as UIKitTokenImage,
   ImageProps,
-} from '@defifarms/special-uikit'
+} from '@loopstarter/special-uikit'
 import tokens from 'config/constants/tokens'
 import { Token } from '@pancakeswap/sdk'
 import { SerializedToken } from 'config/constants/types'

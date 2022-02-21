@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Card, CardBody, Flex, Heading, Text } from '@defifarms/special-uikit'
+import { Button, Card, CardBody, Flex, Heading, Text } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { Link } from 'react-router-dom'
 

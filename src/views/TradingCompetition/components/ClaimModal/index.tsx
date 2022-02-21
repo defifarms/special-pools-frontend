@@ -11,7 +11,7 @@ import {
   CrownIcon,
   TrophyGoldIcon,
   TeamPlayerIcon,
-} from '@defifarms/special-uikit'
+} from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { useTradingCompetitionContract } from 'hooks/useContract'
 import useToast from 'hooks/useToast'

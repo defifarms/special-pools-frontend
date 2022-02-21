@@ -8,7 +8,7 @@ import {
   Heading,
   Button,
   ChevronUpIcon,
-} from '@defifarms/special-uikit'
+} from '@loopstarter/special-uikit'
 import { useWeb3React } from '@web3-react/core'
 import orderBy from 'lodash/orderBy'
 import { useTranslation } from 'contexts/Localization'

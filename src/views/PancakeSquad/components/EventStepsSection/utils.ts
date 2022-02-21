@@ -1,4 +1,4 @@
-import { EventStatus, StepStatus } from '@defifarms/special-uikit'
+import { EventStatus, StepStatus } from '@loopstarter/special-uikit'
 import { SaleStatusEnum } from 'views/PancakeSquad/types'
 import { getEventStepStatus, getEventStepStatusType } from 'views/PancakeSquad/utils'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Button, Text } from '@defifarms/special-uikit'
+import { Flex, Button, Text } from '@loopstarter/special-uikit'
 import QuestionHelper from 'components/QuestionHelper'
 import { useTranslation } from 'contexts/Localization'
 import { GAS_PRICE_GWEI, GAS_PRICE } from 'state/user/hooks/helpers'

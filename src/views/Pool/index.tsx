@@ -1,4 +1,4 @@
-import { AddIcon, Button, CardBody, CardFooter, Flex, Text } from '@defifarms/special-uikit'
+import { AddIcon, Button, CardBody, CardFooter, Flex, Text } from '@loopstarter/special-uikit'
 import { Pair } from '@pancakeswap/sdk'
 import { MainBackground } from 'components/Layout/MainBackground'
 import { useTranslation } from 'contexts/Localization'

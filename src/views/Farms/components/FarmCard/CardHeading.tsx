@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Tag, Flex, Heading, Skeleton } from '@defifarms/special-uikit'
+import { Tag, Flex, Heading, Skeleton } from '@loopstarter/special-uikit'
 import { Token } from '@pancakeswap/sdk'
 import { CommunityTag, CoreTag } from 'components/Tags'
 import { TokenPairImage } from 'components/TokenImage'

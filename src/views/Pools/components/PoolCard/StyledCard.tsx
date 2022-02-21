@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Card } from '@defifarms/special-uikit'
+import { Card } from '@loopstarter/special-uikit'
 
 export const StyledCard = styled(Card)<{ isFinished?: boolean }>`
   max-width: 352px;

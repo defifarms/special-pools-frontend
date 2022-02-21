@@ -1,5 +1,5 @@
 import React from 'react'
-import { Progress, ProgressProps } from '@defifarms/special-uikit'
+import { Progress, ProgressProps } from '@loopstarter/special-uikit'
 import { useBlock } from 'state/block/hooks'
 
 interface BlockProgressProps extends ProgressProps {

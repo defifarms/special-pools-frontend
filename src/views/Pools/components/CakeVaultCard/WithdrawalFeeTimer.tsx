@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text } from '@defifarms/special-uikit'
+import { Text } from '@loopstarter/special-uikit'
 import getTimePeriods from 'utils/getTimePeriods'
 import { useTranslation } from 'contexts/Localization'
 

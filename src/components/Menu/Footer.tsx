@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ButtonMenu, ButtonMenuItem, LinkExternal, Flex, Svg, Image, Button } from '@defifarms/special-uikit'
+import { ButtonMenu, ButtonMenuItem, LinkExternal, Flex, Svg, Image, Button } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 
 const Wrapper = styled.div<{ $isSide: boolean }>`

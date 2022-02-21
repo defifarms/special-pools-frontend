@@ -15,7 +15,7 @@ import {
   Box,
   ModalCloseButton,
   Skeleton,
-} from '@defifarms/special-uikit'
+} from '@loopstarter/special-uikit'
 import { useWeb3React } from '@web3-react/core'
 import { useAppDispatch } from 'state'
 import { REWARD_RATE } from 'state/predictions/config'

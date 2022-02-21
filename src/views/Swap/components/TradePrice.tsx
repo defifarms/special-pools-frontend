@@ -1,6 +1,6 @@
 import React from 'react'
 import { Price } from '@pancakeswap/sdk'
-import { Text, AutoRenewIcon } from '@defifarms/special-uikit'
+import { Text, AutoRenewIcon } from '@loopstarter/special-uikit'
 import { StyledBalanceMaxMini } from './styleds'
 
 interface TradePriceProps {

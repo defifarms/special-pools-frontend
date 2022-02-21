@@ -1,5 +1,5 @@
 import React from 'react'
-import { BackgroundImage, BoxProps } from '@defifarms/special-uikit'
+import { BackgroundImage, BoxProps } from '@loopstarter/special-uikit'
 import PlaceholderImage from './PlaceholderImage'
 
 interface PreviewImageProps extends BoxProps {

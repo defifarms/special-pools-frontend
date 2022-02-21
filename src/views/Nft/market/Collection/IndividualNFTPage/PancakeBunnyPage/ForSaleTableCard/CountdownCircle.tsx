@@ -1,4 +1,4 @@
-import { Spinner, Text } from '@defifarms/special-uikit'
+import { Spinner, Text } from '@loopstarter/special-uikit'
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
 

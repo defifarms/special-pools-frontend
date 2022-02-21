@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Button } from '@defifarms/special-uikit'
+import { Button } from '@loopstarter/special-uikit'
 
 interface NumTicketsToBuyButtonProps {
   onClick: () => void

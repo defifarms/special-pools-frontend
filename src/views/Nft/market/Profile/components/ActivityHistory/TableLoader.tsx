@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex, Skeleton, Td, useMatchBreakpoints } from '@defifarms/special-uikit'
+import { Flex, Skeleton, Td, useMatchBreakpoints } from '@loopstarter/special-uikit'
 
 const GridItem = styled(Flex)`
   align-items: center;

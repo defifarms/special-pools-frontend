@@ -1,5 +1,5 @@
 import React, { ElementType, ReactNode } from 'react'
-import { Flex, Heading, Text, TextProps } from '@defifarms/special-uikit'
+import { Flex, Heading, Text, TextProps } from '@loopstarter/special-uikit'
 import styled from 'styled-components'
 
 const SecondaryCard = styled(Text)`

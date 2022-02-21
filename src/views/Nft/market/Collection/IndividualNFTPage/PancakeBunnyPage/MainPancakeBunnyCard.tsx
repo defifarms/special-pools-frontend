@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Box, Card, CardBody, Text, Button, BinanceIcon, Skeleton, useModal } from '@defifarms/special-uikit'
+import { Flex, Box, Card, CardBody, Text, Button, BinanceIcon, Skeleton, useModal } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { multiplyPriceByAmount } from 'utils/prices'
 import { NftToken } from 'state/nftMarket/types'

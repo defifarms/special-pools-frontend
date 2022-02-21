@@ -1,6 +1,6 @@
 import React from 'react'
 import BigNumber from 'bignumber.js'
-import { Text, TextProps } from '@defifarms/special-uikit'
+import { Text, TextProps } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 
 interface PercentageOfTotalProps extends TextProps {

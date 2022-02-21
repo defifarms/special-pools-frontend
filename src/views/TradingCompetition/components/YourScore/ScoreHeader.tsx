@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { NoProfileAvatarIcon, LaurelLeftIcon, LaurelRightIcon, Skeleton } from '@defifarms/special-uikit'
+import { NoProfileAvatarIcon, LaurelLeftIcon, LaurelRightIcon, Skeleton } from '@loopstarter/special-uikit'
 import ProfileAvatarWithTeam from 'components/ProfileAvatarWithTeam'
 import { YourScoreProps } from '../../types'
 import Sticker from '../Sticker'

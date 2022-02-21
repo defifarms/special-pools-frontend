@@ -11,7 +11,7 @@ import {
   Text,
   WalletFilledIcon,
   Skeleton,
-} from '@defifarms/special-uikit'
+} from '@loopstarter/special-uikit'
 import { Price } from '@pancakeswap/sdk'
 import { useTranslation } from 'contexts/Localization'
 import { multiplyPriceByAmount } from 'utils/prices'

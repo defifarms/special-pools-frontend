@@ -11,7 +11,7 @@ import {
   ModalTitle,
   Heading,
   Box,
-} from '@defifarms/special-uikit'
+} from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import styled from 'styled-components'
 

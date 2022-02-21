@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ArrowDownIcon, ArrowUpIcon } from '@defifarms/special-uikit'
+import { ArrowDownIcon, ArrowUpIcon } from '@loopstarter/special-uikit'
 import { BetPosition } from 'state/types'
 import { useTranslation } from 'contexts/Localization'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, Flex, Text, Td, IconButton, Link, OpenNewIcon, useMatchBreakpoints, useModal } from '@defifarms/special-uikit'
+import { Image, Flex, Text, Td, IconButton, Link, OpenNewIcon, useMatchBreakpoints, useModal } from '@loopstarter/special-uikit'
 import { NftToken } from 'state/nftMarket/types'
 import { Price } from '@pancakeswap/sdk'
 import styled from 'styled-components'

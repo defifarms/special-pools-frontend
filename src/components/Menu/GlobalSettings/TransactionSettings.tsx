@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { escapeRegExp } from 'utils'
 import styled from 'styled-components'
-import { Text, Button, Input, Flex, Box } from '@defifarms/special-uikit'
+import { Text, Button, Input, Flex, Box } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { useUserSlippageTolerance, useUserTransactionTTL } from 'state/user/hooks'
 import QuestionHelper from '../../QuestionHelper'

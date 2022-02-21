@@ -1,4 +1,4 @@
-import { Flex, Heading, Text } from '@defifarms/special-uikit'
+import { Flex, Heading, Text } from '@loopstarter/special-uikit'
 import { MainBackground } from 'components/Layout/MainBackground'
 import PageHeader from 'components/PageHeader'
 import { useTranslation } from 'contexts/Localization'

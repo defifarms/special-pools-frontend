@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Box, Heading, Text } from '@defifarms/special-uikit'
+import { Box, Heading, Text } from '@loopstarter/special-uikit'
 import Container from 'components/Layout/Container'
 import { useTranslation } from 'contexts/Localization'
 

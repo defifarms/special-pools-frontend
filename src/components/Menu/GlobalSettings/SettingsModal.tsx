@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Text, Toggle, Flex, Modal, InjectedModalProps } from '@defifarms/special-uikit'
+import { Text, Toggle, Flex, Modal, InjectedModalProps } from '@loopstarter/special-uikit'
 import {
   useAudioModeManager,
   useExpertModeManager,

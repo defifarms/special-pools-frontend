@@ -1,5 +1,5 @@
 import React from 'react'
-import { NoProfileAvatarIcon } from '@defifarms/special-uikit'
+import { NoProfileAvatarIcon } from '@loopstarter/special-uikit'
 import { Profile } from 'state/types'
 import styled from 'styled-components'
 

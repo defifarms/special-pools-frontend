@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Text } from '@defifarms/special-uikit'
+import { Box, Text } from '@loopstarter/special-uikit'
 import { PredictionUser } from 'state/types'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'

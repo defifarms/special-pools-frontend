@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import every from 'lodash/every'
-import { Stepper, Step, StepStatus, Card, CardBody, Heading, Text, Button, Link, OpenNewIcon } from '@defifarms/special-uikit'
+import { Stepper, Step, StepStatus, Card, CardBody, Heading, Text, Button, Link, OpenNewIcon } from '@loopstarter/special-uikit'
 import { Link as RouterLink } from 'react-router-dom'
 import { useWeb3React } from '@web3-react/core'
 import { Ifo } from 'config/constants/types'

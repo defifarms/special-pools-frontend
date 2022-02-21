@@ -1,5 +1,5 @@
 import React from 'react'
-import { HistoryIcon, Button, useModal } from '@defifarms/special-uikit'
+import { HistoryIcon, Button, useModal } from '@loopstarter/special-uikit'
 import TransactionsModal from './TransactionsModal'
 
 const Transactions = () => {

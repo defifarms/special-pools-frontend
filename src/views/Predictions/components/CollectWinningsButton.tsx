@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, ButtonProps, useModal } from '@defifarms/special-uikit'
+import { Button, ButtonProps, useModal } from '@loopstarter/special-uikit'
 import CollectRoundWinningsModal from './CollectRoundWinningsModal'
 
 interface CollectWinningsButtonProps extends ButtonProps {

@@ -1,4 +1,4 @@
-import { Flex, Text } from '@defifarms/special-uikit'
+import { Flex, Text } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import React from 'react'
 import { StyledPriceChart } from './styles'

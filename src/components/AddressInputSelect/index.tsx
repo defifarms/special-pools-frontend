@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useState, useEffect } from 'react'
-import { Box, BoxProps, Text, Input } from '@defifarms/special-uikit'
+import { Box, BoxProps, Text, Input } from '@loopstarter/special-uikit'
 import styled from 'styled-components'
 import { isAddress } from 'utils'
 import { useTranslation } from 'contexts/Localization'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Svg, SvgProps } from '@defifarms/special-uikit'
+import { Svg, SvgProps } from '@loopstarter/special-uikit'
 
 const RibbonUpSide: React.FC<SvgProps> = (props) => {
   return (

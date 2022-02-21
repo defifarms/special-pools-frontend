@@ -1,4 +1,4 @@
-import { Language } from '@defifarms/special-uikit'
+import { Language } from '@loopstarter/special-uikit'
 
 export const AR: Language = { locale: 'ar-SA', language: 'العربية', code: 'ar' }
 export const BN: Language = { locale: 'bn-BD', language: 'বাংলা', code: 'bn' }

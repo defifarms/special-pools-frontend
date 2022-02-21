@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal, ModalBody, Text, Image, Button, Link, OpenNewIcon } from '@defifarms/special-uikit'
+import { Modal, ModalBody, Text, Image, Button, Link, OpenNewIcon } from '@loopstarter/special-uikit'
 import { Token } from '@pancakeswap/sdk'
 import { useTranslation } from 'contexts/Localization'
 

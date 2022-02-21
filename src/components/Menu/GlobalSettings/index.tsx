@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, IconButton, CogIcon, useModal } from '@defifarms/special-uikit'
+import { Flex, IconButton, CogIcon, useModal } from '@loopstarter/special-uikit'
 import SettingsModal from './SettingsModal'
 
 type Props = {

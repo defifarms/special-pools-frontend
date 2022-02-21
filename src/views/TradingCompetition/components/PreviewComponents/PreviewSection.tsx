@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex } from '@defifarms/special-uikit'
+import { Flex } from '@loopstarter/special-uikit'
 import { SectionProps } from '../../types'
 
 const BackgroundColorWrapper = styled(Flex)<SectionProps>`

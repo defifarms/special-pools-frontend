@@ -1,4 +1,4 @@
-import { Flex, Text } from '@defifarms/special-uikit'
+import { Flex, Text } from '@loopstarter/special-uikit'
 import styled from 'styled-components'
 
 const BaseCell = styled.div`

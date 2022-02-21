@@ -1,5 +1,5 @@
 import React from 'react'
-import { BoxProps, Text } from '@defifarms/special-uikit'
+import { BoxProps, Text } from '@loopstarter/special-uikit'
 import { NodeRound } from 'state/types'
 import { useTranslation } from 'contexts/Localization'
 import { getRoundPosition } from '../../helpers'

@@ -9,7 +9,7 @@ import {
   TimerIcon,
   BlockIcon,
   VoteIcon,
-} from '@defifarms/special-uikit'
+} from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 
 const CoreTag: React.FC<TagProps> = (props) => {

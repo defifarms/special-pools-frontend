@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text } from '@defifarms/special-uikit'
+import { Text } from '@loopstarter/special-uikit'
 import { ContextApi } from 'contexts/Localization/types'
 import { Link } from 'react-router-dom'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid } from '@defifarms/special-uikit'
+import { Grid } from '@loopstarter/special-uikit'
 import orderBy from 'lodash/orderBy'
 import { Collection } from 'state/nftMarket/types'
 import { CollectibleLinkCard } from '../../components/CollectibleCard'

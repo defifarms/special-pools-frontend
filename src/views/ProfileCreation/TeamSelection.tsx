@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { Card, CardBody, CommunityIcon, Flex, Heading, Text } from '@defifarms/special-uikit'
+import { Card, CardBody, CommunityIcon, Flex, Heading, Text } from '@loopstarter/special-uikit'
 import shuffle from 'lodash/shuffle'
 import { useTeams } from 'state/teams/hooks'
 import { useTranslation } from 'contexts/Localization'

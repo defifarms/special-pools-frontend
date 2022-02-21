@@ -1,6 +1,6 @@
 import { Currency, Percent, Price } from '@pancakeswap/sdk'
 import React from 'react'
-import { Text } from '@defifarms/special-uikit'
+import { Text } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { AutoColumn } from '../../components/Layout/Column'
 import { AutoRow } from '../../components/Layout/Row'

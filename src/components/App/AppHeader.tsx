@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, Flex, Heading, IconButton, ArrowBackIcon, NotificationDot } from '@defifarms/special-uikit'
+import { Text, Flex, Heading, IconButton, ArrowBackIcon, NotificationDot } from '@loopstarter/special-uikit'
 import { Link } from 'react-router-dom'
 import { useExpertModeManager } from 'state/user/hooks'
 import GlobalSettings from 'components/Menu/GlobalSettings'

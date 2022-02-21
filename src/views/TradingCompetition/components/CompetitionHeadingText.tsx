@@ -1,4 +1,4 @@
-import { Heading } from '@defifarms/special-uikit'
+import { Heading } from '@loopstarter/special-uikit'
 import styled, { DefaultTheme } from 'styled-components'
 
 const H1SizeStyles = (theme: DefaultTheme) => `

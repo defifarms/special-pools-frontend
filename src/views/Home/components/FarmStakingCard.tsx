@@ -1,6 +1,6 @@
 import React, { useCallback, useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { BaseLayout, Button, Card, CardBody, Heading } from '@defifarms/special-uikit'
+import { BaseLayout, Button, Card, CardBody, Heading } from '@loopstarter/special-uikit'
 import { harvestFarm } from 'utils/calls'
 import { useWeb3React } from '@web3-react/core'
 import { useTranslation } from 'contexts/Localization'

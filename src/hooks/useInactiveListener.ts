@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useWeb3React } from '@web3-react/core'
-import { connectorLocalStorageKey } from '@defifarms/special-uikit'
+import { connectorLocalStorageKey } from '@loopstarter/special-uikit'
 import { profileClear } from '../state/profile'
 import { resetUserNftState } from '../state/nftMarket/reducer'
 import { clearAllTransactions } from '../state/transactions/actions'

@@ -9,7 +9,7 @@ import {
   useTooltip,
   TooltipText,
   InfoIcon,
-} from '@defifarms/special-uikit'
+} from '@loopstarter/special-uikit'
 import { BetPosition } from 'state/types'
 import { useTranslation } from 'contexts/Localization'
 

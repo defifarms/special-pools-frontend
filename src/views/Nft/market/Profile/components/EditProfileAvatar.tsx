@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useModal } from '@defifarms/special-uikit'
+import { useModal } from '@loopstarter/special-uikit'
 import AvatarImage from 'views/Nft/market/components/BannerHeader/AvatarImage'
 import EditProfileModal from './EditProfileModal'
 

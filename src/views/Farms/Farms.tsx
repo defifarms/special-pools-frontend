@@ -1,4 +1,4 @@
-import { Flex, Heading, Image, RowType, Text, Toggle } from '@defifarms/special-uikit'
+import { Flex, Heading, Image, RowType, Text, Toggle } from '@loopstarter/special-uikit'
 import { ChainId } from '@pancakeswap/sdk'
 import { useWeb3React } from '@web3-react/core'
 import BigNumber from 'bignumber.js'

@@ -12,7 +12,7 @@ import {
   ModalCloseButton,
   Button,
   AutoRenewIcon,
-} from '@defifarms/special-uikit'
+} from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { getAllV1History } from './helpers'
 

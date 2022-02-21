@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Text, Heading } from '@defifarms/special-uikit'
+import { Flex, Text, Heading } from '@loopstarter/special-uikit'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { useTranslation } from 'contexts/Localization'

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ChevronDownIcon, ChevronUpIcon, Text } from '@defifarms/special-uikit'
+import { ChevronDownIcon, ChevronUpIcon, Text } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 
 export interface ExpandableSectionButtonProps {

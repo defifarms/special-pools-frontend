@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Flex, Skeleton } from '@defifarms/special-uikit'
+import { Box, Flex, Skeleton } from '@loopstarter/special-uikit'
 import times from 'lodash/times'
 import styled from 'styled-components'
 

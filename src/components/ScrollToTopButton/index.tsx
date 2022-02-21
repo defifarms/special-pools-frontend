@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { Button, ChevronUpIcon } from '@defifarms/special-uikit'
+import { Button, ChevronUpIcon } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 
 const FixedContainer = styled.div`

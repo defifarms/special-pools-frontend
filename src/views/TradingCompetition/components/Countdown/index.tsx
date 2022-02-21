@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex, Skeleton, PocketWatchIcon, Text } from '@defifarms/special-uikit'
+import { Flex, Skeleton, PocketWatchIcon, Text } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import getTimePeriods from 'utils/getTimePeriods'
 import { CompetitionSteps, LIVE } from 'config/constants/trading-competition/easterPhases'

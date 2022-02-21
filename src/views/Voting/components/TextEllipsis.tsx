@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Text } from '@defifarms/special-uikit'
+import { Text } from '@loopstarter/special-uikit'
 
 const TextEllipsis = styled(Text)`
   overflow: hidden;

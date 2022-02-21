@@ -12,7 +12,7 @@ import {
   Text,
   TimerIcon,
   useTooltip,
-} from '@defifarms/special-uikit'
+} from '@loopstarter/special-uikit'
 import { BASE_BSC_SCAN_URL } from 'config'
 import { getBscScanLink } from 'utils'
 import { useBlock } from 'state/block/hooks'

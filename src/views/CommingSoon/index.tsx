@@ -1,4 +1,4 @@
-import { BaseLayout, Heading, Text, Flex, Button, useMatchBreakpoints } from '@defifarms/special-uikit'
+import { BaseLayout, Heading, Text, Flex, Button, useMatchBreakpoints } from '@loopstarter/special-uikit'
 import { MainBackground } from 'components/Layout/MainBackground'
 import Page from 'components/Layout/Page'
 import { useTranslation } from 'contexts/Localization'

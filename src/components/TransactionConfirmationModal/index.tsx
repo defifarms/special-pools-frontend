@@ -13,7 +13,7 @@ import {
   Spinner,
   Modal,
   InjectedModalProps,
-} from '@defifarms/special-uikit'
+} from '@loopstarter/special-uikit'
 import { registerToken } from 'utils/wallet'
 import { useTranslation } from 'contexts/Localization'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'

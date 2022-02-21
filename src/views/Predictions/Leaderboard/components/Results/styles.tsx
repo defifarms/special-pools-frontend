@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, FlexProps, Text } from '@defifarms/special-uikit'
+import { Flex, FlexProps, Text } from '@loopstarter/special-uikit'
 import { useTranslation } from 'contexts/Localization'
 import { useBNBBusdPrice } from 'hooks/useBUSDPrice'
 import { multiplyPriceByAmount } from 'utils/prices'

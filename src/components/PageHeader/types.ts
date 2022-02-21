@@ -1,4 +1,4 @@
-import { BoxProps } from '@defifarms/special-uikit'
+import { BoxProps } from '@loopstarter/special-uikit'
 
 export interface PageHeaderProps extends BoxProps {
   background?: string
