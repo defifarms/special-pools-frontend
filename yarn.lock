@@ -2421,10 +2421,10 @@
   resolved "https://registry.yarnpkg.com/@ledgerhq/logs/-/logs-5.50.0.tgz#29c6419e8379d496ab6d0426eadf3c4d100cd186"
   integrity sha512-swKHYCOZUGyVt4ge0u8a7AwNcA//h4nx5wIi0sruGye1IJ5Cva0GyK9L2/WdX+kWVTKp92ZiEo1df31lrWGPgA==
 
-"@loopstarter/special-uikit@^0.1.5":
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/@loopstarter/special-uikit/-/special-uikit-0.1.5.tgz#6b6f4409d34a1a2957b049caf790a23a1315d596"
-  integrity sha512-aQwlnQRNNcuEgKeLiVIohL1g47wb+KrbEsMpmX/iH4LQLpOWQbIxxgF2V3x6XFxGSNY7TNWrYFG3FzS14I3z1Q==
+"@loopstarter/special-uikit@^0.1.7":
+  version "0.1.7"
+  resolved "https://registry.yarnpkg.com/@loopstarter/special-uikit/-/special-uikit-0.1.7.tgz#e009244b725c063c2c67eae6b757bba43321835b"
+  integrity sha512-h+GErdcS9YlFAeMuvhjQL62hkzFMi8YmqItXEJnz080MMAnUH7vWOV5PlKv3rCkSvWuhstqM4OoyOwBsQ6YCtQ==
   dependencies:
     "@popperjs/core" "^2.9.2"
     "@types/lodash" "^4.14.168"
@@ -3919,9 +3919,9 @@
     csstype "^3.0.2"
 
 "@types/styled-system@^5.1.10":
-  version "5.1.14"
-  resolved "https://registry.yarnpkg.com/@types/styled-system/-/styled-system-5.1.14.tgz#5ab9f7ce4ae8ee9c4d20219988a09ad9ee381b22"
-  integrity sha512-yJL0KWju8VNhKIwELAe6oLsvy03Y1ZBwfhncH7HRdj7YVR09l3wOBBpyBKh8QkFAfLQLXGQBSbfhtVgd7y9BKg==
+  version "5.1.15"
+  resolved "https://registry.yarnpkg.com/@types/styled-system/-/styled-system-5.1.15.tgz#075f969cc028a895dba916c07708e2fe828d7077"
+  integrity sha512-1uls4wipZn8FtYFZ7upRVFDoEeOXTQTs2zuyOZPn02T6rjIxtvj2P2lG5qsxXHhKuKsu3thveCZrtaeLE/ibLg==
   dependencies:
     csstype "^3.0.2"
 

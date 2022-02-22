@@ -108,8 +108,6 @@ export default function CurrencyInputPanel({
               </Text>
             ) : (
               <Text id="pair" bold>
-                {console.log("currency", currency)
-                }
                 {(currency && currency.symbol && currency.symbol.length > 20
                   ? `${currency.symbol.slice(0, 4)}...${currency.symbol.slice(
                       currency.symbol.length - 5,
