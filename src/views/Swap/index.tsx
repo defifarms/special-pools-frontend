@@ -169,10 +169,10 @@ export default function Swap({ history }: RouteComponentProps) {
   const userHasSpecifiedInputOutput = Boolean(
     currencies[Field.INPUT] && currencies[Field.OUTPUT],
   )
-  console.log({
+  console.log('userHasSpecifiedInputOutput', {
     userHasSpecifiedInputOutput,
     route,
-    currencies
+    currencies,
   })
   const noRoute = !route
 
@@ -331,6 +331,9 @@ export default function Swap({ history }: RouteComponentProps) {
     true,
     'confirmSwapModal',
   )
+  
+  console.log('noRoute && userHasSpecifiedInputOutput ', noRoute, userHasSpecifiedInputOutput)
+  
 
   return (
     <MainBackground>

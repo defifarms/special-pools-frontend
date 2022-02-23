@@ -1,19 +1,21 @@
 import { parseUnits } from '@ethersproject/units'
+import { Trade as LoopsTrade } from '@loopstarter/sdk'
 import { Currency, CurrencyAmount, ETHER, JSBI, Token, TokenAmount, Trade } from '@pancakeswap/sdk'
+import { useTranslation } from 'contexts/Localization'
+import useENS from 'hooks/ENS/useENS'
+import { useCurrency } from 'hooks/Tokens'
+import { useTradeExactIn, useTradeExactOut } from 'hooks/Trades'
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import useParsedQueryString from 'hooks/useParsedQueryString'
 import { ParsedQs } from 'qs'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import useENS from 'hooks/ENS/useENS'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { useCurrency } from 'hooks/Tokens'
-import { useTradeExactIn, useTradeExactOut } from 'hooks/Trades'
-import useParsedQueryString from 'hooks/useParsedQueryString'
-import { useTranslation } from 'contexts/Localization'
 import { isAddress } from 'utils'
-import { computeSlippageAdjustedAmounts } from 'utils/prices'
 import getLpAddress from 'utils/getLpAddress'
+import { computeSlippageAdjustedAmounts } from 'utils/prices'
 import { getTokenAddress } from 'views/Swap/components/Chart/utils'
 import { AppDispatch, AppState } from '../index'
+import { useUserSlippageTolerance } from '../user/hooks'
 import { useCurrencyBalances } from '../wallet/hooks'
 import {
   Field,
@@ -23,22 +25,23 @@ import {
   switchCurrencies,
   typeInput,
   updateDerivedPairData,
-  updatePairData,
+  updatePairData
 } from './actions'
-import { SwapState } from './reducer'
-import { useUserSlippageTolerance } from '../user/hooks'
+import { DEFAULT_INPUT_CURRENCY, DEFAULT_OUTPUT_CURRENCY } from './constants'
+import fetchDerivedPriceData from './fetch/fetchDerivedPriceData'
 import fetchPairPriceData from './fetch/fetchPairPriceData'
+import { pairHasEnoughLiquidity } from './fetch/utils'
 import {
   normalizeChartData,
   normalizeDerivedChartData,
   normalizeDerivedPairDataByActiveToken,
-  normalizePairDataByActiveToken,
+  normalizePairDataByActiveToken
 } from './normalizers'
-import { PairDataTimeWindowEnum } from './types'
+import { SwapState } from './reducer'
 import { derivedPairByDataIdSelector, pairByDataIdSelector } from './selectors'
-import { DEFAULT_INPUT_CURRENCY, DEFAULT_OUTPUT_CURRENCY } from './constants'
-import fetchDerivedPriceData from './fetch/fetchDerivedPriceData'
-import { pairHasEnoughLiquidity } from './fetch/utils'
+import { PairDataTimeWindowEnum } from './types'
+
+const exchange = () => 'PancakeSwap'
 
 export function useSwapState(): AppState['swap'] {
   return useSelector<AppState, AppState['swap']>((state) => state.swap)
@@ -141,7 +144,7 @@ export function useSingleTokenSwapInfo(): { [key: string]: number } {
 
   const parsedAmount = tryParseAmount('1', inputCurrency ?? undefined)
 
-  const bestTradeExactIn = useTradeExactIn(parsedAmount, outputCurrency ?? undefined)
+  const bestTradeExactIn = useTradeExactIn(parsedAmount, outputCurrency ?? undefined, exchange())
   if (!inputCurrency || !outputCurrency || !bestTradeExactIn) {
     return null
   }
@@ -187,9 +190,9 @@ export function useDerivedSwapInfo(): {
   const isExactIn: boolean = independentField === Field.INPUT
   const parsedAmount = tryParseAmount(typedValue, (isExactIn ? inputCurrency : outputCurrency) ?? undefined)
 
-  const bestTradeExactIn = useTradeExactIn(isExactIn ? parsedAmount : undefined, outputCurrency ?? undefined)
-  const bestTradeExactOut = useTradeExactOut(inputCurrency ?? undefined, !isExactIn ? parsedAmount : undefined)
-  console.log({
+  const bestTradeExactIn = useTradeExactIn(isExactIn ? parsedAmount : undefined, outputCurrency ?? undefined, exchange())
+  const bestTradeExactOut = useTradeExactOut(inputCurrency ?? undefined, !isExactIn ? parsedAmount : undefined, exchange())
+  console.log('useDerivedSwapInfo', {
     bestTradeExactIn,
     bestTradeExactOut,
     outputCurrency,
@@ -226,14 +229,16 @@ export function useDerivedSwapInfo(): {
     inputError = inputError ?? t('Enter a recipient')
   } else if (
     BAD_RECIPIENT_ADDRESSES.indexOf(formattedTo) !== -1 ||
+    // @ts-ignore
     (bestTradeExactIn && involvesAddress(bestTradeExactIn, formattedTo)) ||
+    // @ts-ignore
     (bestTradeExactOut && involvesAddress(bestTradeExactOut, formattedTo))
   ) {
     inputError = inputError ?? t('Invalid recipient')
   }
 
   const [allowedSlippage] = useUserSlippageTolerance()
-
+  // @ts-ignore
   const slippageAdjustedAmounts = v2Trade && allowedSlippage && computeSlippageAdjustedAmounts(v2Trade, allowedSlippage)
 
   // compare input balance to max input based on version
@@ -250,6 +255,7 @@ export function useDerivedSwapInfo(): {
     currencies,
     currencyBalances,
     parsedAmount,
+    // @ts-ignore
     v2Trade: v2Trade ?? undefined,
     inputError,
   }
