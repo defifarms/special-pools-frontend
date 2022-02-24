@@ -1,4 +1,6 @@
-import { TokenAmount, Pair, Currency } from '@pancakeswap/sdk'
+// @ts-nocheck
+import { TokenAmount, Pair as PancakePair, Currency } from '@pancakeswap/sdk'
+import { Pair } from '@loopstarter/sdk'
 import { useMemo } from 'react'
 import { abi as IUniswapV2PairABI } from '@uniswap/v2-core/build/IUniswapV2Pair.json'
 import { Interface } from '@ethersproject/abi'
@@ -31,7 +33,7 @@ export function usePairs(currencies: [Currency | undefined, Currency | undefined
   const pairAddresses = useMemo(
     () =>
       tokens.map(([tokenA, tokenB]) => {
-        return tokenA && tokenB && !tokenA.equals(tokenB) ? Pair.getAddress(tokenA, tokenB) : undefined
+        return tokenA && tokenB && !tokenA.equals(tokenB) ? Pair.getAddress(tokenA, tokenB) : PancakePair.getAddress(tokenA, tokenB)
       }),
     [tokens],
   )
@@ -51,7 +53,7 @@ export function usePairs(currencies: [Currency | undefined, Currency | undefined
       const [token0, token1] = tokenA.sortsBefore(tokenB) ? [tokenA, tokenB] : [tokenB, tokenA]
       return [
         PairState.EXISTS,
-        new Pair(new TokenAmount(token0, reserve0.toString()), new TokenAmount(token1, reserve1.toString())),
+        new PancakePair(new TokenAmount(token0, reserve0.toString()), new TokenAmount(token1, reserve1.toString())),
       ]
     })
   }, [results, tokens])
