@@ -61,7 +61,7 @@ const Announcements = () => {
             className="twitter-timeline"
             data-height="400"
             data-theme="light"
-            href="https://twitter.com/DeFiFarmsNFTs?ref_src=twsrc%5Etfw"
+            href="https://t.me/Loopstarter?ref_src=twsrc%5Etfw"
           >
             Tweets
           </Link>

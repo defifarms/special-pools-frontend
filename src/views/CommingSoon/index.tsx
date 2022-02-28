@@ -101,7 +101,7 @@ const WrapSocialIcon = styled.div`
   cursor: pointer;
   z-index: 2;
 `
-// https://twitter.com/DeFiFarmsNFTs
+// https://t.me/Loopstarter
 
 const Home: React.FC = () => {
   const { t } = useTranslation()
@@ -153,8 +153,8 @@ const Home: React.FC = () => {
             </HeadingWrapper>
             <Flex mt={24}>
               <WrapSocialIcon>
-                <Button paddingX={0} id="telegram" as="a" external href="https://t.me/DefifarmsNFT" variant="text">
-                  {/* <LinkExternal id="Telegram" href="https://t.me/DefifarmsNFT"> */}
+                <Button paddingX={0} id="telegram" as="a" external href="https://t.me/Loopstarter" variant="text">
+                  {/* <LinkExternal id="Telegram" href="https://t.me/Loopstarter"> */}
                   <TelegramIcon />
                   {/* </LinkExternal> */}
                 </Button>
@@ -165,10 +165,10 @@ const Home: React.FC = () => {
                   id="twitter"
                   as="a"
                   external
-                  href="https://twitter.com/DeFiFarmsNFTs"
+                  href="https://t.me/Loopstarter"
                   variant="text"
                 >
-                  {/* <LinkExternal id="Twitter" href="https://twitter.com/DeFiFarmsNFTs"> */}
+                  {/* <LinkExternal id="Twitter" href="https://t.me/Loopstarter"> */}
                   <TwitterIcon />
                   {/* </LinkExternal> */}
                 </Button>

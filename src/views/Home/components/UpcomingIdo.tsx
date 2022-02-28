@@ -367,8 +367,8 @@ const UpcomingIdo: React.FC = () => {
             <IconWrapper>
             
               <a target="_blank" rel="noreferrer" href="https://defifarmsnfts.medium.com/"><Icon bg="/images/home/medium.png" /></a>
-              <a target="_blank" rel="noreferrer" href="https://t.me/DefifarmsNFT"><Icon bg="/images/home/telegram.png" /></a>
-              <a target="_blank" rel="noreferrer" href="https://twitter.com/DeFiFarmsNFTs"><Icon bg="/images/home/twitter.png" /></a>
+              <a target="_blank" rel="noreferrer" href="https://t.me/Loopstarter"><Icon bg="/images/home/telegram.png" /></a>
+              <a target="_blank" rel="noreferrer" href="https://t.me/Loopstarter"><Icon bg="/images/home/twitter.png" /></a>
             </IconWrapper>
           </RealTextWrapper>
         </Grid>
