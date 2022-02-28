@@ -65,7 +65,9 @@ const FullWidthButtonMenu = styled(ButtonMenu)<{ disabled?: boolean }>`
 
   opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
 `
-
+const CheckboxStyled = styled(Checkbox)`
+  border: 1px solid ${({ theme }) => theme.colors.primary};
+`
 const RoiCalculatorModal: React.FC<RoiCalculatorModalProps> = ({
   onDismiss,
   onBack,
@@ -212,7 +214,7 @@ const RoiCalculatorModal: React.FC<RoiCalculatorModalProps> = ({
               </Text>
               <Flex alignItems="center">
                 <Flex flex="1">
-                  <Checkbox scale="sm" checked={compounding} onChange={toggleCompounding} />
+                  <CheckboxStyled scale="sm" checked={compounding} onChange={toggleCompounding} />
                 </Flex>
                 <Flex flex="6">
                   <FullWidthButtonMenu

@@ -26,6 +26,9 @@ const Ul = styled.ul`
     line-height: 1.5;
   }
 `
+const CheckboxStyled = styled(Checkbox)`
+  border: 1px solid ${({ theme }) => theme.colors.primary};
+`
 
 const ChartDisclaimer: React.FC<InjectedModalProps> = ({ onDismiss }) => {
   const [showDisclaimer, setShowDisclaimer] = useUserPredictionChartDisclaimerShow()
@@ -72,7 +75,7 @@ const ChartDisclaimer: React.FC<InjectedModalProps> = ({ onDismiss }) => {
         <label htmlFor="checkbox" style={{ display: 'block', cursor: 'pointer', marginBottom: '24px' }}>
           <Flex alignItems="center">
             <div style={{ flex: 'none' }}>
-              <Checkbox
+              <CheckboxStyled
                 id="checkbox"
                 scale="sm"
                 checked={!showDisclaimer}

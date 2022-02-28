@@ -1,14 +1,19 @@
-import React, { useState } from 'react'
-import { Token, Currency } from '@pancakeswap/sdk'
-import { Button, Text, ErrorIcon, Flex, Message, Checkbox, Link, Tag, Grid } from '@loopstarter/special-uikit'
+import { Button, Checkbox, ErrorIcon, Flex, Grid, Link, Message, Tag, Text } from '@loopstarter/special-uikit'
+import { Currency, Token } from '@pancakeswap/sdk'
 import { AutoColumn } from 'components/Layout/Column'
-import { useAddUserToken } from 'state/user/hooks'
-import { getBscScanLink } from 'utils'
-import truncateHash from 'utils/truncateHash'
-import useActiveWeb3React from 'hooks/useActiveWeb3React'
-import { useCombinedInactiveList } from 'state/lists/hooks'
 import { ListLogo } from 'components/Logo'
 import { useTranslation } from 'contexts/Localization'
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
+import React, { useState } from 'react'
+import { useCombinedInactiveList } from 'state/lists/hooks'
+import { useAddUserToken } from 'state/user/hooks'
+import styled from 'styled-components'
+import truncateHash from 'utils/truncateHash'
+import { getBscScanLink } from 'utils'
+
+const CheckboxStyled = styled(Checkbox)`
+  border: 1px solid ${({ theme }) => theme.colors.primary};
+`
 
 interface ImportProps {
   tokens: Token[]
@@ -77,7 +82,7 @@ function ImportToken({ tokens, handleCurrencySelect }: ImportProps) {
 
       <Flex justifyContent="space-between" alignItems="center">
         <Flex alignItems="center" onClick={() => setConfirmed(!confirmed)}>
-          <Checkbox
+          <CheckboxStyled
             scale="sm"
             name="confirmed"
             type="checkbox"

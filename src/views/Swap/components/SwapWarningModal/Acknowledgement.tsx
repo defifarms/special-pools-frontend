@@ -1,6 +1,11 @@
 import React, { useState } from 'react'
 import { useTranslation } from 'contexts/Localization'
 import { Text, Flex, Checkbox, Button } from '@loopstarter/special-uikit'
+import styled from 'styled-components'
+
+const CheckboxStyled = styled(Checkbox)`
+  border: 1px solid ${({ theme }) => theme.colors.primary};
+`
 
 interface AcknowledgementProps {
   handleContinueClick: () => void
@@ -14,7 +19,7 @@ const Acknowledgement: React.FC<AcknowledgementProps> = ({ handleContinueClick }
     <>
       <Flex justifyContent="space-between">
         <Flex alignItems="center">
-          <Checkbox
+          <CheckboxStyled
             name="confirmed"
             type="checkbox"
             checked={isConfirmed}

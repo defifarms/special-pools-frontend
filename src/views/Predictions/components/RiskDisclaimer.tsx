@@ -12,9 +12,12 @@ import {
   Heading,
   Box,
 } from '@loopstarter/special-uikit'
-import { useTranslation } from 'contexts/Localization'
 import styled from 'styled-components'
+import { useTranslation } from 'contexts/Localization'
 
+const CheckboxStyled = styled(Checkbox)`
+  border: 1px solid ${({ theme }) => theme.colors.primary};
+`
 interface RiskDisclaimerProps extends InjectedModalProps {
   onSuccess: () => void
 }
@@ -66,7 +69,7 @@ const RiskDisclaimer: React.FC<RiskDisclaimerProps> = ({ onSuccess, onDismiss })
           >
             <Flex alignItems="center">
               <div style={{ flex: 'none' }}>
-                <Checkbox
+                <CheckboxStyled
                   id="responsibility-checkbox"
                   scale="sm"
                   checked={acknowledgeRisk}
@@ -83,7 +86,7 @@ const RiskDisclaimer: React.FC<RiskDisclaimerProps> = ({ onSuccess, onDismiss })
           <label htmlFor="beta-checkbox" style={{ display: 'block', cursor: 'pointer', marginBottom: '24px' }}>
             <Flex alignItems="center">
               <div style={{ flex: 'none' }}>
-                <Checkbox id="beta-checkbox" scale="sm" checked={acknowledgeBeta} onChange={handleSetAcknowledgeBeta} />
+                <CheckboxStyled id="beta-checkbox" scale="sm" checked={acknowledgeBeta} onChange={handleSetAcknowledgeBeta} />
               </div>
               <Text ml="8px">
                 {t('I understand that this product is still in beta. I am participating at my own risk')}

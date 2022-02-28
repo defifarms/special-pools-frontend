@@ -97,12 +97,12 @@ function TransactionSubmittedContent({
               onClick={() => registerToken(token.address, token.symbol, token.decimals)}
             >
               <RowFixed>
-                {t('Add %asset% to Metamask', { asset: currencyToAdd.symbol })}
+                {t('Add %asset% to Metamask', { asset: currencyToAdd.symbol === "Defifarm-LP" ? "Loopstarter-LP" : currencyToAdd.symbol })}
                 <MetamaskIcon width="16px" ml="6px" />
               </RowFixed>
             </Button>
           )}
-          <Button onClick={onDismiss} mt="20px" variant='four'>
+          <Button onClick={onDismiss} mt="20px" variant="four">
             {t('Close')}
           </Button>
         </AutoColumn>

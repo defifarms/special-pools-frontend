@@ -11,7 +11,11 @@ import { useProfile as useProfileContract } from 'hooks/useContract'
 import { useWeb3React } from '@web3-react/core'
 import { useCallWithGasPrice } from 'hooks/useCallWithGasPrice'
 import { ToastDescriptionWithTx } from 'components/Toast'
+import styled from 'styled-components'
 
+const CheckboxStyled = styled(Checkbox)`
+  border: 1px solid ${({ theme }) => theme.colors.primary};
+`
 type PauseProfilePageProps = InjectedModalProps
 
 const PauseProfilePage: React.FC<PauseProfilePageProps> = ({ onDismiss }) => {
@@ -64,7 +68,7 @@ const PauseProfilePage: React.FC<PauseProfilePageProps> = ({ onDismiss }) => {
       </Text>
       <label htmlFor="acknowledgement" style={{ cursor: 'pointer', display: 'block', marginBottom: '24px' }}>
         <Flex alignItems="center">
-          <Checkbox id="acknowledgement" checked={isAcknowledged} onChange={handleChange} scale="sm" />
+          <CheckboxStyled id="acknowledgement" checked={isAcknowledged} onChange={handleChange} scale="sm" />
           <Text ml="8px">{t('I understand')}</Text>
         </Flex>
       </label>

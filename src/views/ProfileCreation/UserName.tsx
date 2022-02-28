@@ -36,6 +36,9 @@ enum ExistingUserState {
   NEW = 'new', // username has not been created
 }
 
+const CheckboxStyled = styled(Checkbox)`
+  border: 1px solid ${({ theme }) => theme.colors.primary};
+`
 const InputWrap = styled.div`
   position: relative;
   max-width: 240px;
@@ -250,7 +253,7 @@ const UserName: React.FC = () => {
           <label htmlFor="checkbox" style={{ display: 'block', cursor: 'pointer', marginBottom: '24px' }}>
             <Flex alignItems="center">
               <div style={{ flex: 'none' }}>
-                <Checkbox id="checkbox" scale="sm" checked={isAcknowledged} onChange={handleAcknowledge} />
+                <CheckboxStyled id="checkbox" scale="sm" checked={isAcknowledged} onChange={handleAcknowledge} />
               </div>
               <Text ml="8px">{t('I understand that people can view my wallet if they know my username')}</Text>
             </Flex>

@@ -31,6 +31,9 @@ const TextDot = styled.div`
   background-color: ${({ theme }) => theme.colors.text};
   border-radius: 50%;
 `
+const CheckboxStyled = styled(Checkbox)`
+  border: 1px solid ${({ theme }) => theme.colors.primary};
+`
 
 function ImportList({ listURL, list, onImport }: ImportProps) {
   const { theme } = useTheme()
@@ -108,7 +111,7 @@ function ImportList({ listURL, list, onImport }: ImportProps) {
                 {typeof 'If you purchase a token from this list, you may not be able to sell it back.'}
               </Text>
               <Flex alignItems="center">
-                <Checkbox
+                <CheckboxStyled
                   name="confirmed"
                   type="checkbox"
                   checked={confirmed}

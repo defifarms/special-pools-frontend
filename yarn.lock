@@ -2421,10 +2421,10 @@
   resolved "https://registry.yarnpkg.com/@ledgerhq/logs/-/logs-5.50.0.tgz#29c6419e8379d496ab6d0426eadf3c4d100cd186"
   integrity sha512-swKHYCOZUGyVt4ge0u8a7AwNcA//h4nx5wIi0sruGye1IJ5Cva0GyK9L2/WdX+kWVTKp92ZiEo1df31lrWGPgA==
 
-"@loopstarter/special-uikit@^0.1.7":
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/@loopstarter/special-uikit/-/special-uikit-0.1.7.tgz#e009244b725c063c2c67eae6b757bba43321835b"
-  integrity sha512-h+GErdcS9YlFAeMuvhjQL62hkzFMi8YmqItXEJnz080MMAnUH7vWOV5PlKv3rCkSvWuhstqM4OoyOwBsQ6YCtQ==
+"@loopstarter/special-uikit@^0.1.8":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@loopstarter/special-uikit/-/special-uikit-0.1.8.tgz#59d51905c72339358bb0c16c66937dcc54d5b0c3"
+  integrity sha512-5ybcekHzJFkCspOPAcjAOgrGqt67uNGviiUhznUCyXgc/i1jPdWFgGhoJLJxXVL4sQPuS9BuYBObivFmqgbGUw==
   dependencies:
     "@popperjs/core" "^2.9.2"
     "@types/lodash" "^4.14.168"
