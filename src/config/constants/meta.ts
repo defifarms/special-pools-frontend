@@ -5,7 +5,7 @@ export const DEFAULT_META: PageMeta = {
   title: 'LoopStarter',
   description:
     'Evolution of DAO',
-  image: 'https://app.defifarms.org/images/logo.png',
+  image: 'https://dex.loopstarter.com/images/logo.png',
 }
 
 export const getCustomMeta = (path: string, t: ContextApi['t']): PageMeta => {

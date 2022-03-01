@@ -97,7 +97,7 @@ function TransactionSubmittedContent({
               onClick={() => registerToken(token.address, token.symbol, token.decimals)}
             >
               <RowFixed>
-                {t('Add %asset% to Metamask', { asset: currencyToAdd.symbol === "Defifarm-LP" ? "Loopstarter-LP" : currencyToAdd.symbol })}
+                {t('Add %asset% to Metamask', { asset: currencyToAdd.symbol })}
                 <MetamaskIcon width="16px" ml="6px" />
               </RowFixed>
             </Button>

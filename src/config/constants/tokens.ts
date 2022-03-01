@@ -12,16 +12,6 @@ interface SerializedTokenList {
   [symbol: string]: SerializedToken
 }
 
-// defiy: {
-//   symbol: 'LOOPS',
-//     address: {
-//     56: '0x08d1Ed0e3816183e703a492dDD28d68fcc13bb61',
-//       97: '0x5017AE3D04e29B67b33CF96a86980717A773a783',
-//     },
-//   decimals: 18,
-//     projectLink: 'https://defifarms.org',
-//   },
-
 export const mainnetTokens = {
   wbnb: new Token(
     MAINNET,
