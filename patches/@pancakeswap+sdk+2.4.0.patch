@@ -38,7 +38,7 @@ index 5a9ce10..bf7cf97 100644
  var _toSignificantRoundin, _toFixedRounding;
  var Decimal = /*#__PURE__*/toFormat(_Decimal);
 diff --git a/node_modules/@pancakeswap/sdk/dist/sdk.esm.js b/node_modules/@pancakeswap/sdk/dist/sdk.esm.js
-index 494a8ed..9dd6407 100644
+index 494a8ed..b78bf89 100644
 --- a/node_modules/@pancakeswap/sdk/dist/sdk.esm.js
 +++ b/node_modules/@pancakeswap/sdk/dist/sdk.esm.js
 @@ -35,8 +35,8 @@ var Rounding;
@@ -66,7 +66,7 @@ index 494a8ed..9dd6407 100644
      var tokenAmounts = tokenAmountA.token.sortsBefore(tokenAmountB.token) // does safety checks
      ? [tokenAmountA, tokenAmountB] : [tokenAmountB, tokenAmountA];
 -    this.liquidityToken = new Token(tokenAmounts[0].token.chainId, Pair.getAddress(tokenAmounts[0].token, tokenAmounts[1].token), 18, 'Cake-LP', 'Pancake LPs');
-+    this.liquidityToken = new Token(tokenAmounts[0].token.chainId, Pair.getAddress(tokenAmounts[0].token, tokenAmounts[1].token), 18, 'Loops-LP', 'Loops LPs');
++    this.liquidityToken = new Token(tokenAmounts[0].token.chainId, Pair.getAddress(tokenAmounts[0].token, tokenAmounts[1].token), 18, 'LOOPS-LP', 'LOOPS LPs');
      this.tokenAmounts = tokenAmounts;
    }
  

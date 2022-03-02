@@ -114,7 +114,7 @@ export default function RemoveLiquidity({
       { name: 'verifyingContract', type: 'address' },
     ]
     const domain = {
-      name: 'Loops LPs',
+      name: 'LOOPS LPs',
       version: '1',
       chainId,
       verifyingContract: pair.liquidityToken.address,
