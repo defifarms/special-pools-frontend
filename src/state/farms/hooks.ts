@@ -1,15 +1,23 @@
-import { useEffect, useMemo } from 'react'
-import { useSelector } from 'react-redux'
-import { useAppDispatch } from 'state'
 import { useWeb3React } from '@web3-react/core'
 import BigNumber from 'bignumber.js'
-import { BIG_ZERO } from 'utils/bigNumber'
-import { getBalanceAmount } from 'utils/formatBalance'
-import { farmsConfig } from 'config/constants'
+import { DEFAULT_TOKEN_DECIMAL } from 'config'
+import cakeAbi from 'config/abi/cake.json'
+import RouterABI from 'config/abi/RouterABI.json'
+import { farmsConfig, ROUTER_ADDRESS } from 'config/constants'
+import tokens from 'config/constants/tokens'
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import useRefresh from 'hooks/useRefresh'
+import { useEffect, useMemo, useState, useRef } from 'react'
+import { useSelector } from 'react-redux'
+import { useAppDispatch } from 'state'
+import { useBlock } from 'state/block/hooks'
 import { deserializeToken } from 'state/user/hooks/helpers'
+import { getContract } from 'utils'
+import { BIG_ONE, BIG_ZERO } from 'utils/bigNumber'
+import { getBalanceAmount } from 'utils/formatBalance'
 import { fetchFarmsPublicDataAsync, fetchFarmUserDataAsync, nonArchivedFarms } from '.'
-import { State, SerializedFarm, DeserializedFarmUserData, DeserializedFarm, DeserializedFarmsState } from '../types'
+import { DeserializedFarm, DeserializedFarmsState, DeserializedFarmUserData, SerializedFarm, State } from '../types'
+
 
 const deserializeFarmUserData = (farm: SerializedFarm): DeserializedFarmUserData => {
   return {
@@ -142,12 +150,57 @@ export const useLpTokenPrice = (symbol: string) => {
   return lpTokenPrice
 }
 
+export const useLoopsBusdPrice = (): BigNumber => {
+  const { library } = useActiveWeb3React()
+  const { currentBlock } = useBlock()
+  const previousBlock = useRef(0)
+
+  const [price, setPrice] = useState(BIG_ZERO);
+  const pancakeRouter = getContract(ROUTER_ADDRESS, RouterABI, library)
+  useEffect(() => {
+    pancakeRouter
+      .getAmountsIn(new BigNumber(1).multipliedBy(DEFAULT_TOKEN_DECIMAL).toString(), [
+        tokens.loops.address,
+        tokens.busd.address,
+      ])
+      .then((data) => {
+        if (previousBlock.current < currentBlock) {
+          setPrice(new BigNumber(data[0]._hex).div(DEFAULT_TOKEN_DECIMAL))
+          previousBlock.current = currentBlock
+        }
+      })
+  }, [pancakeRouter, currentBlock])
+  return BIG_ONE.div(price) || BIG_ZERO
+}
+export const useTokenBusdPrice = (address: string): BigNumber => {
+  const { library } = useActiveWeb3React()
+  const { currentBlock } = useBlock()
+  const previousBlock = useRef(0)
+
+  const [price, setPrice] = useState(BIG_ZERO);
+  const pancakeRouter = getContract(ROUTER_ADDRESS, RouterABI, library)
+  useEffect(() => {
+    pancakeRouter
+      .getAmountsIn(new BigNumber(1).multipliedBy(DEFAULT_TOKEN_DECIMAL).toString(), [
+        address,
+        tokens.busd.address,
+      ])
+      .then((data) => {
+        if (previousBlock.current < currentBlock) {
+          setPrice(new BigNumber(data[0]._hex).div(DEFAULT_TOKEN_DECIMAL))
+          previousBlock.current = currentBlock
+        }
+      })
+  }, [pancakeRouter, currentBlock, address])
+  return BIG_ONE.div(price) || BIG_ZERO
+}
+
 // /!\ Deprecated , use the BUSD hook in /hooks
 
 export const usePriceCakeBusd = (): BigNumber => {
-  const cakeBnbFarm = useFarmFromPid(1)
-  
-  const cakePriceBusdAsString = cakeBnbFarm.tokenPriceBusd
+  const tokenPriceBusd = useLoopsBusdPrice()
+
+  const cakePriceBusdAsString = tokenPriceBusd
 
   const cakePriceBusd = useMemo(() => {
     return new BigNumber(cakePriceBusdAsString)
