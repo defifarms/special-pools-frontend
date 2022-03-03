@@ -42,7 +42,7 @@ const AprRow: React.FC<AprRowProps> = ({ pool, stakedBalance, performanceFee = 0
       const staked = totalStaked.dividedBy(DEFAULT_TOKEN_DECIMAL).toNumber()
       const token0Price = new BigNumber(reserve0._hex).div(DEFAULT_TOKEN_DECIMAL).multipliedBy(2).multipliedBy(cakePriceUsd.toNumber()).dividedBy(staked).toNumber()
       setEarningsPercentageToDisplay(getPoolApr(token0Price, earningTokenPrice, staked, 1))
-      console.log(token0Price, new BigNumber(reserve0._hex).div(DEFAULT_TOKEN_DECIMAL).toNumber(), cakePriceUsd.toNumber()) 
+      // console.log(token0Price, new BigNumber(reserve0._hex).div(DEFAULT_TOKEN_DECIMAL).toNumber(), cakePriceUsd.toNumber()) 
     })
   }, [pairContract, cakePriceUsd, totalStaked, setEarningsPercentageToDisplay, earningTokenPrice])
   const stakingTokenBalance = userData?.stakingTokenBalance ? new BigNumber(userData.stakingTokenBalance) : BIG_ZERO
