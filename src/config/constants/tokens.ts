@@ -21,7 +21,8 @@ export const mainnetTokens = {
     'Wrapped BNB',
     'https://www.binance.com/',
   ),
-  lpLoopsBnb: new Token(MAINNET, '0xdf5bB32A0A6eEA368ec8c36E70B51252DAbfE3d8', 18, 'LP-LOOPS-BNB', 'LP-LOOPS-BNB', 'https://loopstarter.com'),
+  lpLoopsBnb: new Token(MAINNET, '0x0cc7fDA73620791a8e22654C754e5C2e1df976a6', 18, 'LP-LOOPS-BNB', 'LP-LOOPS-BNB', 'https://loopstarter.com'),
+  lpLoopsBusd: new Token(MAINNET, '0xAcd398DD095706E9b4A51b028e67023232e8D646', 18, 'LP-LOOPS-BUSD', 'LP-LOOPS-BUSD', 'https://loopstarter.com'),
   // bnb here points to the wbnb contract. Wherever the currency BNB is required, conditional checks for the symbol 'BNB' can be used
   bnb: new Token(MAINNET, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', 18, 'BNB', 'BNB', 'https://www.binance.com/'),
   defiy: new Token(MAINNET, '0x08d1Ed0e3816183e703a492dDD28d68fcc13bb61', 18, 'LOOPS', 'LOOPS', 'https://loopstarter.com'),

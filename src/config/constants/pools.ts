@@ -35,9 +35,9 @@ const pools: SerializedPoolConfig[] = [
   {
     sousId: 3,
     stakingToken: serializedTokens.lpLoopsBnb,
-    earningToken: serializedTokens.defiy,
+    earningToken: serializedTokens.loops,
     contractAddress: {
-      97: '0x7630396C31Cc18232f9409Cc4dfe9e11DAE7cD3d',
+      97: '0xbCF87663fCE5d74C4FCE91b412C80bd0544B51f6',
       56: '',
     },
     poolCategory: PoolCategory.FARMING,
@@ -46,6 +46,20 @@ const pools: SerializedPoolConfig[] = [
     sortOrder: 2,
     isFinished: false,
     lpSymbol: 'LOOPS-BNB LP'
+  },
+  {
+    sousId: 4,
+    stakingToken: serializedTokens.lpLoopsBusd,
+    earningToken: serializedTokens.loops,
+    contractAddress: {
+      97: '0x883F18e4B364D637F6A05e3db101956764e38384',
+      56: '',
+    },
+    poolCategory: PoolCategory.FARMING,
+    harvest: true,
+    sortOrder: 999,
+    tokenPerBlock: '0.0578',
+    poolNote: 'LOOPS-BUSD LP',
   },
   /**
    * SpecialPools start from 500
