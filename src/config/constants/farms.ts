@@ -11,20 +11,20 @@ const farms: SerializedFarmConfig[] = [
     pid: 0,
     lpSymbol: 'LOOPS',
     lpAddresses: {
-      97: '0x5017AE3D04e29B67b33CF96a86980717A773a783', // DEFI
+      97: '0xAcd398DD095706E9b4A51b028e67023232e8D646', // DEFI
       56: '',
     },
-    token: serializedTokens.defiy,
+    token: serializedTokens.loops,
     quoteToken: serializedTokens.busd,
   },
   {
     pid: 1,
     lpSymbol: 'LOOPS-BNB LP',
     lpAddresses: {
-      97: '0x1AAe36292a6F188e3c8ef245258Df50BFf1ab87D',
+      97: '0x0cc7fDA73620791a8e22654C754e5C2e1df976a6',
       56: '0xf5cae1131ff6004f4091543b08e6264c73b703df',
     },
-    token: serializedTokens.defiy,
+    token: serializedTokens.loops,
     quoteToken: serializedTokens.wbnb,
   },
   {
