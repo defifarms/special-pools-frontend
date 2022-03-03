@@ -1816,7 +1816,8 @@ export const testnetTokens = {
   defiy: new Token(TESTNET, '0xF75E0D2Cb7667506edeEce42144b8667D042c937', 18, 'LOOPS', 'LOOPS', 'https://loopstarter.com'),
   loops: new Token(TESTNET, '0x33D1b53722A43d2be15943B60061eCc763C30B46', 18, 'LOOPS', 'LOOPS', 'https://loopstarter.com'),
 
-  lpLoopsBnb: new Token(TESTNET, '0xdf5bB32A0A6eEA368ec8c36E70B51252DAbfE3d8', 18, 'LP-LOOPS-BNB', 'LP-LOOPS-BNB', 'https://loopstarter.com'),
+  lpLoopsBnb: new Token(TESTNET, '0x0cc7fDA73620791a8e22654C754e5C2e1df976a6', 18, 'LP-LOOPS-BNB', 'LP-LOOPS-BNB', 'https://loopstarter.com'),
+  lpLoopsBusd: new Token(TESTNET, '0xAcd398DD095706E9b4A51b028e67023232e8D646', 18, 'LP-LOOPS-BNB', 'LP-LOOPS-BNB', 'https://loopstarter.com'),
   cake: new Token(
     TESTNET,
     '0x01BB38d9F8d2d83564bab7BD756EB801651E539F',
