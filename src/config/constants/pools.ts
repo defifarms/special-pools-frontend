@@ -20,10 +20,10 @@ const pools: SerializedPoolConfig[] = [
   },
   {
     sousId: 1,
-    stakingToken: serializedTokens.defiy,
-    earningToken: serializedTokens.defiy,
+    stakingToken: serializedTokens.loops,
+    earningToken: serializedTokens.loops,
     contractAddress: {
-      97: '0x2C149949B4B8cc29FDCD251ab1d58a5c7fD4996d',
+      97: '0xD91566F73d8FCE7e2eDB33E69ac2700Aa9c62361',
       56: '',
     },
     poolCategory: PoolCategory.CORE,
