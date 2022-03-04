@@ -23,7 +23,7 @@ const pools: SerializedPoolConfig[] = [
     stakingToken: serializedTokens.loops,
     earningToken: serializedTokens.loops,
     contractAddress: {
-      97: '0xD91566F73d8FCE7e2eDB33E69ac2700Aa9c62361',
+      97: '0xF14285af8De447CbaA18338496DB2f5366aC1Eeb',
       56: '',
     },
     poolCategory: PoolCategory.CORE,
@@ -37,7 +37,7 @@ const pools: SerializedPoolConfig[] = [
     stakingToken: serializedTokens.lpLoopsBnb,
     earningToken: serializedTokens.loops,
     contractAddress: {
-      97: '0xbCF87663fCE5d74C4FCE91b412C80bd0544B51f6',
+      97: '0x001E155bedaFC726d99D5fB81F2249f3cd291974',
       56: '',
     },
     poolCategory: PoolCategory.FARMING,
