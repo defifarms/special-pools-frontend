@@ -37,7 +37,7 @@ const pools: SerializedPoolConfig[] = [
     stakingToken: serializedTokens.lpLoopsBnb,
     earningToken: serializedTokens.loops,
     contractAddress: {
-      97: '0x001E155bedaFC726d99D5fB81F2249f3cd291974',
+      97: '0x6D9f1bC1ce26848Fc1c47F1bfF3Be5Bb12c95dE6',
       56: '',
     },
     poolCategory: PoolCategory.FARMING,
