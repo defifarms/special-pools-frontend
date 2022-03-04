@@ -23,7 +23,7 @@ const pools: SerializedPoolConfig[] = [
     stakingToken: serializedTokens.loops,
     earningToken: serializedTokens.loops,
     contractAddress: {
-      97: '0xF14285af8De447CbaA18338496DB2f5366aC1Eeb',
+      97: '0x09c5e8977F6d5581e7EeA60Bd83B22bD62A03960',
       56: '',
     },
     poolCategory: PoolCategory.CORE,
