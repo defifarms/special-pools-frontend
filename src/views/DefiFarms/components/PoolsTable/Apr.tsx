@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { Flex, useModal, CalculateIcon, Skeleton, FlexProps, Button } from '@loopstarter/special-uikit'
 import RoiCalculatorModal from 'components/RoiCalculatorModal'
@@ -8,6 +8,10 @@ import { useTranslation } from 'contexts/Localization'
 import { getAprData } from 'views/Pools/helpers'
 import BigNumber from 'bignumber.js'
 import { BIG_ZERO } from 'utils/bigNumber'
+import { usePairContract } from 'hooks/useContract'
+import { DEFAULT_TOKEN_DECIMAL } from 'config'
+import { usePriceCakeBusd } from 'state/farms/hooks'
+import { getPoolApr } from 'utils/apr'
 
 const AprLabelContainer = styled(Flex)`
   &:hover {
@@ -23,10 +27,37 @@ interface AprProps extends FlexProps {
 }
 
 const Apr: React.FC<AprProps> = ({ pool, showIcon, stakedBalance, performanceFee = 0, ...props }) => {
-  const { stakingToken, earningToken, isFinished, earningTokenPrice, stakingTokenPrice, userData, apr } = pool
+  const {
+    stakingToken,
+    earningToken,
+    isFinished,
+    apr,
+    earningTokenPrice,
+    stakingTokenPrice,
+    userData,
+    isAutoVault,
+    totalStaked,
+  } = pool
   const { t } = useTranslation()
+  const [earningsPercentageToDisplay, setEarningsPercentageToDisplay] = useState(0)
+  const pairContract = usePairContract(stakingToken.address)
+  const cakePriceUsd = usePriceCakeBusd()
+  const { autoCompoundFrequency } = getAprData(pool, performanceFee)
 
-  const { apr: earningsPercentageToDisplay, autoCompoundFrequency } = getAprData(pool, performanceFee)
+  useEffect(() => {
+    pairContract.getReserves().then((res) => {
+      const { reserve0 } = res
+      const staked = totalStaked.dividedBy(DEFAULT_TOKEN_DECIMAL).toNumber()
+      const token0Price = new BigNumber(reserve0._hex)
+        .div(DEFAULT_TOKEN_DECIMAL)
+        .multipliedBy(2)
+        .multipliedBy(cakePriceUsd.toNumber())
+        .dividedBy(staked)
+        .toNumber()
+      setEarningsPercentageToDisplay(getPoolApr(token0Price, earningTokenPrice, staked, 1))
+      // console.log(token0Price, new BigNumber(reserve0._hex).div(DEFAULT_TOKEN_DECIMAL).toNumber(), cakePriceUsd.toNumber())
+    })
+  }, [pairContract, cakePriceUsd, totalStaked, setEarningsPercentageToDisplay, earningTokenPrice])
 
   const stakingTokenBalance = userData?.stakingTokenBalance ? new BigNumber(userData.stakingTokenBalance) : BIG_ZERO
 

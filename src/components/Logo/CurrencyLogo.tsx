@@ -24,7 +24,7 @@ export default function CurrencyLogo({
   const uriLocations = useHttpLocations(currency instanceof WrappedTokenInfo ? currency.logoURI : undefined)
 
   const getImageUrlFromToken = (address: string) => {
-    return `${window.location.origin}/images/tokens/${address}.svg`
+    return `${window.location.origin}/images/tokens/${address}.png`
   }
   const srcs: string[] = useMemo(() => {
     if (currency === ETHER) return []
