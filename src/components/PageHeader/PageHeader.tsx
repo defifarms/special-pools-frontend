@@ -12,26 +12,38 @@ const Outer = styled(Box)<{ background?: string }>`
 
 const Inner = styled(Container)`
   margin-top: 32px;
-  margin-bottom: 16px;
   margin-left: 16px;
   margin-right: 16px;
-  padding-top: 16px;
   padding-bottom: 24px;
   border-radius: ${({ theme }) => theme.radii.default};
   background: ${({ background }) => background || 'linear-gradient(269.58deg, #ffa318 25.78%, #ff9900 88.47%)'};
   position: relative;
   overflow: hidden;
   width: 100%;
+  flex: 1;
 
   ${({ theme }) => theme.mediaQueries.sm} {
     margin-left: 32px;
     margin-right: 32px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
 `
 const HeaderDecorateWrap = styled.div`
+  justify-content: flex-end;
+  display: flex;
+  width: fit-content;
+  ${({ theme }) => theme.mediaQueries.sm} {
+    width: auto;
+  }
+`
+const ChildrenWrap = styled.div`
   position: absolute;
   left: 0;
   top: 0;
+  padding: 16px;
+  padding-right: 0;
+  width: 100%;
   ${({ theme }) => theme.mediaQueries.sm} {
     right: 0;
     left: unset;
@@ -52,8 +64,8 @@ const PageHeader: React.FC<{ background?: string; pageName?: string }> = ({
 }) => (
   <Outer background={background} {...props}>
     <Inner background={background}>
-      {children}
       <HeaderDecorateWrap>{getHeaderDecorate(pageName)}</HeaderDecorateWrap>
+      <ChildrenWrap>{children}</ChildrenWrap>
     </Inner>
   </Outer>
 )
