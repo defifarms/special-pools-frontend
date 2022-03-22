@@ -9,34 +9,34 @@ export enum DropdownMenuItemType {
 }
 
 export interface LinkStatus {
-  text: string;
-  color: keyof Colors;
+  text: string
+  color: keyof Colors
 }
 
 export interface DropdownMenuItems {
-  label?: string | React.ReactNode;
-  href?: string;
-  onClick?: () => void;
-  type?: DropdownMenuItemType;
-  status?: LinkStatus;
-  disabled?: boolean;
-  iconName?: string;
-  isMobileOnly?: boolean;
+  label?: string | React.ReactNode
+  href?: string
+  onClick?: () => void
+  type?: DropdownMenuItemType
+  status?: LinkStatus
+  disabled?: boolean
+  iconName?: string
+  isMobileOnly?: boolean
 }
 
 export type MenuItemsType = {
-  label: string;
-  href?: string;
-  icon?: string;
-  items?: DropdownMenuItems[];
-  showOnMobile?: boolean;
-  showItemsOnMobile?: boolean;
-};
+  label: string
+  href?: string
+  icon?: string
+  items?: DropdownMenuItems[]
+  showOnMobile?: boolean
+  showItemsOnMobile?: boolean
+}
 
 export interface MenuItemsProps extends BoxProps {
-  items: MenuItemsType[];
-  activeItem?: string;
-  activeSubItem?: string;
+  items: MenuItemsType[]
+  activeItem?: string
+  activeSubItem?: string
 }
 
 export type ConfigMenuItemsType = MenuItemsType & { hideSubNav?: boolean }
@@ -81,7 +81,7 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => {
           href: `/spool`,
         },
       ],
-    }
+    },
   ]
   if (chainId === '97') {
     return [
@@ -118,17 +118,22 @@ const config: (t: ContextApi['t']) => MenuEntry[] = (t) => {
             href: `/spool`,
           },
         ],
-      }, {
+      },
+      {
         label: t('Claim BNB'),
         icon: 'NftIcon',
         href: `https://testnet.binance.org/faucet-smart`,
-        target: "_blank"
-      }
+        target: '_blank',
+      },
+      {
+        label: t('Changelly'),
+        icon: 'TradeIcon',
+        href: `/changelly`,
+        target: '_blank',
+      },
     ]
   }
   return configMenu
 }
-
-
 
 export default config

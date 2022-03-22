@@ -57,6 +57,7 @@ const Info = lazy(() => import('./views/Info'))
 const NftMarket = lazy(() => import('./views/Nft/market'))
 const ProfileCreation = lazy(() => import('./views/ProfileCreation'))
 const PancakeSquad = lazy(() => import('./views/PancakeSquad'))
+const Instantly = lazy(() => import('./views/Instantly'))
 
 // This config is required for number formatting
 BigNumber.config({
@@ -134,6 +135,7 @@ const App: React.FC = () => {
             <Route path="/collectibles">
               <Redirect to="/nfts" />
             </Route>
+            <Route exact strict path="/changelly" component={Instantly} />
             {/* <Route path="/profile">
               <Redirect to={`${nftsBaseUrl}/profile/${account?.toLowerCase() || ''}`} />
             </Route> */}

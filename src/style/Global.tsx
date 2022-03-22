@@ -42,6 +42,9 @@ const GlobalStyle = createGlobalStyle`
   .recharts-layer recharts-cartesian-axis-tick {
     color: #fff;
   }
+  #changellyModal {
+    height: calc(100vh - 88px);
+  }
 `
 
 export default GlobalStyle
