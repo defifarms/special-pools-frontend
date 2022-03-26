@@ -73,7 +73,7 @@ const UserMenu = () => {
       {/* {!isMobile && <Image alt="alt" src="/images/header.png" />} */}
 
       <MenuWrapper>
-        {!isMobile && <ChainInfo>{t(chainId === 56 ? 'BSC Mainet' : 'BSC Testnet')}</ChainInfo>}
+        {!isMobile && <ChainInfo>{t(chainId === 56 ? 'BSC Mainnet' : 'BSC Testnet')}</ChainInfo>}
         <UIKitUserMenu account={account} avatarSrc={avatarSrc}>
           <WalletUserMenuItem hasLowBnbBalance={hasLowBnbBalance} onPresentWalletModal={onPresentWalletModal} />
           <UserMenuItem as="button" onClick={onPresentTransactionModal}>
